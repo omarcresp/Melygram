@@ -1,0 +1,60 @@
+body {
+    background-color: #fafafa;
+    color: #125688;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#main-container {
+    margin: 30px auto;
+}
+
+.iphone {
+    max-width: 100%;
+    position: relative;
+    right: 30px;
+}
+
+.site-footer {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.login-box,
+.signup-box {
+    background-color: white;
+    border: 1px solid #edeeee;
+    padding: 10px;
+    text-align: center;
+}
+
+.platzigram-tittle {
+    font-family: 'Oleo Script', cursive;
+    font-size: 5em;
+}
+
+.signup-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.signup-form h2 {
+    color: #a5a7aa;
+    font-size: 1.2em;
+}
+
+.signup-form .btn.btn-fb {
+    font-size: .9em;
+    background-color: #4090db;
+}
+
+.signup-form .btn.btn-fb:hover {
+    background-color: #2d6599;
+}
+
+.signup-form .btn.btn-signup {
+    background-color: #125688;
+}
+
+.trademark {
+    font-size: 14px;
+}

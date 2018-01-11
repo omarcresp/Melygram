@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <title>Melygram</title>
+
+  <!-- Estilos -->
+    <!-- Materialize CSS -->
+      <link rel="stylesheet" href="./Libs/materialize/css/materialize.min.css">
+    <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script" rel="stylesheet">
+      <!-- Montserrat -->
+    <!-- Main CSS -->
+      <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <section id="main-container">
+    <div class="container">
+      <div class="row">
+        <div class="col s10 m12 push-s1">
+          <div class="row">
+            <div class="col m5 hide-on-small-only">
+              <img src="./assets/images/iphone.png" class="iphone">
+            </div>
+
+            <div class="col s12 m7">
+              <div class="row"> <!-- Registrarse -->
+                <div class="signup-box">
+                  <h1 class="platzigram-tittle">Platzigram</h1>
+          
+                  <form class="signup-form">
+                    <h2>Regístrate para ver fotos de tus amigos</h2>
+    
+                    <div class="section"> <!-- Iniciar sesion con Facebook -->
+                      <a href="#" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>
+                      <a href="#" class="btn btn-fb hide-on-large-only">Iniciar sesión</a>
+                    </div>
+    
+                    <div class="divider"></div>
+    
+                    <div class="section"> <!-- Formulario de registro -->
+                      <input type="email" name="email" placeholder="Correo Electronico">
+                      <input type="text" name="name" placeholder="Nombre Completo">
+                      <input type="text" name="user-name" placeholder="Nombre de Usuario">
+                      <input type="password" name="password" placeholder="Contraseña">
+    
+                      <button class="btn waves-effect waves-light btn-signup" type="submit">Regístrate</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="row"> <!-- Iniciar sesión -->
+                <div class="login-box">
+                  ¿Tienes una cuenta? <a href="/signin">Entrar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l3 center-align"> <!-- Cambiar idioma -->
+          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Idioma</a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Español</a></li>
+            <li><a href="#!">Inglés</a></li>
+          </ul>
+        </div>
+
+        <div class="col s12 l3 push-l6 center-align trademark">
+            © 2018 Melygram
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Codigo JavaScript -->
+    <!-- jQuery -->
+      <script src="./Libs/JQuery/jquery-1.8.1.js"></script>
+    <!-- Materialize -->
+      <script src="./Libs/materialize/js/materialize.min.js"></script>
+</body>
+</html>
