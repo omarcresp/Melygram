@@ -3,7 +3,7 @@ var app = express()
 
 app.set('view engine', 'pug')
 
-app.use(express.static('assets'))
+app.use(express.static('public'))
 app.use(express.static('node_modules/jquery/dist'))
 app.use(express.static('node_modules/materialize-css/dist/js'))
 
