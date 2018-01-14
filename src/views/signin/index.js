@@ -4,7 +4,7 @@ import template from '../landing'
 
 var main = document.getElementById('main-container')
 
-page('/signup', function () {
+page('/signin', function () {
   main.innerHTML = ''
   main.appendChild(template(box))
 })
