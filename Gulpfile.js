@@ -6,6 +6,7 @@ var browserify = require('browserify')
 var uglify = require('gulp-uglify')
 var buffer = require('vinyl-buffer')
 var source = require('vinyl-source-stream')
+var watchify = require('watchify')
 
 gulp.task('styles', function () {
   gulp
@@ -25,15 +26,32 @@ gulp.task('assets', function () {
     .pipe(gulp.dest('public/favicon'))
 })
 
-gulp.task('scripts', function () {
-  browserify('./src/index.js')
-    .transform(babel)
-    .bundle()
-    .pipe(source('index.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(rename('app.js'))
-    .pipe(gulp.dest('public'))
-})
+function compile (watch) {
+  var bundle = watchify(browserify('./src/index.js'))
 
-gulp.task('default', ['styles', 'assets', 'scripts'])
+  function rebundle () {
+    bundle
+      .transform(babel)
+      .bundle()
+      .pipe(source('index.js'))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(rename('app.js'))
+      .pipe(gulp.dest('public'))
+  }
+
+  if (watch) {
+    bundle.on('update', function () {
+      console.log('--> Bundling...')
+      rebundle()
+    })
+  }
+
+  rebundle()
+}
+
+gulp.task('default', ['styles', 'assets', 'build'])
+
+gulp.task('build', function () { return compile() })
+
+gulp.task('watch', function () { return compile(true) })
