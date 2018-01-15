@@ -1,3 +1,21 @@
 import yo from 'yo-yo'
 
-export default yo`<a href="/signup">Registrarse</a>`
+export default yo`
+<nav class="header">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m1">
+          <a href="/" class="platzigram brand-logo">Platzigram</a>
+        </div>
+
+        <div class="col s2 m6 psuh-m10">
+          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user"></a>
+          <ul id="drop-user" class="dropdown-content">
+            <li><a href="#">Salir</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>`

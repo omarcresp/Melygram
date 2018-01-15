@@ -8,15 +8,15 @@ app.use(express.static('node_modules/jquery/dist'))
 app.use(express.static('node_modules/materialize-css/dist/js'))
 
 app.get('/', function (req, res) {
-  res.render('index')
+  res.render('index', { title: 'Melygram' })
 })
 
 app.get('/signup', function (req, res) {
-  res.render('index')
+  res.render('index', { title: 'Melygram - Signup' })
 })
 
 app.get('/signin', function (req, res) {
-  res.render('index')
+  res.render('index', { title: 'Melygram - Signin' })
 })
 
 app.listen(3000, function (err) {
