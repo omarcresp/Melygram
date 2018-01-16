@@ -10,7 +10,9 @@ export default yo`<div class="col s12 m7">
 
         <div class="section"> <!-- Iniciar sesion con Facebook -->
           <a href="#" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>
-          <a href="#" class="btn btn-fb hide-on-large-only">Iniciar sesión</a>
+          <a href="#" class="btn btn-fb hide-on-large-only">
+            <i class="fa fa-facebook-official"></i> Iniciar sesión
+          </a>
         </div>
 
         <div class="divider"></div>

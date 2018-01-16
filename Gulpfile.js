@@ -27,7 +27,7 @@ gulp.task('assets', function () {
 })
 
 function compile (watch) {
-  var bundle = watchify(browserify('./src/index.js'))
+  var bundle
 
   function rebundle () {
     bundle
@@ -41,10 +41,14 @@ function compile (watch) {
   }
 
   if (watch) {
+    bundle = watchify(browserify('./src/index.js'))
+
     bundle.on('update', function () {
       console.log('--> Bundling...')
       rebundle()
     })
+  } else {
+    bundle = browserify('./src/index.js')
   }
 
   rebundle()

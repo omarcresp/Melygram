@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-html(lang="es")
+html(lang='es')
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0") 
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0') 
+
+    // Font Awesome
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet', integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN', crossorigin='anonymous')
 
     // Favicon
     link(rel='apple-touch-icon', sizes='57x57', href='favicon/apple-icon-57x57.png')
@@ -26,15 +29,15 @@ html(lang="es")
 
     title=title
 
-    link(href="https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script", rel="stylesheet")
-    link(rel="stylesheet", href="css/main.css")
+    link(href='https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script', rel='stylesheet')
+    link(rel='stylesheet', href='css/main.css')
   body
     section#main-container
     
     footer.site-footer
       .container
         .row
-          .col.s12.l3.center-align
+          .col.s12.l2.center-align
             // Cambiar idioma
             a.dropdown-button.btn(href='#', data-activates='dropdown1') Idioma
             // Dropdown Structure
@@ -43,7 +46,7 @@ html(lang="es")
                 a(href='#!') Español
               li
                 a(href='#!') Inglés
-          .col.s12.l3.push-l6.center-align.trademark
+          .col.s12.l3.push-l7.center-align.trademark
             | © 2018 Melygram
 
     script(src='./jquery.min.js')

@@ -6937,7 +6937,8 @@ body {
 
 .platzigram-tittle {
   font-family: 'Oleo Script', cursive;
-  font-size: 5em; }
+  font-size: 5em;
+  color: #125688 !important; }
 
 .signup-form {
   width: 80%;
@@ -6957,5 +6958,20 @@ body {
 .signup-form .btn.btn-signup, .signup-form .btn-signup.btn-large {
   background-color: #125688; }
 
+.header {
+  background-color: white;
+  color: #125688;
+  box-shadow: none;
+  border-bottom: 1px solid #edeeee; }
+
+#main-container {
+  margin-top: 0; }
+
+.landing {
+  margin: 30px auto; }
+
 .trademark {
-  font-size: 14px; }
+  margin: 20px 0; }
+
+.layout-title {
+  font-size: 2.1rem; }
