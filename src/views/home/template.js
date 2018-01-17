@@ -1,13 +1,17 @@
 import yo from 'yo-yo'
 import layout from '../layout'
+import picture from '../picture-card'
 
-//
-var template = yo`<div class="container timeline">
-  <div class="row">
-    <div class="col s12 m10 offset-m1 l6 offset-l3">
-      content
+export default function (picturesAPI) {
+  var el = yo`<div class="container timeline">
+    <div class="row">
+      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">
+        ${picturesAPI.map(function (image) {
+          return picture(image)
+        })}
+      </div>
     </div>
-  </div>
-</div>`
+  </div>`
 
-export default layout(template)
+  return layout(el)
+}

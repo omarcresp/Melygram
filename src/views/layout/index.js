@@ -7,7 +7,7 @@ export default function (content) {
         <div class="container">
           <div class="row">
             <div class="col s6 m4">
-              <a href="/" class="platzigram-tittle layout-title">Platzigram</a>
+              <a href="/" class="platzigram-tittle layout-title">Meligram</a>
             </div>
 
             <div class="col s3 m2 offset-m6 offset-s3">

@@ -78,8 +78,59 @@ body {
 
 .trademark {
     margin: 20px 0;
+    font-size: 14px;
 }
 
 .layout-title {
     font-size: 2.1rem;
+}
+
+$avatar-size: 48px;
+
+.avatar {
+    width: $avatar-size;
+    border-radius: 50%;
+    margin-right: 12px;
+    float: left;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.card .card-title {
+    display: flex !important;
+    height: $avatar-size;
+    align-items: center;
+}
+
+.card .username {
+    color: $secondary-color;
+}
+
+.card small.time {
+    line-height: $avatar-size;
+}
+
+.card p {
+    padding: 20px 0;
+    position: relative;
+    bottom: 5px;
+}
+
+.card .likes {
+    line-height: 30px;
+    margin-left: 12px;
+}
+
+.card i {
+    font-size: 30px;
+}
+
+.card .fa-heart-o {
+    color: $secondary-color;
+}
+
+.fa-heart {
+    color: purple;
 }

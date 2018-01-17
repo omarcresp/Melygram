@@ -3,7 +3,7 @@ import yo from 'yo-yo'
 export default yo`<div class="col s12 m7">
   <div class="row"> <!-- Registrarse -->
     <div class="signup-box">
-      <h1 class="platzigram-tittle">Platzigram</h1>
+      <h1 class="platzigram-tittle">Meligram</h1>
 
       <form class="signup-form">
         <div class="section"> <!-- Iniciar sesion con Facebook -->
