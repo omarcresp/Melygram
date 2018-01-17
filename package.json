@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch & node server.js"
+    "start": "gulp watch & node server.js",
+    "prod": "gulp watch & sudo node server.js"
   },
   "author": "Omar Crespo <crespomerchano@gmail.com> (omarcrespo.com.ve)",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.2",
+    "font-awesome": "^4.7.0",
     "materialize-css": "^0.100.2",
     "page": "^1.7.1",
     "pug": "^2.0.0-rc.4",
@@ -23,6 +25,7 @@
     "babelify": "^8.0.0",
     "browserify": "^15.1.0",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",

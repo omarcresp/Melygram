@@ -19,12 +19,6 @@ app.get('/signin', function (req, res) {
   res.render('index', { title: 'Melygram - Signin' })
 })
 
-app.listen(3000, function (err) {
-  if (err) {
-    console.log('Hola Mundo')
-
-    return process.exit(1)
-  }
-
+app.listen(3000, function () {
   console.log('Platzigram escuchando en el puerto 3000')
 })
