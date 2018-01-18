@@ -1,4 +1,5 @@
 import yo from 'yo-yo'
+import translate from '../../translate'
 
 export default function (pic) {
   var el
@@ -13,7 +14,7 @@ export default function (pic) {
           <img src="${image.user.avatar}" class="avatar" />
           <span class="username">${image.user.username}</span>
         </a>
-        <small class="time right">Hace 1 día</small>
+        <small class="time right">${translate.date.format(image.date)}</small>
         <p>
           <a class="left ${image.liked ? 'hide' : ''}" href="#" onclick=${like.bind(null, true)}>
             <i class="fa fa-heart-o"></i>
@@ -22,7 +23,7 @@ export default function (pic) {
           <a class="left ${image.liked ? '' : 'hide'}" href="#" onclick=${like.bind(null, false)}>
             <i class="fa fa-heart"></i>
           </a>
-          <span class="left likes">${image.likes} Me gusta</span>
+          <span class="left likes">${translate.message('likes', {'likes': image.likes})}</span>
         </p>
       </div>
     </div>`
@@ -31,8 +32,6 @@ export default function (pic) {
   function like (liked) {
     pic.liked = liked
     pic.likes += liked ? 1 : -1
-
-    console.log(pic.liked)
 
     var newEl = render(pic)
 

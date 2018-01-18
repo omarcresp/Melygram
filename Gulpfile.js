@@ -57,8 +57,8 @@ function compile (watch) {
       .transform(babel)
       .bundle()
       .pipe(source('index.js'))
-      .pipe(buffer())
-      .pipe(uglify())
+      /* .pipe(buffer())
+      .pipe(uglify()) */
       .pipe(rename('app.js'))
       .pipe(gulp.dest('public'))
   }

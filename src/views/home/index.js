@@ -11,8 +11,9 @@ var imagesAPI = [
       'avatar': 'https://static.platzi.com/media/avatars/JackCres_8fd44b90-2b85-41aa-bf83-0da695b2e702.png',
       'username': 'JackCres'
     },
-    'likes': 57,
-    'liked': false
+    'likes': 1,
+    'liked': false,
+    'date': new Date()
   },
   {
     'url': './images/office.jpg',
@@ -20,8 +21,9 @@ var imagesAPI = [
       'avatar': 'https://static.platzi.com/media/avatars/JackCres_8fd44b90-2b85-41aa-bf83-0da695b2e702.png',
       'username': 'JackCres'
     },
-    'likes': 25,
-    'liked': false
+    'likes': 1,
+    'liked': true,
+    'date': new Date().setDate(new Date().getDate() - 10)
   }
 ]
 
