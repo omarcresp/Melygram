@@ -13,11 +13,11 @@ gulp.task('styles', function () {
   gulp
     .src('./src/sass/index.scss')
     .pipe(sass())
-    .pipe(cleanCSS({debug: true}, (details) => {
+    /* .pipe(cleanCSS({debug: true}, (details) => {
       console.log('\nMinfyCSS Details >>>>>>>>>>>>>>>>>>>')
       console.log(`${details.name}: ${Math.round(details.stats.originalSize / 1024)} KB`)
       console.log(`${details.name}: ${Math.round(details.stats.minifiedSize / 1024)} KB`)
-    }))
+    })) */
     .pipe(rename('main.css'))
     .pipe(gulp.dest('./public/css'))
 })
@@ -40,11 +40,11 @@ gulp.task('font-awesome', function () {
   gulp
     .src('./node_modules/font-awesome/scss/font-awesome.scss')
     .pipe(sass())
-    .pipe(cleanCSS({debug: true}, (details) => {
+    /* .pipe(cleanCSS({debug: true}, (details) => {
       console.log('\nMinfyCSS Details >>>>>>>>>>>>>>>>>>>')
       console.log(`${details.name}: ${Math.round(details.stats.originalSize / 1024)} KB`)
       console.log(`${details.name}: ${Math.round(details.stats.minifiedSize / 1024)} KB`)
-    }))
+    })) */
     .pipe(rename('font-awesome.css'))
     .pipe(gulp.dest('./public/css'))
 })
@@ -54,7 +54,7 @@ function compile (watch) {
 
   function rebundle () {
     bundle
-      .transform(babel)
+      .transform(babel, {presets: ['env']})
       .bundle()
       .pipe(source('index.js'))
       /* .pipe(buffer())
@@ -69,6 +69,7 @@ function compile (watch) {
     bundle.on('update', function () {
       console.log('--> Bundling...')
       rebundle()
+      console.log('--> Bundling Complete')
     })
   } else {
     bundle = browserify('./src/index.js')

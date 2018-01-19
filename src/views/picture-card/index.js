@@ -14,7 +14,7 @@ export default function (pic) {
           <img src="${image.user.avatar}" class="avatar" />
           <span class="username">${image.user.username}</span>
         </a>
-        <small class="time right">${translate.date.format(image.date)}</small>
+        <small class="time right">${translate.date.format(new Date(image.date))}</small>
         <p>
           <a class="left ${image.liked ? 'hide' : ''}" href="#" onclick=${like.bind(null, true)}>
             <i class="fa fa-heart-o"></i>

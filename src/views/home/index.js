@@ -2,34 +2,33 @@ import page from 'page'
 import template from './template'
 import title from 'title'
 
+import '../header'
+
 var main = document.getElementById('main-container')
 
-var imagesAPI = [
-  {
-    'url': './images/Ruta_Platzi.png',
-    'user': {
-      'avatar': 'https://static.platzi.com/media/avatars/JackCres_8fd44b90-2b85-41aa-bf83-0da695b2e702.png',
-      'username': 'JackCres'
-    },
-    'likes': 1,
-    'liked': false,
-    'date': new Date()
-  },
-  {
-    'url': './images/office.jpg',
-    'user': {
-      'avatar': 'https://static.platzi.com/media/avatars/JackCres_8fd44b90-2b85-41aa-bf83-0da695b2e702.png',
-      'username': 'JackCres'
-    },
-    'likes': 1,
-    'liked': true,
-    'date': new Date().setDate(new Date().getDate() - 10)
-  }
-]
+console.log('Global')
 
-page('/', function () {  // ctx y next son posible parametros
+function loadPictures (ctx, next) {
+  fetch('/api/pictures')
+    .then(response => {
+      response.json().then(data => {
+        console.log(data)
+
+        ctx.imagesAPI = data
+
+        next()
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+page('/', loadPictures, function (ctx, next) {  // ctx y next son posible parametros
   title('Melygram')
 
+  console.log('Funciona')
+
   main.innerHTML = ''
-  main.appendChild(template(imagesAPI))
+  main.appendChild(template(ctx.imagesAPI))
 })

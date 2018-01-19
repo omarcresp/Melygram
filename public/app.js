@@ -1,1 +1,10110 @@
-!function e(a,t,n){function r(i,s){if(!t[i]){if(!a[i]){var l="function"==typeof require&&require;if(!s&&l)return l(i,!0);if(o)return o(i,!0);var u=new Error("Cannot find module '"+i+"'");throw u.code="MODULE_NOT_FOUND",u}var d=t[i]={exports:{}};a[i][0].call(d.exports,function(e){var t=a[i][1][e];return r(t||e)},d,d.exports,e,a,t,n)}return t[i].exports}for(var o="function"==typeof require&&require,i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,a,t){var n=e("global/document"),r=e("hyperx"),o=e("on-load"),i="http://www.w3.org/2000/svg",s="http://www.w3.org/1999/xlink",l={autofocus:1,checked:1,defaultchecked:1,disabled:1,formnovalidate:1,indeterminate:1,readonly:1,required:1,selected:1,willvalidate:1},u="!--",d=["svg","altGlyph","altGlyphDef","altGlyphItem","animate","animateColor","animateMotion","animateTransform","circle","clipPath","color-profile","cursor","defs","desc","ellipse","feBlend","feColorMatrix","feComponentTransfer","feComposite","feConvolveMatrix","feDiffuseLighting","feDisplacementMap","feDistantLight","feFlood","feFuncA","feFuncB","feFuncG","feFuncR","feGaussianBlur","feImage","feMerge","feMergeNode","feMorphology","feOffset","fePointLight","feSpecularLighting","feSpotLight","feTile","feTurbulence","filter","font","font-face","font-face-format","font-face-name","font-face-src","font-face-uri","foreignObject","g","glyph","glyphRef","hkern","image","line","linearGradient","marker","mask","metadata","missing-glyph","mpath","path","pattern","polygon","polyline","radialGradient","rect","set","stop","switch","symbol","text","textPath","title","tref","tspan","use","view","vkern"];function h(e,a,t){var r;-1!==d.indexOf(e)&&(a.namespace=i);var c=!1;if(a.namespace&&(c=a.namespace,delete a.namespace),c)r=n.createElementNS(c,e);else{if(e===u)return n.createComment(a.comment);r=n.createElement(e)}if(a.onload||a.onunload){var m=a.onload||function(){},p=a.onunload||function(){};o(r,function(){m(r)},function(){p(r)},h.caller.caller.caller),delete a.onload,delete a.onunload}for(var f in a)if(a.hasOwnProperty(f)){var y=f.toLowerCase(),v=a[f];if("classname"===y&&(y="class",f="class"),"htmlFor"===f&&(f="for"),l[y])if("true"===v)v=y;else if("false"===v)continue;"on"===y.slice(0,2)?r[f]=v:c?"xlink:href"===f?r.setAttributeNS(s,f,v):/^xmlns($|:)/i.test(f)||r.setAttributeNS(null,f,v):r.setAttribute(f,v)}return function e(a){if(Array.isArray(a))for(var t=0;t<a.length;t++){var o=a[t];if(Array.isArray(o))e(o);else{if(("number"==typeof o||"boolean"==typeof o||"function"==typeof o||o instanceof Date||o instanceof RegExp)&&(o=o.toString()),"string"==typeof o){if(r.lastChild&&"#text"===r.lastChild.nodeName){r.lastChild.nodeValue+=o;continue}o=n.createTextNode(o)}o&&o.nodeType&&r.appendChild(o)}}}(t),r}a.exports=r(h,{comments:!0}),a.exports.default=a.exports,a.exports.createElement=h},{"global/document":3,hyperx:6,"on-load":31}],2:[function(e,a,t){},{}],3:[function(e,a,t){(function(t){var n,r=void 0!==t?t:"undefined"!=typeof window?window:{},o=e("min-document");"undefined"!=typeof document?n=document:(n=r["__GLOBAL_DOCUMENT_CACHE@4"])||(n=r["__GLOBAL_DOCUMENT_CACHE@4"]=o),a.exports=n}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{"min-document":2}],4:[function(e,a,t){(function(e){var t;t="undefined"!=typeof window?window:void 0!==e?e:"undefined"!=typeof self?self:{},a.exports=t}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{}],5:[function(e,a,t){a.exports=function(e){return function(a,t,r){for(var o in t)o in n&&(t[n[o]]=t[o],delete t[o]);return e(a,t,r)}};var n={class:"className",for:"htmlFor","http-equiv":"httpEquiv"}},{}],6:[function(e,a,t){var n=e("hyperscript-attribute-to-property"),r=1,o=2,i=3,s=4,l=5,u=6,d=7,h=8,c=9,m=10,p=11,f=12,y=13;a.exports=function(e,a){a||(a={});var t=a.concat||function(e,a){return String(e)+String(a)};return!1!==a.attrToProp&&(e=n(e)),function(n){for(var b=r,M="",w=arguments.length,T=[],k=0;k<n.length;k++)if(k<w-1){var _=arguments[k+1],S=C(n[k]),E=b;E===m&&(E=h),E===c&&(E=h),E===d&&(E=h),E===s&&(E=l),S.push([0,E,_]),T.push.apply(T,S)}else T.push.apply(T,C(n[k]));var N,L=[null,{},[]],F=[[L,-1]];for(k=0;k<T.length;k++){var K=F[F.length-1][0],j=(S=T[k])[0];if(j===o&&/^\//.test(S[1])){var x=F[F.length-1][1];F.length>1&&(F.pop(),F[F.length-1][0][2][x]=e(K[0],K[1],K[2].length?K[2]:void 0))}else if(j===o){var D=[S[1],{},[]];K[2].push(D),F.push([D,K[2].length-1])}else if(j===l||0===j&&S[1]===l){for(var A,R="";k<T.length;k++)if(T[k][0]===l)R=t(R,T[k][1]);else{if(0!==T[k][0]||T[k][1]!==l)break;if("object"!=typeof T[k][2]||R)R=t(R,T[k][2]);else for(A in T[k][2])T[k][2].hasOwnProperty(A)&&!K[1][A]&&(K[1][A]=T[k][2][A])}T[k][0]===p&&k++;for(var I=k;k<T.length;k++)if(T[k][0]===h||T[k][0]===l)K[1][R]?""===T[k][1]||(K[1][R]=t(K[1][R],T[k][1])):K[1][R]=g(T[k][1]);else{if(0!==T[k][0]||T[k][1]!==h&&T[k][1]!==l){!R.length||K[1][R]||k!==I||T[k][0]!==i&&T[k][0]!==f||(K[1][R]=R.toLowerCase()),T[k][0]===i&&k--;break}K[1][R]?""===T[k][2]||(K[1][R]=t(K[1][R],T[k][2])):K[1][R]=g(T[k][2])}}else if(j===l)K[1][S[1]]=!0;else if(0===j&&S[1]===l)K[1][S[2]]=!0;else if(j===i){if(N=K[0],v.test(N)&&F.length){x=F[F.length-1][1];F.pop(),F[F.length-1][0][2][x]=e(K[0],K[1],K[2].length?K[2]:void 0)}}else if(0===j&&S[1]===r)void 0===S[2]||null===S[2]?S[2]="":S[2]||(S[2]=t("",S[2])),Array.isArray(S[2][0])?K[2].push.apply(K[2],S[2]):K[2].push(S[2]);else if(j===r)K[2].push(S[1]);else if(j!==p&&j!==f)throw new Error("unhandled: "+j)}if(L[2].length>1&&/^\s*$/.test(L[2][0])&&L[2].shift(),L[2].length>2||2===L[2].length&&/\S/.test(L[2][1]))throw new Error("multiple root elements must be wrapped in an enclosing tag");return Array.isArray(L[2][0])&&"string"==typeof L[2][0][0]&&Array.isArray(L[2][0][2])&&(L[2][0]=e(L[2][0][0],L[2][0][1],L[2][0][2])),L[2][0];function C(e){var t,n=[];b===d&&(b=s);for(var v=0;v<e.length;v++){var g=e.charAt(v);b===r&&"<"===g?(M.length&&n.push([r,M]),M="",b=o):">"===g&&((t=b)!==c&&t!==m)&&b!==y?(b===o?n.push([o,M]):b===l?n.push([l,M]):b===h&&M.length&&n.push([h,M]),n.push([i]),M="",b=r):b===y&&/-$/.test(M)&&"-"===g?(a.comments&&n.push([h,M.substr(0,M.length-1)],[i]),M="",b=r):b===o&&/^!--$/.test(M)?(a.comments&&n.push([o,M],[l,"comment"],[p]),M=g,b=y):b===r||b===y?M+=g:b===o&&/\s/.test(g)?(n.push([o,M]),M="",b=s):b===o?M+=g:b===s&&/[^\s"'=/]/.test(g)?(b=l,M=g):b===s&&/\s/.test(g)?(M.length&&n.push([l,M]),n.push([f])):b===l&&/\s/.test(g)?(n.push([l,M]),M="",b=u):b===l&&"="===g?(n.push([l,M],[p]),M="",b=d):b===l?M+=g:b!==u&&b!==s||"="!==g?b!==u&&b!==s||/\s/.test(g)?b===d&&'"'===g?b=m:b===d&&"'"===g?b=c:b===m&&'"'===g?(n.push([h,M],[f]),M="",b=s):b===c&&"'"===g?(n.push([h,M],[f]),M="",b=s):b!==d||/\s/.test(g)?b===h&&/\s/.test(g)?(n.push([h,M],[f]),M="",b=s):b!==h&&b!==c&&b!==m||(M+=g):(b=h,v--):(n.push([f]),/[\w-]/.test(g)?(M+=g,b=l):b=s):(n.push([p]),b=d)}return b===r&&M.length?(n.push([r,M]),M=""):b===h&&M.length?(n.push([h,M]),M=""):b===m&&M.length?(n.push([h,M]),M=""):b===c&&M.length?(n.push([h,M]),M=""):b===l&&(n.push([l,M]),M=""),n}};function g(e){return"function"==typeof e?e:"string"==typeof e?e:e&&"object"==typeof e?e:t("",e)}};Object.prototype.hasOwnProperty;var v=RegExp("^("+["area","base","basefont","bgsound","br","col","command","embed","frame","hr","img","input","isindex","keygen","link","meta","param","source","track","wbr","!--","animate","animateTransform","circle","cursor","desc","ellipse","feBlend","feColorMatrix","feComposite","feConvolveMatrix","feDiffuseLighting","feDisplacementMap","feDistantLight","feFlood","feFuncA","feFuncB","feFuncG","feFuncR","feGaussianBlur","feImage","feMergeNode","feMorphology","feOffset","fePointLight","feSpecularLighting","feSpotLight","feTile","feTurbulence","font-face-format","font-face-name","font-face-uri","glyph","glyphRef","hkern","image","line","missing-glyph","mpath","path","polygon","polyline","rect","set","stop","tref","use","view","vkern"].join("|")+")(?:[.#][a-zA-Z0-9-￿_:-]+)*$")},{"hyperscript-attribute-to-property":5}],7:[function(e,a,t){"use strict";(t=a.exports=e("./lib/parser").default).default=t},{"./lib/parser":8}],8:[function(e,a,t){"use strict";t.default=function(){function e(a,t,n,r){this.message=a,this.expected=t,this.found=n,this.location=r,this.name="SyntaxError","function"==typeof Error.captureStackTrace&&Error.captureStackTrace(this,e)}return function(e,a){function t(){this.constructor=e}t.prototype=a.prototype,e.prototype=new t}(e,Error),{SyntaxError:e,parse:function(a){var t,n=arguments.length>1?arguments[1]:{},r={},o={start:Ke},i=Ke,s=function(e){return{type:"messageFormatPattern",elements:e,location:Se()}},l=function(e){var a,t,n,r,o,i="";for(a=0,n=e.length;a<n;a+=1)for(t=0,o=(r=e[a]).length;t<o;t+=1)i+=r[t];return i},u=function(e){return{type:"messageTextElement",value:e,location:Se()}},d=/^[^ \t\n\r,.+={}#]/,h={type:"class",value:"[^ \\t\\n\\r,.+={}#]",description:"[^ \\t\\n\\r,.+={}#]"},c="{",m={type:"literal",value:"{",description:'"{"'},p=",",f={type:"literal",value:",",description:'","'},y="}",v={type:"literal",value:"}",description:'"}"'},g=function(e,a){return{type:"argumentElement",id:e,format:a&&a[2],location:Se()}},b="number",M={type:"literal",value:"number",description:'"number"'},w="date",T={type:"literal",value:"date",description:'"date"'},k="time",_={type:"literal",value:"time",description:'"time"'},S=function(e,a){return{type:e+"Format",style:a&&a[2],location:Se()}},E="plural",N={type:"literal",value:"plural",description:'"plural"'},L=function(e){return{type:e.type,ordinal:!1,offset:e.offset||0,options:e.options,location:Se()}},F="selectordinal",K={type:"literal",value:"selectordinal",description:'"selectordinal"'},j=function(e){return{type:e.type,ordinal:!0,offset:e.offset||0,options:e.options,location:Se()}},x="select",D={type:"literal",value:"select",description:'"select"'},A=function(e){return{type:"selectFormat",options:e,location:Se()}},R="=",I={type:"literal",value:"=",description:'"="'},C=function(e,a){return{type:"optionalFormatPattern",selector:e,value:a,location:Se()}},P="offset:",O={type:"literal",value:"offset:",description:'"offset:"'},J=function(e){return e},H=function(e,a){return{type:"pluralFormat",offset:e,options:a,location:Se()}},z={type:"other",description:"whitespace"},G=/^[ \t\n\r]/,B={type:"class",value:"[ \\t\\n\\r]",description:"[ \\t\\n\\r]"},U={type:"other",description:"optionalWhitespace"},W=/^[0-9]/,V={type:"class",value:"[0-9]",description:"[0-9]"},q=/^[0-9a-f]/i,Y={type:"class",value:"[0-9a-f]i",description:"[0-9a-f]i"},Q="0",$={type:"literal",value:"0",description:'"0"'},X=/^[1-9]/,Z={type:"class",value:"[1-9]",description:"[1-9]"},ee=function(e){return parseInt(e,10)},ae=/^[^{}\\\0-\x1F \t\n\r]/,te={type:"class",value:"[^{}\\\\\\0-\\x1F\\x7f \\t\\n\\r]",description:"[^{}\\\\\\0-\\x1F\\x7f \\t\\n\\r]"},ne="\\\\",re={type:"literal",value:"\\\\",description:'"\\\\\\\\"'},oe=function(){return"\\"},ie="\\#",se={type:"literal",value:"\\#",description:'"\\\\#"'},le=function(){return"\\#"},ue="\\{",de={type:"literal",value:"\\{",description:'"\\\\{"'},he=function(){return"{"},ce="\\}",me={type:"literal",value:"\\}",description:'"\\\\}"'},pe=function(){return"}"},fe="\\u",ye={type:"literal",value:"\\u",description:'"\\\\u"'},ve=function(e){return String.fromCharCode(parseInt(e,16))},ge=function(e){return e.join("")},be=0,Me=0,we=[{line:1,column:1,seenCR:!1}],Te=0,ke=[],_e=0;if("startRule"in n){if(!(n.startRule in o))throw new Error("Can't start parsing from rule \""+n.startRule+'".');i=o[n.startRule]}function Se(){return Ne(Me,be)}function Ee(e){var t,n,r=we[e];if(r)return r;for(t=e-1;!we[t];)t--;for(r={line:(r=we[t]).line,column:r.column,seenCR:r.seenCR};t<e;)"\n"===(n=a.charAt(t))?(r.seenCR||r.line++,r.column=1,r.seenCR=!1):"\r"===n||"\u2028"===n||"\u2029"===n?(r.line++,r.column=1,r.seenCR=!0):(r.column++,r.seenCR=!1),t++;return we[e]=r,r}function Ne(e,a){var t=Ee(e),n=Ee(a);return{start:{offset:e,line:t.line,column:t.column},end:{offset:a,line:n.line,column:n.column}}}function Le(e){be<Te||(be>Te&&(Te=be,ke=[]),ke.push(e))}function Fe(a,t,n,r){return null!==t&&function(e){var a=1;for(e.sort(function(e,a){return e.description<a.description?-1:e.description>a.description?1:0});a<e.length;)e[a-1]===e[a]?e.splice(a,1):a++}(t),new e(null!==a?a:function(e,a){var t,n=new Array(e.length);for(t=0;t<e.length;t++)n[t]=e[t].description;return"Expected "+(e.length>1?n.slice(0,-1).join(", ")+" or "+n[e.length-1]:n[0])+" but "+(a?'"'+function(e){function a(e){return e.charCodeAt(0).toString(16).toUpperCase()}return e.replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/\x08/g,"\\b").replace(/\t/g,"\\t").replace(/\n/g,"\\n").replace(/\f/g,"\\f").replace(/\r/g,"\\r").replace(/[\x00-\x07\x0B\x0E\x0F]/g,function(e){return"\\x0"+a(e)}).replace(/[\x10-\x1F\x80-\xFF]/g,function(e){return"\\x"+a(e)}).replace(/[\u0100-\u0FFF]/g,function(e){return"\\u0"+a(e)}).replace(/[\u1000-\uFFFF]/g,function(e){return"\\u"+a(e)})}(a)+'"':"end of input")+" found."}(t,n),t,n,r)}function Ke(){return je()}function je(){var e,a,t;for(e=be,a=[],t=xe();t!==r;)a.push(t),t=xe();return a!==r&&(Me=e,a=s(a)),e=a}function xe(){var e,t,n,o,i,s,R,I,C,P,O,J,H,z,G,B,U,W,V,q,Y,Q,$,X,Z;return X=be,(Z=function(){var e,t,n,o,i,s;if(e=be,t=[],n=be,(o=Ie())!==r&&(i=He())!==r&&(s=Ie())!==r?n=o=[o,i,s]:(be=n,n=r),n!==r)for(;n!==r;)t.push(n),n=be,(o=Ie())!==r&&(i=He())!==r&&(s=Ie())!==r?n=o=[o,i,s]:(be=n,n=r);else t=r;return t!==r&&(Me=e,t=l(t)),(e=t)===r&&(e=be,t=Re(),e=t!==r?a.substring(e,be):t),e}())!==r&&(Me=X,Z=u(Z)),(e=X=Z)===r&&(t=be,123===a.charCodeAt(be)?(n=c,be++):(n=r,0===_e&&Le(m)),n!==r&&Ie()!==r&&(o=function(){var e,t,n;if((e=Oe())===r){if(e=be,t=[],d.test(a.charAt(be))?(n=a.charAt(be),be++):(n=r,0===_e&&Le(h)),n!==r)for(;n!==r;)t.push(n),d.test(a.charAt(be))?(n=a.charAt(be),be++):(n=r,0===_e&&Le(h));else t=r;e=t!==r?a.substring(e,be):t}return e}())!==r&&Ie()!==r?(i=be,44===a.charCodeAt(be)?(s=p,be++):(s=r,0===_e&&Le(f)),s!==r&&(R=Ie())!==r&&(W=be,a.substr(be,6)===b?(V=b,be+=6):(V=r,0===_e&&Le(M)),V===r&&(a.substr(be,4)===w?(V=w,be+=4):(V=r,0===_e&&Le(T)),V===r&&(a.substr(be,4)===k?(V=k,be+=4):(V=r,0===_e&&Le(_)))),V!==r&&Ie()!==r?(q=be,44===a.charCodeAt(be)?(Y=p,be++):(Y=r,0===_e&&Le(f)),Y!==r&&(Q=Ie())!==r&&($=He())!==r?q=Y=[Y,Q,$]:(be=q,q=r),q===r&&(q=null),q!==r?(Me=W,V=S(V,q),W=V):(be=W,W=r)):(be=W,W=r),(C=W)===r&&(z=be,a.substr(be,6)===E?(G=E,be+=6):(G=r,0===_e&&Le(N)),G!==r&&Ie()!==r?(44===a.charCodeAt(be)?(B=p,be++):(B=r,0===_e&&Le(f)),B!==r&&Ie()!==r&&(U=Ae())!==r?(Me=z,G=L(U),z=G):(be=z,z=r)):(be=z,z=r),(C=z)===r)&&(P=be,a.substr(be,13)===F?(O=F,be+=13):(O=r,0===_e&&Le(K)),O!==r&&Ie()!==r?(44===a.charCodeAt(be)?(J=p,be++):(J=r,0===_e&&Le(f)),J!==r&&Ie()!==r&&(H=Ae())!==r?(Me=P,O=j(H),P=O):(be=P,P=r)):(be=P,P=r),(C=P)===r)&&(C=function(){var e,t,n,o,i;if(e=be,a.substr(be,6)===x?(t=x,be+=6):(t=r,0===_e&&Le(D)),t!==r)if(Ie()!==r)if(44===a.charCodeAt(be)?(n=p,be++):(n=r,0===_e&&Le(f)),n!==r)if(Ie()!==r){if(o=[],(i=De())!==r)for(;i!==r;)o.push(i),i=De();else o=r;o!==r?(Me=e,t=A(o),e=t):(be=e,e=r)}else be=e,e=r;else be=e,e=r;else be=e,e=r;else be=e,e=r;return e}()),(I=C)!==r)?i=s=[s,R,I]:(be=i,i=r),i===r&&(i=null),i!==r&&(s=Ie())!==r?(125===a.charCodeAt(be)?(R=y,be++):(R=r,0===_e&&Le(v)),R!==r?(Me=t,n=g(o,i),t=n):(be=t,t=r)):(be=t,t=r)):(be=t,t=r),e=t),e}function De(){var e,t,n,o,i,s,l,u,d;return e=be,Ie()!==r?(s=be,l=be,61===a.charCodeAt(be)?(u=R,be++):(u=r,0===_e&&Le(I)),u!==r&&(d=Oe())!==r?l=u=[u,d]:(be=l,l=r),(s=l!==r?a.substring(s,be):l)===r&&(s=He()),(t=s)!==r&&Ie()!==r?(123===a.charCodeAt(be)?(n=c,be++):(n=r,0===_e&&Le(m)),n!==r&&Ie()!==r&&(o=je())!==r&&Ie()!==r?(125===a.charCodeAt(be)?(i=y,be++):(i=r,0===_e&&Le(v)),i!==r?(Me=e,e=C(t,o)):(be=e,e=r)):(be=e,e=r)):(be=e,e=r)):(be=e,e=r),e}function Ae(){var e,t,n,o,i,s,l;if(e=be,i=be,a.substr(be,7)===P?(s=P,be+=7):(s=r,0===_e&&Le(O)),s!==r&&Ie()!==r&&(l=Oe())!==r?(Me=i,i=s=J(l)):(be=i,i=r),(t=i)===r&&(t=null),t!==r)if(Ie()!==r){if(n=[],(o=De())!==r)for(;o!==r;)n.push(o),o=De();else n=r;n!==r?(Me=e,e=t=H(t,n)):(be=e,e=r)}else be=e,e=r;else be=e,e=r;return e}function Re(){var e,t;if(_e++,e=[],G.test(a.charAt(be))?(t=a.charAt(be),be++):(t=r,0===_e&&Le(B)),t!==r)for(;t!==r;)e.push(t),G.test(a.charAt(be))?(t=a.charAt(be),be++):(t=r,0===_e&&Le(B));else e=r;return _e--,e===r&&(t=r,0===_e&&Le(z)),e}function Ie(){var e,t,n;for(_e++,e=be,t=[],n=Re();n!==r;)t.push(n),n=Re();return e=t!==r?a.substring(e,be):t,_e--,e===r&&(t=r,0===_e&&Le(U)),e}function Ce(){var e;return W.test(a.charAt(be))?(e=a.charAt(be),be++):(e=r,0===_e&&Le(V)),e}function Pe(){var e;return q.test(a.charAt(be))?(e=a.charAt(be),be++):(e=r,0===_e&&Le(Y)),e}function Oe(){var e,t,n,o,i,s;if(e=be,48===a.charCodeAt(be)?(t=Q,be++):(t=r,0===_e&&Le($)),t===r){if(t=be,n=be,X.test(a.charAt(be))?(o=a.charAt(be),be++):(o=r,0===_e&&Le(Z)),o!==r){for(i=[],s=Ce();s!==r;)i.push(s),s=Ce();i!==r?n=o=[o,i]:(be=n,n=r)}else be=n,n=r;t=n!==r?a.substring(t,be):n}return t!==r&&(Me=e,t=ee(t)),e=t}function Je(){var e,t,n,o,i,s,l,u;return ae.test(a.charAt(be))?(e=a.charAt(be),be++):(e=r,0===_e&&Le(te)),e===r&&(e=be,a.substr(be,2)===ne?(t=ne,be+=2):(t=r,0===_e&&Le(re)),t!==r&&(Me=e,t=oe()),(e=t)===r&&(e=be,a.substr(be,2)===ie?(t=ie,be+=2):(t=r,0===_e&&Le(se)),t!==r&&(Me=e,t=le()),(e=t)===r&&(e=be,a.substr(be,2)===ue?(t=ue,be+=2):(t=r,0===_e&&Le(de)),t!==r&&(Me=e,t=he()),(e=t)===r&&(e=be,a.substr(be,2)===ce?(t=ce,be+=2):(t=r,0===_e&&Le(me)),t!==r&&(Me=e,t=pe()),(e=t)===r&&(e=be,a.substr(be,2)===fe?(t=fe,be+=2):(t=r,0===_e&&Le(ye)),t!==r?(n=be,o=be,(i=Pe())!==r&&(s=Pe())!==r&&(l=Pe())!==r&&(u=Pe())!==r?o=i=[i,s,l,u]:(be=o,o=r),(n=o!==r?a.substring(n,be):o)!==r?(Me=e,e=t=ve(n)):(be=e,e=r)):(be=e,e=r)))))),e}function He(){var e,a,t;if(e=be,a=[],(t=Je())!==r)for(;t!==r;)a.push(t),t=Je();else a=r;return a!==r&&(Me=e,a=ge(a)),e=a}if((t=i())!==r&&be===a.length)return t;throw t!==r&&be<a.length&&Le({type:"end",description:"end of input"}),Fe(null,ke,Te<a.length?a.charAt(Te):null,Te<a.length?Ne(Te,Te+1):Ne(Te,Te))}}}()},{}],9:[function(e,a,t){"use strict";var n=e("./lib/main").default;e("./lib/locales"),(t=a.exports=n).default=t},{"./lib/locales":2,"./lib/main":14}],10:[function(e,a,t){"use strict";function n(e,a,t){this.locales=e,this.formats=a,this.pluralFn=t}function r(e){this.id=e}function o(e,a,t,n,r){this.id=e,this.useOrdinal=a,this.offset=t,this.options=n,this.pluralFn=r}function i(e,a,t,n){this.id=e,this.offset=a,this.numberFormat=t,this.string=n}function s(e,a){this.id=e,this.options=a}t.default=n,n.prototype.compile=function(e){return this.pluralStack=[],this.currentPlural=null,this.pluralNumberFormat=null,this.compileMessage(e)},n.prototype.compileMessage=function(e){if(!e||"messageFormatPattern"!==e.type)throw new Error('Message AST is not of type: "messageFormatPattern"');var a,t,n,r=e.elements,o=[];for(a=0,t=r.length;a<t;a+=1)switch((n=r[a]).type){case"messageTextElement":o.push(this.compileMessageText(n));break;case"argumentElement":o.push(this.compileArgument(n));break;default:throw new Error("Message element does not have a valid type")}return o},n.prototype.compileMessageText=function(e){return this.currentPlural&&/(^|[^\\])#/g.test(e.value)?(this.pluralNumberFormat||(this.pluralNumberFormat=new Intl.NumberFormat(this.locales)),new i(this.currentPlural.id,this.currentPlural.format.offset,this.pluralNumberFormat,e.value)):e.value.replace(/\\#/g,"#")},n.prototype.compileArgument=function(e){var a=e.format;if(!a)return new r(e.id);var t,n=this.formats,i=this.locales,l=this.pluralFn;switch(a.type){case"numberFormat":return t=n.number[a.style],{id:e.id,format:new Intl.NumberFormat(i,t).format};case"dateFormat":return t=n.date[a.style],{id:e.id,format:new Intl.DateTimeFormat(i,t).format};case"timeFormat":return t=n.time[a.style],{id:e.id,format:new Intl.DateTimeFormat(i,t).format};case"pluralFormat":return t=this.compileOptions(e),new o(e.id,a.ordinal,a.offset,t,l);case"selectFormat":return t=this.compileOptions(e),new s(e.id,t);default:throw new Error("Message element does not have a valid format type")}},n.prototype.compileOptions=function(e){var a,t,n,r=e.format,o=r.options,i={};for(this.pluralStack.push(this.currentPlural),this.currentPlural="pluralFormat"===r.type?e:null,a=0,t=o.length;a<t;a+=1)i[(n=o[a]).selector]=this.compileMessage(n.value);return this.currentPlural=this.pluralStack.pop(),i},r.prototype.format=function(e){return e||"number"==typeof e?"string"==typeof e?e:String(e):""},o.prototype.getOption=function(e){var a=this.options;return a["="+e]||a[this.pluralFn(e-this.offset,this.useOrdinal)]||a.other},i.prototype.format=function(e){var a=this.numberFormat.format(e-this.offset);return this.string.replace(/(^|[^\\])#/g,"$1"+a).replace(/\\#/g,"#")},s.prototype.getOption=function(e){var a=this.options;return a[e]||a.other}},{}],11:[function(e,a,t){"use strict";var n=e("./utils"),r=e("./es5"),o=e("./compiler"),i=e("intl-messageformat-parser");function s(e,a,t){var n="string"==typeof e?s.__parse(e):e;if(!n||"messageFormatPattern"!==n.type)throw new TypeError("A message must be provided as a String or AST.");t=this._mergeFormats(s.formats,t),r.defineProperty(this,"_locale",{value:this._resolveLocale(a)});var o=this._findPluralRuleFunction(this._locale),i=this._compilePattern(n,a,t,o),l=this;this.format=function(a){try{return l._format(i,a)}catch(a){throw a.variableId?new Error("The intl string context variable '"+a.variableId+"' was not provided to the string '"+e+"'"):a}}}t.default=s,r.defineProperty(s,"formats",{enumerable:!0,value:{number:{currency:{style:"currency"},percent:{style:"percent"}},date:{short:{month:"numeric",day:"numeric",year:"2-digit"},medium:{month:"short",day:"numeric",year:"numeric"},long:{month:"long",day:"numeric",year:"numeric"},full:{weekday:"long",month:"long",day:"numeric",year:"numeric"}},time:{short:{hour:"numeric",minute:"numeric"},medium:{hour:"numeric",minute:"numeric",second:"numeric"},long:{hour:"numeric",minute:"numeric",second:"numeric",timeZoneName:"short"},full:{hour:"numeric",minute:"numeric",second:"numeric",timeZoneName:"short"}}}}),r.defineProperty(s,"__localeData__",{value:r.objCreate(null)}),r.defineProperty(s,"__addLocaleData",{value:function(e){if(!e||!e.locale)throw new Error("Locale data provided to IntlMessageFormat is missing a `locale` property");s.__localeData__[e.locale.toLowerCase()]=e}}),r.defineProperty(s,"__parse",{value:i.default.parse}),r.defineProperty(s,"defaultLocale",{enumerable:!0,writable:!0,value:void 0}),s.prototype.resolvedOptions=function(){return{locale:this._locale}},s.prototype._compilePattern=function(e,a,t,n){return new o.default(a,t,n).compile(e)},s.prototype._findPluralRuleFunction=function(e){for(var a=s.__localeData__,t=a[e.toLowerCase()];t;){if(t.pluralRuleFunction)return t.pluralRuleFunction;t=t.parentLocale&&a[t.parentLocale.toLowerCase()]}throw new Error("Locale data added to IntlMessageFormat is missing a `pluralRuleFunction` for :"+e)},s.prototype._format=function(e,a){var t,r,o,i,s,l,u="";for(t=0,r=e.length;t<r;t+=1)if("string"!=typeof(o=e[t])){if(i=o.id,!a||!n.hop.call(a,i))throw(l=new Error("A value must be provided for: "+i)).variableId=i,l;s=a[i],o.options?u+=this._format(o.getOption(s),a):u+=o.format(s)}else u+=o;return u},s.prototype._mergeFormats=function(e,a){var t,o,i={};for(t in e)n.hop.call(e,t)&&(i[t]=o=r.objCreate(e[t]),a&&n.hop.call(a,t)&&n.extend(o,a[t]));return i},s.prototype._resolveLocale=function(e){"string"==typeof e&&(e=[e]),e=(e||[]).concat(s.defaultLocale);var a,t,n,r,o=s.__localeData__;for(a=0,t=e.length;a<t;a+=1)for(n=e[a].toLowerCase().split("-");n.length;){if(r=o[n.join("-")])return r.locale;n.pop()}var i=e.pop();throw new Error("No locale data has been added to IntlMessageFormat for: "+e.join(", ")+", or the default locale: "+i)}},{"./compiler":10,"./es5":13,"./utils":15,"intl-messageformat-parser":7}],12:[function(e,a,t){"use strict";t.default={locale:"en",pluralRuleFunction:function(e,a){var t=String(e).split("."),n=!t[1],r=Number(t[0])==e,o=r&&t[0].slice(-1),i=r&&t[0].slice(-2);return a?1==o&&11!=i?"one":2==o&&12!=i?"two":3==o&&13!=i?"few":"other":1==e&&n?"one":"other"}}},{}],13:[function(e,a,t){"use strict";var n=e("./utils"),r=function(){try{return!!Object.defineProperty({},"a",{})}catch(e){return!1}}(),o=(!r&&Object.prototype.__defineGetter__,r?Object.defineProperty:function(e,a,t){"get"in t&&e.__defineGetter__?e.__defineGetter__(a,t.get):(!n.hop.call(e,a)||"value"in t)&&(e[a]=t.value)}),i=Object.create||function(e,a){var t,r;function i(){}i.prototype=e,t=new i;for(r in a)n.hop.call(a,r)&&o(t,r,a[r]);return t};t.defineProperty=o,t.objCreate=i},{"./utils":15}],14:[function(e,a,t){"use strict";var n=e("./core"),r=e("./en");n.default.__addLocaleData(r.default),n.default.defaultLocale="en",t.default=n.default},{"./core":11,"./en":12}],15:[function(e,a,t){"use strict";t.extend=function(e){var a,t,r,o,i=Array.prototype.slice.call(arguments,1);for(a=0,t=i.length;a<t;a+=1)if(r=i[a])for(o in r)n.call(r,o)&&(e[o]=r[o]);return e};var n=Object.prototype.hasOwnProperty;t.hop=n},{}],16:[function(e,a,t){IntlRelativeFormat.__addLocaleData({locale:"en",pluralRuleFunction:function(e,a){var t=String(e).split("."),n=!t[1],r=Number(t[0])==e,o=r&&t[0].slice(-1),i=r&&t[0].slice(-2);return a?1==o&&11!=i?"one":2==o&&12!=i?"two":3==o&&13!=i?"few":"other":1==e&&n?"one":"other"},fields:{year:{displayName:"year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{one:"in {0} year",other:"in {0} years"},past:{one:"{0} year ago",other:"{0} years ago"}}},"year-short":{displayName:"yr.",relative:{0:"this yr.",1:"next yr.","-1":"last yr."},relativeTime:{future:{one:"in {0} yr.",other:"in {0} yr."},past:{one:"{0} yr. ago",other:"{0} yr. ago"}}},month:{displayName:"month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{one:"in {0} month",other:"in {0} months"},past:{one:"{0} month ago",other:"{0} months ago"}}},"month-short":{displayName:"mo.",relative:{0:"this mo.",1:"next mo.","-1":"last mo."},relativeTime:{future:{one:"in {0} mo.",other:"in {0} mo."},past:{one:"{0} mo. ago",other:"{0} mo. ago"}}},day:{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},"day-short":{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},hour:{displayName:"hour",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hour",other:"in {0} hours"},past:{one:"{0} hour ago",other:"{0} hours ago"}}},"hour-short":{displayName:"hr.",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hr.",other:"in {0} hr."},past:{one:"{0} hr. ago",other:"{0} hr. ago"}}},minute:{displayName:"minute",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} minute",other:"in {0} minutes"},past:{one:"{0} minute ago",other:"{0} minutes ago"}}},"minute-short":{displayName:"min.",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} min.",other:"in {0} min."},past:{one:"{0} min. ago",other:"{0} min. ago"}}},second:{displayName:"second",relative:{0:"now"},relativeTime:{future:{one:"in {0} second",other:"in {0} seconds"},past:{one:"{0} second ago",other:"{0} seconds ago"}}},"second-short":{displayName:"sec.",relative:{0:"now"},relativeTime:{future:{one:"in {0} sec.",other:"in {0} sec."},past:{one:"{0} sec. ago",other:"{0} sec. ago"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-001",parentLocale:"en",fields:{year:{displayName:"year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{one:"in {0} year",other:"in {0} years"},past:{one:"{0} year ago",other:"{0} years ago"}}},"year-short":{displayName:"yr",relative:{0:"this yr.",1:"next yr.","-1":"last yr."},relativeTime:{future:{one:"in {0} yr",other:"in {0} yr"},past:{one:"{0} yr ago",other:"{0} yr ago"}}},month:{displayName:"month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{one:"in {0} month",other:"in {0} months"},past:{one:"{0} month ago",other:"{0} months ago"}}},"month-short":{displayName:"mo",relative:{0:"this mo.",1:"next mo.","-1":"last mo."},relativeTime:{future:{one:"in {0} mo",other:"in {0} mo"},past:{one:"{0} mo ago",other:"{0} mo ago"}}},day:{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},"day-short":{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},hour:{displayName:"hour",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hour",other:"in {0} hours"},past:{one:"{0} hour ago",other:"{0} hours ago"}}},"hour-short":{displayName:"hr",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hr",other:"in {0} hr"},past:{one:"{0} hr ago",other:"{0} hr ago"}}},minute:{displayName:"minute",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} minute",other:"in {0} minutes"},past:{one:"{0} minute ago",other:"{0} minutes ago"}}},"minute-short":{displayName:"min",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} min",other:"in {0} min"},past:{one:"{0} min ago",other:"{0} min ago"}}},second:{displayName:"second",relative:{0:"now"},relativeTime:{future:{one:"in {0} second",other:"in {0} seconds"},past:{one:"{0} second ago",other:"{0} seconds ago"}}},"second-short":{displayName:"sec",relative:{0:"now"},relativeTime:{future:{one:"in {0} sec",other:"in {0} sec"},past:{one:"{0} sec ago",other:"{0} sec ago"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-150",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-AG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-AI",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-AS",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-AT",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-AU",parentLocale:"en-001",fields:{year:{displayName:"year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{one:"in {0} year",other:"in {0} years"},past:{one:"{0} year ago",other:"{0} years ago"}}},"year-short":{displayName:"yr",relative:{0:"this yr.",1:"next yr.","-1":"last yr."},relativeTime:{future:{one:"in {0} yr",other:"in {0} yr"},past:{one:"{0} yr ago",other:"{0} yr ago"}}},month:{displayName:"month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{one:"in {0} month",other:"in {0} months"},past:{one:"{0} month ago",other:"{0} months ago"}}},"month-short":{displayName:"mo",relative:{0:"this mo.",1:"next mo.","-1":"last mo."},relativeTime:{future:{one:"in {0} mo",other:"in {0} mo"},past:{one:"{0} mo ago",other:"{0} mo ago"}}},day:{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},"day-short":{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},hour:{displayName:"hour",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hour",other:"in {0} hours"},past:{one:"{0} hour ago",other:"{0} hours ago"}}},"hour-short":{displayName:"h",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hr",other:"in {0} hr"},past:{one:"{0} hr ago",other:"{0} hr ago"}}},minute:{displayName:"minute",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} minute",other:"in {0} minutes"},past:{one:"{0} minute ago",other:"{0} minutes ago"}}},"minute-short":{displayName:"min",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} min",other:"in {0} min"},past:{one:"{0} min ago",other:"{0} min ago"}}},second:{displayName:"second",relative:{0:"now"},relativeTime:{future:{one:"in {0} second",other:"in {0} seconds"},past:{one:"{0} second ago",other:"{0} seconds ago"}}},"second-short":{displayName:"sec",relative:{0:"now"},relativeTime:{future:{one:"in {0} sec",other:"in {0} sec"},past:{one:"{0} sec ago",other:"{0} sec ago"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-BB",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-BE",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-BI",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-BM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-BS",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-BW",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-BZ",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-CA",parentLocale:"en-001",fields:{year:{displayName:"year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{one:"in {0} year",other:"in {0} years"},past:{one:"{0} year ago",other:"{0} years ago"}}},"year-short":{displayName:"yr",relative:{0:"this yr.",1:"next yr.","-1":"last yr."},relativeTime:{future:{one:"in {0} yr.",other:"in {0} yrs."},past:{one:"{0} yr. ago",other:"{0} yrs. ago"}}},month:{displayName:"month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{one:"in {0} month",other:"in {0} months"},past:{one:"{0} month ago",other:"{0} months ago"}}},"month-short":{displayName:"mo",relative:{0:"this mo.",1:"next mo.","-1":"last mo."},relativeTime:{future:{one:"in {0} mo.",other:"in {0} mos."},past:{one:"{0} mo. ago",other:"{0} mos. ago"}}},day:{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},"day-short":{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},hour:{displayName:"hour",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hour",other:"in {0} hours"},past:{one:"{0} hour ago",other:"{0} hours ago"}}},"hour-short":{displayName:"hr",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hr.",other:"in {0} hrs."},past:{one:"{0} hr. ago",other:"{0} hrs. ago"}}},minute:{displayName:"minute",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} minute",other:"in {0} minutes"},past:{one:"{0} minute ago",other:"{0} minutes ago"}}},"minute-short":{displayName:"min",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} min.",other:"in {0} mins."},past:{one:"{0} min. ago",other:"{0} mins. ago"}}},second:{displayName:"second",relative:{0:"now"},relativeTime:{future:{one:"in {0} second",other:"in {0} seconds"},past:{one:"{0} second ago",other:"{0} seconds ago"}}},"second-short":{displayName:"sec",relative:{0:"now"},relativeTime:{future:{one:"in {0} sec.",other:"in {0} secs."},past:{one:"{0} sec. ago",other:"{0} secs. ago"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-CC",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-CH",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-CK",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-CM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-CX",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-CY",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-DE",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-DG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-DK",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-DM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-Dsrt",pluralRuleFunction:function(e,a){return"other"},fields:{year:{displayName:"Year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{other:"+{0} y"},past:{other:"-{0} y"}}},"year-short":{displayName:"Year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{other:"+{0} y"},past:{other:"-{0} y"}}},month:{displayName:"Month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{other:"+{0} m"},past:{other:"-{0} m"}}},"month-short":{displayName:"Month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{other:"+{0} m"},past:{other:"-{0} m"}}},day:{displayName:"Day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{other:"+{0} d"},past:{other:"-{0} d"}}},"day-short":{displayName:"Day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{other:"+{0} d"},past:{other:"-{0} d"}}},hour:{displayName:"Hour",relative:{0:"this hour"},relativeTime:{future:{other:"+{0} h"},past:{other:"-{0} h"}}},"hour-short":{displayName:"Hour",relative:{0:"this hour"},relativeTime:{future:{other:"+{0} h"},past:{other:"-{0} h"}}},minute:{displayName:"Minute",relative:{0:"this minute"},relativeTime:{future:{other:"+{0} min"},past:{other:"-{0} min"}}},"minute-short":{displayName:"Minute",relative:{0:"this minute"},relativeTime:{future:{other:"+{0} min"},past:{other:"-{0} min"}}},second:{displayName:"Second",relative:{0:"now"},relativeTime:{future:{other:"+{0} s"},past:{other:"-{0} s"}}},"second-short":{displayName:"Second",relative:{0:"now"},relativeTime:{future:{other:"+{0} s"},past:{other:"-{0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-ER",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-FI",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-FJ",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-FK",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-FM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GB",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GD",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GH",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GI",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-GU",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-GY",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-HK",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-IE",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-IL",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-IM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-IN",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-IO",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-JE",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-JM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-KE",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-KI",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-KN",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-KY",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-LC",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-LR",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-LS",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MH",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-MO",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MP",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-MS",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MT",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MU",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MW",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-MY",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-NA",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-NF",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-NG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-NL",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-NR",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-NU",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-NZ",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-PG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-PH",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-PK",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-PN",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-PR",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-PW",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-RW",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SB",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SC",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SD",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SE",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-SG",parentLocale:"en-001",fields:{year:{displayName:"year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{one:"in {0} year",other:"in {0} years"},past:{one:"{0} year ago",other:"{0} years ago"}}},"year-short":{displayName:"yr",relative:{0:"this yr",1:"next yr","-1":"last yr"},relativeTime:{future:{one:"in {0} yr",other:"in {0} yr"},past:{one:"{0} yr ago",other:"{0} yr ago"}}},month:{displayName:"month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{one:"in {0} month",other:"in {0} months"},past:{one:"{0} month ago",other:"{0} months ago"}}},"month-short":{displayName:"mth",relative:{0:"this mth",1:"next mth","-1":"last mth"},relativeTime:{future:{one:"in {0} mth",other:"in {0} mth"},past:{one:"{0} mth ago",other:"{0} mth ago"}}},day:{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},"day-short":{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},hour:{displayName:"hour",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hour",other:"in {0} hours"},past:{one:"{0} hour ago",other:"{0} hours ago"}}},"hour-short":{displayName:"hr",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hr",other:"in {0} hr"},past:{one:"{0} hr ago",other:"{0} hr ago"}}},minute:{displayName:"minute",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} minute",other:"in {0} minutes"},past:{one:"{0} minute ago",other:"{0} minutes ago"}}},"minute-short":{displayName:"min",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} min",other:"in {0} min"},past:{one:"{0} min ago",other:"{0} min ago"}}},second:{displayName:"second",relative:{0:"now"},relativeTime:{future:{one:"in {0} second",other:"in {0} seconds"},past:{one:"{0} second ago",other:"{0} seconds ago"}}},"second-short":{displayName:"sec",relative:{0:"now"},relativeTime:{future:{one:"in {0} sec",other:"in {0} sec"},past:{one:"{0} sec ago",other:"{0} sec ago"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-SH",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SI",parentLocale:"en-150"}),IntlRelativeFormat.__addLocaleData({locale:"en-SL",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SS",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SX",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-SZ",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-Shaw",pluralRuleFunction:function(e,a){return"other"},fields:{year:{displayName:"Year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{other:"+{0} y"},past:{other:"-{0} y"}}},"year-short":{displayName:"Year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{other:"+{0} y"},past:{other:"-{0} y"}}},month:{displayName:"Month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{other:"+{0} m"},past:{other:"-{0} m"}}},"month-short":{displayName:"Month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{other:"+{0} m"},past:{other:"-{0} m"}}},day:{displayName:"Day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{other:"+{0} d"},past:{other:"-{0} d"}}},"day-short":{displayName:"Day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{other:"+{0} d"},past:{other:"-{0} d"}}},hour:{displayName:"Hour",relative:{0:"this hour"},relativeTime:{future:{other:"+{0} h"},past:{other:"-{0} h"}}},"hour-short":{displayName:"Hour",relative:{0:"this hour"},relativeTime:{future:{other:"+{0} h"},past:{other:"-{0} h"}}},minute:{displayName:"Minute",relative:{0:"this minute"},relativeTime:{future:{other:"+{0} min"},past:{other:"-{0} min"}}},"minute-short":{displayName:"Minute",relative:{0:"this minute"},relativeTime:{future:{other:"+{0} min"},past:{other:"-{0} min"}}},second:{displayName:"Second",relative:{0:"now"},relativeTime:{future:{other:"+{0} s"},past:{other:"-{0} s"}}},"second-short":{displayName:"Second",relative:{0:"now"},relativeTime:{future:{other:"+{0} s"},past:{other:"-{0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"en-TC",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-TK",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-TO",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-TT",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-TV",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-TZ",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-UG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-UM",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-US",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-VC",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-VG",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-VI",parentLocale:"en"}),IntlRelativeFormat.__addLocaleData({locale:"en-VU",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-WS",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-ZA",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-ZM",parentLocale:"en-001"}),IntlRelativeFormat.__addLocaleData({locale:"en-ZW",parentLocale:"en-001"})},{}],17:[function(e,a,t){IntlRelativeFormat.__addLocaleData({locale:"es",pluralRuleFunction:function(e,a){return a?"other":1==e?"one":"other"},fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-419",parentLocale:"es"}),IntlRelativeFormat.__addLocaleData({locale:"es-AR",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} días",other:"dentro de {0} días"},past:{one:"hace {0} días",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"seg.",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} seg.",other:"dentro de {0} seg."},past:{one:"hace {0} seg.",other:"hace {0} seg."}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-BO",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-BR",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-BZ",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-CL",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-CO",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-CR",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-CU",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-DO",parentLocale:"es-419",fields:{year:{displayName:"Año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"Mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"Día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"Minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"Segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-EA",parentLocale:"es"}),IntlRelativeFormat.__addLocaleData({locale:"es-EC",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-GQ",parentLocale:"es"}),IntlRelativeFormat.__addLocaleData({locale:"es-GT",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-HN",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-IC",parentLocale:"es"}),IntlRelativeFormat.__addLocaleData({locale:"es-MX",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el año próximo","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"en {0} a",other:"en {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el mes próximo","-1":"el mes pasado"},relativeTime:{future:{one:"en {0} mes",other:"en {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"en {0} m",other:"en {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"en {0} día",other:"en {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"en {0} h",other:"en {0} n"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"en {0} min",other:"en {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"en {0} s",other:"en {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-NI",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-PA",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-PE",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-PH",parentLocale:"es"}),IntlRelativeFormat.__addLocaleData({locale:"es-PR",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-PY",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antes de ayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"seg.",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} seg.",other:"dentro de {0} seg."},past:{one:"hace {0} seg.",other:"hace {0} seg."}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-SV",parentLocale:"es-419",fields:{year:{displayName:"año",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} año",other:"dentro de {0} años"},past:{one:"hace {0} año",other:"hace {0} años"}}},"year-short":{displayName:"a",relative:{0:"este año",1:"el próximo año","-1":"el año pasado"},relativeTime:{future:{one:"dentro de {0} a",other:"dentro de {0} a"},past:{one:"hace {0} a",other:"hace {0} a"}}},month:{displayName:"mes",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} mes",other:"dentro de {0} meses"},past:{one:"hace {0} mes",other:"hace {0} meses"}}},"month-short":{displayName:"m",relative:{0:"este mes",1:"el próximo mes","-1":"el mes pasado"},relativeTime:{future:{one:"dentro de {0} m",other:"dentro de {0} m"},past:{one:"hace {0} m",other:"hace {0} m"}}},day:{displayName:"día",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"antier","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},"day-short":{displayName:"d",relative:{0:"hoy",1:"mañana",2:"pasado mañana","-2":"anteayer","-1":"ayer"},relativeTime:{future:{one:"dentro de {0} día",other:"dentro de {0} días"},past:{one:"hace {0} día",other:"hace {0} días"}}},hour:{displayName:"hora",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} hora",other:"dentro de {0} horas"},past:{one:"hace {0} hora",other:"hace {0} horas"}}},"hour-short":{displayName:"h",relative:{0:"esta hora"},relativeTime:{future:{one:"dentro de {0} h",other:"dentro de {0} h"},past:{one:"hace {0} h",other:"hace {0} h"}}},minute:{displayName:"minuto",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} minuto",other:"dentro de {0} minutos"},past:{one:"hace {0} minuto",other:"hace {0} minutos"}}},"minute-short":{displayName:"min",relative:{0:"este minuto"},relativeTime:{future:{one:"dentro de {0} min",other:"dentro de {0} min"},past:{one:"hace {0} min",other:"hace {0} min"}}},second:{displayName:"segundo",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} segundo",other:"dentro de {0} segundos"},past:{one:"hace {0} segundo",other:"hace {0} segundos"}}},"second-short":{displayName:"s",relative:{0:"ahora"},relativeTime:{future:{one:"dentro de {0} s",other:"dentro de {0} s"},past:{one:"hace {0} s",other:"hace {0} s"}}}}}),IntlRelativeFormat.__addLocaleData({locale:"es-US",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-UY",parentLocale:"es-419"}),IntlRelativeFormat.__addLocaleData({locale:"es-VE",parentLocale:"es-419"})},{}],18:[function(e,a,t){"use strict";var n=e("./lib/main").default;e("./lib/locales"),(t=a.exports=n).default=t},{"./lib/locales":2,"./lib/main":23}],19:[function(e,a,t){"use strict";var n=e("intl-messageformat"),r=e("./diff"),o=e("./es5");t.default=l;var i=["second","second-short","minute","minute-short","hour","hour-short","day","day-short","month","month-short","year","year-short"],s=["best fit","numeric"];function l(e,a){a=a||{},o.isArray(e)&&(e=e.concat()),o.defineProperty(this,"_locale",{value:this._resolveLocale(e)}),o.defineProperty(this,"_options",{value:{style:this._resolveStyle(a.style),units:this._isValidUnits(a.units)&&a.units}}),o.defineProperty(this,"_locales",{value:e}),o.defineProperty(this,"_fields",{value:this._findFields(this._locale)}),o.defineProperty(this,"_messages",{value:o.objCreate(null)});var t=this;this.format=function(e,a){return t._format(e,a)}}o.defineProperty(l,"__localeData__",{value:o.objCreate(null)}),o.defineProperty(l,"__addLocaleData",{value:function(e){if(!e||!e.locale)throw new Error("Locale data provided to IntlRelativeFormat is missing a `locale` property value");l.__localeData__[e.locale.toLowerCase()]=e,n.default.__addLocaleData(e)}}),o.defineProperty(l,"defaultLocale",{enumerable:!0,writable:!0,value:void 0}),o.defineProperty(l,"thresholds",{enumerable:!0,value:{second:45,"second-short":45,minute:45,"minute-short":45,hour:22,"hour-short":22,day:26,"day-short":26,month:11,"month-short":11}}),l.prototype.resolvedOptions=function(){return{locale:this._locale,style:this._options.style,units:this._options.units}},l.prototype._compileMessage=function(e){var a,t=this._locales,r=(this._locale,this._fields[e].relativeTime),o="",i="";for(a in r.future)r.future.hasOwnProperty(a)&&(o+=" "+a+" {"+r.future[a].replace("{0}","#")+"}");for(a in r.past)r.past.hasOwnProperty(a)&&(i+=" "+a+" {"+r.past[a].replace("{0}","#")+"}");var s="{when, select, future {{0, plural, "+o+"}}past {{0, plural, "+i+"}}}";return new n.default(s,t)},l.prototype._getMessage=function(e){var a=this._messages;return a[e]||(a[e]=this._compileMessage(e)),a[e]},l.prototype._getRelativeUnits=function(e,a){var t=this._fields[a];if(t.relative)return t.relative[e]},l.prototype._findFields=function(e){for(var a=l.__localeData__,t=a[e.toLowerCase()];t;){if(t.fields)return t.fields;t=t.parentLocale&&a[t.parentLocale.toLowerCase()]}throw new Error("Locale data added to IntlRelativeFormat is missing `fields` for :"+e)},l.prototype._format=function(e,a){var t=a&&void 0!==a.now?a.now:o.dateNow();if(void 0===e&&(e=t),!isFinite(t))throw new RangeError("The `now` option provided to IntlRelativeFormat#format() is not in valid range.");if(!isFinite(e))throw new RangeError("The date value provided to IntlRelativeFormat#format() is not in valid range.");var n=r.default(t,e),i=this._options.units||this._selectUnits(n),s=n[i];if("numeric"!==this._options.style){var l=this._getRelativeUnits(s,i);if(l)return l}return this._getMessage(i).format({0:Math.abs(s),when:s<0?"past":"future"})},l.prototype._isValidUnits=function(e){if(!e||o.arrIndexOf.call(i,e)>=0)return!0;if("string"==typeof e){var a=/s$/.test(e)&&e.substr(0,e.length-1);if(a&&o.arrIndexOf.call(i,a)>=0)throw new Error('"'+e+'" is not a valid IntlRelativeFormat `units` value, did you mean: '+a)}throw new Error('"'+e+'" is not a valid IntlRelativeFormat `units` value, it must be one of: "'+i.join('", "')+'"')},l.prototype._resolveLocale=function(e){"string"==typeof e&&(e=[e]),e=(e||[]).concat(l.defaultLocale);var a,t,n,r,o=l.__localeData__;for(a=0,t=e.length;a<t;a+=1)for(n=e[a].toLowerCase().split("-");n.length;){if(r=o[n.join("-")])return r.locale;n.pop()}var i=e.pop();throw new Error("No locale data has been added to IntlRelativeFormat for: "+e.join(", ")+", or the default locale: "+i)},l.prototype._resolveStyle=function(e){if(!e)return s[0];if(o.arrIndexOf.call(s,e)>=0)return e;throw new Error('"'+e+'" is not a valid IntlRelativeFormat `style` value, it must be one of: "'+s.join('", "')+'"')},l.prototype._selectUnits=function(e){var a,t,n,r=i.filter(function(e){return e.indexOf("-short")<1});for(a=0,t=r.length;a<t&&(n=r[a],!(Math.abs(e[n])<l.thresholds[n]));a+=1);return n}},{"./diff":20,"./es5":22,"intl-messageformat":9}],20:[function(e,a,t){"use strict";var n=Math.round;t.default=function(e,a){var t=n((a=+a)-(e=+e)),r=n(t/1e3),o=n(r/60),i=n(o/60),s=n(i/24),l=n(s/7),u=400*s/146097,d=n(12*u),h=n(u);return{millisecond:t,second:r,"second-short":r,minute:o,"minute-short":o,hour:i,"hour-short":i,day:s,"day-short":s,week:l,"week-short":l,month:d,"month-short":d,year:h,"year-short":h}}},{}],21:[function(e,a,t){"use strict";t.default={locale:"en",pluralRuleFunction:function(e,a){var t=String(e).split("."),n=!t[1],r=Number(t[0])==e,o=r&&t[0].slice(-1),i=r&&t[0].slice(-2);return a?1==o&&11!=i?"one":2==o&&12!=i?"two":3==o&&13!=i?"few":"other":1==e&&n?"one":"other"},fields:{year:{displayName:"year",relative:{0:"this year",1:"next year","-1":"last year"},relativeTime:{future:{one:"in {0} year",other:"in {0} years"},past:{one:"{0} year ago",other:"{0} years ago"}}},"year-short":{displayName:"yr.",relative:{0:"this yr.",1:"next yr.","-1":"last yr."},relativeTime:{future:{one:"in {0} yr.",other:"in {0} yr."},past:{one:"{0} yr. ago",other:"{0} yr. ago"}}},month:{displayName:"month",relative:{0:"this month",1:"next month","-1":"last month"},relativeTime:{future:{one:"in {0} month",other:"in {0} months"},past:{one:"{0} month ago",other:"{0} months ago"}}},"month-short":{displayName:"mo.",relative:{0:"this mo.",1:"next mo.","-1":"last mo."},relativeTime:{future:{one:"in {0} mo.",other:"in {0} mo."},past:{one:"{0} mo. ago",other:"{0} mo. ago"}}},day:{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},"day-short":{displayName:"day",relative:{0:"today",1:"tomorrow","-1":"yesterday"},relativeTime:{future:{one:"in {0} day",other:"in {0} days"},past:{one:"{0} day ago",other:"{0} days ago"}}},hour:{displayName:"hour",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hour",other:"in {0} hours"},past:{one:"{0} hour ago",other:"{0} hours ago"}}},"hour-short":{displayName:"hr.",relative:{0:"this hour"},relativeTime:{future:{one:"in {0} hr.",other:"in {0} hr."},past:{one:"{0} hr. ago",other:"{0} hr. ago"}}},minute:{displayName:"minute",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} minute",other:"in {0} minutes"},past:{one:"{0} minute ago",other:"{0} minutes ago"}}},"minute-short":{displayName:"min.",relative:{0:"this minute"},relativeTime:{future:{one:"in {0} min.",other:"in {0} min."},past:{one:"{0} min. ago",other:"{0} min. ago"}}},second:{displayName:"second",relative:{0:"now"},relativeTime:{future:{one:"in {0} second",other:"in {0} seconds"},past:{one:"{0} second ago",other:"{0} seconds ago"}}},"second-short":{displayName:"sec.",relative:{0:"now"},relativeTime:{future:{one:"in {0} sec.",other:"in {0} sec."},past:{one:"{0} sec. ago",other:"{0} sec. ago"}}}}}},{}],22:[function(e,a,t){"use strict";var n=Object.prototype.hasOwnProperty,r=Object.prototype.toString,o=function(){try{return!!Object.defineProperty({},"a",{})}catch(e){return!1}}(),i=(!o&&Object.prototype.__defineGetter__,o?Object.defineProperty:function(e,a,t){"get"in t&&e.__defineGetter__?e.__defineGetter__(a,t.get):(!n.call(e,a)||"value"in t)&&(e[a]=t.value)}),s=Object.create||function(e,a){var t,r;function o(){}o.prototype=e,t=new o;for(r in a)n.call(a,r)&&i(t,r,a[r]);return t},l=Array.prototype.indexOf||function(e,a){if(!this.length)return-1;for(var t=a||0,n=this.length;t<n;t++)if(this[t]===e)return t;return-1},u=Array.isArray||function(e){return"[object Array]"===r.call(e)},d=Date.now||function(){return(new Date).getTime()};t.defineProperty=i,t.objCreate=s,t.arrIndexOf=l,t.isArray=u,t.dateNow=d},{}],23:[function(e,a,t){arguments[4][14][0].apply(t,arguments)},{"./core":19,"./en":21,dup:14}],24:[function(e,a,t){(function(t){t.IntlPolyfill=e("./lib/core.js"),e("./locale-data/complete.js"),t.Intl||(t.Intl=t.IntlPolyfill,t.IntlPolyfill.__applyLocaleSensitivePrototypes()),a.exports=t.IntlPolyfill}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{"./lib/core.js":25,"./locale-data/complete.js":2}],25:[function(e,a,t){(function(e){"use strict";var t,n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol?"symbol":typeof e},r=(t="function"==typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103,function(e,a,n,r){var o=e&&e.defaultProps,i=arguments.length-3;if(a||0===i||(a={}),a&&o)for(var s in o)void 0===a[s]&&(a[s]=o[s]);else a||(a=o||{});if(1===i)a.children=r;else if(i>1){for(var l=Array(i),u=0;u<i;u++)l[u]=arguments[u+3];a.children=l}return{$$typeof:t,type:e,key:void 0===n?null:""+n,ref:null,props:a,_owner:null}}),o=function(){function e(e,a){for(var t=0;t<a.length;t++){var n=a[t];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(a,t,n){return t&&e(a.prototype,t),n&&e(a,n),a}}(),i=function(e,a,t){return a in e?Object.defineProperty(e,a,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[a]=t,e},s=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var t=arguments[a];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e},l=void 0===e?self:e,u=function(){return function(e,a){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,a){var t=[],n=!0,r=!1,o=void 0;try{for(var i,s=e[Symbol.iterator]();!(n=(i=s.next()).done)&&(t.push(i.value),!a||t.length!==a);n=!0);}catch(e){r=!0,o=e}finally{try{!n&&s.return&&s.return()}finally{if(r)throw o}}return t}(e,a);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),d=Object.freeze({jsx:r,asyncToGenerator:function(e){return function(){var a=e.apply(this,arguments);return new Promise(function(e,t){return function n(r,o){try{var i=a[r](o),s=i.value}catch(e){return void t(e)}if(!i.done)return Promise.resolve(s).then(function(e){return n("next",e)},function(e){return n("throw",e)});e(s)}("next")})}},classCallCheck:function(e,a){if(!(e instanceof a))throw new TypeError("Cannot call a class as a function")},createClass:o,defineEnumerableProperties:function(e,a){for(var t in a){var n=a[t];n.configurable=n.enumerable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,t,n)}return e},defaults:function(e,a){for(var t=Object.getOwnPropertyNames(a),n=0;n<t.length;n++){var r=t[n],o=Object.getOwnPropertyDescriptor(a,r);o&&o.configurable&&void 0===e[r]&&Object.defineProperty(e,r,o)}return e},defineProperty:i,get:function e(a,t,n){null===a&&(a=Function.prototype);var r=Object.getOwnPropertyDescriptor(a,t);if(void 0===r){var o=Object.getPrototypeOf(a);return null===o?void 0:e(o,t,n)}if("value"in r)return r.value;var i=r.get;return void 0!==i?i.call(n):void 0},inherits:function(e,a){if("function"!=typeof a&&null!==a)throw new TypeError("Super expression must either be null or a function, not "+typeof a);e.prototype=Object.create(a&&a.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),a&&(Object.setPrototypeOf?Object.setPrototypeOf(e,a):e.__proto__=a)},interopRequireDefault:function(e){return e&&e.__esModule?e:{default:e}},interopRequireWildcard:function(e){if(e&&e.__esModule)return e;var a={};if(null!=e)for(var t in e)Object.prototype.hasOwnProperty.call(e,t)&&(a[t]=e[t]);return a.default=e,a},newArrowCheck:function(e,a){if(e!==a)throw new TypeError("Cannot instantiate an arrow function")},objectDestructuringEmpty:function(e){if(null==e)throw new TypeError("Cannot destructure undefined")},objectWithoutProperties:function(e,a){var t={};for(var n in e)a.indexOf(n)>=0||Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t},possibleConstructorReturn:function(e,a){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!a||"object"!=typeof a&&"function"!=typeof a?e:a},selfGlobal:l,set:function e(a,t,n,r){var o=Object.getOwnPropertyDescriptor(a,t);if(void 0===o){var i=Object.getPrototypeOf(a);null!==i&&e(i,t,n,r)}else if("value"in o&&o.writable)o.value=n;else{var s=o.set;void 0!==s&&s.call(r,n)}return n},slicedToArray:u,slicedToArrayLoose:function(e,a){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e)){for(var t,n=[],r=e[Symbol.iterator]();!(t=r.next()).done&&(n.push(t.value),!a||n.length!==a););return n}throw new TypeError("Invalid attempt to destructure non-iterable instance")},taggedTemplateLiteral:function(e,a){return Object.freeze(Object.defineProperties(e,{raw:{value:Object.freeze(a)}}))},taggedTemplateLiteralLoose:function(e,a){return e.raw=a,e},temporalRef:function(e,a,t){if(e===t)throw new ReferenceError(a+" is not defined - temporal dead zone");return e},temporalUndefined:{},toArray:function(e){return Array.isArray(e)?e:Array.from(e)},toConsumableArray:function(e){if(Array.isArray(e)){for(var a=0,t=Array(e.length);a<e.length;a++)t[a]=e[a];return t}return Array.from(e)},typeof:n,extends:s,instanceof:function(e,a){return null!=a&&"undefined"!=typeof Symbol&&a[Symbol.hasInstance]?a[Symbol.hasInstance](e):e instanceof a}}),h=function(){var e=function(){};try{return Object.defineProperty(e,"a",{get:function(){return 1}}),Object.defineProperty(e,"prototype",{writable:!1}),1===e.a&&e.prototype instanceof Object}catch(e){return!1}}(),c=!h&&!Object.prototype.__defineGetter__,m=Object.prototype.hasOwnProperty,p=h?Object.defineProperty:function(e,a,t){"get"in t&&e.__defineGetter__?e.__defineGetter__(a,t.get):(!m.call(e,a)||"value"in t)&&(e[a]=t.value)},f=Array.prototype.indexOf||function(e){if(!this.length)return-1;for(var a=arguments[1]||0,t=this.length;a<t;a++)if(this[a]===e)return a;return-1},y=Object.create||function(e,a){var t;function n(){}n.prototype=e,t=new n;for(var r in a)m.call(a,r)&&p(t,r,a[r]);return t},v=Array.prototype.slice,g=Array.prototype.concat,b=Array.prototype.push,M=Array.prototype.join,w=Array.prototype.shift,T=Function.prototype.bind||function(e){var a=this,t=v.call(arguments,1);return a.length,function(){return a.apply(e,g.call(t,v.call(arguments)))}},k=y(null),_=Math.random();function S(e){for(var a in e)(e instanceof S||m.call(e,a))&&p(this,a,{value:e[a],enumerable:!0,writable:!0,configurable:!0})}function E(){p(this,"length",{writable:!0,value:0}),arguments.length&&b.apply(this,v.call(arguments))}function N(){if(k.disableRegExpRestore)return function(){};for(var e={lastMatch:RegExp.lastMatch||"",leftContext:RegExp.leftContext,multiline:RegExp.multiline,input:RegExp.input},a=!1,t=1;t<=9;t++)a=(e["$"+t]=RegExp["$"+t])||a;return function(){var t=/[.?*+^$[\]\\(){}|-]/g,n=e.lastMatch.replace(t,"\\$&"),r=new E;if(a)for(var o=1;o<=9;o++){var i=e["$"+o];i?(i=i.replace(t,"\\$&"),n=n.replace(i,"("+i+")")):n="()"+n,b.call(r,n.slice(0,n.indexOf("(")+1)),n=n.slice(n.indexOf("(")+1)}var s=M.call(r,"")+n;s=s.replace(/(\\\(|\\\)|[^()])+/g,function(e){return"[\\s\\S]{"+e.replace("\\","").length+"}"});var l=new RegExp(s,e.multiline?"gm":"g");l.lastIndex=e.leftContext.length,l.exec(e.input)}}function L(e){if(null===e)throw new TypeError("Cannot convert null or undefined to object");return"object"===(void 0===e?"undefined":d.typeof(e))?e:Object(e)}function F(e){return"number"==typeof e?e:Number(e)}function K(e){var a,t=(a=F(e),isNaN(a)?0:0===a||-0===a||a===1/0||a===-1/0?a:a<0?-1*Math.floor(Math.abs(a)):Math.floor(Math.abs(a)));return t<=0?0:t===1/0?Math.pow(2,53)-1:Math.min(t,Math.pow(2,53)-1)}function j(e){return m.call(e,"__getInternalProperties")?e.__getInternalProperties(_):y(null)}S.prototype=y(null),E.prototype=y(null);var x="(?:[a-z0-9]{5,8}|\\d[a-z0-9]{3})",D="[0-9a-wy-z](?:-[a-z0-9]{2,8})+",A=RegExp("^(?:(?:[a-z]{2,3}(?:-[a-z]{3}(?:-[a-z]{3}){0,2})?|[a-z]{4}|[a-z]{5,8})(?:-[a-z]{4})?(?:-(?:[a-z]{2}|\\d{3}))?(?:-(?:[a-z0-9]{5,8}|\\d[a-z0-9]{3}))*(?:-[0-9a-wy-z](?:-[a-z0-9]{2,8})+)*(?:-x(?:-[a-z0-9]{1,8})+)?|x(?:-[a-z0-9]{1,8})+|(?:(?:en-GB-oed|i-(?:ami|bnn|default|enochian|hak|klingon|lux|mingo|navajo|pwn|tao|tay|tsu)|sgn-(?:BE-FR|BE-NL|CH-DE))|(?:art-lojban|cel-gaulish|no-bok|no-nyn|zh-(?:guoyu|hakka|min|min-nan|xiang))))$","i"),R=RegExp("^(?!x).*?-("+x+")-(?:\\w{4,8}-(?!x-))*\\1\\b","i"),I=RegExp("^(?!x).*?-([0-9a-wy-z])-(?:\\w+-(?!x-))*\\1\\b","i"),C=RegExp("-"+D,"ig"),P=void 0;var O={tags:{"art-lojban":"jbo","i-ami":"ami","i-bnn":"bnn","i-hak":"hak","i-klingon":"tlh","i-lux":"lb","i-navajo":"nv","i-pwn":"pwn","i-tao":"tao","i-tay":"tay","i-tsu":"tsu","no-bok":"nb","no-nyn":"nn","sgn-BE-FR":"sfb","sgn-BE-NL":"vgt","sgn-CH-DE":"sgg","zh-guoyu":"cmn","zh-hakka":"hak","zh-min-nan":"nan","zh-xiang":"hsn","sgn-BR":"bzs","sgn-CO":"csn","sgn-DE":"gsg","sgn-DK":"dsl","sgn-ES":"ssp","sgn-FR":"fsl","sgn-GB":"bfi","sgn-GR":"gss","sgn-IE":"isg","sgn-IT":"ise","sgn-JP":"jsl","sgn-MX":"mfs","sgn-NI":"ncs","sgn-NL":"dse","sgn-NO":"nsl","sgn-PT":"psr","sgn-SE":"swl","sgn-US":"ase","sgn-ZA":"sfs","zh-cmn":"cmn","zh-cmn-Hans":"cmn-Hans","zh-cmn-Hant":"cmn-Hant","zh-gan":"gan","zh-wuu":"wuu","zh-yue":"yue"},subtags:{BU:"MM",DD:"DE",FX:"FR",TP:"TL",YD:"YE",ZR:"CD",heploc:"alalc97",in:"id",iw:"he",ji:"yi",jw:"jv",mo:"ro",ayx:"nun",bjd:"drl",ccq:"rki",cjr:"mom",cka:"cmr",cmk:"xch",drh:"khk",drw:"prs",gav:"dev",hrr:"jal",ibi:"opa",kgh:"kml",lcq:"ppr",mst:"mry",myt:"mry",sca:"hle",tie:"ras",tkk:"twm",tlw:"weo",tnf:"prs",ybd:"rki",yma:"lrr"},extLang:{aao:["aao","ar"],abh:["abh","ar"],abv:["abv","ar"],acm:["acm","ar"],acq:["acq","ar"],acw:["acw","ar"],acx:["acx","ar"],acy:["acy","ar"],adf:["adf","ar"],ads:["ads","sgn"],aeb:["aeb","ar"],aec:["aec","ar"],aed:["aed","sgn"],aen:["aen","sgn"],afb:["afb","ar"],afg:["afg","sgn"],ajp:["ajp","ar"],apc:["apc","ar"],apd:["apd","ar"],arb:["arb","ar"],arq:["arq","ar"],ars:["ars","ar"],ary:["ary","ar"],arz:["arz","ar"],ase:["ase","sgn"],asf:["asf","sgn"],asp:["asp","sgn"],asq:["asq","sgn"],asw:["asw","sgn"],auz:["auz","ar"],avl:["avl","ar"],ayh:["ayh","ar"],ayl:["ayl","ar"],ayn:["ayn","ar"],ayp:["ayp","ar"],bbz:["bbz","ar"],bfi:["bfi","sgn"],bfk:["bfk","sgn"],bjn:["bjn","ms"],bog:["bog","sgn"],bqn:["bqn","sgn"],bqy:["bqy","sgn"],btj:["btj","ms"],bve:["bve","ms"],bvl:["bvl","sgn"],bvu:["bvu","ms"],bzs:["bzs","sgn"],cdo:["cdo","zh"],cds:["cds","sgn"],cjy:["cjy","zh"],cmn:["cmn","zh"],coa:["coa","ms"],cpx:["cpx","zh"],csc:["csc","sgn"],csd:["csd","sgn"],cse:["cse","sgn"],csf:["csf","sgn"],csg:["csg","sgn"],csl:["csl","sgn"],csn:["csn","sgn"],csq:["csq","sgn"],csr:["csr","sgn"],czh:["czh","zh"],czo:["czo","zh"],doq:["doq","sgn"],dse:["dse","sgn"],dsl:["dsl","sgn"],dup:["dup","ms"],ecs:["ecs","sgn"],esl:["esl","sgn"],esn:["esn","sgn"],eso:["eso","sgn"],eth:["eth","sgn"],fcs:["fcs","sgn"],fse:["fse","sgn"],fsl:["fsl","sgn"],fss:["fss","sgn"],gan:["gan","zh"],gds:["gds","sgn"],gom:["gom","kok"],gse:["gse","sgn"],gsg:["gsg","sgn"],gsm:["gsm","sgn"],gss:["gss","sgn"],gus:["gus","sgn"],hab:["hab","sgn"],haf:["haf","sgn"],hak:["hak","zh"],hds:["hds","sgn"],hji:["hji","ms"],hks:["hks","sgn"],hos:["hos","sgn"],hps:["hps","sgn"],hsh:["hsh","sgn"],hsl:["hsl","sgn"],hsn:["hsn","zh"],icl:["icl","sgn"],ils:["ils","sgn"],inl:["inl","sgn"],ins:["ins","sgn"],ise:["ise","sgn"],isg:["isg","sgn"],isr:["isr","sgn"],jak:["jak","ms"],jax:["jax","ms"],jcs:["jcs","sgn"],jhs:["jhs","sgn"],jls:["jls","sgn"],jos:["jos","sgn"],jsl:["jsl","sgn"],jus:["jus","sgn"],kgi:["kgi","sgn"],knn:["knn","kok"],kvb:["kvb","ms"],kvk:["kvk","sgn"],kvr:["kvr","ms"],kxd:["kxd","ms"],lbs:["lbs","sgn"],lce:["lce","ms"],lcf:["lcf","ms"],liw:["liw","ms"],lls:["lls","sgn"],lsg:["lsg","sgn"],lsl:["lsl","sgn"],lso:["lso","sgn"],lsp:["lsp","sgn"],lst:["lst","sgn"],lsy:["lsy","sgn"],ltg:["ltg","lv"],lvs:["lvs","lv"],lzh:["lzh","zh"],max:["max","ms"],mdl:["mdl","sgn"],meo:["meo","ms"],mfa:["mfa","ms"],mfb:["mfb","ms"],mfs:["mfs","sgn"],min:["min","ms"],mnp:["mnp","zh"],mqg:["mqg","ms"],mre:["mre","sgn"],msd:["msd","sgn"],msi:["msi","ms"],msr:["msr","sgn"],mui:["mui","ms"],mzc:["mzc","sgn"],mzg:["mzg","sgn"],mzy:["mzy","sgn"],nan:["nan","zh"],nbs:["nbs","sgn"],ncs:["ncs","sgn"],nsi:["nsi","sgn"],nsl:["nsl","sgn"],nsp:["nsp","sgn"],nsr:["nsr","sgn"],nzs:["nzs","sgn"],okl:["okl","sgn"],orn:["orn","ms"],ors:["ors","ms"],pel:["pel","ms"],pga:["pga","ar"],pks:["pks","sgn"],prl:["prl","sgn"],prz:["prz","sgn"],psc:["psc","sgn"],psd:["psd","sgn"],pse:["pse","ms"],psg:["psg","sgn"],psl:["psl","sgn"],pso:["pso","sgn"],psp:["psp","sgn"],psr:["psr","sgn"],pys:["pys","sgn"],rms:["rms","sgn"],rsi:["rsi","sgn"],rsl:["rsl","sgn"],sdl:["sdl","sgn"],sfb:["sfb","sgn"],sfs:["sfs","sgn"],sgg:["sgg","sgn"],sgx:["sgx","sgn"],shu:["shu","ar"],slf:["slf","sgn"],sls:["sls","sgn"],sqk:["sqk","sgn"],sqs:["sqs","sgn"],ssh:["ssh","ar"],ssp:["ssp","sgn"],ssr:["ssr","sgn"],svk:["svk","sgn"],swc:["swc","sw"],swh:["swh","sw"],swl:["swl","sgn"],syy:["syy","sgn"],tmw:["tmw","ms"],tse:["tse","sgn"],tsm:["tsm","sgn"],tsq:["tsq","sgn"],tss:["tss","sgn"],tsy:["tsy","sgn"],tza:["tza","sgn"],ugn:["ugn","sgn"],ugy:["ugy","sgn"],ukl:["ukl","sgn"],uks:["uks","sgn"],urk:["urk","ms"],uzn:["uzn","uz"],uzs:["uzs","uz"],vgt:["vgt","sgn"],vkk:["vkk","ms"],vkt:["vkt","ms"],vsi:["vsi","sgn"],vsl:["vsl","sgn"],vsv:["vsv","sgn"],wuu:["wuu","zh"],xki:["xki","sgn"],xml:["xml","sgn"],xmm:["xmm","ms"],xms:["xms","sgn"],yds:["yds","sgn"],ysl:["ysl","sgn"],yue:["yue","zh"],zib:["zib","sgn"],zlm:["zlm","ms"],zmi:["zmi","ms"],zsl:["zsl","sgn"],zsm:["zsm","ms"]}};function J(e){for(var a=e.length;a--;){var t=e.charAt(a);t>="a"&&t<="z"&&(e=e.slice(0,a)+t.toUpperCase()+e.slice(a+1))}return e}function H(e){return!!A.test(e)&&(!R.test(e)&&!I.test(e))}function z(e){for(var a=void 0,t=void 0,n=1,r=(t=(e=e.toLowerCase()).split("-")).length;n<r;n++)if(2===t[n].length)t[n]=t[n].toUpperCase();else if(4===t[n].length)t[n]=t[n].charAt(0).toUpperCase()+t[n].slice(1);else if(1===t[n].length&&"x"!==t[n])break;(a=(e=M.call(t,"-")).match(C))&&a.length>1&&(a.sort(),e=e.replace(RegExp("(?:"+C.source+")+","i"),M.call(a,""))),m.call(O.tags,e)&&(e=O.tags[e]);for(var o=1,i=(t=e.split("-")).length;o<i;o++)m.call(O.subtags,t[o])?t[o]=O.subtags[t[o]]:m.call(O.extLang,t[o])&&(t[o]=O.extLang[t[o]][0],1===o&&O.extLang[t[1]][1]===t[0]&&(t=v.call(t,o++),i-=1));return M.call(t,"-")}var G=/^[A-Z]{3}$/;var B=/-u(?:-[0-9a-z]{2,8})+/gi;function U(e){if(void 0===e)return new E;for(var a=new E,t=L(e="string"==typeof e?[e]:e),n=K(t.length),r=0;r<n;){var o=String(r);if(o in t){var i=t[o];if(null===i||"string"!=typeof i&&"object"!==(void 0===i?"undefined":d.typeof(i)))throw new TypeError("String or Object type expected");var s=String(i);if(!H(s))throw new RangeError("'"+s+"' is not a structurally valid language tag");s=z(s),-1===f.call(a,s)&&b.call(a,s)}r++}return a}function W(e,a){for(var t=a;t;){if(f.call(e,t)>-1)return t;var n=t.lastIndexOf("-");if(n<0)return;n>=2&&"-"===t.charAt(n-2)&&(n-=2),t=t.substring(0,n)}}function V(e,a){for(var t=0,n=a.length,r=void 0,o=void 0,i=void 0;t<n&&!r;)o=a[t],r=W(e,i=String(o).replace(B,"")),t++;var s=new S;if(void 0!==r){if(s["[[locale]]"]=r,String(o)!==String(i)){var l=o.match(B)[0],u=o.indexOf("-u-");s["[[extension]]"]=l,s["[[extensionIndex]]"]=u}}else s["[[locale]]"]=P;return s}function q(e,a,t,n,r){if(0===e.length)throw new ReferenceError("No locale data has been provided for this object yet.");var o=void 0;"lookup"===t["[[localeMatcher]]"]?o=V(e,a):o=V(e,a);var i=o["[[locale]]"],s=void 0,l=void 0;if(m.call(o,"[[extension]]")){var u=o["[[extension]]"];l=(s=String.prototype.split.call(u,"-")).length}var d=new S;d["[[dataLocale]]"]=i;for(var h="-u",c=0,p=n.length;c<p;){var y=n[c],v=r[i][y],g=v[0],b="",M=f;if(void 0!==s){var w=M.call(s,y);if(-1!==w)if(w+1<l&&s[w+1].length>2){var T=s[w+1];-1!==M.call(v,T)&&(b="-"+y+"-"+(g=T))}else{-1!==M(v,"true")&&(g="true")}}if(m.call(t,"[["+y+"]]")){var k=t["[["+y+"]]"];-1!==M.call(v,k)&&k!==g&&(g=k,b="")}d["[["+y+"]]"]=g,h+=b,c++}if(h.length>2){var _=i.indexOf("-x-");if(-1===_)i+=h;else i=i.substring(0,_)+h+i.substring(_);i=z(i)}return d["[[locale]]"]=i,d}function Y(e,a){for(var t=a.length,n=new E,r=0;r<t;){var o=a[r];void 0!==W(e,String(o).replace(B,""))&&b.call(n,o),r++}return v.call(n)}function Q(e,a,t){var n=void 0,r=void 0;if(void 0!==t&&void 0!==(n=(t=new S(L(t))).localeMatcher)&&"lookup"!==(n=String(n))&&"best fit"!==n)throw new RangeError('matcher should be "lookup" or "best fit"');void 0===n||"best fit"===n?r=Y(e,a):r=Y(e,a);for(var o in r)m.call(r,o)&&p(r,o,{writable:!1,configurable:!1,value:r[o]});return p(r,"length",{writable:!1}),r}function $(e,a,t,n,r){var o=e[a];if(void 0!==o){if(o="boolean"===t?Boolean(o):"string"===t?String(o):o,void 0!==n&&-1===f.call(n,o))throw new RangeError("'"+o+"' is not an allowed value for `"+a+"`");return o}return r}function X(e,a,t,n,r){var o=e[a];if(void 0!==o){if(o=Number(o),isNaN(o)||o<t||o>n)throw new RangeError("Value is not a number or outside accepted range");return Math.floor(o)}return r}var Z={};Object.defineProperty(Z,"getCanonicalLocales",{enumerable:!1,configurable:!0,writable:!0,value:function(e){for(var a=U(e),t=[],n=a.length,r=0;r<n;)t[r]=a[r],r++;return t}});var ee={BHD:3,BYR:0,XOF:0,BIF:0,XAF:0,CLF:4,CLP:0,KMF:0,DJF:0,XPF:0,GNF:0,ISK:0,IQD:3,JPY:0,JOD:3,KRW:0,KWD:3,LYD:3,OMR:3,PYG:0,RWF:0,TND:3,UGX:0,UYI:0,VUV:0,VND:0};function ae(){var e=arguments[0],a=arguments[1];return this&&this!==Z?function(e,a,t){var n=j(e),r=N();if(!0===n["[[initializedIntlObject]]"])throw new TypeError("`this` object has already been initialized as an Intl object");p(e,"__getInternalProperties",{value:function(){if(arguments[0]===_)return n}}),n["[[initializedIntlObject]]"]=!0;var o=U(a);t=void 0===t?{}:L(t);var i=new S,s=$(t,"localeMatcher","string",new E("lookup","best fit"),"best fit");i["[[localeMatcher]]"]=s;var l=k.NumberFormat["[[localeData]]"],u=q(k.NumberFormat["[[availableLocales]]"],o,i,k.NumberFormat["[[relevantExtensionKeys]]"],l);n["[[locale]]"]=u["[[locale]]"],n["[[numberingSystem]]"]=u["[[nu]]"],n["[[dataLocale]]"]=u["[[dataLocale]]"];var d=u["[[dataLocale]]"],h=$(t,"style","string",new E("decimal","percent","currency"),"decimal");n["[[style]]"]=h;var m=$(t,"currency","string");if(void 0!==m&&(f=m,y=J(String(f)),!1===G.test(y)))throw new RangeError("'"+m+"' is not a valid currency code");var f,y;if("currency"===h&&void 0===m)throw new TypeError("Currency code is required when style is currency");var v=void 0;"currency"===h&&(m=m.toUpperCase(),n["[[currency]]"]=m,v=void 0!==ee[g=m]?ee[g]:2);var g;var b=$(t,"currencyDisplay","string",new E("code","symbol","name"),"symbol");"currency"===h&&(n["[[currencyDisplay]]"]=b);var M=X(t,"minimumIntegerDigits",1,21,1);n["[[minimumIntegerDigits]]"]=M;var w=X(t,"minimumFractionDigits",0,20,"currency"===h?v:0);n["[[minimumFractionDigits]]"]=w;var T="currency"===h?Math.max(w,v):"percent"===h?Math.max(w,0):Math.max(w,3),F=X(t,"maximumFractionDigits",w,20,T);n["[[maximumFractionDigits]]"]=F;var K=t.minimumSignificantDigits,x=t.maximumSignificantDigits;void 0===K&&void 0===x||(K=X(t,"minimumSignificantDigits",1,21,1),x=X(t,"maximumSignificantDigits",K,21,21),n["[[minimumSignificantDigits]]"]=K,n["[[maximumSignificantDigits]]"]=x);var D=$(t,"useGrouping","boolean",void 0,!0);n["[[useGrouping]]"]=D;var A=l[d].patterns[h];n["[[positivePattern]]"]=A.positivePattern,n["[[negativePattern]]"]=A.negativePattern,n["[[boundFormat]]"]=void 0,n["[[initializedNumberFormat]]"]=!0,c&&(e.format=te.call(e));return r(),e}(L(this),e,a):new Z.NumberFormat(e,a)}function te(){var e=null!==this&&"object"===d.typeof(this)&&j(this);if(!e||!e["[[initializedNumberFormat]]"])throw new TypeError("`this` value for format() is not an initialized Intl.NumberFormat object.");if(void 0===e["[[boundFormat]]"]){var a=T.call(function(e){return re(this,Number(e))},this);e["[[boundFormat]]"]=a}return e["[[boundFormat]]"]}function ne(e,a){var t=j(e),n=t["[[dataLocale]]"],r=t["[[numberingSystem]]"],o=k.NumberFormat["[[localeData]]"][n],i=o.symbols[r]||o.symbols.latn,s=void 0;!isNaN(a)&&a<0?(a=-a,s=t["[[negativePattern]]"]):s=t["[[positivePattern]]"];for(var l=new E,u=s.indexOf("{",0),d=0,h=0,c=s.length;u>-1&&u<c;){if(-1===(d=s.indexOf("}",u)))throw new Error;if(u>h){var p=s.substring(h,u);b.call(l,{"[[type]]":"literal","[[value]]":p})}var f=s.substring(u+1,d);if("number"===f)if(isNaN(a)){var y=i.nan;b.call(l,{"[[type]]":"nan","[[value]]":y})}else if(isFinite(a)){"percent"===t["[[style]]"]&&isFinite(a)&&(a*=100);var v=void 0;v=m.call(t,"[[minimumSignificantDigits]]")&&m.call(t,"[[maximumSignificantDigits]]")?oe(a,t["[[minimumSignificantDigits]]"],t["[[maximumSignificantDigits]]"]):ie(a,t["[[minimumIntegerDigits]]"],t["[[minimumFractionDigits]]"],t["[[maximumFractionDigits]]"]),se[r]?function(){var e=se[r];v=String(v).replace(/\d/g,function(a){return e[a]})}():v=String(v);var g=void 0,M=void 0,T=v.indexOf(".",0);if(T>0?(g=v.substring(0,T),M=v.substring(T+1,T.length)):(g=v,M=void 0),!0===t["[[useGrouping]]"]){var _=i.group,S=[],N=o.patterns.primaryGroupSize||3,L=o.patterns.secondaryGroupSize||N;if(g.length>N){var F=g.length-N,K=F%L,x=g.slice(0,K);for(x.length&&b.call(S,x);K<F;)b.call(S,g.slice(K,K+L)),K+=L;b.call(S,g.slice(F))}else b.call(S,g);if(0===S.length)throw new Error;for(;S.length;){var D=w.call(S);b.call(l,{"[[type]]":"integer","[[value]]":D}),S.length&&b.call(l,{"[[type]]":"group","[[value]]":_})}}else b.call(l,{"[[type]]":"integer","[[value]]":g});if(void 0!==M){var A=i.decimal;b.call(l,{"[[type]]":"decimal","[[value]]":A}),b.call(l,{"[[type]]":"fraction","[[value]]":M})}}else{var R=i.infinity;b.call(l,{"[[type]]":"infinity","[[value]]":R})}else if("plusSign"===f){var I=i.plusSign;b.call(l,{"[[type]]":"plusSign","[[value]]":I})}else if("minusSign"===f){var C=i.minusSign;b.call(l,{"[[type]]":"minusSign","[[value]]":C})}else if("percentSign"===f&&"percent"===t["[[style]]"]){var P=i.percentSign;b.call(l,{"[[type]]":"literal","[[value]]":P})}else if("currency"===f&&"currency"===t["[[style]]"]){var O=t["[[currency]]"],J=void 0;"code"===t["[[currencyDisplay]]"]?J=O:"symbol"===t["[[currencyDisplay]]"]?J=o.currencies[O]||O:"name"===t["[[currencyDisplay]]"]&&(J=O),b.call(l,{"[[type]]":"currency","[[value]]":J})}else{var H=s.substring(u,d);b.call(l,{"[[type]]":"literal","[[value]]":H})}h=d+1,u=s.indexOf("{",h)}if(h<c){var z=s.substring(h,c);b.call(l,{"[[type]]":"literal","[[value]]":z})}return l}function re(e,a){for(var t=ne(e,a),n="",r=0;t.length>r;r++){n+=t[r]["[[value]]"]}return n}function oe(e,a,t){var n=t,r=void 0,o=void 0;if(0===e)r=M.call(Array(n+1),"0"),o=0;else{o=function(e){if("function"==typeof Math.log10)return Math.floor(Math.log10(e));var a=Math.round(Math.log(e)*Math.LOG10E);return a-(Number("1e"+a)>e)}(Math.abs(e));var i=Math.round(Math.exp(Math.abs(o-n+1)*Math.LN10));r=String(Math.round(o-n+1<0?e*i:e/i))}if(o>=n)return r+M.call(Array(o-n+1+1),"0");if(o===n-1)return r;if(o>=0?r=r.slice(0,o+1)+"."+r.slice(o+1):o<0&&(r="0."+M.call(Array(1-(o+1)),"0")+r),r.indexOf(".")>=0&&t>a){for(var s=t-a;s>0&&"0"===r.charAt(r.length-1);)r=r.slice(0,-1),s--;"."===r.charAt(r.length-1)&&(r=r.slice(0,-1))}return r}function ie(e,a,t,n){var r,o=n,i=Math.pow(10,o)*e,s=0===i?"0":i.toFixed(0),l=(r=s.indexOf("e"))>-1?s.slice(r+1):0;l&&(s=s.slice(0,r).replace(".",""),s+=M.call(Array(l-(s.length-1)+1),"0"));var u=void 0;if(0!==o){var d=s.length;if(d<=o)s=M.call(Array(o+1-d+1),"0")+s,d=o+1;var h=s.substring(0,d-o);s=h+"."+s.substring(d-o,s.length),u=h.length}else u=s.length;for(var c=n-t;c>0&&"0"===s.slice(-1);)s=s.slice(0,-1),c--;("."===s.slice(-1)&&(s=s.slice(0,-1)),u<a)&&(s=M.call(Array(a-u+1),"0")+s);return s}p(Z,"NumberFormat",{configurable:!0,writable:!0,value:ae}),p(Z.NumberFormat,"prototype",{writable:!1}),k.NumberFormat={"[[availableLocales]]":[],"[[relevantExtensionKeys]]":["nu"],"[[localeData]]":{}},p(Z.NumberFormat,"supportedLocalesOf",{configurable:!0,writable:!0,value:T.call(function(e){if(!m.call(this,"[[availableLocales]]"))throw new TypeError("supportedLocalesOf() is not a constructor");var a=N(),t=arguments[1],n=this["[[availableLocales]]"],r=U(e);return a(),Q(n,r,t)},k.NumberFormat)}),p(Z.NumberFormat.prototype,"format",{configurable:!0,get:te}),Object.defineProperty(Z.NumberFormat.prototype,"formatToParts",{configurable:!0,enumerable:!1,writable:!0,value:function(){var e=arguments.length<=0||void 0===arguments[0]?void 0:arguments[0],a=null!==this&&"object"===d.typeof(this)&&j(this);if(!a||!a["[[initializedNumberFormat]]"])throw new TypeError("`this` value for formatToParts() is not an initialized Intl.NumberFormat object.");return function(e,a){for(var t=ne(e,a),n=[],r=0,o=0;t.length>o;o++){var i=t[o],s={};s.type=i["[[type]]"],s.value=i["[[value]]"],n[r]=s,r+=1}return n}(this,Number(e))}});var se={arab:["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"],arabext:["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"],bali:["᭐","᭑","᭒","᭓","᭔","᭕","᭖","᭗","᭘","᭙"],beng:["০","১","২","৩","৪","৫","৬","৭","৮","৯"],deva:["०","१","२","३","४","५","६","७","८","९"],fullwide:["０","１","２","３","４","５","６","７","８","９"],gujr:["૦","૧","૨","૩","૪","૫","૬","૭","૮","૯"],guru:["੦","੧","੨","੩","੪","੫","੬","੭","੮","੯"],hanidec:["〇","一","二","三","四","五","六","七","八","九"],khmr:["០","១","២","៣","៤","៥","៦","៧","៨","៩"],knda:["೦","೧","೨","೩","೪","೫","೬","೭","೮","೯"],laoo:["໐","໑","໒","໓","໔","໕","໖","໗","໘","໙"],latn:["0","1","2","3","4","5","6","7","8","9"],limb:["᥆","᥇","᥈","᥉","᥊","᥋","᥌","᥍","᥎","᥏"],mlym:["൦","൧","൨","൩","൪","൫","൬","൭","൮","൯"],mong:["᠐","᠑","᠒","᠓","᠔","᠕","᠖","᠗","᠘","᠙"],mymr:["၀","၁","၂","၃","၄","၅","၆","၇","၈","၉"],orya:["୦","୧","୨","୩","୪","୫","୬","୭","୮","୯"],tamldec:["௦","௧","௨","௩","௪","௫","௬","௭","௮","௯"],telu:["౦","౧","౨","౩","౪","౫","౬","౭","౮","౯"],thai:["๐","๑","๒","๓","๔","๕","๖","๗","๘","๙"],tibt:["༠","༡","༢","༣","༤","༥","༦","༧","༨","༩"]};p(Z.NumberFormat.prototype,"resolvedOptions",{configurable:!0,writable:!0,value:function(){var e=void 0,a=new S,t=["locale","numberingSystem","style","currency","currencyDisplay","minimumIntegerDigits","minimumFractionDigits","maximumFractionDigits","minimumSignificantDigits","maximumSignificantDigits","useGrouping"],n=null!==this&&"object"===d.typeof(this)&&j(this);if(!n||!n["[[initializedNumberFormat]]"])throw new TypeError("`this` value for resolvedOptions() is not an initialized Intl.NumberFormat object.");for(var r=0,o=t.length;r<o;r++)m.call(n,e="[["+t[r]+"]]")&&(a[t[r]]={value:n[e],writable:!0,configurable:!0,enumerable:!0});return y({},a)}});var le=/(?:[Eec]{1,6}|G{1,5}|[Qq]{1,5}|(?:[yYur]+|U{1,5})|[ML]{1,5}|d{1,2}|D{1,3}|F{1}|[abB]{1,5}|[hkHK]{1,2}|w{1,2}|W{1}|m{1,2}|s{1,2}|[zZOvVxX]{1,4})(?=([^']*'[^']*')*[^']*$)/g,ue=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,de=/[rqQASjJgwWIQq]/,he=["era","year","month","day","weekday","quarter"],ce=["hour","minute","second","hour12","timeZoneName"];function me(e){for(var a=0;a<ce.length;a+=1)if(e.hasOwnProperty(ce[a]))return!1;return!0}function pe(e){for(var a=0;a<he.length;a+=1)if(e.hasOwnProperty(he[a]))return!1;return!0}function fe(e,a){for(var t={_:{}},n=0;n<he.length;n+=1)e[he[n]]&&(t[he[n]]=e[he[n]]),e._[he[n]]&&(t._[he[n]]=e._[he[n]]);for(var r=0;r<ce.length;r+=1)a[ce[r]]&&(t[ce[r]]=a[ce[r]]),a._[ce[r]]&&(t._[ce[r]]=a._[ce[r]]);return t}function ye(e){return e.pattern12=e.extendedPattern.replace(/'([^']*)'/g,function(e,a){return a||"'"}),e.pattern=e.pattern12.replace("{ampm}","").replace(ue,""),e}function ve(e,a){switch(e.charAt(0)){case"G":return a.era=["short","short","short","long","narrow"][e.length-1],"{era}";case"y":case"Y":case"u":case"U":case"r":return a.year=2===e.length?"2-digit":"numeric","{year}";case"Q":case"q":return a.quarter=["numeric","2-digit","short","long","narrow"][e.length-1],"{quarter}";case"M":case"L":return a.month=["numeric","2-digit","short","long","narrow"][e.length-1],"{month}";case"w":return a.week=2===e.length?"2-digit":"numeric","{weekday}";case"W":return a.week="numeric","{weekday}";case"d":return a.day=2===e.length?"2-digit":"numeric","{day}";case"D":case"F":case"g":return a.day="numeric","{day}";case"E":return a.weekday=["short","short","short","long","narrow","short"][e.length-1],"{weekday}";case"e":return a.weekday=["numeric","2-digit","short","long","narrow","short"][e.length-1],"{weekday}";case"c":return a.weekday=["numeric",void 0,"short","long","narrow","short"][e.length-1],"{weekday}";case"a":case"b":case"B":return a.hour12=!0,"{ampm}";case"h":case"H":return a.hour=2===e.length?"2-digit":"numeric","{hour}";case"k":case"K":return a.hour12=!0,a.hour=2===e.length?"2-digit":"numeric","{hour}";case"m":return a.minute=2===e.length?"2-digit":"numeric","{minute}";case"s":return a.second=2===e.length?"2-digit":"numeric","{second}";case"S":case"A":return a.second="numeric","{second}";case"z":case"Z":case"O":case"v":case"V":case"X":case"x":return a.timeZoneName=e.length<4?"short":"long","{timeZoneName}"}}function ge(e,a){if(!de.test(a)){var t={originalPattern:a,_:{}};return t.extendedPattern=a.replace(le,function(e){return ve(e,t._)}),e.replace(le,function(e){return ve(e,t)}),ye(t)}}var be={second:{numeric:"s","2-digit":"ss"},minute:{numeric:"m","2-digit":"mm"},year:{numeric:"y","2-digit":"yy"},day:{numeric:"d","2-digit":"dd"},month:{numeric:"L","2-digit":"LL",narrow:"LLLLL",short:"LLL",long:"LLLL"},weekday:{narrow:"ccccc",short:"ccc",long:"cccc"}};var Me=y(null,{narrow:{},short:{},long:{}});function we(e,a,t,n,r){var o=e[a]&&e[a][t]?e[a][t]:e.gregory[t],i={narrow:["short","long"],short:["long","narrow"],long:["short","narrow"]},s=m.call(o,n)?o[n]:m.call(o,i[n][0])?o[i[n][0]]:o[i[n][1]];return null!==r?s[r]:s}function Te(){var e=arguments[0],a=arguments[1];return this&&this!==Z?function(e,a,t){var n=j(e),r=N();if(!0===n["[[initializedIntlObject]]"])throw new TypeError("`this` object has already been initialized as an Intl object");p(e,"__getInternalProperties",{value:function(){if(arguments[0]===_)return n}}),n["[[initializedIntlObject]]"]=!0;var o=U(a);t=_e(t,"any","date");var s=new S,l=$(t,"localeMatcher","string",new E("lookup","best fit"),"best fit");s["[[localeMatcher]]"]=l;var u=k.DateTimeFormat,d=u["[[localeData]]"],h=q(u["[[availableLocales]]"],o,s,u["[[relevantExtensionKeys]]"],d);n["[[locale]]"]=h["[[locale]]"],n["[[calendar]]"]=h["[[ca]]"],n["[[numberingSystem]]"]=h["[[nu]]"],n["[[dataLocale]]"]=h["[[dataLocale]]"];var y=h["[[dataLocale]]"],v=t.timeZone;if(void 0!==v&&"UTC"!==(v=J(v)))throw new RangeError("timeZone is not supported.");n["[[timeZone]]"]=v,s=new S;for(var g in ke)if(m.call(ke,g)){var b=$(t,g,"string",ke[g]);s["[["+g+"]]"]=b}var M=void 0,w=d[y],T=function(e){if("[object Array]"===Object.prototype.toString.call(e))return e;return function(e){var a=e.availableFormats,t=e.timeFormats,n=e.dateFormats,r=[],o=void 0,i=void 0,s=void 0,l=void 0,u=void 0,d=[],h=[];for(o in a)a.hasOwnProperty(o)&&(s=ge(o,i=a[o]))&&(r.push(s),me(s)?h.push(s):pe(s)&&d.push(s));for(o in t)t.hasOwnProperty(o)&&(s=ge(o,i=t[o]))&&(r.push(s),d.push(s));for(o in n)n.hasOwnProperty(o)&&(s=ge(o,i=n[o]))&&(r.push(s),h.push(s));for(l=0;l<d.length;l+=1)for(u=0;u<h.length;u+=1)i="long"===h[u].month?h[u].weekday?e.full:e.long:"short"===h[u].month?e.medium:e.short,(s=fe(h[u],d[l])).originalPattern=i,s.extendedPattern=i.replace("{0}",d[l].extendedPattern).replace("{1}",h[u].extendedPattern).replace(/^[,\s]+|[,\s]+$/gi,""),r.push(ye(s));return r}(e)}(w.formats);if(l=$(t,"formatMatcher","string",new E("basic","best fit"),"best fit"),w.formats=T,"basic"===l)M=function(e,a){var t=-1/0,n=void 0,r=0,o=a.length;for(;r<o;){var i=a[r],s=0;for(var l in ke)if(m.call(ke,l)){var u=e["[["+l+"]]"],d=m.call(i,l)?i[l]:void 0;if(void 0===u&&void 0!==d)s-=20;else if(void 0!==u&&void 0===d)s-=120;else{var h=["2-digit","numeric","narrow","short","long"],c=f.call(h,u),p=f.call(h,d),y=Math.max(Math.min(p-c,2),-2);2===y?s-=6:1===y?s-=3:-1===y?s-=6:-2===y&&(s-=8)}}s>t&&(t=s,n=i),r++}return n}(s,T);else{var L=$(t,"hour12","boolean");s.hour12=void 0===L?w.hour12:L,M=function(e,a){var t=[];for(var n in ke)m.call(ke,n)&&void 0!==e["[["+n+"]]"]&&t.push(n);if(1===t.length){var r=function(e,a){var t;if(be[e]&&be[e][a])return t={originalPattern:be[e][a],_:i({},e,a),extendedPattern:"{"+e+"}"},i(t,e,a),i(t,"pattern12","{"+e+"}"),i(t,"pattern","{"+e+"}"),t}(t[0],e["[["+t[0]+"]]"]);if(r)return r}var o=-1/0,s=void 0,l=0,u=a.length;for(;l<u;){var d=a[l],h=0;for(var c in ke)if(m.call(ke,c)){var p=e["[["+c+"]]"],y=m.call(d,c)?d[c]:void 0,v=m.call(d._,c)?d._[c]:void 0;if(p!==v&&(h-=2),void 0===p&&void 0!==y)h-=20;else if(void 0!==p&&void 0===y)h-=120;else{var g=["2-digit","numeric","narrow","short","long"],b=f.call(g,p),M=f.call(g,y),w=Math.max(Math.min(M-b,2),-2);M<=1&&b>=2||M>=2&&b<=1?w>0?h-=6:w<0&&(h-=8):w>1?h-=3:w<-1&&(h-=6)}}d._.hour12!==e.hour12&&(h-=1),h>o&&(o=h,s=d),l++}return s}(s,T)}for(var F in ke)if(m.call(ke,F)&&m.call(M,F)){var K=M[F];K=M._&&m.call(M._,F)?M._[F]:K,n["[["+F+"]]"]=K}var x=void 0,D=$(t,"hour12","boolean");if(n["[[hour]]"])if(D=void 0===D?w.hour12:D,n["[[hour12]]"]=D,!0===D){var A=w.hourNo0;n["[[hourNo0]]"]=A,x=M.pattern12}else x=M.pattern;else x=M.pattern;n["[[pattern]]"]=x,n["[[boundFormat]]"]=void 0,n["[[initializedDateTimeFormat]]"]=!0,c&&(e.format=Se.call(e));return r(),e}(L(this),e,a):new Z.DateTimeFormat(e,a)}p(Z,"DateTimeFormat",{configurable:!0,writable:!0,value:Te}),p(Te,"prototype",{writable:!1});var ke={weekday:["narrow","short","long"],era:["narrow","short","long"],year:["2-digit","numeric"],month:["2-digit","numeric","narrow","short","long"],day:["2-digit","numeric"],hour:["2-digit","numeric"],minute:["2-digit","numeric"],second:["2-digit","numeric"],timeZoneName:["short","long"]};function _e(e,a,t){if(void 0===e)e=null;else{var n=L(e);e=new S;for(var r in n)e[r]=n[r]}e=y(e);var o=!0;return"date"!==a&&"any"!==a||void 0===e.weekday&&void 0===e.year&&void 0===e.month&&void 0===e.day||(o=!1),"time"!==a&&"any"!==a||void 0===e.hour&&void 0===e.minute&&void 0===e.second||(o=!1),!o||"date"!==t&&"all"!==t||(e.year=e.month=e.day="numeric"),!o||"time"!==t&&"all"!==t||(e.hour=e.minute=e.second="numeric"),e}function Se(){var e=null!==this&&"object"===d.typeof(this)&&j(this);if(!e||!e["[[initializedDateTimeFormat]]"])throw new TypeError("`this` value for format() is not an initialized Intl.DateTimeFormat object.");if(void 0===e["[[boundFormat]]"]){var a=T.call(function(){var e=arguments.length<=0||void 0===arguments[0]?void 0:arguments[0];return Ne(this,void 0===e?Date.now():F(e))},this);e["[[boundFormat]]"]=a}return e["[[boundFormat]]"]}function Ee(e,a){if(!isFinite(a))throw new RangeError("Invalid valid date passed to format");var t=e.__getInternalProperties(_);N();for(var n,r,o,i,s=t["[[locale]]"],l=new Z.NumberFormat([s],{useGrouping:!1}),u=new Z.NumberFormat([s],{minimumIntegerDigits:2,useGrouping:!1}),d=(n=a,t["[[calendar]]"],r=t["[[timeZone]]"],new S({"[[weekday]]":(o=new Date(n))[(i="get"+(r||""))+"Day"](),"[[era]]":+(o[i+"FullYear"]()>=0),"[[year]]":o[i+"FullYear"](),"[[month]]":o[i+"Month"](),"[[day]]":o[i+"Date"](),"[[hour]]":o[i+"Hours"](),"[[minute]]":o[i+"Minutes"](),"[[second]]":o[i+"Seconds"](),"[[inDST]]":!1})),h=t["[[pattern]]"],c=new E,m=0,p=h.indexOf("{"),f=0,y=t["[[dataLocale]]"],v=k.DateTimeFormat["[[localeData]]"][y].calendars,g=t["[[calendar]]"];-1!==p;){var M=void 0;if(-1===(f=h.indexOf("}",p)))throw new Error("Unclosed pattern");p>m&&b.call(c,{type:"literal",value:h.substring(m,p)});var w=h.substring(p+1,f);if(ke.hasOwnProperty(w)){var T=t["[["+w+"]]"],L=d["[["+w+"]]"];if("year"===w&&L<=0?L=1-L:"month"===w?L++:"hour"===w&&!0===t["[[hour12]]"]&&0===(L%=12)&&!0===t["[[hourNo0]]"]&&(L=12),"numeric"===T)M=re(l,L);else if("2-digit"===T)(M=re(u,L)).length>2&&(M=M.slice(-2));else if(T in Me)switch(w){case"month":M=we(v,g,"months",T,d["[["+w+"]]"]);break;case"weekday":try{M=we(v,g,"days",T,d["[["+w+"]]"])}catch(e){throw new Error("Could not find weekday data for locale "+s)}break;case"timeZoneName":M="";break;case"era":try{M=we(v,g,"eras",T,d["[["+w+"]]"])}catch(e){throw new Error("Could not find era data for locale "+s)}break;default:M=d["[["+w+"]]"]}b.call(c,{type:w,value:M})}else if("ampm"===w){M=we(v,g,"dayPeriods",d["[[hour]]"]>11?"pm":"am",null),b.call(c,{type:"dayPeriod",value:M})}else b.call(c,{type:"literal",value:h.substring(p,f+1)});m=f+1,p=h.indexOf("{",m)}return f<h.length-1&&b.call(c,{type:"literal",value:h.substr(f+1)}),c}function Ne(e,a){for(var t=Ee(e,a),n="",r=0;t.length>r;r++){n+=t[r].value}return n}k.DateTimeFormat={"[[availableLocales]]":[],"[[relevantExtensionKeys]]":["ca","nu"],"[[localeData]]":{}},p(Z.DateTimeFormat,"supportedLocalesOf",{configurable:!0,writable:!0,value:T.call(function(e){if(!m.call(this,"[[availableLocales]]"))throw new TypeError("supportedLocalesOf() is not a constructor");var a=N(),t=arguments[1],n=this["[[availableLocales]]"],r=U(e);return a(),Q(n,r,t)},k.NumberFormat)}),p(Z.DateTimeFormat.prototype,"format",{configurable:!0,get:Se}),Object.defineProperty(Z.DateTimeFormat.prototype,"formatToParts",{enumerable:!1,writable:!0,configurable:!0,value:function(){var e=arguments.length<=0||void 0===arguments[0]?void 0:arguments[0],a=null!==this&&"object"===d.typeof(this)&&j(this);if(!a||!a["[[initializedDateTimeFormat]]"])throw new TypeError("`this` value for formatToParts() is not an initialized Intl.DateTimeFormat object.");return function(e,a){for(var t=Ee(e,a),n=[],r=0;t.length>r;r++){var o=t[r];n.push({type:o.type,value:o.value})}return n}(this,void 0===e?Date.now():F(e))}}),p(Z.DateTimeFormat.prototype,"resolvedOptions",{writable:!0,configurable:!0,value:function(){var e=void 0,a=new S,t=["locale","calendar","numberingSystem","timeZone","hour12","weekday","era","year","month","day","hour","minute","second","timeZoneName"],n=null!==this&&"object"===d.typeof(this)&&j(this);if(!n||!n["[[initializedDateTimeFormat]]"])throw new TypeError("`this` value for resolvedOptions() is not an initialized Intl.DateTimeFormat object.");for(var r=0,o=t.length;r<o;r++)m.call(n,e="[["+t[r]+"]]")&&(a[t[r]]={value:n[e],writable:!0,configurable:!0,enumerable:!0});return y({},a)}});var Le=Z.__localeSensitiveProtos={Number:{},Date:{}};Le.Number.toLocaleString=function(){if("[object Number]"!==Object.prototype.toString.call(this))throw new TypeError("`this` value must be a number for Number.prototype.toLocaleString()");return re(new ae(arguments[0],arguments[1]),this)},Le.Date.toLocaleString=function(){if("[object Date]"!==Object.prototype.toString.call(this))throw new TypeError("`this` value must be a Date instance for Date.prototype.toLocaleString()");var e=+this;if(isNaN(e))return"Invalid Date";var a=arguments[0],t=arguments[1];return Ne(new Te(a,t=_e(t,"any","all")),e)},Le.Date.toLocaleDateString=function(){if("[object Date]"!==Object.prototype.toString.call(this))throw new TypeError("`this` value must be a Date instance for Date.prototype.toLocaleDateString()");var e=+this;if(isNaN(e))return"Invalid Date";var a=arguments[0],t=arguments[1];return Ne(new Te(a,t=_e(t,"date","date")),e)},Le.Date.toLocaleTimeString=function(){if("[object Date]"!==Object.prototype.toString.call(this))throw new TypeError("`this` value must be a Date instance for Date.prototype.toLocaleTimeString()");var e=+this;if(isNaN(e))return"Invalid Date";var a=arguments[0],t=arguments[1];return Ne(new Te(a,t=_e(t,"time","time")),e)},p(Z,"__applyLocaleSensitivePrototypes",{writable:!0,configurable:!0,value:function(){p(Number.prototype,"toLocaleString",{writable:!0,configurable:!0,value:Le.Number.toLocaleString}),p(Date.prototype,"toLocaleString",{writable:!0,configurable:!0,value:Le.Date.toLocaleString});for(var e in Le.Date)m.call(Le.Date,e)&&p(Date.prototype,e,{writable:!0,configurable:!0,value:Le.Date[e]})}}),p(Z,"__addLocaleData",{value:function(e){if(!H(e.locale))throw new Error("Object passed doesn't identify itself with a valid language tag");!function(e,a){if(!e.number)throw new Error("Object passed doesn't contain locale data for Intl.NumberFormat");var t=void 0,n=[a],r=a.split("-");r.length>2&&4===r[1].length&&b.call(n,r[0]+"-"+r[2]);for(;t=w.call(n);)b.call(k.NumberFormat["[[availableLocales]]"],t),k.NumberFormat["[[localeData]]"][t]=e.number,e.date&&(e.date.nu=e.number.nu,b.call(k.DateTimeFormat["[[availableLocales]]"],t),k.DateTimeFormat["[[localeData]]"][t]=e.date);void 0===P&&(o=a,P=o);var o}(e,e.locale)}}),p(Z,"__disableRegExpRestore",{value:function(){k.disableRegExpRestore=!0}}),a.exports=Z}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{}],26:[function(e,a,t){IntlPolyfill.__addLocaleData({locale:"en-US",date:{ca:["gregory","buddhist","chinese","coptic","dangi","ethioaa","ethiopic","generic","hebrew","indian","islamic","islamicc","japanese","persian","roc"],hourNo0:!0,hour12:!0,formats:{short:"{1}, {0}",medium:"{1}, {0}",full:"{1} 'at' {0}",long:"{1} 'at' {0}",availableFormats:{d:"d",E:"ccc",Ed:"d E",Ehm:"E h:mm a",EHm:"E HH:mm",Ehms:"E h:mm:ss a",EHms:"E HH:mm:ss",Gy:"y G",GyMMM:"MMM y G",GyMMMd:"MMM d, y G",GyMMMEd:"E, MMM d, y G",h:"h a",H:"HH",hm:"h:mm a",Hm:"HH:mm",hms:"h:mm:ss a",Hms:"HH:mm:ss",hmsv:"h:mm:ss a v",Hmsv:"HH:mm:ss v",hmv:"h:mm a v",Hmv:"HH:mm v",M:"L",Md:"M/d",MEd:"E, M/d",MMM:"LLL",MMMd:"MMM d",MMMEd:"E, MMM d",MMMMd:"MMMM d",ms:"mm:ss",y:"y",yM:"M/y",yMd:"M/d/y",yMEd:"E, M/d/y",yMMM:"MMM y",yMMMd:"MMM d, y",yMMMEd:"E, MMM d, y",yMMMM:"MMMM y",yQQQ:"QQQ y",yQQQQ:"QQQQ y"},dateFormats:{yMMMMEEEEd:"EEEE, MMMM d, y",yMMMMd:"MMMM d, y",yMMMd:"MMM d, y",yMd:"M/d/yy"},timeFormats:{hmmsszzzz:"h:mm:ss a zzzz",hmsz:"h:mm:ss a z",hms:"h:mm:ss a",hm:"h:mm a"}},calendars:{buddhist:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["BE"],short:["BE"],long:["BE"]},dayPeriods:{am:"AM",pm:"PM"}},chinese:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Mo1","Mo2","Mo3","Mo4","Mo5","Mo6","Mo7","Mo8","Mo9","Mo10","Mo11","Mo12"],long:["Month1","Month2","Month3","Month4","Month5","Month6","Month7","Month8","Month9","Month10","Month11","Month12"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},dayPeriods:{am:"AM",pm:"PM"}},coptic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"],long:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"AM",pm:"PM"}},dangi:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Mo1","Mo2","Mo3","Mo4","Mo5","Mo6","Mo7","Mo8","Mo9","Mo10","Mo11","Mo12"],long:["Month1","Month2","Month3","Month4","Month5","Month6","Month7","Month8","Month9","Month10","Month11","Month12"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},dayPeriods:{am:"AM",pm:"PM"}},ethiopic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"AM",pm:"PM"}},ethioaa:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0"],short:["ERA0"],long:["ERA0"]},dayPeriods:{am:"AM",pm:"PM"}},generic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"AM",pm:"PM"}},gregory:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["B","A","BCE","CE"],short:["BC","AD","BCE","CE"],long:["Before Christ","Anno Domini","Before Common Era","Common Era"]},dayPeriods:{am:"AM",pm:"PM"}},hebrew:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13","7"],short:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"],long:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AM"],short:["AM"],long:["AM"]},dayPeriods:{am:"AM",pm:"PM"}},indian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"],long:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["Saka"],short:["Saka"],long:["Saka"]},dayPeriods:{am:"AM",pm:"PM"}},islamic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"AM",pm:"PM"}},islamicc:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"AM",pm:"PM"}},japanese:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","M","T","S","H"],short:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"],long:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"]},dayPeriods:{am:"AM",pm:"PM"}},persian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"],long:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AP"],short:["AP"],long:["AP"]},dayPeriods:{am:"AM",pm:"PM"}},roc:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["Before R.O.C.","Minguo"],short:["Before R.O.C.","Minguo"],long:["Before R.O.C.","Minguo"]},dayPeriods:{am:"AM",pm:"PM"}}}},number:{nu:["latn"],patterns:{decimal:{positivePattern:"{number}",negativePattern:"{minusSign}{number}"},currency:{positivePattern:"{currency}{number}",negativePattern:"{minusSign}{currency}{number}"},percent:{positivePattern:"{number}{percentSign}",negativePattern:"{minusSign}{number}{percentSign}"}},symbols:{latn:{decimal:".",group:",",nan:"NaN",plusSign:"+",minusSign:"-",percentSign:"%",infinity:"∞"}},currencies:{AUD:"A$",BRL:"R$",CAD:"CA$",CNY:"CN¥",EUR:"€",GBP:"£",HKD:"HK$",ILS:"₪",INR:"₹",JPY:"¥",KRW:"₩",MXN:"MX$",NZD:"NZ$",TWD:"NT$",USD:"$",VND:"₫",XAF:"FCFA",XCD:"EC$",XOF:"CFA",XPF:"CFPF"}}})},{}],27:[function(e,a,t){IntlPolyfill.__addLocaleData({locale:"es",date:{ca:["gregory","buddhist","chinese","coptic","dangi","ethioaa","ethiopic","generic","hebrew","indian","islamic","islamicc","japanese","persian","roc"],hourNo0:!0,hour12:!1,formats:{short:"{1} {0}",medium:"{1} {0}",full:"{1}, {0}",long:"{1}, {0}",availableFormats:{d:"d",E:"ccc",Ed:"E d",Ehm:"E, h:mm a",EHm:"E, H:mm",Ehms:"E, h:mm:ss a",EHms:"E, H:mm:ss",Gy:"y G",GyMMM:"MMM y G",GyMMMd:"d MMM y G",GyMMMEd:"E, d MMM y G",GyMMMM:"MMMM 'de' y G",GyMMMMd:"d 'de' MMMM 'de' y G",GyMMMMEd:"E, d 'de' MMMM 'de' y G",h:"h a",H:"H",hm:"h:mm a",Hm:"H:mm",hms:"h:mm:ss a",Hms:"H:mm:ss",hmsv:"h:mm:ss a v",Hmsv:"H:mm:ss v",hmsvvvv:"h:mm:ss a (vvvv)",Hmsvvvv:"H:mm:ss (vvvv)",hmv:"h:mm a v",Hmv:"H:mm v",M:"L",Md:"d/M",MEd:"E, d/M",MMd:"d/M",MMdd:"d/M",MMM:"LLL",MMMd:"d MMM",MMMEd:"E, d MMM",MMMMd:"d 'de' MMMM",MMMMEd:"E, d 'de' MMMM",ms:"mm:ss",y:"y",yM:"M/y",yMd:"d/M/y",yMEd:"EEE, d/M/y",yMM:"M/y",yMMM:"MMM y",yMMMd:"d MMM y",yMMMEd:"EEE, d MMM y",yMMMM:"MMMM 'de' y",yMMMMd:"d 'de' MMMM 'de' y",yMMMMEd:"EEE, d 'de' MMMM 'de' y",yQQQ:"QQQ y",yQQQQ:"QQQQ 'de' y"},dateFormats:{yMMMMEEEEd:"EEEE, d 'de' MMMM 'de' y",yMMMMd:"d 'de' MMMM 'de' y",yMMMd:"d MMM y",yMd:"d/M/yy"},timeFormats:{hmmsszzzz:"H:mm:ss (zzzz)",hmsz:"H:mm:ss z",hms:"H:mm:ss",hm:"H:mm"}},calendars:{buddhist:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["BE"],short:["BE"],long:["BE"]},dayPeriods:{am:"a. m.",pm:"p. m."}},chinese:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},dayPeriods:{am:"a. m.",pm:"p. m."}},coptic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"],long:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"a. m.",pm:"p. m."}},dangi:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},dayPeriods:{am:"a. m.",pm:"p. m."}},ethiopic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"a. m.",pm:"p. m."}},ethioaa:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0"],short:["ERA0"],long:["ERA0"]},dayPeriods:{am:"a. m.",pm:"p. m."}},generic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"a. m.",pm:"p. m."}},gregory:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["a. C.","d. C.","a. e. c.","e. c."],short:["a. C.","d. C.","a. e. c.","e. c."],long:["antes de Cristo","después de Cristo","antes de la era común","era común"]},dayPeriods:{am:"a. m.",pm:"p. m."}},hebrew:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13","7"],short:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"],long:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AM"],short:["AM"],long:["AM"]},dayPeriods:{am:"a. m.",pm:"p. m."}},indian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"],long:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["Saka"],short:["Saka"],long:["Saka"]},dayPeriods:{am:"a. m.",pm:"p. m."}},islamic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"a. m.",pm:"p. m."}},islamicc:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"a. m.",pm:"p. m."}},japanese:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","M","T","S","H"],short:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"],long:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"]},dayPeriods:{am:"a. m.",pm:"p. m."}},persian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"],long:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AP"],short:["AP"],long:["AP"]},dayPeriods:{am:"a. m.",pm:"p. m."}},roc:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["antes de R.O.C.","R.O.C."],short:["antes de R.O.C.","R.O.C."],long:["antes de R.O.C.","R.O.C."]},dayPeriods:{am:"a. m.",pm:"p. m."}}}},number:{nu:["latn"],patterns:{decimal:{positivePattern:"{number}",negativePattern:"{minusSign}{number}"},currency:{positivePattern:"{number} {currency}",negativePattern:"{minusSign}{number} {currency}"},percent:{positivePattern:"{number} {percentSign}",negativePattern:"{minusSign}{number} {percentSign}"}},symbols:{latn:{decimal:",",group:".",nan:"NaN",plusSign:"+",minusSign:"-",percentSign:"%",infinity:"∞"}},currencies:{CAD:"CA$",ESP:"₧",EUR:"€",THB:"฿",USD:"$",VND:"₫",XPF:"CFPF"}}})},{}],28:[function(e,a,t){a.exports=Array.isArray||function(e){return"[object Array]"==Object.prototype.toString.call(e)}},{}],29:[function(e,a,t){"use strict";var n,r="http://www.w3.org/1999/xhtml",o="undefined"==typeof document?void 0:document,i=o?o.body||o.createElement("div"):{},s=i.hasAttributeNS?function(e,a,t){return e.hasAttributeNS(a,t)}:i.hasAttribute?function(e,a,t){return e.hasAttribute(t)}:function(e,a,t){return null!=e.getAttributeNode(a,t)};function l(e,a){var t=e.nodeName,n=a.nodeName;return t===n||!!(a.actualize&&t.charCodeAt(0)<91&&n.charCodeAt(0)>90)&&t===n.toUpperCase()}function u(e,a,t){e[t]!==a[t]&&(e[t]=a[t],e[t]?e.setAttribute(t,""):e.removeAttribute(t,""))}var d={OPTION:function(e,a){u(e,a,"selected")},INPUT:function(e,a){u(e,a,"checked"),u(e,a,"disabled"),e.value!==a.value&&(e.value=a.value),s(a,null,"value")||e.removeAttribute("value")},TEXTAREA:function(e,a){var t=a.value;e.value!==t&&(e.value=t);var n=e.firstChild;if(n){var r=n.nodeValue;if(r==t||!t&&r==e.placeholder)return;n.nodeValue=t}},SELECT:function(e,a){if(!s(a,null,"multiple")){for(var t=0,n=a.firstChild;n;){var r=n.nodeName;if(r&&"OPTION"===r.toUpperCase()){if(s(n,null,"selected")){t;break}t++}n=n.nextSibling}e.selectedIndex=t}}},h=1,c=3,m=8;function p(){}function f(e){return e.id}var y,v=(y=function(e,a){var t,n,r,o,i,l=a.attributes;for(t=l.length-1;t>=0;--t)r=(n=l[t]).name,o=n.namespaceURI,i=n.value,o?(r=n.localName||r,e.getAttributeNS(o,r)!==i&&e.setAttributeNS(o,r,i)):e.getAttribute(r)!==i&&e.setAttribute(r,i);for(t=(l=e.attributes).length-1;t>=0;--t)!1!==(n=l[t]).specified&&(r=n.name,(o=n.namespaceURI)?(r=n.localName||r,s(a,o,r)||e.removeAttributeNS(o,r)):s(a,null,r)||e.removeAttribute(r))},function(e,a,t){if(t||(t={}),"string"==typeof a)if("#document"===e.nodeName||"HTML"===e.nodeName){var i=a;(a=o.createElement("html")).innerHTML=i}else s=a,!n&&o.createRange&&(n=o.createRange()).selectNode(o.body),n&&n.createContextualFragment?u=n.createContextualFragment(s):(u=o.createElement("body")).innerHTML=s,a=u.childNodes[0];var s,u,v,g=t.getNodeKey||f,b=t.onBeforeNodeAdded||p,M=t.onNodeAdded||p,w=t.onBeforeElUpdated||p,T=t.onElUpdated||p,k=t.onBeforeNodeDiscarded||p,_=t.onNodeDiscarded||p,S=t.onBeforeElChildrenUpdated||p,E=!0===t.childrenOnly,N={};function L(e){v?v.push(e):v=[e]}function F(e,a,t){!1!==k(e)&&(a&&a.removeChild(e),_(e),function e(a,t){if(a.nodeType===h)for(var n=a.firstChild;n;){var r=void 0;t&&(r=g(n))?L(r):(_(n),n.firstChild&&e(n,t)),n=n.nextSibling}}(e,t))}function K(e){M(e);for(var a=e.firstChild;a;){var t=a.nextSibling,n=g(a);if(n){var r=N[n];r&&l(a,r)&&(a.parentNode.replaceChild(r,a),j(r,a))}K(a),a=t}}function j(t,n,r){var i,s=g(n);if(s&&delete N[s],!a.isSameNode||!a.isSameNode(e)){if(!r){if(!1===w(t,n))return;if(y(t,n),T(t),!1===S(t,n))return}if("TEXTAREA"!==t.nodeName){var u,p,f,v,M=n.firstChild,k=t.firstChild;e:for(;M;){for(f=M.nextSibling,u=g(M);k;){if(p=k.nextSibling,M.isSameNode&&M.isSameNode(k)){M=f,k=p;continue e}i=g(k);var _=k.nodeType,E=void 0;if(_===M.nodeType&&(_===h?(u?u!==i&&((v=N[u])?k.nextSibling===v?E=!1:(t.insertBefore(v,k),p=k.nextSibling,i?L(i):F(k,t,!0),k=v):E=!1):i&&(E=!1),(E=!1!==E&&l(k,M))&&j(k,M)):_!==c&&_!=m||(E=!0,k.nodeValue!==M.nodeValue&&(k.nodeValue=M.nodeValue))),E){M=f,k=p;continue e}i?L(i):F(k,t,!0),k=p}if(u&&(v=N[u])&&l(v,M))t.appendChild(v),j(v,M);else{var x=b(M);!1!==x&&(x&&(M=x),M.actualize&&(M=M.actualize(t.ownerDocument||o)),t.appendChild(M),K(M))}M=f,k=p}for(;k;)p=k.nextSibling,(i=g(k))?L(i):F(k,t,!0),k=p}var D=d[t.nodeName];D&&D(t,n)}}!function e(a){if(a.nodeType===h)for(var t=a.firstChild;t;){var n=g(t);n&&(N[n]=t),e(t),t=t.nextSibling}}(e);var x,D,A=e,R=A.nodeType,I=a.nodeType;if(!E)if(R===h)I===h?l(e,a)||(_(e),A=function(e,a){for(var t=e.firstChild;t;){var n=t.nextSibling;a.appendChild(t),t=n}return a}(e,(x=a.nodeName,(D=a.namespaceURI)&&D!==r?o.createElementNS(D,x):o.createElement(x)))):A=a;else if(R===c||R===m){if(I===R)return A.nodeValue!==a.nodeValue&&(A.nodeValue=a.nodeValue),A;A=a}if(A===a)_(e);else if(j(A,a,E),v)for(var C=0,P=v.length;C<P;C++){var O=N[v[C]];O&&F(O,O.parentNode,!1)}return!E&&A!==e&&e.parentNode&&(A.actualize&&(A=A.actualize(e.ownerDocument||o)),e.parentNode.replaceChild(A,e)),A});a.exports=v},{}],30:[function(e,a,t){function n(e,a){if(!e)throw new Error(a||"AssertionError")}n.notEqual=function(e,a,t){n(e!=a,t)},n.notOk=function(e,a){n(!e,a)},n.equal=function(e,a,t){n(e==a,t)},n.ok=n,a.exports=n},{}],31:[function(e,a,t){var n=e("global/document"),r=e("global/window"),o=e("assert"),i=Object.create(null),s="onloadid"+(new Date%9e6).toString(36),l="data-"+s,u=0;if(r&&r.MutationObserver){var d=new MutationObserver(function(e){if(!(Object.keys(i).length<1))for(var a=0;a<e.length;a++)e[a].attributeName!==l?(f(e[a].removedNodes,m),f(e[a].addedNodes,c)):p(e[a],c,m)});n.body?h(d):n.addEventListener("DOMContentLoaded",function(e){h(d)})}function h(e){e.observe(n.body,{childList:!0,subtree:!0,attributes:!0,attributeOldValue:!0,attributeFilter:[l]})}function c(e,a){i[e][0]&&0===i[e][2]&&(i[e][0](a),i[e][2]=1)}function m(e,a){i[e][1]&&1===i[e][2]&&(i[e][1](a),i[e][2]=0)}function p(e,a,t){var n,r,o=e.target.getAttribute(l);(n=e.oldValue,r=o,n&&r&&i[n][3]===i[r][3])?i[o]=i[e.oldValue]:(i[e.oldValue]&&t(e.oldValue,e.target),i[o]&&a(o,e.target))}function f(e,a){for(var t=Object.keys(i),n=0;n<e.length;n++){if(e[n]&&e[n].getAttribute&&e[n].getAttribute(l)){var r=e[n].getAttribute(l);t.forEach(function(t){r===t&&a(t,e[n])})}e[n].childNodes.length>0&&f(e[n].childNodes,a)}}a.exports=function e(a,t,r,s){return o(n.body,"on-load: will not work prior to DOMContentLoaded"),t=t||function(){},r=r||function(){},a.setAttribute(l,"o"+u),i["o"+u]=[t,r,0,s||e.caller],u+=1,a},a.exports.KEY_ATTR=l,a.exports.KEY_ID=s},{assert:30,"global/document":3,"global/window":4}],32:[function(e,a,t){(function(t){"use strict";var n=e("path-to-regexp");a.exports=c;var r,o,i="undefined"!=typeof document&&document.ontouchstart?"touchstart":"click",s="undefined"!=typeof window&&(window.history.location||window.location),l=!0,u=!0,d="",h=!1;function c(e,a){if("function"==typeof e)return c("*",e);if("function"==typeof a)for(var t=new f(e),n=1;n<arguments.length;++n)c.callbacks.push(t.middleware(arguments[n]));else"string"==typeof e?c["string"==typeof a?"redirect":"show"](e,a):c.start(e)}function m(e){return"string"!=typeof e?e:u?decodeURIComponent(e.replace(/\+/g," ")):e}function p(e,a){"/"===e[0]&&0!==e.indexOf(d)&&(e=d+(h?"#!":"")+e);var t=e.indexOf("?");if(this.canonicalPath=e,this.path=e.replace(d,"")||"/",h&&(this.path=this.path.replace("#!","")||"/"),this.title=document.title,this.state=a||{},this.state.path=e,this.querystring=~t?m(e.slice(t+1)):"",this.pathname=m(~t?e.slice(0,t):e),this.params={},this.hash="",!h){if(!~this.path.indexOf("#"))return;var n=this.path.split("#");this.path=n[0],this.hash=m(n[1])||"",this.querystring=this.querystring.split("#")[0]}}function f(e,a){a=a||{},this.path="*"===e?"(.*)":e,this.method="GET",this.regexp=n(this.path,this.keys=[],a)}c.callbacks=[],c.exits=[],c.current="",c.len=0,c.base=function(e){if(0===arguments.length)return d;d=e},c.start=function(e){if(e=e||{},!r&&(r=!0,!1===e.dispatch&&(l=!1),!1===e.decodeURLComponents&&(u=!1),!1!==e.popstate&&window.addEventListener("popstate",y,!1),!1!==e.click&&document.addEventListener(i,v,!1),!0===e.hashbang&&(h=!0),l)){var a=h&&~s.hash.indexOf("#!")?s.hash.substr(2)+s.search:s.pathname+s.search+s.hash;c.replace(a,null,!0,l)}},c.stop=function(){r&&(c.current="",c.len=0,r=!1,document.removeEventListener(i,v,!1),window.removeEventListener("popstate",y,!1))},c.show=function(e,a,t,n){var r=new p(e,a);return c.current=r.path,!1!==t&&c.dispatch(r),!1!==r.handled&&!1!==n&&r.pushState(),r},c.back=function(e,a){c.len>0?(history.back(),c.len--):e?setTimeout(function(){c.show(e,a)}):setTimeout(function(){c.show(d,a)})},c.redirect=function(e,a){"string"==typeof e&&"string"==typeof a&&c(e,function(e){setTimeout(function(){c.replace(a)},0)}),"string"==typeof e&&void 0===a&&setTimeout(function(){c.replace(e)},0)},c.replace=function(e,a,t,n){var r=new p(e,a);return c.current=r.path,r.init=t,r.save(),!1!==n&&c.dispatch(r),r},c.dispatch=function(e){var a=o,t=0,n=0;function r(){var a=c.callbacks[t++];if(e.path===c.current)return a?void a(e,r):function(e){if(e.handled)return;var a;a=h?d+s.hash.replace("#!",""):s.pathname+s.search;if(a===e.canonicalPath)return;c.stop(),e.handled=!1,s.href=e.canonicalPath}(e);e.handled=!1}o=e,a?function e(){var t=c.exits[n++];if(!t)return r();t(a,e)}():r()},c.exit=function(e,a){if("function"==typeof e)return c.exit("*",e);for(var t=new f(e),n=1;n<arguments.length;++n)c.exits.push(t.middleware(arguments[n]))},c.Context=p,p.prototype.pushState=function(){c.len++,history.pushState(this.state,this.title,h&&"/"!==this.path?"#!"+this.path:this.canonicalPath)},p.prototype.save=function(){history.replaceState(this.state,this.title,h&&"/"!==this.path?"#!"+this.path:this.canonicalPath)},c.Route=f,f.prototype.middleware=function(e){var a=this;return function(t,n){if(a.match(t.path,t.params))return e(t,n);n()}},f.prototype.match=function(e,a){var t=this.keys,n=e.indexOf("?"),r=~n?e.slice(0,n):e,o=this.regexp.exec(decodeURIComponent(r));if(!o)return!1;for(var i=1,s=o.length;i<s;++i){var l=t[i-1],u=m(o[i]);void 0===u&&hasOwnProperty.call(a,l.name)||(a[l.name]=u)}return!0};var y=function(){var e=!1;if("undefined"!=typeof window)return"complete"===document.readyState?e=!0:window.addEventListener("load",function(){setTimeout(function(){e=!0},0)}),function(a){if(e)if(a.state){var t=a.state.path;c.replace(t,a.state)}else c.show(s.pathname+s.hash,void 0,void 0,!1)}}();function v(e){var a;if(1===(null===(a=(a=e)||window.event).which?a.button:a.which)&&!(e.metaKey||e.ctrlKey||e.shiftKey||e.defaultPrevented)){for(var n=e.path?e.path[0]:e.target;n&&"A"!==n.nodeName;)n=n.parentNode;if(n&&"A"===n.nodeName&&!n.hasAttribute("download")&&"external"!==n.getAttribute("rel")){var r=n.getAttribute("href");if((h||n.pathname!==s.pathname||!n.hash&&"#"!==r)&&!(r&&r.indexOf("mailto:")>-1)&&!n.target&&g(n.href)){var o=n.pathname+n.search+(n.hash||"");void 0!==t&&o.match(/^\/[a-zA-Z]:\//)&&(o=o.replace(/^\/[a-zA-Z]:\//,"/"));var i=o;0===o.indexOf(d)&&(o=o.substr(d.length)),h&&(o=o.replace("#!","")),d&&i===o||(e.preventDefault(),c.show(i))}}}}function g(e){var a=s.protocol+"//"+s.hostname;return s.port&&(a+=":"+s.port),e&&0===e.indexOf(a)}c.sameOrigin=g}).call(this,e("_process"))},{_process:34,"path-to-regexp":33}],33:[function(e,a,t){var n=e("isarray");a.exports=h,a.exports.parse=o,a.exports.compile=function(e){return i(o(e))},a.exports.tokensToFunction=i,a.exports.tokensToRegExp=d;var r=new RegExp(["(\\\\.)","([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^()])+)\\))?|\\(((?:\\\\.|[^()])+)\\))([+*?])?|(\\*))"].join("|"),"g");function o(e){for(var a,t,n=[],o=0,i=0,s="";null!=(a=r.exec(e));){var l=a[0],u=a[1],d=a.index;if(s+=e.slice(i,d),i=d+l.length,u)s+=u[1];else{s&&(n.push(s),s="");var h=a[2],c=a[3],m=a[4],p=a[5],f=a[6],y=a[7],v="+"===f||"*"===f,g="?"===f||"*"===f,b=h||"/",M=m||p||(y?".*":"[^"+b+"]+?");n.push({name:c||o++,prefix:h||"",delimiter:b,optional:g,repeat:v,pattern:(t=M,t.replace(/([=!:$\/()])/g,"\\$1"))})}}return i<e.length&&(s+=e.substr(i)),s&&n.push(s),n}function i(e){for(var a=new Array(e.length),t=0;t<e.length;t++)"object"==typeof e[t]&&(a[t]=new RegExp("^"+e[t].pattern+"$"));return function(t){for(var r="",o=t||{},i=0;i<e.length;i++){var s=e[i];if("string"!=typeof s){var l,u=o[s.name];if(null==u){if(s.optional)continue;throw new TypeError('Expected "'+s.name+'" to be defined')}if(n(u)){if(!s.repeat)throw new TypeError('Expected "'+s.name+'" to not repeat, but received "'+u+'"');if(0===u.length){if(s.optional)continue;throw new TypeError('Expected "'+s.name+'" to not be empty')}for(var d=0;d<u.length;d++){if(l=encodeURIComponent(u[d]),!a[i].test(l))throw new TypeError('Expected all "'+s.name+'" to match "'+s.pattern+'", but received "'+l+'"');r+=(0===d?s.prefix:s.delimiter)+l}}else{if(l=encodeURIComponent(u),!a[i].test(l))throw new TypeError('Expected "'+s.name+'" to match "'+s.pattern+'", but received "'+l+'"');r+=s.prefix+l}}else r+=s}return r}}function s(e){return e.replace(/([.+*?=^!:${}()[\]|\/])/g,"\\$1")}function l(e,a){return e.keys=a,e}function u(e){return e.sensitive?"":"i"}function d(e,a){for(var t=(a=a||{}).strict,n=!1!==a.end,r="",o=e[e.length-1],i="string"==typeof o&&/\/$/.test(o),l=0;l<e.length;l++){var d=e[l];if("string"==typeof d)r+=s(d);else{var h=s(d.prefix),c=d.pattern;d.repeat&&(c+="(?:"+h+c+")*"),r+=c=d.optional?h?"(?:"+h+"("+c+"))?":"("+c+")?":h+"("+c+")"}}return t||(r=(i?r.slice(0,-2):r)+"(?:\\/(?=$))?"),r+=n?"$":t&&i?"":"(?=\\/|$)",new RegExp("^"+r,u(a))}function h(e,a,t){return n(a=a||[])?t||(t={}):(t=a,a=[]),e instanceof RegExp?function(e,a){var t=e.source.match(/\((?!\?)/g);if(t)for(var n=0;n<t.length;n++)a.push({name:n,prefix:null,delimiter:null,optional:!1,repeat:!1,pattern:null});return l(e,a)}(e,a):n(e)?function(e,a,t){for(var n=[],r=0;r<e.length;r++)n.push(h(e[r],a,t).source);return l(new RegExp("(?:"+n.join("|")+")",u(t)),a)}(e,a,t):function(e,a,t){for(var n=o(e),r=d(n,t),i=0;i<n.length;i++)"string"!=typeof n[i]&&a.push(n[i]);return l(r,a)}(e,a,t)}},{isarray:28}],34:[function(e,a,t){var n,r,o=a.exports={};function i(){throw new Error("setTimeout has not been defined")}function s(){throw new Error("clearTimeout has not been defined")}function l(e){if(n===setTimeout)return setTimeout(e,0);if((n===i||!n)&&setTimeout)return n=setTimeout,setTimeout(e,0);try{return n(e,0)}catch(a){try{return n.call(null,e,0)}catch(a){return n.call(this,e,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:i}catch(e){n=i}try{r="function"==typeof clearTimeout?clearTimeout:s}catch(e){r=s}}();var u,d=[],h=!1,c=-1;function m(){h&&u&&(h=!1,u.length?d=u.concat(d):c=-1,d.length&&p())}function p(){if(!h){var e=l(m);h=!0;for(var a=d.length;a;){for(u=d,d=[];++c<a;)u&&u[c].run();c=-1,a=d.length}u=null,h=!1,function(e){if(r===clearTimeout)return clearTimeout(e);if((r===s||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(e);try{r(e)}catch(a){try{return r.call(null,e)}catch(a){return r.call(this,e)}}}(e)}}function f(e,a){this.fun=e,this.array=a}function y(){}o.nextTick=function(e){var a=new Array(arguments.length-1);if(arguments.length>1)for(var t=1;t<arguments.length;t++)a[t-1]=arguments[t];d.push(new f(e,a)),1!==d.length||h||l(p)},f.prototype.run=function(){this.fun.apply(null,this.array)},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=y,o.addListener=y,o.once=y,o.off=y,o.removeListener=y,o.removeAllListeners=y,o.emit=y,o.prependListener=y,o.prependOnceListener=y,o.listeners=function(e){return[]},o.binding=function(e){throw new Error("process.binding is not supported")},o.cwd=function(){return"/"},o.chdir=function(e){throw new Error("process.chdir is not supported")},o.umask=function(){return 0}},{}],35:[function(e,a,t){var n=document.title;function r(e){var a=1,t=arguments;document.title=e.replace(/%[os]/g,function(e){switch(e){case"%o":return n;case"%s":return t[a++]}})}(a.exports=r).reset=function(){r(n)}},{}],36:[function(e,a,t){var n=e("bel"),r=e("morphdom"),o=e("./update-events.js");a.exports=n,a.exports.update=function(e,a,t){return t||(t={}),!1!==t.events&&(t.onBeforeElUpdated||(t.onBeforeElUpdated=function(e,a){for(var n=t.events||o,r=0;r<n.length;r++){var i=n[r];a[i]?e[i]=a[i]:e[i]&&(e[i]=void 0)}var s=e.value,l=a.value;"INPUT"===e.nodeName&&"file"!==e.type||"SELECT"===e.nodeName?l||a.hasAttribute("value")?l!==s&&(e.value=l):a.value=e.value:"TEXTAREA"===e.nodeName&&null===a.getAttribute("value")&&(e.value=a.value)})),r(e,a,t)}},{"./update-events.js":37,bel:1,morphdom:29}],37:[function(e,a,t){a.exports=["onclick","ondblclick","onmousedown","onmouseup","onmouseover","onmousemove","onmouseout","ondragstart","ondrag","ondragenter","ondragleave","ondragover","ondrop","ondragend","onkeydown","onkeypress","onkeyup","onunload","onabort","onerror","onresize","onscroll","onselect","onchange","onsubmit","onreset","onfocus","onblur","oninput","oncontextmenu","onfocusin","onfocusout"]},{}],38:[function(e,a,t){"use strict";var n,r=e("page"),o=(n=r)&&n.__esModule?n:{default:n};e("./views/home"),e("./views/signup"),e("./views/signin"),(0,o.default)()},{"./views/home":42,"./views/signin":47,"./views/signup":49,page:32}],39:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={likes:"{likes, plural, =1 { # like }other { # likes }}"}},{}],40:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={likes:"{likes, number} me gusta"}},{}],41:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=o(e("./es")),r=o(e("./en-US"));function o(e){return e&&e.__esModule?e:{default:e}}window.Intl||(window.Intl=e("intl"),e("intl/locale-data/jsonp/en-US"),e("intl/locale-data/jsonp/es"));var i=window.IntlRelativeFormat=e("intl-relativeformat");e("intl-relativeformat/dist/locale-data/en"),e("intl-relativeformat/dist/locale-data/es");var s=window.IntlMessageFormat=e("intl-messageformat"),l={};l.es=n.default,l["en-US"]=r.default;t.default={message:function(e){var a=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return new s(l["en-US"][e],"en-US",null).format(a)},date:new i("en-US")}},{"./en-US":39,"./es":40,intl:24,"intl-messageformat":9,"intl-relativeformat":18,"intl-relativeformat/dist/locale-data/en":16,"intl-relativeformat/dist/locale-data/es":17,"intl/locale-data/jsonp/en-US":26,"intl/locale-data/jsonp/es":27}],42:[function(e,a,t){"use strict";var n=i(e("page")),r=i(e("./template")),o=i(e("title"));function i(e){return e&&e.__esModule?e:{default:e}}var s=document.getElementById("main-container"),l=[{url:"./images/Ruta_Platzi.png",user:{avatar:"https://static.platzi.com/media/avatars/JackCres_8fd44b90-2b85-41aa-bf83-0da695b2e702.png",username:"JackCres"},likes:1,liked:!1,date:new Date},{url:"./images/office.jpg",user:{avatar:"https://static.platzi.com/media/avatars/JackCres_8fd44b90-2b85-41aa-bf83-0da695b2e702.png",username:"JackCres"},likes:1,liked:!0,date:(new Date).setDate((new Date).getDate()-10)}];(0,n.default)("/",function(){(0,o.default)("Melygram"),s.innerHTML="",s.appendChild((0,r.default)(l))})},{"./template":43,page:32,title:35}],43:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n,r,o=(n=['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ',"\n      </div>\n    </div>\n  </div>"],r=['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ',"\n      </div>\n    </div>\n  </div>"],Object.freeze(Object.defineProperties(n,{raw:{value:Object.freeze(r)}})));t.default=function(e){var a=(0,i.default)(o,e.map(function(e){return(0,l.default)(e)}));return(0,s.default)(a)};var i=u(e("yo-yo")),s=u(e("../layout")),l=u(e("../picture-card"));function u(e){return e&&e.__esModule?e:{default:e}}},{"../layout":45,"../picture-card":46,"yo-yo":36}],44:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n,r,o=(n=['<div class="container landing">\n    <div class="row">\n      <div class="col s10 m12 push-s1">\n        <div class="row">\n          <div class="col m5 hide-on-small-only">\n            <img src="./images/iphone.png" class="iphone">\n          </div>\n\n          ',"\n        </div>\n      </div>\n    </div>\n  </div>"],r=['<div class="container landing">\n    <div class="row">\n      <div class="col s10 m12 push-s1">\n        <div class="row">\n          <div class="col m5 hide-on-small-only">\n            <img src="./images/iphone.png" class="iphone">\n          </div>\n\n          ',"\n        </div>\n      </div>\n    </div>\n  </div>"],Object.freeze(Object.defineProperties(n,{raw:{value:Object.freeze(r)}})));t.default=function(e){return(0,l.default)(o,e)};var i,s=e("yo-yo"),l=(i=s)&&i.__esModule?i:{default:i}},{"yo-yo":36}],45:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n,r,o=(n=['<div>\n    <nav class="header">\n      <div class="wrapper">\n        <div class="container">\n          <div class="row">\n            <div class="col s6 m4">\n              <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n            </div>\n\n            <div class="col s3 m2 offset-m6 offset-s3">\n              <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                <i class="fa fa-user" aria-hidden="true"></i>\n              </a>\n              <ul id="drop-user" class="dropdown-content">\n                <li><a href="#">Salir</a></li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </nav>\n    <div class="content">\n      ',"\n    </div>\n  </div>"],r=['<div>\n    <nav class="header">\n      <div class="wrapper">\n        <div class="container">\n          <div class="row">\n            <div class="col s6 m4">\n              <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n            </div>\n\n            <div class="col s3 m2 offset-m6 offset-s3">\n              <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                <i class="fa fa-user" aria-hidden="true"></i>\n              </a>\n              <ul id="drop-user" class="dropdown-content">\n                <li><a href="#">Salir</a></li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n    </nav>\n    <div class="content">\n      ',"\n    </div>\n  </div>"],Object.freeze(Object.defineProperties(n,{raw:{value:Object.freeze(r)}})));t.default=function(e){return(0,l.default)(o,e)};var i,s=e("yo-yo"),l=(i=s)&&i.__esModule?i:{default:i}},{"yo-yo":36}],46:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n,r,o=(n=['<div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="','">\n      </div>\n      <div class="card-content">\n        <a href="/user/','" class="card-title">\n          <img src="','" class="avatar" />\n          <span class="username">','</span>\n        </a>\n        <small class="time right">','</small>\n        <p>\n          <a class="left ','" href="#" onclick=','>\n            <i class="fa fa-heart-o"></i>\n          </a>\n\n          <a class="left ','" href="#" onclick=','>\n            <i class="fa fa-heart"></i>\n          </a>\n          <span class="left likes">',"</span>\n        </p>\n      </div>\n    </div>"],r=['<div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="','">\n      </div>\n      <div class="card-content">\n        <a href="/user/','" class="card-title">\n          <img src="','" class="avatar" />\n          <span class="username">','</span>\n        </a>\n        <small class="time right">','</small>\n        <p>\n          <a class="left ','" href="#" onclick=','>\n            <i class="fa fa-heart-o"></i>\n          </a>\n\n          <a class="left ','" href="#" onclick=','>\n            <i class="fa fa-heart"></i>\n          </a>\n          <span class="left likes">',"</span>\n        </p>\n      </div>\n    </div>"],Object.freeze(Object.defineProperties(n,{raw:{value:Object.freeze(r)}})));t.default=function(e){var a;function t(e){return(0,i.default)(o,e.url,e.user.username,e.user.avatar,e.user.username,s.default.date.format(e.date),e.liked?"hide":"",n.bind(null,!0),e.liked?"":"hide",n.bind(null,!1),s.default.message("likes",{likes:e.likes}))}function n(n){e.liked=n,e.likes+=n?1:-1;var r=t(e);return i.default.update(a,r),!1}return a=t(e)};var i=l(e("yo-yo")),s=l(e("../../translate"));function l(e){return e&&e.__esModule?e:{default:e}}},{"../../translate":41,"yo-yo":36}],47:[function(e,a,t){"use strict";var n=s(e("page")),r=s(e("./template")),o=s(e("../landing")),i=s(e("title"));function s(e){return e&&e.__esModule?e:{default:e}}var l=document.getElementById("main-container");(0,n.default)("/signin",function(){(0,i.default)("Melygram - Signin"),l.innerHTML="",l.appendChild((0,o.default)(r.default))})},{"../landing":44,"./template":48,page:32,title:35}],48:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n,r,o,i=(n=['<div class="col s12 m7">\n  <div class="row"> \x3c!-- Registrarse --\x3e\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <div class="section"> \x3c!-- Iniciar sesion con Facebook --\x3e\n          <a href="#" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> Iniciar sesión\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> \x3c!-- Formulario de registro --\x3e\n          <input type="text" name="user-name" placeholder="Nombre de Usuario">\n          <input type="password" name="password" placeholder="Contraseña">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">Iniciar sesión</button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> \x3c!-- Iniciar sesión --\x3e\n    <div class="login-box">\n      ¿No tienes una cuenta? <a href="/signup">Regístrate</a>\n    </div>\n  </div>\n</div>'],r=['<div class="col s12 m7">\n  <div class="row"> \x3c!-- Registrarse --\x3e\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <div class="section"> \x3c!-- Iniciar sesion con Facebook --\x3e\n          <a href="#" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> Iniciar sesión\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> \x3c!-- Formulario de registro --\x3e\n          <input type="text" name="user-name" placeholder="Nombre de Usuario">\n          <input type="password" name="password" placeholder="Contraseña">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">Iniciar sesión</button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> \x3c!-- Iniciar sesión --\x3e\n    <div class="login-box">\n      ¿No tienes una cuenta? <a href="/signup">Regístrate</a>\n    </div>\n  </div>\n</div>'],Object.freeze(Object.defineProperties(n,{raw:{value:Object.freeze(r)}}))),s=e("yo-yo"),l=(o=s)&&o.__esModule?o:{default:o};t.default=(0,l.default)(i)},{"yo-yo":36}],49:[function(e,a,t){"use strict";var n=s(e("page")),r=s(e("./template")),o=s(e("../landing")),i=s(e("title"));function s(e){return e&&e.__esModule?e:{default:e}}var l=document.getElementById("main-container");(0,n.default)("/signup",function(){(0,i.default)("Melygram - Signup"),l.innerHTML="",l.appendChild((0,o.default)(r.default))})},{"../landing":44,"./template":50,page:32,title:35}],50:[function(e,a,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n,r,o,i=(n=['<div class="col s12 m7">\n  <div class="row"> \x3c!-- Registrarse --\x3e\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <h2>Regístrate para ver fotos de tus amigos</h2>\n\n        <div class="section"> \x3c!-- Iniciar sesion con Facebook --\x3e\n          <a href="#" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> Iniciar sesión\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> \x3c!-- Formulario de registro --\x3e\n          <input type="email" name="email" placeholder="Correo Electronico">\n          <input type="text" name="name" placeholder="Nombre Completo">\n          <input type="text" name="user-name" placeholder="Nombre de Usuario">\n          <input type="password" name="password" placeholder="Contraseña">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">Regístrate</button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> \x3c!-- Iniciar sesión --\x3e\n    <div class="login-box">\n      ¿Tienes una cuenta? <a href="/signin">Entrar</a>\n    </div>\n  </div>\n</div>'],r=['<div class="col s12 m7">\n  <div class="row"> \x3c!-- Registrarse --\x3e\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <h2>Regístrate para ver fotos de tus amigos</h2>\n\n        <div class="section"> \x3c!-- Iniciar sesion con Facebook --\x3e\n          <a href="#" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> Iniciar sesión\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> \x3c!-- Formulario de registro --\x3e\n          <input type="email" name="email" placeholder="Correo Electronico">\n          <input type="text" name="name" placeholder="Nombre Completo">\n          <input type="text" name="user-name" placeholder="Nombre de Usuario">\n          <input type="password" name="password" placeholder="Contraseña">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">Regístrate</button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> \x3c!-- Iniciar sesión --\x3e\n    <div class="login-box">\n      ¿Tienes una cuenta? <a href="/signin">Entrar</a>\n    </div>\n  </div>\n</div>'],Object.freeze(Object.defineProperties(n,{raw:{value:Object.freeze(r)}}))),s=e("yo-yo"),l=(o=s)&&o.__esModule?o:{default:o};t.default=(0,l.default)(i)},{"yo-yo":36}]},{},[38]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var document = require('global/document')
+var hyperx = require('hyperx')
+var onload = require('on-load')
+
+var SVGNS = 'http://www.w3.org/2000/svg'
+var XLINKNS = 'http://www.w3.org/1999/xlink'
+
+var BOOL_PROPS = {
+  autofocus: 1,
+  checked: 1,
+  defaultchecked: 1,
+  disabled: 1,
+  formnovalidate: 1,
+  indeterminate: 1,
+  readonly: 1,
+  required: 1,
+  selected: 1,
+  willvalidate: 1
+}
+var COMMENT_TAG = '!--'
+var SVG_TAGS = [
+  'svg',
+  'altGlyph', 'altGlyphDef', 'altGlyphItem', 'animate', 'animateColor',
+  'animateMotion', 'animateTransform', 'circle', 'clipPath', 'color-profile',
+  'cursor', 'defs', 'desc', 'ellipse', 'feBlend', 'feColorMatrix',
+  'feComponentTransfer', 'feComposite', 'feConvolveMatrix', 'feDiffuseLighting',
+  'feDisplacementMap', 'feDistantLight', 'feFlood', 'feFuncA', 'feFuncB',
+  'feFuncG', 'feFuncR', 'feGaussianBlur', 'feImage', 'feMerge', 'feMergeNode',
+  'feMorphology', 'feOffset', 'fePointLight', 'feSpecularLighting',
+  'feSpotLight', 'feTile', 'feTurbulence', 'filter', 'font', 'font-face',
+  'font-face-format', 'font-face-name', 'font-face-src', 'font-face-uri',
+  'foreignObject', 'g', 'glyph', 'glyphRef', 'hkern', 'image', 'line',
+  'linearGradient', 'marker', 'mask', 'metadata', 'missing-glyph', 'mpath',
+  'path', 'pattern', 'polygon', 'polyline', 'radialGradient', 'rect',
+  'set', 'stop', 'switch', 'symbol', 'text', 'textPath', 'title', 'tref',
+  'tspan', 'use', 'view', 'vkern'
+]
+
+function belCreateElement (tag, props, children) {
+  var el
+
+  // If an svg tag, it needs a namespace
+  if (SVG_TAGS.indexOf(tag) !== -1) {
+    props.namespace = SVGNS
+  }
+
+  // If we are using a namespace
+  var ns = false
+  if (props.namespace) {
+    ns = props.namespace
+    delete props.namespace
+  }
+
+  // Create the element
+  if (ns) {
+    el = document.createElementNS(ns, tag)
+  } else if (tag === COMMENT_TAG) {
+    return document.createComment(props.comment)
+  } else {
+    el = document.createElement(tag)
+  }
+
+  // If adding onload events
+  if (props.onload || props.onunload) {
+    var load = props.onload || function () {}
+    var unload = props.onunload || function () {}
+    onload(el, function belOnload () {
+      load(el)
+    }, function belOnunload () {
+      unload(el)
+    },
+    // We have to use non-standard `caller` to find who invokes `belCreateElement`
+    belCreateElement.caller.caller.caller)
+    delete props.onload
+    delete props.onunload
+  }
+
+  // Create the properties
+  for (var p in props) {
+    if (props.hasOwnProperty(p)) {
+      var key = p.toLowerCase()
+      var val = props[p]
+      // Normalize className
+      if (key === 'classname') {
+        key = 'class'
+        p = 'class'
+      }
+      // The for attribute gets transformed to htmlFor, but we just set as for
+      if (p === 'htmlFor') {
+        p = 'for'
+      }
+      // If a property is boolean, set itself to the key
+      if (BOOL_PROPS[key]) {
+        if (val === 'true') val = key
+        else if (val === 'false') continue
+      }
+      // If a property prefers being set directly vs setAttribute
+      if (key.slice(0, 2) === 'on') {
+        el[p] = val
+      } else {
+        if (ns) {
+          if (p === 'xlink:href') {
+            el.setAttributeNS(XLINKNS, p, val)
+          } else if (/^xmlns($|:)/i.test(p)) {
+            // skip xmlns definitions
+          } else {
+            el.setAttributeNS(null, p, val)
+          }
+        } else {
+          el.setAttribute(p, val)
+        }
+      }
+    }
+  }
+
+  function appendChild (childs) {
+    if (!Array.isArray(childs)) return
+    for (var i = 0; i < childs.length; i++) {
+      var node = childs[i]
+      if (Array.isArray(node)) {
+        appendChild(node)
+        continue
+      }
+
+      if (typeof node === 'number' ||
+        typeof node === 'boolean' ||
+        typeof node === 'function' ||
+        node instanceof Date ||
+        node instanceof RegExp) {
+        node = node.toString()
+      }
+
+      if (typeof node === 'string') {
+        if (el.lastChild && el.lastChild.nodeName === '#text') {
+          el.lastChild.nodeValue += node
+          continue
+        }
+        node = document.createTextNode(node)
+      }
+
+      if (node && node.nodeType) {
+        el.appendChild(node)
+      }
+    }
+  }
+  appendChild(children)
+
+  return el
+}
+
+module.exports = hyperx(belCreateElement, {comments: true})
+module.exports.default = module.exports
+module.exports.createElement = belCreateElement
+
+},{"global/document":3,"hyperx":6,"on-load":31}],2:[function(require,module,exports){
+
+},{}],3:[function(require,module,exports){
+(function (global){
+var topLevel = typeof global !== 'undefined' ? global :
+    typeof window !== 'undefined' ? window : {}
+var minDoc = require('min-document');
+
+var doccy;
+
+if (typeof document !== 'undefined') {
+    doccy = document;
+} else {
+    doccy = topLevel['__GLOBAL_DOCUMENT_CACHE@4'];
+
+    if (!doccy) {
+        doccy = topLevel['__GLOBAL_DOCUMENT_CACHE@4'] = minDoc;
+    }
+}
+
+module.exports = doccy;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"min-document":2}],4:[function(require,module,exports){
+(function (global){
+var win;
+
+if (typeof window !== "undefined") {
+    win = window;
+} else if (typeof global !== "undefined") {
+    win = global;
+} else if (typeof self !== "undefined"){
+    win = self;
+} else {
+    win = {};
+}
+
+module.exports = win;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],5:[function(require,module,exports){
+module.exports = attributeToProperty
+
+var transform = {
+  'class': 'className',
+  'for': 'htmlFor',
+  'http-equiv': 'httpEquiv'
+}
+
+function attributeToProperty (h) {
+  return function (tagName, attrs, children) {
+    for (var attr in attrs) {
+      if (attr in transform) {
+        attrs[transform[attr]] = attrs[attr]
+        delete attrs[attr]
+      }
+    }
+    return h(tagName, attrs, children)
+  }
+}
+
+},{}],6:[function(require,module,exports){
+var attrToProp = require('hyperscript-attribute-to-property')
+
+var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
+var ATTR_KEY = 5, ATTR_KEY_W = 6
+var ATTR_VALUE_W = 7, ATTR_VALUE = 8
+var ATTR_VALUE_SQ = 9, ATTR_VALUE_DQ = 10
+var ATTR_EQ = 11, ATTR_BREAK = 12
+var COMMENT = 13
+
+module.exports = function (h, opts) {
+  if (!opts) opts = {}
+  var concat = opts.concat || function (a, b) {
+    return String(a) + String(b)
+  }
+  if (opts.attrToProp !== false) {
+    h = attrToProp(h)
+  }
+
+  return function (strings) {
+    var state = TEXT, reg = ''
+    var arglen = arguments.length
+    var parts = []
+
+    for (var i = 0; i < strings.length; i++) {
+      if (i < arglen - 1) {
+        var arg = arguments[i+1]
+        var p = parse(strings[i])
+        var xstate = state
+        if (xstate === ATTR_VALUE_DQ) xstate = ATTR_VALUE
+        if (xstate === ATTR_VALUE_SQ) xstate = ATTR_VALUE
+        if (xstate === ATTR_VALUE_W) xstate = ATTR_VALUE
+        if (xstate === ATTR) xstate = ATTR_KEY
+        p.push([ VAR, xstate, arg ])
+        parts.push.apply(parts, p)
+      } else parts.push.apply(parts, parse(strings[i]))
+    }
+
+    var tree = [null,{},[]]
+    var stack = [[tree,-1]]
+    for (var i = 0; i < parts.length; i++) {
+      var cur = stack[stack.length-1][0]
+      var p = parts[i], s = p[0]
+      if (s === OPEN && /^\//.test(p[1])) {
+        var ix = stack[stack.length-1][1]
+        if (stack.length > 1) {
+          stack.pop()
+          stack[stack.length-1][0][2][ix] = h(
+            cur[0], cur[1], cur[2].length ? cur[2] : undefined
+          )
+        }
+      } else if (s === OPEN) {
+        var c = [p[1],{},[]]
+        cur[2].push(c)
+        stack.push([c,cur[2].length-1])
+      } else if (s === ATTR_KEY || (s === VAR && p[1] === ATTR_KEY)) {
+        var key = ''
+        var copyKey
+        for (; i < parts.length; i++) {
+          if (parts[i][0] === ATTR_KEY) {
+            key = concat(key, parts[i][1])
+          } else if (parts[i][0] === VAR && parts[i][1] === ATTR_KEY) {
+            if (typeof parts[i][2] === 'object' && !key) {
+              for (copyKey in parts[i][2]) {
+                if (parts[i][2].hasOwnProperty(copyKey) && !cur[1][copyKey]) {
+                  cur[1][copyKey] = parts[i][2][copyKey]
+                }
+              }
+            } else {
+              key = concat(key, parts[i][2])
+            }
+          } else break
+        }
+        if (parts[i][0] === ATTR_EQ) i++
+        var j = i
+        for (; i < parts.length; i++) {
+          if (parts[i][0] === ATTR_VALUE || parts[i][0] === ATTR_KEY) {
+            if (!cur[1][key]) cur[1][key] = strfn(parts[i][1])
+            else parts[i][1]==="" || (cur[1][key] = concat(cur[1][key], parts[i][1]));
+          } else if (parts[i][0] === VAR
+          && (parts[i][1] === ATTR_VALUE || parts[i][1] === ATTR_KEY)) {
+            if (!cur[1][key]) cur[1][key] = strfn(parts[i][2])
+            else parts[i][2]==="" || (cur[1][key] = concat(cur[1][key], parts[i][2]));
+          } else {
+            if (key.length && !cur[1][key] && i === j
+            && (parts[i][0] === CLOSE || parts[i][0] === ATTR_BREAK)) {
+              // https://html.spec.whatwg.org/multipage/infrastructure.html#boolean-attributes
+              // empty string is falsy, not well behaved value in browser
+              cur[1][key] = key.toLowerCase()
+            }
+            if (parts[i][0] === CLOSE) {
+              i--
+            }
+            break
+          }
+        }
+      } else if (s === ATTR_KEY) {
+        cur[1][p[1]] = true
+      } else if (s === VAR && p[1] === ATTR_KEY) {
+        cur[1][p[2]] = true
+      } else if (s === CLOSE) {
+        if (selfClosing(cur[0]) && stack.length) {
+          var ix = stack[stack.length-1][1]
+          stack.pop()
+          stack[stack.length-1][0][2][ix] = h(
+            cur[0], cur[1], cur[2].length ? cur[2] : undefined
+          )
+        }
+      } else if (s === VAR && p[1] === TEXT) {
+        if (p[2] === undefined || p[2] === null) p[2] = ''
+        else if (!p[2]) p[2] = concat('', p[2])
+        if (Array.isArray(p[2][0])) {
+          cur[2].push.apply(cur[2], p[2])
+        } else {
+          cur[2].push(p[2])
+        }
+      } else if (s === TEXT) {
+        cur[2].push(p[1])
+      } else if (s === ATTR_EQ || s === ATTR_BREAK) {
+        // no-op
+      } else {
+        throw new Error('unhandled: ' + s)
+      }
+    }
+
+    if (tree[2].length > 1 && /^\s*$/.test(tree[2][0])) {
+      tree[2].shift()
+    }
+
+    if (tree[2].length > 2
+    || (tree[2].length === 2 && /\S/.test(tree[2][1]))) {
+      throw new Error(
+        'multiple root elements must be wrapped in an enclosing tag'
+      )
+    }
+    if (Array.isArray(tree[2][0]) && typeof tree[2][0][0] === 'string'
+    && Array.isArray(tree[2][0][2])) {
+      tree[2][0] = h(tree[2][0][0], tree[2][0][1], tree[2][0][2])
+    }
+    return tree[2][0]
+
+    function parse (str) {
+      var res = []
+      if (state === ATTR_VALUE_W) state = ATTR
+      for (var i = 0; i < str.length; i++) {
+        var c = str.charAt(i)
+        if (state === TEXT && c === '<') {
+          if (reg.length) res.push([TEXT, reg])
+          reg = ''
+          state = OPEN
+        } else if (c === '>' && !quot(state) && state !== COMMENT) {
+          if (state === OPEN) {
+            res.push([OPEN,reg])
+          } else if (state === ATTR_KEY) {
+            res.push([ATTR_KEY,reg])
+          } else if (state === ATTR_VALUE && reg.length) {
+            res.push([ATTR_VALUE,reg])
+          }
+          res.push([CLOSE])
+          reg = ''
+          state = TEXT
+        } else if (state === COMMENT && /-$/.test(reg) && c === '-') {
+          if (opts.comments) {
+            res.push([ATTR_VALUE,reg.substr(0, reg.length - 1)],[CLOSE])
+          }
+          reg = ''
+          state = TEXT
+        } else if (state === OPEN && /^!--$/.test(reg)) {
+          if (opts.comments) {
+            res.push([OPEN, reg],[ATTR_KEY,'comment'],[ATTR_EQ])
+          }
+          reg = c
+          state = COMMENT
+        } else if (state === TEXT || state === COMMENT) {
+          reg += c
+        } else if (state === OPEN && /\s/.test(c)) {
+          res.push([OPEN, reg])
+          reg = ''
+          state = ATTR
+        } else if (state === OPEN) {
+          reg += c
+        } else if (state === ATTR && /[^\s"'=/]/.test(c)) {
+          state = ATTR_KEY
+          reg = c
+        } else if (state === ATTR && /\s/.test(c)) {
+          if (reg.length) res.push([ATTR_KEY,reg])
+          res.push([ATTR_BREAK])
+        } else if (state === ATTR_KEY && /\s/.test(c)) {
+          res.push([ATTR_KEY,reg])
+          reg = ''
+          state = ATTR_KEY_W
+        } else if (state === ATTR_KEY && c === '=') {
+          res.push([ATTR_KEY,reg],[ATTR_EQ])
+          reg = ''
+          state = ATTR_VALUE_W
+        } else if (state === ATTR_KEY) {
+          reg += c
+        } else if ((state === ATTR_KEY_W || state === ATTR) && c === '=') {
+          res.push([ATTR_EQ])
+          state = ATTR_VALUE_W
+        } else if ((state === ATTR_KEY_W || state === ATTR) && !/\s/.test(c)) {
+          res.push([ATTR_BREAK])
+          if (/[\w-]/.test(c)) {
+            reg += c
+            state = ATTR_KEY
+          } else state = ATTR
+        } else if (state === ATTR_VALUE_W && c === '"') {
+          state = ATTR_VALUE_DQ
+        } else if (state === ATTR_VALUE_W && c === "'") {
+          state = ATTR_VALUE_SQ
+        } else if (state === ATTR_VALUE_DQ && c === '"') {
+          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
+          reg = ''
+          state = ATTR
+        } else if (state === ATTR_VALUE_SQ && c === "'") {
+          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
+          reg = ''
+          state = ATTR
+        } else if (state === ATTR_VALUE_W && !/\s/.test(c)) {
+          state = ATTR_VALUE
+          i--
+        } else if (state === ATTR_VALUE && /\s/.test(c)) {
+          res.push([ATTR_VALUE,reg],[ATTR_BREAK])
+          reg = ''
+          state = ATTR
+        } else if (state === ATTR_VALUE || state === ATTR_VALUE_SQ
+        || state === ATTR_VALUE_DQ) {
+          reg += c
+        }
+      }
+      if (state === TEXT && reg.length) {
+        res.push([TEXT,reg])
+        reg = ''
+      } else if (state === ATTR_VALUE && reg.length) {
+        res.push([ATTR_VALUE,reg])
+        reg = ''
+      } else if (state === ATTR_VALUE_DQ && reg.length) {
+        res.push([ATTR_VALUE,reg])
+        reg = ''
+      } else if (state === ATTR_VALUE_SQ && reg.length) {
+        res.push([ATTR_VALUE,reg])
+        reg = ''
+      } else if (state === ATTR_KEY) {
+        res.push([ATTR_KEY,reg])
+        reg = ''
+      }
+      return res
+    }
+  }
+
+  function strfn (x) {
+    if (typeof x === 'function') return x
+    else if (typeof x === 'string') return x
+    else if (x && typeof x === 'object') return x
+    else return concat('', x)
+  }
+}
+
+function quot (state) {
+  return state === ATTR_VALUE_SQ || state === ATTR_VALUE_DQ
+}
+
+var hasOwn = Object.prototype.hasOwnProperty
+function has (obj, key) { return hasOwn.call(obj, key) }
+
+var closeRE = RegExp('^(' + [
+  'area', 'base', 'basefont', 'bgsound', 'br', 'col', 'command', 'embed',
+  'frame', 'hr', 'img', 'input', 'isindex', 'keygen', 'link', 'meta', 'param',
+  'source', 'track', 'wbr', '!--',
+  // SVG TAGS
+  'animate', 'animateTransform', 'circle', 'cursor', 'desc', 'ellipse',
+  'feBlend', 'feColorMatrix', 'feComposite',
+  'feConvolveMatrix', 'feDiffuseLighting', 'feDisplacementMap',
+  'feDistantLight', 'feFlood', 'feFuncA', 'feFuncB', 'feFuncG', 'feFuncR',
+  'feGaussianBlur', 'feImage', 'feMergeNode', 'feMorphology',
+  'feOffset', 'fePointLight', 'feSpecularLighting', 'feSpotLight', 'feTile',
+  'feTurbulence', 'font-face-format', 'font-face-name', 'font-face-uri',
+  'glyph', 'glyphRef', 'hkern', 'image', 'line', 'missing-glyph', 'mpath',
+  'path', 'polygon', 'polyline', 'rect', 'set', 'stop', 'tref', 'use', 'view',
+  'vkern'
+].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
+function selfClosing (tag) { return closeRE.test(tag) }
+
+},{"hyperscript-attribute-to-property":5}],7:[function(require,module,exports){
+'use strict';
+
+exports = module.exports = require('./lib/parser')['default'];
+exports['default'] = exports;
+
+},{"./lib/parser":8}],8:[function(require,module,exports){
+"use strict";
+
+exports["default"] = (function() {
+  "use strict";
+
+  /*
+   * Generated by PEG.js 0.9.0.
+   *
+   * http://pegjs.org/
+   */
+
+  function peg$subclass(child, parent) {
+    function ctor() { this.constructor = child; }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor();
+  }
+
+  function peg$SyntaxError(message, expected, found, location) {
+    this.message  = message;
+    this.expected = expected;
+    this.found    = found;
+    this.location = location;
+    this.name     = "SyntaxError";
+
+    if (typeof Error.captureStackTrace === "function") {
+      Error.captureStackTrace(this, peg$SyntaxError);
+    }
+  }
+
+  peg$subclass(peg$SyntaxError, Error);
+
+  function peg$parse(input) {
+    var options = arguments.length > 1 ? arguments[1] : {},
+        parser  = this,
+
+        peg$FAILED = {},
+
+        peg$startRuleFunctions = { start: peg$parsestart },
+        peg$startRuleFunction  = peg$parsestart,
+
+        peg$c0 = function(elements) {
+                return {
+                    type    : 'messageFormatPattern',
+                    elements: elements,
+                    location: location()
+                };
+            },
+        peg$c1 = function(text) {
+                var string = '',
+                    i, j, outerLen, inner, innerLen;
+
+                for (i = 0, outerLen = text.length; i < outerLen; i += 1) {
+                    inner = text[i];
+
+                    for (j = 0, innerLen = inner.length; j < innerLen; j += 1) {
+                        string += inner[j];
+                    }
+                }
+
+                return string;
+            },
+        peg$c2 = function(messageText) {
+                return {
+                    type : 'messageTextElement',
+                    value: messageText,
+                    location: location()
+                };
+            },
+        peg$c3 = /^[^ \t\n\r,.+={}#]/,
+        peg$c4 = { type: "class", value: "[^ \\t\\n\\r,.+={}#]", description: "[^ \\t\\n\\r,.+={}#]" },
+        peg$c5 = "{",
+        peg$c6 = { type: "literal", value: "{", description: "\"{\"" },
+        peg$c7 = ",",
+        peg$c8 = { type: "literal", value: ",", description: "\",\"" },
+        peg$c9 = "}",
+        peg$c10 = { type: "literal", value: "}", description: "\"}\"" },
+        peg$c11 = function(id, format) {
+                return {
+                    type  : 'argumentElement',
+                    id    : id,
+                    format: format && format[2],
+                    location: location()
+                };
+            },
+        peg$c12 = "number",
+        peg$c13 = { type: "literal", value: "number", description: "\"number\"" },
+        peg$c14 = "date",
+        peg$c15 = { type: "literal", value: "date", description: "\"date\"" },
+        peg$c16 = "time",
+        peg$c17 = { type: "literal", value: "time", description: "\"time\"" },
+        peg$c18 = function(type, style) {
+                return {
+                    type : type + 'Format',
+                    style: style && style[2],
+                    location: location()
+                };
+            },
+        peg$c19 = "plural",
+        peg$c20 = { type: "literal", value: "plural", description: "\"plural\"" },
+        peg$c21 = function(pluralStyle) {
+                return {
+                    type   : pluralStyle.type,
+                    ordinal: false,
+                    offset : pluralStyle.offset || 0,
+                    options: pluralStyle.options,
+                    location: location()
+                };
+            },
+        peg$c22 = "selectordinal",
+        peg$c23 = { type: "literal", value: "selectordinal", description: "\"selectordinal\"" },
+        peg$c24 = function(pluralStyle) {
+                return {
+                    type   : pluralStyle.type,
+                    ordinal: true,
+                    offset : pluralStyle.offset || 0,
+                    options: pluralStyle.options,
+                    location: location()
+                }
+            },
+        peg$c25 = "select",
+        peg$c26 = { type: "literal", value: "select", description: "\"select\"" },
+        peg$c27 = function(options) {
+                return {
+                    type   : 'selectFormat',
+                    options: options,
+                    location: location()
+                };
+            },
+        peg$c28 = "=",
+        peg$c29 = { type: "literal", value: "=", description: "\"=\"" },
+        peg$c30 = function(selector, pattern) {
+                return {
+                    type    : 'optionalFormatPattern',
+                    selector: selector,
+                    value   : pattern,
+                    location: location()
+                };
+            },
+        peg$c31 = "offset:",
+        peg$c32 = { type: "literal", value: "offset:", description: "\"offset:\"" },
+        peg$c33 = function(number) {
+                return number;
+            },
+        peg$c34 = function(offset, options) {
+                return {
+                    type   : 'pluralFormat',
+                    offset : offset,
+                    options: options,
+                    location: location()
+                };
+            },
+        peg$c35 = { type: "other", description: "whitespace" },
+        peg$c36 = /^[ \t\n\r]/,
+        peg$c37 = { type: "class", value: "[ \\t\\n\\r]", description: "[ \\t\\n\\r]" },
+        peg$c38 = { type: "other", description: "optionalWhitespace" },
+        peg$c39 = /^[0-9]/,
+        peg$c40 = { type: "class", value: "[0-9]", description: "[0-9]" },
+        peg$c41 = /^[0-9a-f]/i,
+        peg$c42 = { type: "class", value: "[0-9a-f]i", description: "[0-9a-f]i" },
+        peg$c43 = "0",
+        peg$c44 = { type: "literal", value: "0", description: "\"0\"" },
+        peg$c45 = /^[1-9]/,
+        peg$c46 = { type: "class", value: "[1-9]", description: "[1-9]" },
+        peg$c47 = function(digits) {
+            return parseInt(digits, 10);
+        },
+        peg$c48 = /^[^{}\\\0-\x1F \t\n\r]/,
+        peg$c49 = { type: "class", value: "[^{}\\\\\\0-\\x1F\\x7f \\t\\n\\r]", description: "[^{}\\\\\\0-\\x1F\\x7f \\t\\n\\r]" },
+        peg$c50 = "\\\\",
+        peg$c51 = { type: "literal", value: "\\\\", description: "\"\\\\\\\\\"" },
+        peg$c52 = function() { return '\\'; },
+        peg$c53 = "\\#",
+        peg$c54 = { type: "literal", value: "\\#", description: "\"\\\\#\"" },
+        peg$c55 = function() { return '\\#'; },
+        peg$c56 = "\\{",
+        peg$c57 = { type: "literal", value: "\\{", description: "\"\\\\{\"" },
+        peg$c58 = function() { return '\u007B'; },
+        peg$c59 = "\\}",
+        peg$c60 = { type: "literal", value: "\\}", description: "\"\\\\}\"" },
+        peg$c61 = function() { return '\u007D'; },
+        peg$c62 = "\\u",
+        peg$c63 = { type: "literal", value: "\\u", description: "\"\\\\u\"" },
+        peg$c64 = function(digits) {
+                return String.fromCharCode(parseInt(digits, 16));
+            },
+        peg$c65 = function(chars) { return chars.join(''); },
+
+        peg$currPos          = 0,
+        peg$savedPos         = 0,
+        peg$posDetailsCache  = [{ line: 1, column: 1, seenCR: false }],
+        peg$maxFailPos       = 0,
+        peg$maxFailExpected  = [],
+        peg$silentFails      = 0,
+
+        peg$result;
+
+    if ("startRule" in options) {
+      if (!(options.startRule in peg$startRuleFunctions)) {
+        throw new Error("Can't start parsing from rule \"" + options.startRule + "\".");
+      }
+
+      peg$startRuleFunction = peg$startRuleFunctions[options.startRule];
+    }
+
+    function text() {
+      return input.substring(peg$savedPos, peg$currPos);
+    }
+
+    function location() {
+      return peg$computeLocation(peg$savedPos, peg$currPos);
+    }
+
+    function expected(description) {
+      throw peg$buildException(
+        null,
+        [{ type: "other", description: description }],
+        input.substring(peg$savedPos, peg$currPos),
+        peg$computeLocation(peg$savedPos, peg$currPos)
+      );
+    }
+
+    function error(message) {
+      throw peg$buildException(
+        message,
+        null,
+        input.substring(peg$savedPos, peg$currPos),
+        peg$computeLocation(peg$savedPos, peg$currPos)
+      );
+    }
+
+    function peg$computePosDetails(pos) {
+      var details = peg$posDetailsCache[pos],
+          p, ch;
+
+      if (details) {
+        return details;
+      } else {
+        p = pos - 1;
+        while (!peg$posDetailsCache[p]) {
+          p--;
+        }
+
+        details = peg$posDetailsCache[p];
+        details = {
+          line:   details.line,
+          column: details.column,
+          seenCR: details.seenCR
+        };
+
+        while (p < pos) {
+          ch = input.charAt(p);
+          if (ch === "\n") {
+            if (!details.seenCR) { details.line++; }
+            details.column = 1;
+            details.seenCR = false;
+          } else if (ch === "\r" || ch === "\u2028" || ch === "\u2029") {
+            details.line++;
+            details.column = 1;
+            details.seenCR = true;
+          } else {
+            details.column++;
+            details.seenCR = false;
+          }
+
+          p++;
+        }
+
+        peg$posDetailsCache[pos] = details;
+        return details;
+      }
+    }
+
+    function peg$computeLocation(startPos, endPos) {
+      var startPosDetails = peg$computePosDetails(startPos),
+          endPosDetails   = peg$computePosDetails(endPos);
+
+      return {
+        start: {
+          offset: startPos,
+          line:   startPosDetails.line,
+          column: startPosDetails.column
+        },
+        end: {
+          offset: endPos,
+          line:   endPosDetails.line,
+          column: endPosDetails.column
+        }
+      };
+    }
+
+    function peg$fail(expected) {
+      if (peg$currPos < peg$maxFailPos) { return; }
+
+      if (peg$currPos > peg$maxFailPos) {
+        peg$maxFailPos = peg$currPos;
+        peg$maxFailExpected = [];
+      }
+
+      peg$maxFailExpected.push(expected);
+    }
+
+    function peg$buildException(message, expected, found, location) {
+      function cleanupExpected(expected) {
+        var i = 1;
+
+        expected.sort(function(a, b) {
+          if (a.description < b.description) {
+            return -1;
+          } else if (a.description > b.description) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+
+        while (i < expected.length) {
+          if (expected[i - 1] === expected[i]) {
+            expected.splice(i, 1);
+          } else {
+            i++;
+          }
+        }
+      }
+
+      function buildMessage(expected, found) {
+        function stringEscape(s) {
+          function hex(ch) { return ch.charCodeAt(0).toString(16).toUpperCase(); }
+
+          return s
+            .replace(/\\/g,   '\\\\')
+            .replace(/"/g,    '\\"')
+            .replace(/\x08/g, '\\b')
+            .replace(/\t/g,   '\\t')
+            .replace(/\n/g,   '\\n')
+            .replace(/\f/g,   '\\f')
+            .replace(/\r/g,   '\\r')
+            .replace(/[\x00-\x07\x0B\x0E\x0F]/g, function(ch) { return '\\x0' + hex(ch); })
+            .replace(/[\x10-\x1F\x80-\xFF]/g,    function(ch) { return '\\x'  + hex(ch); })
+            .replace(/[\u0100-\u0FFF]/g,         function(ch) { return '\\u0' + hex(ch); })
+            .replace(/[\u1000-\uFFFF]/g,         function(ch) { return '\\u'  + hex(ch); });
+        }
+
+        var expectedDescs = new Array(expected.length),
+            expectedDesc, foundDesc, i;
+
+        for (i = 0; i < expected.length; i++) {
+          expectedDescs[i] = expected[i].description;
+        }
+
+        expectedDesc = expected.length > 1
+          ? expectedDescs.slice(0, -1).join(", ")
+              + " or "
+              + expectedDescs[expected.length - 1]
+          : expectedDescs[0];
+
+        foundDesc = found ? "\"" + stringEscape(found) + "\"" : "end of input";
+
+        return "Expected " + expectedDesc + " but " + foundDesc + " found.";
+      }
+
+      if (expected !== null) {
+        cleanupExpected(expected);
+      }
+
+      return new peg$SyntaxError(
+        message !== null ? message : buildMessage(expected, found),
+        expected,
+        found,
+        location
+      );
+    }
+
+    function peg$parsestart() {
+      var s0;
+
+      s0 = peg$parsemessageFormatPattern();
+
+      return s0;
+    }
+
+    function peg$parsemessageFormatPattern() {
+      var s0, s1, s2;
+
+      s0 = peg$currPos;
+      s1 = [];
+      s2 = peg$parsemessageFormatElement();
+      while (s2 !== peg$FAILED) {
+        s1.push(s2);
+        s2 = peg$parsemessageFormatElement();
+      }
+      if (s1 !== peg$FAILED) {
+        peg$savedPos = s0;
+        s1 = peg$c0(s1);
+      }
+      s0 = s1;
+
+      return s0;
+    }
+
+    function peg$parsemessageFormatElement() {
+      var s0;
+
+      s0 = peg$parsemessageTextElement();
+      if (s0 === peg$FAILED) {
+        s0 = peg$parseargumentElement();
+      }
+
+      return s0;
+    }
+
+    function peg$parsemessageText() {
+      var s0, s1, s2, s3, s4, s5;
+
+      s0 = peg$currPos;
+      s1 = [];
+      s2 = peg$currPos;
+      s3 = peg$parse_();
+      if (s3 !== peg$FAILED) {
+        s4 = peg$parsechars();
+        if (s4 !== peg$FAILED) {
+          s5 = peg$parse_();
+          if (s5 !== peg$FAILED) {
+            s3 = [s3, s4, s5];
+            s2 = s3;
+          } else {
+            peg$currPos = s2;
+            s2 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s2;
+          s2 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s2;
+        s2 = peg$FAILED;
+      }
+      if (s2 !== peg$FAILED) {
+        while (s2 !== peg$FAILED) {
+          s1.push(s2);
+          s2 = peg$currPos;
+          s3 = peg$parse_();
+          if (s3 !== peg$FAILED) {
+            s4 = peg$parsechars();
+            if (s4 !== peg$FAILED) {
+              s5 = peg$parse_();
+              if (s5 !== peg$FAILED) {
+                s3 = [s3, s4, s5];
+                s2 = s3;
+              } else {
+                peg$currPos = s2;
+                s2 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s2;
+              s2 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s2;
+            s2 = peg$FAILED;
+          }
+        }
+      } else {
+        s1 = peg$FAILED;
+      }
+      if (s1 !== peg$FAILED) {
+        peg$savedPos = s0;
+        s1 = peg$c1(s1);
+      }
+      s0 = s1;
+      if (s0 === peg$FAILED) {
+        s0 = peg$currPos;
+        s1 = peg$parsews();
+        if (s1 !== peg$FAILED) {
+          s0 = input.substring(s0, peg$currPos);
+        } else {
+          s0 = s1;
+        }
+      }
+
+      return s0;
+    }
+
+    function peg$parsemessageTextElement() {
+      var s0, s1;
+
+      s0 = peg$currPos;
+      s1 = peg$parsemessageText();
+      if (s1 !== peg$FAILED) {
+        peg$savedPos = s0;
+        s1 = peg$c2(s1);
+      }
+      s0 = s1;
+
+      return s0;
+    }
+
+    function peg$parseargument() {
+      var s0, s1, s2;
+
+      s0 = peg$parsenumber();
+      if (s0 === peg$FAILED) {
+        s0 = peg$currPos;
+        s1 = [];
+        if (peg$c3.test(input.charAt(peg$currPos))) {
+          s2 = input.charAt(peg$currPos);
+          peg$currPos++;
+        } else {
+          s2 = peg$FAILED;
+          if (peg$silentFails === 0) { peg$fail(peg$c4); }
+        }
+        if (s2 !== peg$FAILED) {
+          while (s2 !== peg$FAILED) {
+            s1.push(s2);
+            if (peg$c3.test(input.charAt(peg$currPos))) {
+              s2 = input.charAt(peg$currPos);
+              peg$currPos++;
+            } else {
+              s2 = peg$FAILED;
+              if (peg$silentFails === 0) { peg$fail(peg$c4); }
+            }
+          }
+        } else {
+          s1 = peg$FAILED;
+        }
+        if (s1 !== peg$FAILED) {
+          s0 = input.substring(s0, peg$currPos);
+        } else {
+          s0 = s1;
+        }
+      }
+
+      return s0;
+    }
+
+    function peg$parseargumentElement() {
+      var s0, s1, s2, s3, s4, s5, s6, s7, s8;
+
+      s0 = peg$currPos;
+      if (input.charCodeAt(peg$currPos) === 123) {
+        s1 = peg$c5;
+        peg$currPos++;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c6); }
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          s3 = peg$parseargument();
+          if (s3 !== peg$FAILED) {
+            s4 = peg$parse_();
+            if (s4 !== peg$FAILED) {
+              s5 = peg$currPos;
+              if (input.charCodeAt(peg$currPos) === 44) {
+                s6 = peg$c7;
+                peg$currPos++;
+              } else {
+                s6 = peg$FAILED;
+                if (peg$silentFails === 0) { peg$fail(peg$c8); }
+              }
+              if (s6 !== peg$FAILED) {
+                s7 = peg$parse_();
+                if (s7 !== peg$FAILED) {
+                  s8 = peg$parseelementFormat();
+                  if (s8 !== peg$FAILED) {
+                    s6 = [s6, s7, s8];
+                    s5 = s6;
+                  } else {
+                    peg$currPos = s5;
+                    s5 = peg$FAILED;
+                  }
+                } else {
+                  peg$currPos = s5;
+                  s5 = peg$FAILED;
+                }
+              } else {
+                peg$currPos = s5;
+                s5 = peg$FAILED;
+              }
+              if (s5 === peg$FAILED) {
+                s5 = null;
+              }
+              if (s5 !== peg$FAILED) {
+                s6 = peg$parse_();
+                if (s6 !== peg$FAILED) {
+                  if (input.charCodeAt(peg$currPos) === 125) {
+                    s7 = peg$c9;
+                    peg$currPos++;
+                  } else {
+                    s7 = peg$FAILED;
+                    if (peg$silentFails === 0) { peg$fail(peg$c10); }
+                  }
+                  if (s7 !== peg$FAILED) {
+                    peg$savedPos = s0;
+                    s1 = peg$c11(s3, s5);
+                    s0 = s1;
+                  } else {
+                    peg$currPos = s0;
+                    s0 = peg$FAILED;
+                  }
+                } else {
+                  peg$currPos = s0;
+                  s0 = peg$FAILED;
+                }
+              } else {
+                peg$currPos = s0;
+                s0 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s0;
+              s0 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parseelementFormat() {
+      var s0;
+
+      s0 = peg$parsesimpleFormat();
+      if (s0 === peg$FAILED) {
+        s0 = peg$parsepluralFormat();
+        if (s0 === peg$FAILED) {
+          s0 = peg$parseselectOrdinalFormat();
+          if (s0 === peg$FAILED) {
+            s0 = peg$parseselectFormat();
+          }
+        }
+      }
+
+      return s0;
+    }
+
+    function peg$parsesimpleFormat() {
+      var s0, s1, s2, s3, s4, s5, s6;
+
+      s0 = peg$currPos;
+      if (input.substr(peg$currPos, 6) === peg$c12) {
+        s1 = peg$c12;
+        peg$currPos += 6;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c13); }
+      }
+      if (s1 === peg$FAILED) {
+        if (input.substr(peg$currPos, 4) === peg$c14) {
+          s1 = peg$c14;
+          peg$currPos += 4;
+        } else {
+          s1 = peg$FAILED;
+          if (peg$silentFails === 0) { peg$fail(peg$c15); }
+        }
+        if (s1 === peg$FAILED) {
+          if (input.substr(peg$currPos, 4) === peg$c16) {
+            s1 = peg$c16;
+            peg$currPos += 4;
+          } else {
+            s1 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c17); }
+          }
+        }
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          s3 = peg$currPos;
+          if (input.charCodeAt(peg$currPos) === 44) {
+            s4 = peg$c7;
+            peg$currPos++;
+          } else {
+            s4 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c8); }
+          }
+          if (s4 !== peg$FAILED) {
+            s5 = peg$parse_();
+            if (s5 !== peg$FAILED) {
+              s6 = peg$parsechars();
+              if (s6 !== peg$FAILED) {
+                s4 = [s4, s5, s6];
+                s3 = s4;
+              } else {
+                peg$currPos = s3;
+                s3 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s3;
+              s3 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s3;
+            s3 = peg$FAILED;
+          }
+          if (s3 === peg$FAILED) {
+            s3 = null;
+          }
+          if (s3 !== peg$FAILED) {
+            peg$savedPos = s0;
+            s1 = peg$c18(s1, s3);
+            s0 = s1;
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parsepluralFormat() {
+      var s0, s1, s2, s3, s4, s5;
+
+      s0 = peg$currPos;
+      if (input.substr(peg$currPos, 6) === peg$c19) {
+        s1 = peg$c19;
+        peg$currPos += 6;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c20); }
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          if (input.charCodeAt(peg$currPos) === 44) {
+            s3 = peg$c7;
+            peg$currPos++;
+          } else {
+            s3 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c8); }
+          }
+          if (s3 !== peg$FAILED) {
+            s4 = peg$parse_();
+            if (s4 !== peg$FAILED) {
+              s5 = peg$parsepluralStyle();
+              if (s5 !== peg$FAILED) {
+                peg$savedPos = s0;
+                s1 = peg$c21(s5);
+                s0 = s1;
+              } else {
+                peg$currPos = s0;
+                s0 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s0;
+              s0 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parseselectOrdinalFormat() {
+      var s0, s1, s2, s3, s4, s5;
+
+      s0 = peg$currPos;
+      if (input.substr(peg$currPos, 13) === peg$c22) {
+        s1 = peg$c22;
+        peg$currPos += 13;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c23); }
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          if (input.charCodeAt(peg$currPos) === 44) {
+            s3 = peg$c7;
+            peg$currPos++;
+          } else {
+            s3 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c8); }
+          }
+          if (s3 !== peg$FAILED) {
+            s4 = peg$parse_();
+            if (s4 !== peg$FAILED) {
+              s5 = peg$parsepluralStyle();
+              if (s5 !== peg$FAILED) {
+                peg$savedPos = s0;
+                s1 = peg$c24(s5);
+                s0 = s1;
+              } else {
+                peg$currPos = s0;
+                s0 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s0;
+              s0 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parseselectFormat() {
+      var s0, s1, s2, s3, s4, s5, s6;
+
+      s0 = peg$currPos;
+      if (input.substr(peg$currPos, 6) === peg$c25) {
+        s1 = peg$c25;
+        peg$currPos += 6;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c26); }
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          if (input.charCodeAt(peg$currPos) === 44) {
+            s3 = peg$c7;
+            peg$currPos++;
+          } else {
+            s3 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c8); }
+          }
+          if (s3 !== peg$FAILED) {
+            s4 = peg$parse_();
+            if (s4 !== peg$FAILED) {
+              s5 = [];
+              s6 = peg$parseoptionalFormatPattern();
+              if (s6 !== peg$FAILED) {
+                while (s6 !== peg$FAILED) {
+                  s5.push(s6);
+                  s6 = peg$parseoptionalFormatPattern();
+                }
+              } else {
+                s5 = peg$FAILED;
+              }
+              if (s5 !== peg$FAILED) {
+                peg$savedPos = s0;
+                s1 = peg$c27(s5);
+                s0 = s1;
+              } else {
+                peg$currPos = s0;
+                s0 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s0;
+              s0 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parseselector() {
+      var s0, s1, s2, s3;
+
+      s0 = peg$currPos;
+      s1 = peg$currPos;
+      if (input.charCodeAt(peg$currPos) === 61) {
+        s2 = peg$c28;
+        peg$currPos++;
+      } else {
+        s2 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c29); }
+      }
+      if (s2 !== peg$FAILED) {
+        s3 = peg$parsenumber();
+        if (s3 !== peg$FAILED) {
+          s2 = [s2, s3];
+          s1 = s2;
+        } else {
+          peg$currPos = s1;
+          s1 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s1;
+        s1 = peg$FAILED;
+      }
+      if (s1 !== peg$FAILED) {
+        s0 = input.substring(s0, peg$currPos);
+      } else {
+        s0 = s1;
+      }
+      if (s0 === peg$FAILED) {
+        s0 = peg$parsechars();
+      }
+
+      return s0;
+    }
+
+    function peg$parseoptionalFormatPattern() {
+      var s0, s1, s2, s3, s4, s5, s6, s7, s8;
+
+      s0 = peg$currPos;
+      s1 = peg$parse_();
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parseselector();
+        if (s2 !== peg$FAILED) {
+          s3 = peg$parse_();
+          if (s3 !== peg$FAILED) {
+            if (input.charCodeAt(peg$currPos) === 123) {
+              s4 = peg$c5;
+              peg$currPos++;
+            } else {
+              s4 = peg$FAILED;
+              if (peg$silentFails === 0) { peg$fail(peg$c6); }
+            }
+            if (s4 !== peg$FAILED) {
+              s5 = peg$parse_();
+              if (s5 !== peg$FAILED) {
+                s6 = peg$parsemessageFormatPattern();
+                if (s6 !== peg$FAILED) {
+                  s7 = peg$parse_();
+                  if (s7 !== peg$FAILED) {
+                    if (input.charCodeAt(peg$currPos) === 125) {
+                      s8 = peg$c9;
+                      peg$currPos++;
+                    } else {
+                      s8 = peg$FAILED;
+                      if (peg$silentFails === 0) { peg$fail(peg$c10); }
+                    }
+                    if (s8 !== peg$FAILED) {
+                      peg$savedPos = s0;
+                      s1 = peg$c30(s2, s6);
+                      s0 = s1;
+                    } else {
+                      peg$currPos = s0;
+                      s0 = peg$FAILED;
+                    }
+                  } else {
+                    peg$currPos = s0;
+                    s0 = peg$FAILED;
+                  }
+                } else {
+                  peg$currPos = s0;
+                  s0 = peg$FAILED;
+                }
+              } else {
+                peg$currPos = s0;
+                s0 = peg$FAILED;
+              }
+            } else {
+              peg$currPos = s0;
+              s0 = peg$FAILED;
+            }
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parseoffset() {
+      var s0, s1, s2, s3;
+
+      s0 = peg$currPos;
+      if (input.substr(peg$currPos, 7) === peg$c31) {
+        s1 = peg$c31;
+        peg$currPos += 7;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c32); }
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          s3 = peg$parsenumber();
+          if (s3 !== peg$FAILED) {
+            peg$savedPos = s0;
+            s1 = peg$c33(s3);
+            s0 = s1;
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parsepluralStyle() {
+      var s0, s1, s2, s3, s4;
+
+      s0 = peg$currPos;
+      s1 = peg$parseoffset();
+      if (s1 === peg$FAILED) {
+        s1 = null;
+      }
+      if (s1 !== peg$FAILED) {
+        s2 = peg$parse_();
+        if (s2 !== peg$FAILED) {
+          s3 = [];
+          s4 = peg$parseoptionalFormatPattern();
+          if (s4 !== peg$FAILED) {
+            while (s4 !== peg$FAILED) {
+              s3.push(s4);
+              s4 = peg$parseoptionalFormatPattern();
+            }
+          } else {
+            s3 = peg$FAILED;
+          }
+          if (s3 !== peg$FAILED) {
+            peg$savedPos = s0;
+            s1 = peg$c34(s1, s3);
+            s0 = s1;
+          } else {
+            peg$currPos = s0;
+            s0 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s0;
+          s0 = peg$FAILED;
+        }
+      } else {
+        peg$currPos = s0;
+        s0 = peg$FAILED;
+      }
+
+      return s0;
+    }
+
+    function peg$parsews() {
+      var s0, s1;
+
+      peg$silentFails++;
+      s0 = [];
+      if (peg$c36.test(input.charAt(peg$currPos))) {
+        s1 = input.charAt(peg$currPos);
+        peg$currPos++;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c37); }
+      }
+      if (s1 !== peg$FAILED) {
+        while (s1 !== peg$FAILED) {
+          s0.push(s1);
+          if (peg$c36.test(input.charAt(peg$currPos))) {
+            s1 = input.charAt(peg$currPos);
+            peg$currPos++;
+          } else {
+            s1 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c37); }
+          }
+        }
+      } else {
+        s0 = peg$FAILED;
+      }
+      peg$silentFails--;
+      if (s0 === peg$FAILED) {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c35); }
+      }
+
+      return s0;
+    }
+
+    function peg$parse_() {
+      var s0, s1, s2;
+
+      peg$silentFails++;
+      s0 = peg$currPos;
+      s1 = [];
+      s2 = peg$parsews();
+      while (s2 !== peg$FAILED) {
+        s1.push(s2);
+        s2 = peg$parsews();
+      }
+      if (s1 !== peg$FAILED) {
+        s0 = input.substring(s0, peg$currPos);
+      } else {
+        s0 = s1;
+      }
+      peg$silentFails--;
+      if (s0 === peg$FAILED) {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c38); }
+      }
+
+      return s0;
+    }
+
+    function peg$parsedigit() {
+      var s0;
+
+      if (peg$c39.test(input.charAt(peg$currPos))) {
+        s0 = input.charAt(peg$currPos);
+        peg$currPos++;
+      } else {
+        s0 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c40); }
+      }
+
+      return s0;
+    }
+
+    function peg$parsehexDigit() {
+      var s0;
+
+      if (peg$c41.test(input.charAt(peg$currPos))) {
+        s0 = input.charAt(peg$currPos);
+        peg$currPos++;
+      } else {
+        s0 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c42); }
+      }
+
+      return s0;
+    }
+
+    function peg$parsenumber() {
+      var s0, s1, s2, s3, s4, s5;
+
+      s0 = peg$currPos;
+      if (input.charCodeAt(peg$currPos) === 48) {
+        s1 = peg$c43;
+        peg$currPos++;
+      } else {
+        s1 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c44); }
+      }
+      if (s1 === peg$FAILED) {
+        s1 = peg$currPos;
+        s2 = peg$currPos;
+        if (peg$c45.test(input.charAt(peg$currPos))) {
+          s3 = input.charAt(peg$currPos);
+          peg$currPos++;
+        } else {
+          s3 = peg$FAILED;
+          if (peg$silentFails === 0) { peg$fail(peg$c46); }
+        }
+        if (s3 !== peg$FAILED) {
+          s4 = [];
+          s5 = peg$parsedigit();
+          while (s5 !== peg$FAILED) {
+            s4.push(s5);
+            s5 = peg$parsedigit();
+          }
+          if (s4 !== peg$FAILED) {
+            s3 = [s3, s4];
+            s2 = s3;
+          } else {
+            peg$currPos = s2;
+            s2 = peg$FAILED;
+          }
+        } else {
+          peg$currPos = s2;
+          s2 = peg$FAILED;
+        }
+        if (s2 !== peg$FAILED) {
+          s1 = input.substring(s1, peg$currPos);
+        } else {
+          s1 = s2;
+        }
+      }
+      if (s1 !== peg$FAILED) {
+        peg$savedPos = s0;
+        s1 = peg$c47(s1);
+      }
+      s0 = s1;
+
+      return s0;
+    }
+
+    function peg$parsechar() {
+      var s0, s1, s2, s3, s4, s5, s6, s7;
+
+      if (peg$c48.test(input.charAt(peg$currPos))) {
+        s0 = input.charAt(peg$currPos);
+        peg$currPos++;
+      } else {
+        s0 = peg$FAILED;
+        if (peg$silentFails === 0) { peg$fail(peg$c49); }
+      }
+      if (s0 === peg$FAILED) {
+        s0 = peg$currPos;
+        if (input.substr(peg$currPos, 2) === peg$c50) {
+          s1 = peg$c50;
+          peg$currPos += 2;
+        } else {
+          s1 = peg$FAILED;
+          if (peg$silentFails === 0) { peg$fail(peg$c51); }
+        }
+        if (s1 !== peg$FAILED) {
+          peg$savedPos = s0;
+          s1 = peg$c52();
+        }
+        s0 = s1;
+        if (s0 === peg$FAILED) {
+          s0 = peg$currPos;
+          if (input.substr(peg$currPos, 2) === peg$c53) {
+            s1 = peg$c53;
+            peg$currPos += 2;
+          } else {
+            s1 = peg$FAILED;
+            if (peg$silentFails === 0) { peg$fail(peg$c54); }
+          }
+          if (s1 !== peg$FAILED) {
+            peg$savedPos = s0;
+            s1 = peg$c55();
+          }
+          s0 = s1;
+          if (s0 === peg$FAILED) {
+            s0 = peg$currPos;
+            if (input.substr(peg$currPos, 2) === peg$c56) {
+              s1 = peg$c56;
+              peg$currPos += 2;
+            } else {
+              s1 = peg$FAILED;
+              if (peg$silentFails === 0) { peg$fail(peg$c57); }
+            }
+            if (s1 !== peg$FAILED) {
+              peg$savedPos = s0;
+              s1 = peg$c58();
+            }
+            s0 = s1;
+            if (s0 === peg$FAILED) {
+              s0 = peg$currPos;
+              if (input.substr(peg$currPos, 2) === peg$c59) {
+                s1 = peg$c59;
+                peg$currPos += 2;
+              } else {
+                s1 = peg$FAILED;
+                if (peg$silentFails === 0) { peg$fail(peg$c60); }
+              }
+              if (s1 !== peg$FAILED) {
+                peg$savedPos = s0;
+                s1 = peg$c61();
+              }
+              s0 = s1;
+              if (s0 === peg$FAILED) {
+                s0 = peg$currPos;
+                if (input.substr(peg$currPos, 2) === peg$c62) {
+                  s1 = peg$c62;
+                  peg$currPos += 2;
+                } else {
+                  s1 = peg$FAILED;
+                  if (peg$silentFails === 0) { peg$fail(peg$c63); }
+                }
+                if (s1 !== peg$FAILED) {
+                  s2 = peg$currPos;
+                  s3 = peg$currPos;
+                  s4 = peg$parsehexDigit();
+                  if (s4 !== peg$FAILED) {
+                    s5 = peg$parsehexDigit();
+                    if (s5 !== peg$FAILED) {
+                      s6 = peg$parsehexDigit();
+                      if (s6 !== peg$FAILED) {
+                        s7 = peg$parsehexDigit();
+                        if (s7 !== peg$FAILED) {
+                          s4 = [s4, s5, s6, s7];
+                          s3 = s4;
+                        } else {
+                          peg$currPos = s3;
+                          s3 = peg$FAILED;
+                        }
+                      } else {
+                        peg$currPos = s3;
+                        s3 = peg$FAILED;
+                      }
+                    } else {
+                      peg$currPos = s3;
+                      s3 = peg$FAILED;
+                    }
+                  } else {
+                    peg$currPos = s3;
+                    s3 = peg$FAILED;
+                  }
+                  if (s3 !== peg$FAILED) {
+                    s2 = input.substring(s2, peg$currPos);
+                  } else {
+                    s2 = s3;
+                  }
+                  if (s2 !== peg$FAILED) {
+                    peg$savedPos = s0;
+                    s1 = peg$c64(s2);
+                    s0 = s1;
+                  } else {
+                    peg$currPos = s0;
+                    s0 = peg$FAILED;
+                  }
+                } else {
+                  peg$currPos = s0;
+                  s0 = peg$FAILED;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return s0;
+    }
+
+    function peg$parsechars() {
+      var s0, s1, s2;
+
+      s0 = peg$currPos;
+      s1 = [];
+      s2 = peg$parsechar();
+      if (s2 !== peg$FAILED) {
+        while (s2 !== peg$FAILED) {
+          s1.push(s2);
+          s2 = peg$parsechar();
+        }
+      } else {
+        s1 = peg$FAILED;
+      }
+      if (s1 !== peg$FAILED) {
+        peg$savedPos = s0;
+        s1 = peg$c65(s1);
+      }
+      s0 = s1;
+
+      return s0;
+    }
+
+    peg$result = peg$startRuleFunction();
+
+    if (peg$result !== peg$FAILED && peg$currPos === input.length) {
+      return peg$result;
+    } else {
+      if (peg$result !== peg$FAILED && peg$currPos < input.length) {
+        peg$fail({ type: "end", description: "end of input" });
+      }
+
+      throw peg$buildException(
+        null,
+        peg$maxFailExpected,
+        peg$maxFailPos < input.length ? input.charAt(peg$maxFailPos) : null,
+        peg$maxFailPos < input.length
+          ? peg$computeLocation(peg$maxFailPos, peg$maxFailPos + 1)
+          : peg$computeLocation(peg$maxFailPos, peg$maxFailPos)
+      );
+    }
+  }
+
+  return {
+    SyntaxError: peg$SyntaxError,
+    parse:       peg$parse
+  };
+})();
+
+
+},{}],9:[function(require,module,exports){
+/* jshint node:true */
+
+'use strict';
+
+var IntlMessageFormat = require('./lib/main')['default'];
+
+// Add all locale data to `IntlMessageFormat`. This module will be ignored when
+// bundling for the browser with Browserify/Webpack.
+require('./lib/locales');
+
+// Re-export `IntlMessageFormat` as the CommonJS default exports with all the
+// locale data registered, and with English set as the default locale. Define
+// the `default` prop for use with other compiled ES6 Modules.
+exports = module.exports = IntlMessageFormat;
+exports['default'] = exports;
+
+},{"./lib/locales":2,"./lib/main":14}],10:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+"use strict";
+exports["default"] = Compiler;
+
+function Compiler(locales, formats, pluralFn) {
+    this.locales  = locales;
+    this.formats  = formats;
+    this.pluralFn = pluralFn;
+}
+
+Compiler.prototype.compile = function (ast) {
+    this.pluralStack        = [];
+    this.currentPlural      = null;
+    this.pluralNumberFormat = null;
+
+    return this.compileMessage(ast);
+};
+
+Compiler.prototype.compileMessage = function (ast) {
+    if (!(ast && ast.type === 'messageFormatPattern')) {
+        throw new Error('Message AST is not of type: "messageFormatPattern"');
+    }
+
+    var elements = ast.elements,
+        pattern  = [];
+
+    var i, len, element;
+
+    for (i = 0, len = elements.length; i < len; i += 1) {
+        element = elements[i];
+
+        switch (element.type) {
+            case 'messageTextElement':
+                pattern.push(this.compileMessageText(element));
+                break;
+
+            case 'argumentElement':
+                pattern.push(this.compileArgument(element));
+                break;
+
+            default:
+                throw new Error('Message element does not have a valid type');
+        }
+    }
+
+    return pattern;
+};
+
+Compiler.prototype.compileMessageText = function (element) {
+    // When this `element` is part of plural sub-pattern and its value contains
+    // an unescaped '#', use a `PluralOffsetString` helper to properly output
+    // the number with the correct offset in the string.
+    if (this.currentPlural && /(^|[^\\])#/g.test(element.value)) {
+        // Create a cache a NumberFormat instance that can be reused for any
+        // PluralOffsetString instance in this message.
+        if (!this.pluralNumberFormat) {
+            this.pluralNumberFormat = new Intl.NumberFormat(this.locales);
+        }
+
+        return new PluralOffsetString(
+                this.currentPlural.id,
+                this.currentPlural.format.offset,
+                this.pluralNumberFormat,
+                element.value);
+    }
+
+    // Unescape the escaped '#'s in the message text.
+    return element.value.replace(/\\#/g, '#');
+};
+
+Compiler.prototype.compileArgument = function (element) {
+    var format = element.format;
+
+    if (!format) {
+        return new StringFormat(element.id);
+    }
+
+    var formats  = this.formats,
+        locales  = this.locales,
+        pluralFn = this.pluralFn,
+        options;
+
+    switch (format.type) {
+        case 'numberFormat':
+            options = formats.number[format.style];
+            return {
+                id    : element.id,
+                format: new Intl.NumberFormat(locales, options).format
+            };
+
+        case 'dateFormat':
+            options = formats.date[format.style];
+            return {
+                id    : element.id,
+                format: new Intl.DateTimeFormat(locales, options).format
+            };
+
+        case 'timeFormat':
+            options = formats.time[format.style];
+            return {
+                id    : element.id,
+                format: new Intl.DateTimeFormat(locales, options).format
+            };
+
+        case 'pluralFormat':
+            options = this.compileOptions(element);
+            return new PluralFormat(
+                element.id, format.ordinal, format.offset, options, pluralFn
+            );
+
+        case 'selectFormat':
+            options = this.compileOptions(element);
+            return new SelectFormat(element.id, options);
+
+        default:
+            throw new Error('Message element does not have a valid format type');
+    }
+};
+
+Compiler.prototype.compileOptions = function (element) {
+    var format      = element.format,
+        options     = format.options,
+        optionsHash = {};
+
+    // Save the current plural element, if any, then set it to a new value when
+    // compiling the options sub-patterns. This conforms the spec's algorithm
+    // for handling `"#"` syntax in message text.
+    this.pluralStack.push(this.currentPlural);
+    this.currentPlural = format.type === 'pluralFormat' ? element : null;
+
+    var i, len, option;
+
+    for (i = 0, len = options.length; i < len; i += 1) {
+        option = options[i];
+
+        // Compile the sub-pattern and save it under the options's selector.
+        optionsHash[option.selector] = this.compileMessage(option.value);
+    }
+
+    // Pop the plural stack to put back the original current plural value.
+    this.currentPlural = this.pluralStack.pop();
+
+    return optionsHash;
+};
+
+// -- Compiler Helper Classes --------------------------------------------------
+
+function StringFormat(id) {
+    this.id = id;
+}
+
+StringFormat.prototype.format = function (value) {
+    if (!value && typeof value !== 'number') {
+        return '';
+    }
+
+    return typeof value === 'string' ? value : String(value);
+};
+
+function PluralFormat(id, useOrdinal, offset, options, pluralFn) {
+    this.id         = id;
+    this.useOrdinal = useOrdinal;
+    this.offset     = offset;
+    this.options    = options;
+    this.pluralFn   = pluralFn;
+}
+
+PluralFormat.prototype.getOption = function (value) {
+    var options = this.options;
+
+    var option = options['=' + value] ||
+            options[this.pluralFn(value - this.offset, this.useOrdinal)];
+
+    return option || options.other;
+};
+
+function PluralOffsetString(id, offset, numberFormat, string) {
+    this.id           = id;
+    this.offset       = offset;
+    this.numberFormat = numberFormat;
+    this.string       = string;
+}
+
+PluralOffsetString.prototype.format = function (value) {
+    var number = this.numberFormat.format(value - this.offset);
+
+    return this.string
+            .replace(/(^|[^\\])#/g, '$1' + number)
+            .replace(/\\#/g, '#');
+};
+
+function SelectFormat(id, options) {
+    this.id      = id;
+    this.options = options;
+}
+
+SelectFormat.prototype.getOption = function (value) {
+    var options = this.options;
+    return options[value] || options.other;
+};
+
+
+},{}],11:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+"use strict";
+var src$utils$$ = require("./utils"), src$es5$$ = require("./es5"), src$compiler$$ = require("./compiler"), intl$messageformat$parser$$ = require("intl-messageformat-parser");
+exports["default"] = MessageFormat;
+
+// -- MessageFormat --------------------------------------------------------
+
+function MessageFormat(message, locales, formats) {
+    // Parse string messages into an AST.
+    var ast = typeof message === 'string' ?
+            MessageFormat.__parse(message) : message;
+
+    if (!(ast && ast.type === 'messageFormatPattern')) {
+        throw new TypeError('A message must be provided as a String or AST.');
+    }
+
+    // Creates a new object with the specified `formats` merged with the default
+    // formats.
+    formats = this._mergeFormats(MessageFormat.formats, formats);
+
+    // Defined first because it's used to build the format pattern.
+    src$es5$$.defineProperty(this, '_locale',  {value: this._resolveLocale(locales)});
+
+    // Compile the `ast` to a pattern that is highly optimized for repeated
+    // `format()` invocations. **Note:** This passes the `locales` set provided
+    // to the constructor instead of just the resolved locale.
+    var pluralFn = this._findPluralRuleFunction(this._locale);
+    var pattern  = this._compilePattern(ast, locales, formats, pluralFn);
+
+    // "Bind" `format()` method to `this` so it can be passed by reference like
+    // the other `Intl` APIs.
+    var messageFormat = this;
+    this.format = function (values) {
+      try {
+        return messageFormat._format(pattern, values);
+      } catch (e) {
+        if (e.variableId) {
+          throw new Error(
+            'The intl string context variable \'' + e.variableId + '\'' +
+            ' was not provided to the string \'' + message + '\''
+          );
+        } else {
+          throw e;
+        }
+      }
+    };
+}
+
+// Default format options used as the prototype of the `formats` provided to the
+// constructor. These are used when constructing the internal Intl.NumberFormat
+// and Intl.DateTimeFormat instances.
+src$es5$$.defineProperty(MessageFormat, 'formats', {
+    enumerable: true,
+
+    value: {
+        number: {
+            'currency': {
+                style: 'currency'
+            },
+
+            'percent': {
+                style: 'percent'
+            }
+        },
+
+        date: {
+            'short': {
+                month: 'numeric',
+                day  : 'numeric',
+                year : '2-digit'
+            },
+
+            'medium': {
+                month: 'short',
+                day  : 'numeric',
+                year : 'numeric'
+            },
+
+            'long': {
+                month: 'long',
+                day  : 'numeric',
+                year : 'numeric'
+            },
+
+            'full': {
+                weekday: 'long',
+                month  : 'long',
+                day    : 'numeric',
+                year   : 'numeric'
+            }
+        },
+
+        time: {
+            'short': {
+                hour  : 'numeric',
+                minute: 'numeric'
+            },
+
+            'medium':  {
+                hour  : 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            },
+
+            'long': {
+                hour        : 'numeric',
+                minute      : 'numeric',
+                second      : 'numeric',
+                timeZoneName: 'short'
+            },
+
+            'full': {
+                hour        : 'numeric',
+                minute      : 'numeric',
+                second      : 'numeric',
+                timeZoneName: 'short'
+            }
+        }
+    }
+});
+
+// Define internal private properties for dealing with locale data.
+src$es5$$.defineProperty(MessageFormat, '__localeData__', {value: src$es5$$.objCreate(null)});
+src$es5$$.defineProperty(MessageFormat, '__addLocaleData', {value: function (data) {
+    if (!(data && data.locale)) {
+        throw new Error(
+            'Locale data provided to IntlMessageFormat is missing a ' +
+            '`locale` property'
+        );
+    }
+
+    MessageFormat.__localeData__[data.locale.toLowerCase()] = data;
+}});
+
+// Defines `__parse()` static method as an exposed private.
+src$es5$$.defineProperty(MessageFormat, '__parse', {value: intl$messageformat$parser$$["default"].parse});
+
+// Define public `defaultLocale` property which defaults to English, but can be
+// set by the developer.
+src$es5$$.defineProperty(MessageFormat, 'defaultLocale', {
+    enumerable: true,
+    writable  : true,
+    value     : undefined
+});
+
+MessageFormat.prototype.resolvedOptions = function () {
+    // TODO: Provide anything else?
+    return {
+        locale: this._locale
+    };
+};
+
+MessageFormat.prototype._compilePattern = function (ast, locales, formats, pluralFn) {
+    var compiler = new src$compiler$$["default"](locales, formats, pluralFn);
+    return compiler.compile(ast);
+};
+
+MessageFormat.prototype._findPluralRuleFunction = function (locale) {
+    var localeData = MessageFormat.__localeData__;
+    var data       = localeData[locale.toLowerCase()];
+
+    // The locale data is de-duplicated, so we have to traverse the locale's
+    // hierarchy until we find a `pluralRuleFunction` to return.
+    while (data) {
+        if (data.pluralRuleFunction) {
+            return data.pluralRuleFunction;
+        }
+
+        data = data.parentLocale && localeData[data.parentLocale.toLowerCase()];
+    }
+
+    throw new Error(
+        'Locale data added to IntlMessageFormat is missing a ' +
+        '`pluralRuleFunction` for :' + locale
+    );
+};
+
+MessageFormat.prototype._format = function (pattern, values) {
+    var result = '',
+        i, len, part, id, value, err;
+
+    for (i = 0, len = pattern.length; i < len; i += 1) {
+        part = pattern[i];
+
+        // Exist early for string parts.
+        if (typeof part === 'string') {
+            result += part;
+            continue;
+        }
+
+        id = part.id;
+
+        // Enforce that all required values are provided by the caller.
+        if (!(values && src$utils$$.hop.call(values, id))) {
+          err = new Error('A value must be provided for: ' + id);
+          err.variableId = id;
+          throw err;
+        }
+
+        value = values[id];
+
+        // Recursively format plural and select parts' option — which can be a
+        // nested pattern structure. The choosing of the option to use is
+        // abstracted-by and delegated-to the part helper object.
+        if (part.options) {
+            result += this._format(part.getOption(value), values);
+        } else {
+            result += part.format(value);
+        }
+    }
+
+    return result;
+};
+
+MessageFormat.prototype._mergeFormats = function (defaults, formats) {
+    var mergedFormats = {},
+        type, mergedType;
+
+    for (type in defaults) {
+        if (!src$utils$$.hop.call(defaults, type)) { continue; }
+
+        mergedFormats[type] = mergedType = src$es5$$.objCreate(defaults[type]);
+
+        if (formats && src$utils$$.hop.call(formats, type)) {
+            src$utils$$.extend(mergedType, formats[type]);
+        }
+    }
+
+    return mergedFormats;
+};
+
+MessageFormat.prototype._resolveLocale = function (locales) {
+    if (typeof locales === 'string') {
+        locales = [locales];
+    }
+
+    // Create a copy of the array so we can push on the default locale.
+    locales = (locales || []).concat(MessageFormat.defaultLocale);
+
+    var localeData = MessageFormat.__localeData__;
+    var i, len, localeParts, data;
+
+    // Using the set of locales + the default locale, we look for the first one
+    // which that has been registered. When data does not exist for a locale, we
+    // traverse its ancestors to find something that's been registered within
+    // its hierarchy of locales. Since we lack the proper `parentLocale` data
+    // here, we must take a naive approach to traversal.
+    for (i = 0, len = locales.length; i < len; i += 1) {
+        localeParts = locales[i].toLowerCase().split('-');
+
+        while (localeParts.length) {
+            data = localeData[localeParts.join('-')];
+            if (data) {
+                // Return the normalized locale string; e.g., we return "en-US",
+                // instead of "en-us".
+                return data.locale;
+            }
+
+            localeParts.pop();
+        }
+    }
+
+    var defaultLocale = locales.pop();
+    throw new Error(
+        'No locale data has been added to IntlMessageFormat for: ' +
+        locales.join(', ') + ', or the default locale: ' + defaultLocale
+    );
+};
+
+
+},{"./compiler":10,"./es5":13,"./utils":15,"intl-messageformat-parser":7}],12:[function(require,module,exports){
+// GENERATED FILE
+"use strict";
+exports["default"] = {"locale":"en","pluralRuleFunction":function (n,ord){var s=String(n).split("."),v0=!s[1],t0=Number(s[0])==n,n10=t0&&s[0].slice(-1),n100=t0&&s[0].slice(-2);if(ord)return n10==1&&n100!=11?"one":n10==2&&n100!=12?"two":n10==3&&n100!=13?"few":"other";return n==1&&v0?"one":"other"}};
+
+
+},{}],13:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+"use strict";
+var src$utils$$ = require("./utils");
+
+// Purposely using the same implementation as the Intl.js `Intl` polyfill.
+// Copyright 2013 Andy Earnshaw, MIT License
+
+var realDefineProp = (function () {
+    try { return !!Object.defineProperty({}, 'a', {}); }
+    catch (e) { return false; }
+})();
+
+var es3 = !realDefineProp && !Object.prototype.__defineGetter__;
+
+var defineProperty = realDefineProp ? Object.defineProperty :
+        function (obj, name, desc) {
+
+    if ('get' in desc && obj.__defineGetter__) {
+        obj.__defineGetter__(name, desc.get);
+    } else if (!src$utils$$.hop.call(obj, name) || 'value' in desc) {
+        obj[name] = desc.value;
+    }
+};
+
+var objCreate = Object.create || function (proto, props) {
+    var obj, k;
+
+    function F() {}
+    F.prototype = proto;
+    obj = new F();
+
+    for (k in props) {
+        if (src$utils$$.hop.call(props, k)) {
+            defineProperty(obj, k, props[k]);
+        }
+    }
+
+    return obj;
+};
+
+exports.defineProperty = defineProperty, exports.objCreate = objCreate;
+
+
+},{"./utils":15}],14:[function(require,module,exports){
+/* jslint esnext: true */
+
+"use strict";
+var src$core$$ = require("./core"), src$en$$ = require("./en");
+
+src$core$$["default"].__addLocaleData(src$en$$["default"]);
+src$core$$["default"].defaultLocale = 'en';
+
+exports["default"] = src$core$$["default"];
+
+
+},{"./core":11,"./en":12}],15:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+"use strict";
+exports.extend = extend;
+var hop = Object.prototype.hasOwnProperty;
+
+function extend(obj) {
+    var sources = Array.prototype.slice.call(arguments, 1),
+        i, len, source, key;
+
+    for (i = 0, len = sources.length; i < len; i += 1) {
+        source = sources[i];
+        if (!source) { continue; }
+
+        for (key in source) {
+            if (hop.call(source, key)) {
+                obj[key] = source[key];
+            }
+        }
+    }
+
+    return obj;
+}
+exports.hop = hop;
+
+
+},{}],16:[function(require,module,exports){
+IntlRelativeFormat.__addLocaleData({"locale":"en","pluralRuleFunction":function (n,ord){var s=String(n).split("."),v0=!s[1],t0=Number(s[0])==n,n10=t0&&s[0].slice(-1),n100=t0&&s[0].slice(-2);if(ord)return n10==1&&n100!=11?"one":n10==2&&n100!=12?"two":n10==3&&n100!=13?"few":"other";return n==1&&v0?"one":"other"},"fields":{"year":{"displayName":"year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"one":"in {0} year","other":"in {0} years"},"past":{"one":"{0} year ago","other":"{0} years ago"}}},"year-short":{"displayName":"yr.","relative":{"0":"this yr.","1":"next yr.","-1":"last yr."},"relativeTime":{"future":{"one":"in {0} yr.","other":"in {0} yr."},"past":{"one":"{0} yr. ago","other":"{0} yr. ago"}}},"month":{"displayName":"month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"one":"in {0} month","other":"in {0} months"},"past":{"one":"{0} month ago","other":"{0} months ago"}}},"month-short":{"displayName":"mo.","relative":{"0":"this mo.","1":"next mo.","-1":"last mo."},"relativeTime":{"future":{"one":"in {0} mo.","other":"in {0} mo."},"past":{"one":"{0} mo. ago","other":"{0} mo. ago"}}},"day":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"day-short":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"hour":{"displayName":"hour","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hour","other":"in {0} hours"},"past":{"one":"{0} hour ago","other":"{0} hours ago"}}},"hour-short":{"displayName":"hr.","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hr.","other":"in {0} hr."},"past":{"one":"{0} hr. ago","other":"{0} hr. ago"}}},"minute":{"displayName":"minute","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} minute","other":"in {0} minutes"},"past":{"one":"{0} minute ago","other":"{0} minutes ago"}}},"minute-short":{"displayName":"min.","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} min.","other":"in {0} min."},"past":{"one":"{0} min. ago","other":"{0} min. ago"}}},"second":{"displayName":"second","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} second","other":"in {0} seconds"},"past":{"one":"{0} second ago","other":"{0} seconds ago"}}},"second-short":{"displayName":"sec.","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} sec.","other":"in {0} sec."},"past":{"one":"{0} sec. ago","other":"{0} sec. ago"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-001","parentLocale":"en","fields":{"year":{"displayName":"year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"one":"in {0} year","other":"in {0} years"},"past":{"one":"{0} year ago","other":"{0} years ago"}}},"year-short":{"displayName":"yr","relative":{"0":"this yr.","1":"next yr.","-1":"last yr."},"relativeTime":{"future":{"one":"in {0} yr","other":"in {0} yr"},"past":{"one":"{0} yr ago","other":"{0} yr ago"}}},"month":{"displayName":"month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"one":"in {0} month","other":"in {0} months"},"past":{"one":"{0} month ago","other":"{0} months ago"}}},"month-short":{"displayName":"mo","relative":{"0":"this mo.","1":"next mo.","-1":"last mo."},"relativeTime":{"future":{"one":"in {0} mo","other":"in {0} mo"},"past":{"one":"{0} mo ago","other":"{0} mo ago"}}},"day":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"day-short":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"hour":{"displayName":"hour","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hour","other":"in {0} hours"},"past":{"one":"{0} hour ago","other":"{0} hours ago"}}},"hour-short":{"displayName":"hr","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hr","other":"in {0} hr"},"past":{"one":"{0} hr ago","other":"{0} hr ago"}}},"minute":{"displayName":"minute","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} minute","other":"in {0} minutes"},"past":{"one":"{0} minute ago","other":"{0} minutes ago"}}},"minute-short":{"displayName":"min","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} min","other":"in {0} min"},"past":{"one":"{0} min ago","other":"{0} min ago"}}},"second":{"displayName":"second","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} second","other":"in {0} seconds"},"past":{"one":"{0} second ago","other":"{0} seconds ago"}}},"second-short":{"displayName":"sec","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} sec","other":"in {0} sec"},"past":{"one":"{0} sec ago","other":"{0} sec ago"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-150","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-AG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-AI","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-AS","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-AT","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-AU","parentLocale":"en-001","fields":{"year":{"displayName":"year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"one":"in {0} year","other":"in {0} years"},"past":{"one":"{0} year ago","other":"{0} years ago"}}},"year-short":{"displayName":"yr","relative":{"0":"this yr.","1":"next yr.","-1":"last yr."},"relativeTime":{"future":{"one":"in {0} yr","other":"in {0} yr"},"past":{"one":"{0} yr ago","other":"{0} yr ago"}}},"month":{"displayName":"month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"one":"in {0} month","other":"in {0} months"},"past":{"one":"{0} month ago","other":"{0} months ago"}}},"month-short":{"displayName":"mo","relative":{"0":"this mo.","1":"next mo.","-1":"last mo."},"relativeTime":{"future":{"one":"in {0} mo","other":"in {0} mo"},"past":{"one":"{0} mo ago","other":"{0} mo ago"}}},"day":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"day-short":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"hour":{"displayName":"hour","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hour","other":"in {0} hours"},"past":{"one":"{0} hour ago","other":"{0} hours ago"}}},"hour-short":{"displayName":"h","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hr","other":"in {0} hr"},"past":{"one":"{0} hr ago","other":"{0} hr ago"}}},"minute":{"displayName":"minute","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} minute","other":"in {0} minutes"},"past":{"one":"{0} minute ago","other":"{0} minutes ago"}}},"minute-short":{"displayName":"min","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} min","other":"in {0} min"},"past":{"one":"{0} min ago","other":"{0} min ago"}}},"second":{"displayName":"second","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} second","other":"in {0} seconds"},"past":{"one":"{0} second ago","other":"{0} seconds ago"}}},"second-short":{"displayName":"sec","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} sec","other":"in {0} sec"},"past":{"one":"{0} sec ago","other":"{0} sec ago"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BB","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BE","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BI","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BS","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BW","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-BZ","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CA","parentLocale":"en-001","fields":{"year":{"displayName":"year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"one":"in {0} year","other":"in {0} years"},"past":{"one":"{0} year ago","other":"{0} years ago"}}},"year-short":{"displayName":"yr","relative":{"0":"this yr.","1":"next yr.","-1":"last yr."},"relativeTime":{"future":{"one":"in {0} yr.","other":"in {0} yrs."},"past":{"one":"{0} yr. ago","other":"{0} yrs. ago"}}},"month":{"displayName":"month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"one":"in {0} month","other":"in {0} months"},"past":{"one":"{0} month ago","other":"{0} months ago"}}},"month-short":{"displayName":"mo","relative":{"0":"this mo.","1":"next mo.","-1":"last mo."},"relativeTime":{"future":{"one":"in {0} mo.","other":"in {0} mos."},"past":{"one":"{0} mo. ago","other":"{0} mos. ago"}}},"day":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"day-short":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"hour":{"displayName":"hour","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hour","other":"in {0} hours"},"past":{"one":"{0} hour ago","other":"{0} hours ago"}}},"hour-short":{"displayName":"hr","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hr.","other":"in {0} hrs."},"past":{"one":"{0} hr. ago","other":"{0} hrs. ago"}}},"minute":{"displayName":"minute","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} minute","other":"in {0} minutes"},"past":{"one":"{0} minute ago","other":"{0} minutes ago"}}},"minute-short":{"displayName":"min","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} min.","other":"in {0} mins."},"past":{"one":"{0} min. ago","other":"{0} mins. ago"}}},"second":{"displayName":"second","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} second","other":"in {0} seconds"},"past":{"one":"{0} second ago","other":"{0} seconds ago"}}},"second-short":{"displayName":"sec","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} sec.","other":"in {0} secs."},"past":{"one":"{0} sec. ago","other":"{0} secs. ago"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CC","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CH","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CK","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CX","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-CY","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-DE","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-DG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-DK","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-DM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-Dsrt","pluralRuleFunction":function (n,ord){if(ord)return"other";return"other"},"fields":{"year":{"displayName":"Year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"other":"+{0} y"},"past":{"other":"-{0} y"}}},"year-short":{"displayName":"Year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"other":"+{0} y"},"past":{"other":"-{0} y"}}},"month":{"displayName":"Month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"other":"+{0} m"},"past":{"other":"-{0} m"}}},"month-short":{"displayName":"Month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"other":"+{0} m"},"past":{"other":"-{0} m"}}},"day":{"displayName":"Day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"other":"+{0} d"},"past":{"other":"-{0} d"}}},"day-short":{"displayName":"Day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"other":"+{0} d"},"past":{"other":"-{0} d"}}},"hour":{"displayName":"Hour","relative":{"0":"this hour"},"relativeTime":{"future":{"other":"+{0} h"},"past":{"other":"-{0} h"}}},"hour-short":{"displayName":"Hour","relative":{"0":"this hour"},"relativeTime":{"future":{"other":"+{0} h"},"past":{"other":"-{0} h"}}},"minute":{"displayName":"Minute","relative":{"0":"this minute"},"relativeTime":{"future":{"other":"+{0} min"},"past":{"other":"-{0} min"}}},"minute-short":{"displayName":"Minute","relative":{"0":"this minute"},"relativeTime":{"future":{"other":"+{0} min"},"past":{"other":"-{0} min"}}},"second":{"displayName":"Second","relative":{"0":"now"},"relativeTime":{"future":{"other":"+{0} s"},"past":{"other":"-{0} s"}}},"second-short":{"displayName":"Second","relative":{"0":"now"},"relativeTime":{"future":{"other":"+{0} s"},"past":{"other":"-{0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-ER","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-FI","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-FJ","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-FK","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-FM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GB","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GD","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GH","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GI","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GU","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-GY","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-HK","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-IE","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-IL","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-IM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-IN","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-IO","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-JE","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-JM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-KE","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-KI","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-KN","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-KY","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-LC","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-LR","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-LS","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MH","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MO","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MP","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MS","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MT","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MU","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MW","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-MY","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NA","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NF","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NL","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NR","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NU","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-NZ","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-PG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-PH","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-PK","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-PN","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-PR","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-PW","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-RW","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SB","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SC","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SD","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SE","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SG","parentLocale":"en-001","fields":{"year":{"displayName":"year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"one":"in {0} year","other":"in {0} years"},"past":{"one":"{0} year ago","other":"{0} years ago"}}},"year-short":{"displayName":"yr","relative":{"0":"this yr","1":"next yr","-1":"last yr"},"relativeTime":{"future":{"one":"in {0} yr","other":"in {0} yr"},"past":{"one":"{0} yr ago","other":"{0} yr ago"}}},"month":{"displayName":"month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"one":"in {0} month","other":"in {0} months"},"past":{"one":"{0} month ago","other":"{0} months ago"}}},"month-short":{"displayName":"mth","relative":{"0":"this mth","1":"next mth","-1":"last mth"},"relativeTime":{"future":{"one":"in {0} mth","other":"in {0} mth"},"past":{"one":"{0} mth ago","other":"{0} mth ago"}}},"day":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"day-short":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"hour":{"displayName":"hour","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hour","other":"in {0} hours"},"past":{"one":"{0} hour ago","other":"{0} hours ago"}}},"hour-short":{"displayName":"hr","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hr","other":"in {0} hr"},"past":{"one":"{0} hr ago","other":"{0} hr ago"}}},"minute":{"displayName":"minute","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} minute","other":"in {0} minutes"},"past":{"one":"{0} minute ago","other":"{0} minutes ago"}}},"minute-short":{"displayName":"min","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} min","other":"in {0} min"},"past":{"one":"{0} min ago","other":"{0} min ago"}}},"second":{"displayName":"second","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} second","other":"in {0} seconds"},"past":{"one":"{0} second ago","other":"{0} seconds ago"}}},"second-short":{"displayName":"sec","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} sec","other":"in {0} sec"},"past":{"one":"{0} sec ago","other":"{0} sec ago"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SH","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SI","parentLocale":"en-150"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SL","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SS","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SX","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-SZ","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-Shaw","pluralRuleFunction":function (n,ord){if(ord)return"other";return"other"},"fields":{"year":{"displayName":"Year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"other":"+{0} y"},"past":{"other":"-{0} y"}}},"year-short":{"displayName":"Year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"other":"+{0} y"},"past":{"other":"-{0} y"}}},"month":{"displayName":"Month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"other":"+{0} m"},"past":{"other":"-{0} m"}}},"month-short":{"displayName":"Month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"other":"+{0} m"},"past":{"other":"-{0} m"}}},"day":{"displayName":"Day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"other":"+{0} d"},"past":{"other":"-{0} d"}}},"day-short":{"displayName":"Day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"other":"+{0} d"},"past":{"other":"-{0} d"}}},"hour":{"displayName":"Hour","relative":{"0":"this hour"},"relativeTime":{"future":{"other":"+{0} h"},"past":{"other":"-{0} h"}}},"hour-short":{"displayName":"Hour","relative":{"0":"this hour"},"relativeTime":{"future":{"other":"+{0} h"},"past":{"other":"-{0} h"}}},"minute":{"displayName":"Minute","relative":{"0":"this minute"},"relativeTime":{"future":{"other":"+{0} min"},"past":{"other":"-{0} min"}}},"minute-short":{"displayName":"Minute","relative":{"0":"this minute"},"relativeTime":{"future":{"other":"+{0} min"},"past":{"other":"-{0} min"}}},"second":{"displayName":"Second","relative":{"0":"now"},"relativeTime":{"future":{"other":"+{0} s"},"past":{"other":"-{0} s"}}},"second-short":{"displayName":"Second","relative":{"0":"now"},"relativeTime":{"future":{"other":"+{0} s"},"past":{"other":"-{0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"en-TC","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-TK","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-TO","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-TT","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-TV","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-TZ","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-UG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-UM","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-US","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-VC","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-VG","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-VI","parentLocale":"en"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-VU","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-WS","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-ZA","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-ZM","parentLocale":"en-001"});
+IntlRelativeFormat.__addLocaleData({"locale":"en-ZW","parentLocale":"en-001"});
+
+},{}],17:[function(require,module,exports){
+IntlRelativeFormat.__addLocaleData({"locale":"es","pluralRuleFunction":function (n,ord){if(ord)return"other";return n==1?"one":"other"},"fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-419","parentLocale":"es"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-AR","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} días","other":"dentro de {0} días"},"past":{"one":"hace {0} días","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"seg.","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} seg.","other":"dentro de {0} seg."},"past":{"one":"hace {0} seg.","other":"hace {0} seg."}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-BO","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-BR","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-BZ","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-CL","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-CO","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-CR","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-CU","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-DO","parentLocale":"es-419","fields":{"year":{"displayName":"Año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"Mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"Día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"Minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"Segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-EA","parentLocale":"es"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-EC","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-GQ","parentLocale":"es"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-GT","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-HN","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-IC","parentLocale":"es"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-MX","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el año próximo","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"en {0} a","other":"en {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el mes próximo","-1":"el mes pasado"},"relativeTime":{"future":{"one":"en {0} mes","other":"en {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"en {0} m","other":"en {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"en {0} día","other":"en {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"en {0} h","other":"en {0} n"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"en {0} min","other":"en {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"en {0} s","other":"en {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-NI","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-PA","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-PE","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-PH","parentLocale":"es"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-PR","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-PY","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antes de ayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"seg.","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} seg.","other":"dentro de {0} seg."},"past":{"one":"hace {0} seg.","other":"hace {0} seg."}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-SV","parentLocale":"es-419","fields":{"year":{"displayName":"año","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} año","other":"dentro de {0} años"},"past":{"one":"hace {0} año","other":"hace {0} años"}}},"year-short":{"displayName":"a","relative":{"0":"este año","1":"el próximo año","-1":"el año pasado"},"relativeTime":{"future":{"one":"dentro de {0} a","other":"dentro de {0} a"},"past":{"one":"hace {0} a","other":"hace {0} a"}}},"month":{"displayName":"mes","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} mes","other":"dentro de {0} meses"},"past":{"one":"hace {0} mes","other":"hace {0} meses"}}},"month-short":{"displayName":"m","relative":{"0":"este mes","1":"el próximo mes","-1":"el mes pasado"},"relativeTime":{"future":{"one":"dentro de {0} m","other":"dentro de {0} m"},"past":{"one":"hace {0} m","other":"hace {0} m"}}},"day":{"displayName":"día","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"antier","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"day-short":{"displayName":"d","relative":{"0":"hoy","1":"mañana","2":"pasado mañana","-2":"anteayer","-1":"ayer"},"relativeTime":{"future":{"one":"dentro de {0} día","other":"dentro de {0} días"},"past":{"one":"hace {0} día","other":"hace {0} días"}}},"hour":{"displayName":"hora","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} hora","other":"dentro de {0} horas"},"past":{"one":"hace {0} hora","other":"hace {0} horas"}}},"hour-short":{"displayName":"h","relative":{"0":"esta hora"},"relativeTime":{"future":{"one":"dentro de {0} h","other":"dentro de {0} h"},"past":{"one":"hace {0} h","other":"hace {0} h"}}},"minute":{"displayName":"minuto","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} minuto","other":"dentro de {0} minutos"},"past":{"one":"hace {0} minuto","other":"hace {0} minutos"}}},"minute-short":{"displayName":"min","relative":{"0":"este minuto"},"relativeTime":{"future":{"one":"dentro de {0} min","other":"dentro de {0} min"},"past":{"one":"hace {0} min","other":"hace {0} min"}}},"second":{"displayName":"segundo","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} segundo","other":"dentro de {0} segundos"},"past":{"one":"hace {0} segundo","other":"hace {0} segundos"}}},"second-short":{"displayName":"s","relative":{"0":"ahora"},"relativeTime":{"future":{"one":"dentro de {0} s","other":"dentro de {0} s"},"past":{"one":"hace {0} s","other":"hace {0} s"}}}}});
+IntlRelativeFormat.__addLocaleData({"locale":"es-US","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-UY","parentLocale":"es-419"});
+IntlRelativeFormat.__addLocaleData({"locale":"es-VE","parentLocale":"es-419"});
+
+},{}],18:[function(require,module,exports){
+/* jshint node:true */
+
+'use strict';
+
+var IntlRelativeFormat = require('./lib/main')['default'];
+
+// Add all locale data to `IntlRelativeFormat`. This module will be ignored when
+// bundling for the browser with Browserify/Webpack.
+require('./lib/locales');
+
+// Re-export `IntlRelativeFormat` as the CommonJS default exports with all the
+// locale data registered, and with English set as the default locale. Define
+// the `default` prop for use with other compiled ES6 Modules.
+exports = module.exports = IntlRelativeFormat;
+exports['default'] = exports;
+
+},{"./lib/locales":2,"./lib/main":23}],19:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+"use strict";
+var intl$messageformat$$ = require("intl-messageformat"), src$diff$$ = require("./diff"), src$es5$$ = require("./es5");
+exports["default"] = RelativeFormat;
+
+// -----------------------------------------------------------------------------
+
+var FIELDS = [
+    'second', 'second-short',
+    'minute', 'minute-short',
+    'hour', 'hour-short',
+    'day', 'day-short',
+    'month', 'month-short',
+    'year', 'year-short'
+];
+var STYLES = ['best fit', 'numeric'];
+
+// -- RelativeFormat -----------------------------------------------------------
+
+function RelativeFormat(locales, options) {
+    options = options || {};
+
+    // Make a copy of `locales` if it's an array, so that it doesn't change
+    // since it's used lazily.
+    if (src$es5$$.isArray(locales)) {
+        locales = locales.concat();
+    }
+
+    src$es5$$.defineProperty(this, '_locale', {value: this._resolveLocale(locales)});
+    src$es5$$.defineProperty(this, '_options', {value: {
+        style: this._resolveStyle(options.style),
+        units: this._isValidUnits(options.units) && options.units
+    }});
+
+    src$es5$$.defineProperty(this, '_locales', {value: locales});
+    src$es5$$.defineProperty(this, '_fields', {value: this._findFields(this._locale)});
+    src$es5$$.defineProperty(this, '_messages', {value: src$es5$$.objCreate(null)});
+
+    // "Bind" `format()` method to `this` so it can be passed by reference like
+    // the other `Intl` APIs.
+    var relativeFormat = this;
+    this.format = function format(date, options) {
+        return relativeFormat._format(date, options);
+    };
+}
+
+// Define internal private properties for dealing with locale data.
+src$es5$$.defineProperty(RelativeFormat, '__localeData__', {value: src$es5$$.objCreate(null)});
+src$es5$$.defineProperty(RelativeFormat, '__addLocaleData', {value: function (data) {
+    if (!(data && data.locale)) {
+        throw new Error(
+            'Locale data provided to IntlRelativeFormat is missing a ' +
+            '`locale` property value'
+        );
+    }
+
+    RelativeFormat.__localeData__[data.locale.toLowerCase()] = data;
+
+    // Add data to IntlMessageFormat.
+    intl$messageformat$$["default"].__addLocaleData(data);
+}});
+
+// Define public `defaultLocale` property which can be set by the developer, or
+// it will be set when the first RelativeFormat instance is created by
+// leveraging the resolved locale from `Intl`.
+src$es5$$.defineProperty(RelativeFormat, 'defaultLocale', {
+    enumerable: true,
+    writable  : true,
+    value     : undefined
+});
+
+// Define public `thresholds` property which can be set by the developer, and
+// defaults to relative time thresholds from moment.js.
+src$es5$$.defineProperty(RelativeFormat, 'thresholds', {
+    enumerable: true,
+
+    value: {
+        second: 45, 'second-short': 45,  // seconds to minute
+        minute: 45, 'minute-short': 45, // minutes to hour
+        hour  : 22, 'hour-short': 22, // hours to day
+        day   : 26, 'day-short': 26, // days to month
+        month : 11, 'month-short': 11 // months to year
+    }
+});
+
+RelativeFormat.prototype.resolvedOptions = function () {
+    return {
+        locale: this._locale,
+        style : this._options.style,
+        units : this._options.units
+    };
+};
+
+RelativeFormat.prototype._compileMessage = function (units) {
+    // `this._locales` is the original set of locales the user specified to the
+    // constructor, while `this._locale` is the resolved root locale.
+    var locales        = this._locales;
+    var resolvedLocale = this._locale;
+
+    var field        = this._fields[units];
+    var relativeTime = field.relativeTime;
+    var future       = '';
+    var past         = '';
+    var i;
+
+    for (i in relativeTime.future) {
+        if (relativeTime.future.hasOwnProperty(i)) {
+            future += ' ' + i + ' {' +
+                relativeTime.future[i].replace('{0}', '#') + '}';
+        }
+    }
+
+    for (i in relativeTime.past) {
+        if (relativeTime.past.hasOwnProperty(i)) {
+            past += ' ' + i + ' {' +
+                relativeTime.past[i].replace('{0}', '#') + '}';
+        }
+    }
+
+    var message = '{when, select, future {{0, plural, ' + future + '}}' +
+                                 'past {{0, plural, ' + past + '}}}';
+
+    // Create the synthetic IntlMessageFormat instance using the original
+    // locales value specified by the user when constructing the the parent
+    // IntlRelativeFormat instance.
+    return new intl$messageformat$$["default"](message, locales);
+};
+
+RelativeFormat.prototype._getMessage = function (units) {
+    var messages = this._messages;
+
+    // Create a new synthetic message based on the locale data from CLDR.
+    if (!messages[units]) {
+        messages[units] = this._compileMessage(units);
+    }
+
+    return messages[units];
+};
+
+RelativeFormat.prototype._getRelativeUnits = function (diff, units) {
+    var field = this._fields[units];
+
+    if (field.relative) {
+        return field.relative[diff];
+    }
+};
+
+RelativeFormat.prototype._findFields = function (locale) {
+    var localeData = RelativeFormat.__localeData__;
+    var data       = localeData[locale.toLowerCase()];
+
+    // The locale data is de-duplicated, so we have to traverse the locale's
+    // hierarchy until we find `fields` to return.
+    while (data) {
+        if (data.fields) {
+            return data.fields;
+        }
+
+        data = data.parentLocale && localeData[data.parentLocale.toLowerCase()];
+    }
+
+    throw new Error(
+        'Locale data added to IntlRelativeFormat is missing `fields` for :' +
+        locale
+    );
+};
+
+RelativeFormat.prototype._format = function (date, options) {
+    var now = options && options.now !== undefined ? options.now : src$es5$$.dateNow();
+
+    if (date === undefined) {
+        date = now;
+    }
+
+    // Determine if the `date` and optional `now` values are valid, and throw a
+    // similar error to what `Intl.DateTimeFormat#format()` would throw.
+    if (!isFinite(now)) {
+        throw new RangeError(
+            'The `now` option provided to IntlRelativeFormat#format() is not ' +
+            'in valid range.'
+        );
+    }
+
+    if (!isFinite(date)) {
+        throw new RangeError(
+            'The date value provided to IntlRelativeFormat#format() is not ' +
+            'in valid range.'
+        );
+    }
+
+    var diffReport  = src$diff$$["default"](now, date);
+    var units       = this._options.units || this._selectUnits(diffReport);
+    var diffInUnits = diffReport[units];
+
+    if (this._options.style !== 'numeric') {
+        var relativeUnits = this._getRelativeUnits(diffInUnits, units);
+        if (relativeUnits) {
+            return relativeUnits;
+        }
+    }
+
+    return this._getMessage(units).format({
+        '0' : Math.abs(diffInUnits),
+        when: diffInUnits < 0 ? 'past' : 'future'
+    });
+};
+
+RelativeFormat.prototype._isValidUnits = function (units) {
+    if (!units || src$es5$$.arrIndexOf.call(FIELDS, units) >= 0) {
+        return true;
+    }
+
+    if (typeof units === 'string') {
+        var suggestion = /s$/.test(units) && units.substr(0, units.length - 1);
+        if (suggestion && src$es5$$.arrIndexOf.call(FIELDS, suggestion) >= 0) {
+            throw new Error(
+                '"' + units + '" is not a valid IntlRelativeFormat `units` ' +
+                'value, did you mean: ' + suggestion
+            );
+        }
+    }
+
+    throw new Error(
+        '"' + units + '" is not a valid IntlRelativeFormat `units` value, it ' +
+        'must be one of: "' + FIELDS.join('", "') + '"'
+    );
+};
+
+RelativeFormat.prototype._resolveLocale = function (locales) {
+    if (typeof locales === 'string') {
+        locales = [locales];
+    }
+
+    // Create a copy of the array so we can push on the default locale.
+    locales = (locales || []).concat(RelativeFormat.defaultLocale);
+
+    var localeData = RelativeFormat.__localeData__;
+    var i, len, localeParts, data;
+
+    // Using the set of locales + the default locale, we look for the first one
+    // which that has been registered. When data does not exist for a locale, we
+    // traverse its ancestors to find something that's been registered within
+    // its hierarchy of locales. Since we lack the proper `parentLocale` data
+    // here, we must take a naive approach to traversal.
+    for (i = 0, len = locales.length; i < len; i += 1) {
+        localeParts = locales[i].toLowerCase().split('-');
+
+        while (localeParts.length) {
+            data = localeData[localeParts.join('-')];
+            if (data) {
+                // Return the normalized locale string; e.g., we return "en-US",
+                // instead of "en-us".
+                return data.locale;
+            }
+
+            localeParts.pop();
+        }
+    }
+
+    var defaultLocale = locales.pop();
+    throw new Error(
+        'No locale data has been added to IntlRelativeFormat for: ' +
+        locales.join(', ') + ', or the default locale: ' + defaultLocale
+    );
+};
+
+RelativeFormat.prototype._resolveStyle = function (style) {
+    // Default to "best fit" style.
+    if (!style) {
+        return STYLES[0];
+    }
+
+    if (src$es5$$.arrIndexOf.call(STYLES, style) >= 0) {
+        return style;
+    }
+
+    throw new Error(
+        '"' + style + '" is not a valid IntlRelativeFormat `style` value, it ' +
+        'must be one of: "' + STYLES.join('", "') + '"'
+    );
+};
+
+RelativeFormat.prototype._selectUnits = function (diffReport) {
+    var i, l, units;
+    var fields = FIELDS.filter(function(field) {
+        return field.indexOf('-short') < 1;
+    });
+
+    for (i = 0, l = fields.length; i < l; i += 1) {
+        units = fields[i];
+
+        if (Math.abs(diffReport[units]) < RelativeFormat.thresholds[units]) {
+            break;
+        }
+    }
+
+    return units;
+};
+
+
+},{"./diff":20,"./es5":22,"intl-messageformat":9}],20:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+"use strict";
+
+var round = Math.round;
+
+function daysToYears(days) {
+    // 400 years have 146097 days (taking into account leap year rules)
+    return days * 400 / 146097;
+}
+
+exports["default"] = function (from, to) {
+    // Convert to ms timestamps.
+    from = +from;
+    to   = +to;
+
+    var millisecond = round(to - from),
+        second      = round(millisecond / 1000),
+        minute      = round(second / 60),
+        hour        = round(minute / 60),
+        day         = round(hour / 24),
+        week        = round(day / 7);
+
+    var rawYears = daysToYears(day),
+        month    = round(rawYears * 12),
+        year     = round(rawYears);
+
+    return {
+        millisecond    : millisecond,
+        second         : second,
+        'second-short' : second,
+        minute         : minute,
+        'minute-short' : minute,
+        hour           : hour,
+        'hour-short'   : hour,
+        day            : day,
+        'day-short'    : day,
+        week           : week,
+        'week-short'   : week,
+        month          : month,
+        'month-short'  : month,
+        year           : year,
+        'year-short'   : year
+    };
+};
+
+
+},{}],21:[function(require,module,exports){
+// GENERATED FILE
+"use strict";
+exports["default"] = {"locale":"en","pluralRuleFunction":function (n,ord){var s=String(n).split("."),v0=!s[1],t0=Number(s[0])==n,n10=t0&&s[0].slice(-1),n100=t0&&s[0].slice(-2);if(ord)return n10==1&&n100!=11?"one":n10==2&&n100!=12?"two":n10==3&&n100!=13?"few":"other";return n==1&&v0?"one":"other"},"fields":{"year":{"displayName":"year","relative":{"0":"this year","1":"next year","-1":"last year"},"relativeTime":{"future":{"one":"in {0} year","other":"in {0} years"},"past":{"one":"{0} year ago","other":"{0} years ago"}}},"year-short":{"displayName":"yr.","relative":{"0":"this yr.","1":"next yr.","-1":"last yr."},"relativeTime":{"future":{"one":"in {0} yr.","other":"in {0} yr."},"past":{"one":"{0} yr. ago","other":"{0} yr. ago"}}},"month":{"displayName":"month","relative":{"0":"this month","1":"next month","-1":"last month"},"relativeTime":{"future":{"one":"in {0} month","other":"in {0} months"},"past":{"one":"{0} month ago","other":"{0} months ago"}}},"month-short":{"displayName":"mo.","relative":{"0":"this mo.","1":"next mo.","-1":"last mo."},"relativeTime":{"future":{"one":"in {0} mo.","other":"in {0} mo."},"past":{"one":"{0} mo. ago","other":"{0} mo. ago"}}},"day":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"day-short":{"displayName":"day","relative":{"0":"today","1":"tomorrow","-1":"yesterday"},"relativeTime":{"future":{"one":"in {0} day","other":"in {0} days"},"past":{"one":"{0} day ago","other":"{0} days ago"}}},"hour":{"displayName":"hour","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hour","other":"in {0} hours"},"past":{"one":"{0} hour ago","other":"{0} hours ago"}}},"hour-short":{"displayName":"hr.","relative":{"0":"this hour"},"relativeTime":{"future":{"one":"in {0} hr.","other":"in {0} hr."},"past":{"one":"{0} hr. ago","other":"{0} hr. ago"}}},"minute":{"displayName":"minute","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} minute","other":"in {0} minutes"},"past":{"one":"{0} minute ago","other":"{0} minutes ago"}}},"minute-short":{"displayName":"min.","relative":{"0":"this minute"},"relativeTime":{"future":{"one":"in {0} min.","other":"in {0} min."},"past":{"one":"{0} min. ago","other":"{0} min. ago"}}},"second":{"displayName":"second","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} second","other":"in {0} seconds"},"past":{"one":"{0} second ago","other":"{0} seconds ago"}}},"second-short":{"displayName":"sec.","relative":{"0":"now"},"relativeTime":{"future":{"one":"in {0} sec.","other":"in {0} sec."},"past":{"one":"{0} sec. ago","other":"{0} sec. ago"}}}}};
+
+
+},{}],22:[function(require,module,exports){
+/*
+Copyright (c) 2014, Yahoo! Inc. All rights reserved.
+Copyrights licensed under the New BSD License.
+See the accompanying LICENSE file for terms.
+*/
+
+/* jslint esnext: true */
+
+// Purposely using the same implementation as the Intl.js `Intl` polyfill.
+// Copyright 2013 Andy Earnshaw, MIT License
+
+"use strict";
+
+var hop = Object.prototype.hasOwnProperty;
+var toString = Object.prototype.toString;
+
+var realDefineProp = (function () {
+    try { return !!Object.defineProperty({}, 'a', {}); }
+    catch (e) { return false; }
+})();
+
+var es3 = !realDefineProp && !Object.prototype.__defineGetter__;
+
+var defineProperty = realDefineProp ? Object.defineProperty :
+        function (obj, name, desc) {
+
+    if ('get' in desc && obj.__defineGetter__) {
+        obj.__defineGetter__(name, desc.get);
+    } else if (!hop.call(obj, name) || 'value' in desc) {
+        obj[name] = desc.value;
+    }
+};
+
+var objCreate = Object.create || function (proto, props) {
+    var obj, k;
+
+    function F() {}
+    F.prototype = proto;
+    obj = new F();
+
+    for (k in props) {
+        if (hop.call(props, k)) {
+            defineProperty(obj, k, props[k]);
+        }
+    }
+
+    return obj;
+};
+
+var arrIndexOf = Array.prototype.indexOf || function (search, fromIndex) {
+    /*jshint validthis:true */
+    var arr = this;
+    if (!arr.length) {
+        return -1;
+    }
+
+    for (var i = fromIndex || 0, max = arr.length; i < max; i++) {
+        if (arr[i] === search) {
+            return i;
+        }
+    }
+
+    return -1;
+};
+
+var isArray = Array.isArray || function (obj) {
+    return toString.call(obj) === '[object Array]';
+};
+
+var dateNow = Date.now || function () {
+    return new Date().getTime();
+};
+
+exports.defineProperty = defineProperty, exports.objCreate = objCreate, exports.arrIndexOf = arrIndexOf, exports.isArray = isArray, exports.dateNow = dateNow;
+
+
+},{}],23:[function(require,module,exports){
+arguments[4][14][0].apply(exports,arguments)
+},{"./core":19,"./en":21,"dup":14}],24:[function(require,module,exports){
+(function (global){
+// Expose `IntlPolyfill` as global to add locale data into runtime later on.
+global.IntlPolyfill = require('./lib/core.js');
+
+// Require all locale data for `Intl`. This module will be
+// ignored when bundling for the browser with Browserify/Webpack.
+require('./locale-data/complete.js');
+
+// hack to export the polyfill as global Intl if needed
+if (!global.Intl) {
+    global.Intl = global.IntlPolyfill;
+    global.IntlPolyfill.__applyLocaleSensitivePrototypes();
+}
+
+// providing an idiomatic api for the nodejs version of this module
+module.exports = global.IntlPolyfill;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./lib/core.js":25,"./locale-data/complete.js":2}],25:[function(require,module,exports){
+(function (global){
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
+};
+
+var jsx = function () {
+  var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7;
+  return function createRawReactElement(type, props, key, children) {
+    var defaultProps = type && type.defaultProps;
+    var childrenLength = arguments.length - 3;
+
+    if (!props && childrenLength !== 0) {
+      props = {};
+    }
+
+    if (props && defaultProps) {
+      for (var propName in defaultProps) {
+        if (props[propName] === void 0) {
+          props[propName] = defaultProps[propName];
+        }
+      }
+    } else if (!props) {
+      props = defaultProps || {};
+    }
+
+    if (childrenLength === 1) {
+      props.children = children;
+    } else if (childrenLength > 1) {
+      var childArray = Array(childrenLength);
+
+      for (var i = 0; i < childrenLength; i++) {
+        childArray[i] = arguments[i + 3];
+      }
+
+      props.children = childArray;
+    }
+
+    return {
+      $$typeof: REACT_ELEMENT_TYPE,
+      type: type,
+      key: key === undefined ? null : '' + key,
+      ref: null,
+      props: props,
+      _owner: null
+    };
+  };
+}();
+
+var asyncToGenerator = function (fn) {
+  return function () {
+    var gen = fn.apply(this, arguments);
+    return new Promise(function (resolve, reject) {
+      function step(key, arg) {
+        try {
+          var info = gen[key](arg);
+          var value = info.value;
+        } catch (error) {
+          reject(error);
+          return;
+        }
+
+        if (info.done) {
+          resolve(value);
+        } else {
+          return Promise.resolve(value).then(function (value) {
+            return step("next", value);
+          }, function (err) {
+            return step("throw", err);
+          });
+        }
+      }
+
+      return step("next");
+    });
+  };
+};
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var defineEnumerableProperties = function (obj, descs) {
+  for (var key in descs) {
+    var desc = descs[key];
+    desc.configurable = desc.enumerable = true;
+    if ("value" in desc) desc.writable = true;
+    Object.defineProperty(obj, key, desc);
+  }
+
+  return obj;
+};
+
+var defaults = function (obj, defaults) {
+  var keys = Object.getOwnPropertyNames(defaults);
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    var value = Object.getOwnPropertyDescriptor(defaults, key);
+
+    if (value && value.configurable && obj[key] === undefined) {
+      Object.defineProperty(obj, key, value);
+    }
+  }
+
+  return obj;
+};
+
+var defineProperty$1 = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var get = function get(object, property, receiver) {
+  if (object === null) object = Function.prototype;
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent === null) {
+      return undefined;
+    } else {
+      return get(parent, property, receiver);
+    }
+  } else if ("value" in desc) {
+    return desc.value;
+  } else {
+    var getter = desc.get;
+
+    if (getter === undefined) {
+      return undefined;
+    }
+
+    return getter.call(receiver);
+  }
+};
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+var _instanceof = function (left, right) {
+  if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+    return right[Symbol.hasInstance](left);
+  } else {
+    return left instanceof right;
+  }
+};
+
+var interopRequireDefault = function (obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+};
+
+var interopRequireWildcard = function (obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};
+
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+      }
+    }
+
+    newObj.default = obj;
+    return newObj;
+  }
+};
+
+var newArrowCheck = function (innerThis, boundThis) {
+  if (innerThis !== boundThis) {
+    throw new TypeError("Cannot instantiate an arrow function");
+  }
+};
+
+var objectDestructuringEmpty = function (obj) {
+  if (obj == null) throw new TypeError("Cannot destructure undefined");
+};
+
+var objectWithoutProperties = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+
+var selfGlobal = typeof global === "undefined" ? self : global;
+
+var set = function set(object, property, value, receiver) {
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent !== null) {
+      set(parent, property, value, receiver);
+    }
+  } else if ("value" in desc && desc.writable) {
+    desc.value = value;
+  } else {
+    var setter = desc.set;
+
+    if (setter !== undefined) {
+      setter.call(receiver, value);
+    }
+  }
+
+  return value;
+};
+
+var slicedToArray = function () {
+  function sliceIterator(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"]) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  return function (arr, i) {
+    if (Array.isArray(arr)) {
+      return arr;
+    } else if (Symbol.iterator in Object(arr)) {
+      return sliceIterator(arr, i);
+    } else {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+  };
+}();
+
+var slicedToArrayLoose = function (arr, i) {
+  if (Array.isArray(arr)) {
+    return arr;
+  } else if (Symbol.iterator in Object(arr)) {
+    var _arr = [];
+
+    for (var _iterator = arr[Symbol.iterator](), _step; !(_step = _iterator.next()).done;) {
+      _arr.push(_step.value);
+
+      if (i && _arr.length === i) break;
+    }
+
+    return _arr;
+  } else {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance");
+  }
+};
+
+var taggedTemplateLiteral = function (strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
+};
+
+var taggedTemplateLiteralLoose = function (strings, raw) {
+  strings.raw = raw;
+  return strings;
+};
+
+var temporalRef = function (val, name, undef) {
+  if (val === undef) {
+    throw new ReferenceError(name + " is not defined - temporal dead zone");
+  } else {
+    return val;
+  }
+};
+
+var temporalUndefined = {};
+
+var toArray = function (arr) {
+  return Array.isArray(arr) ? arr : Array.from(arr);
+};
+
+var toConsumableArray = function (arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  } else {
+    return Array.from(arr);
+  }
+};
+
+
+
+var babelHelpers$1 = Object.freeze({
+  jsx: jsx,
+  asyncToGenerator: asyncToGenerator,
+  classCallCheck: classCallCheck,
+  createClass: createClass,
+  defineEnumerableProperties: defineEnumerableProperties,
+  defaults: defaults,
+  defineProperty: defineProperty$1,
+  get: get,
+  inherits: inherits,
+  interopRequireDefault: interopRequireDefault,
+  interopRequireWildcard: interopRequireWildcard,
+  newArrowCheck: newArrowCheck,
+  objectDestructuringEmpty: objectDestructuringEmpty,
+  objectWithoutProperties: objectWithoutProperties,
+  possibleConstructorReturn: possibleConstructorReturn,
+  selfGlobal: selfGlobal,
+  set: set,
+  slicedToArray: slicedToArray,
+  slicedToArrayLoose: slicedToArrayLoose,
+  taggedTemplateLiteral: taggedTemplateLiteral,
+  taggedTemplateLiteralLoose: taggedTemplateLiteralLoose,
+  temporalRef: temporalRef,
+  temporalUndefined: temporalUndefined,
+  toArray: toArray,
+  toConsumableArray: toConsumableArray,
+  typeof: _typeof,
+  extends: _extends,
+  instanceof: _instanceof
+});
+
+var realDefineProp = function () {
+    var sentinel = function sentinel() {};
+    try {
+        Object.defineProperty(sentinel, 'a', {
+            get: function get() {
+                return 1;
+            }
+        });
+        Object.defineProperty(sentinel, 'prototype', { writable: false });
+        return sentinel.a === 1 && sentinel.prototype instanceof Object;
+    } catch (e) {
+        return false;
+    }
+}();
+
+// Need a workaround for getters in ES3
+var es3 = !realDefineProp && !Object.prototype.__defineGetter__;
+
+// We use this a lot (and need it for proto-less objects)
+var hop = Object.prototype.hasOwnProperty;
+
+// Naive defineProperty for compatibility
+var defineProperty = realDefineProp ? Object.defineProperty : function (obj, name, desc) {
+    if ('get' in desc && obj.__defineGetter__) obj.__defineGetter__(name, desc.get);else if (!hop.call(obj, name) || 'value' in desc) obj[name] = desc.value;
+};
+
+// Array.prototype.indexOf, as good as we need it to be
+var arrIndexOf = Array.prototype.indexOf || function (search) {
+    /*jshint validthis:true */
+    var t = this;
+    if (!t.length) return -1;
+
+    for (var i = arguments[1] || 0, max = t.length; i < max; i++) {
+        if (t[i] === search) return i;
+    }
+
+    return -1;
+};
+
+// Create an object with the specified prototype (2nd arg required for Record)
+var objCreate = Object.create || function (proto, props) {
+    var obj = void 0;
+
+    function F() {}
+    F.prototype = proto;
+    obj = new F();
+
+    for (var k in props) {
+        if (hop.call(props, k)) defineProperty(obj, k, props[k]);
+    }
+
+    return obj;
+};
+
+// Snapshot some (hopefully still) native built-ins
+var arrSlice = Array.prototype.slice;
+var arrConcat = Array.prototype.concat;
+var arrPush = Array.prototype.push;
+var arrJoin = Array.prototype.join;
+var arrShift = Array.prototype.shift;
+
+// Naive Function.prototype.bind for compatibility
+var fnBind = Function.prototype.bind || function (thisObj) {
+    var fn = this,
+        args = arrSlice.call(arguments, 1);
+
+    // All our (presently) bound functions have either 1 or 0 arguments. By returning
+    // different function signatures, we can pass some tests in ES3 environments
+    if (fn.length === 1) {
+        return function () {
+            return fn.apply(thisObj, arrConcat.call(args, arrSlice.call(arguments)));
+        };
+    }
+    return function () {
+        return fn.apply(thisObj, arrConcat.call(args, arrSlice.call(arguments)));
+    };
+};
+
+// Object housing internal properties for constructors
+var internals = objCreate(null);
+
+// Keep internal properties internal
+var secret = Math.random();
+
+// Helper functions
+// ================
+
+/**
+ * A function to deal with the inaccuracy of calculating log10 in pre-ES6
+ * JavaScript environments. Math.log(num) / Math.LN10 was responsible for
+ * causing issue #62.
+ */
+function log10Floor(n) {
+    // ES6 provides the more accurate Math.log10
+    if (typeof Math.log10 === 'function') return Math.floor(Math.log10(n));
+
+    var x = Math.round(Math.log(n) * Math.LOG10E);
+    return x - (Number('1e' + x) > n);
+}
+
+/**
+ * A map that doesn't contain Object in its prototype chain
+ */
+function Record(obj) {
+    // Copy only own properties over unless this object is already a Record instance
+    for (var k in obj) {
+        if (obj instanceof Record || hop.call(obj, k)) defineProperty(this, k, { value: obj[k], enumerable: true, writable: true, configurable: true });
+    }
+}
+Record.prototype = objCreate(null);
+
+/**
+ * An ordered list
+ */
+function List() {
+    defineProperty(this, 'length', { writable: true, value: 0 });
+
+    if (arguments.length) arrPush.apply(this, arrSlice.call(arguments));
+}
+List.prototype = objCreate(null);
+
+/**
+ * Constructs a regular expression to restore tainted RegExp properties
+ */
+function createRegExpRestore() {
+    if (internals.disableRegExpRestore) {
+        return function () {/* no-op */};
+    }
+
+    var regExpCache = {
+        lastMatch: RegExp.lastMatch || '',
+        leftContext: RegExp.leftContext,
+        multiline: RegExp.multiline,
+        input: RegExp.input
+    },
+        has = false;
+
+    // Create a snapshot of all the 'captured' properties
+    for (var i = 1; i <= 9; i++) {
+        has = (regExpCache['$' + i] = RegExp['$' + i]) || has;
+    }return function () {
+        // Now we've snapshotted some properties, escape the lastMatch string
+        var esc = /[.?*+^$[\]\\(){}|-]/g,
+            lm = regExpCache.lastMatch.replace(esc, '\\$&'),
+            reg = new List();
+
+        // If any of the captured strings were non-empty, iterate over them all
+        if (has) {
+            for (var _i = 1; _i <= 9; _i++) {
+                var m = regExpCache['$' + _i];
+
+                // If it's empty, add an empty capturing group
+                if (!m) lm = '()' + lm;
+
+                // Else find the string in lm and escape & wrap it to capture it
+                else {
+                        m = m.replace(esc, '\\$&');
+                        lm = lm.replace(m, '(' + m + ')');
+                    }
+
+                // Push it to the reg and chop lm to make sure further groups come after
+                arrPush.call(reg, lm.slice(0, lm.indexOf('(') + 1));
+                lm = lm.slice(lm.indexOf('(') + 1);
+            }
+        }
+
+        var exprStr = arrJoin.call(reg, '') + lm;
+
+        // Shorten the regex by replacing each part of the expression with a match
+        // for a string of that exact length.  This is safe for the type of
+        // expressions generated above, because the expression matches the whole
+        // match string, so we know each group and each segment between capturing
+        // groups can be matched by its length alone.
+        exprStr = exprStr.replace(/(\\\(|\\\)|[^()])+/g, function (match) {
+            return '[\\s\\S]{' + match.replace('\\', '').length + '}';
+        });
+
+        // Create the regular expression that will reconstruct the RegExp properties
+        var expr = new RegExp(exprStr, regExpCache.multiline ? 'gm' : 'g');
+
+        // Set the lastIndex of the generated expression to ensure that the match
+        // is found in the correct index.
+        expr.lastIndex = regExpCache.leftContext.length;
+
+        expr.exec(regExpCache.input);
+    };
+}
+
+/**
+ * Mimics ES5's abstract ToObject() function
+ */
+function toObject(arg) {
+    if (arg === null) throw new TypeError('Cannot convert null or undefined to object');
+
+    if ((typeof arg === 'undefined' ? 'undefined' : babelHelpers$1['typeof'](arg)) === 'object') return arg;
+    return Object(arg);
+}
+
+function toNumber(arg) {
+    if (typeof arg === 'number') return arg;
+    return Number(arg);
+}
+
+function toInteger(arg) {
+    var number = toNumber(arg);
+    if (isNaN(number)) return 0;
+    if (number === +0 || number === -0 || number === +Infinity || number === -Infinity) return number;
+    if (number < 0) return Math.floor(Math.abs(number)) * -1;
+    return Math.floor(Math.abs(number));
+}
+
+function toLength(arg) {
+    var len = toInteger(arg);
+    if (len <= 0) return 0;
+    if (len === Infinity) return Math.pow(2, 53) - 1;
+    return Math.min(len, Math.pow(2, 53) - 1);
+}
+
+/**
+ * Returns "internal" properties for an object
+ */
+function getInternalProperties(obj) {
+    if (hop.call(obj, '__getInternalProperties')) return obj.__getInternalProperties(secret);
+
+    return objCreate(null);
+}
+
+/**
+* Defines regular expressions for various operations related to the BCP 47 syntax,
+* as defined at http://tools.ietf.org/html/bcp47#section-2.1
+*/
+
+// extlang       = 3ALPHA              ; selected ISO 639 codes
+//                 *2("-" 3ALPHA)      ; permanently reserved
+var extlang = '[a-z]{3}(?:-[a-z]{3}){0,2}';
+
+// language      = 2*3ALPHA            ; shortest ISO 639 code
+//                 ["-" extlang]       ; sometimes followed by
+//                                     ; extended language subtags
+//               / 4ALPHA              ; or reserved for future use
+//               / 5*8ALPHA            ; or registered language subtag
+var language = '(?:[a-z]{2,3}(?:-' + extlang + ')?|[a-z]{4}|[a-z]{5,8})';
+
+// script        = 4ALPHA              ; ISO 15924 code
+var script = '[a-z]{4}';
+
+// region        = 2ALPHA              ; ISO 3166-1 code
+//               / 3DIGIT              ; UN M.49 code
+var region = '(?:[a-z]{2}|\\d{3})';
+
+// variant       = 5*8alphanum         ; registered variants
+//               / (DIGIT 3alphanum)
+var variant = '(?:[a-z0-9]{5,8}|\\d[a-z0-9]{3})';
+
+//                                     ; Single alphanumerics
+//                                     ; "x" reserved for private use
+// singleton     = DIGIT               ; 0 - 9
+//               / %x41-57             ; A - W
+//               / %x59-5A             ; Y - Z
+//               / %x61-77             ; a - w
+//               / %x79-7A             ; y - z
+var singleton = '[0-9a-wy-z]';
+
+// extension     = singleton 1*("-" (2*8alphanum))
+var extension = singleton + '(?:-[a-z0-9]{2,8})+';
+
+// privateuse    = "x" 1*("-" (1*8alphanum))
+var privateuse = 'x(?:-[a-z0-9]{1,8})+';
+
+// irregular     = "en-GB-oed"         ; irregular tags do not match
+//               / "i-ami"             ; the 'langtag' production and
+//               / "i-bnn"             ; would not otherwise be
+//               / "i-default"         ; considered 'well-formed'
+//               / "i-enochian"        ; These tags are all valid,
+//               / "i-hak"             ; but most are deprecated
+//               / "i-klingon"         ; in favor of more modern
+//               / "i-lux"             ; subtags or subtag
+//               / "i-mingo"           ; combination
+//               / "i-navajo"
+//               / "i-pwn"
+//               / "i-tao"
+//               / "i-tay"
+//               / "i-tsu"
+//               / "sgn-BE-FR"
+//               / "sgn-BE-NL"
+//               / "sgn-CH-DE"
+var irregular = '(?:en-GB-oed' + '|i-(?:ami|bnn|default|enochian|hak|klingon|lux|mingo|navajo|pwn|tao|tay|tsu)' + '|sgn-(?:BE-FR|BE-NL|CH-DE))';
+
+// regular       = "art-lojban"        ; these tags match the 'langtag'
+//               / "cel-gaulish"       ; production, but their subtags
+//               / "no-bok"            ; are not extended language
+//               / "no-nyn"            ; or variant subtags: their meaning
+//               / "zh-guoyu"          ; is defined by their registration
+//               / "zh-hakka"          ; and all of these are deprecated
+//               / "zh-min"            ; in favor of a more modern
+//               / "zh-min-nan"        ; subtag or sequence of subtags
+//               / "zh-xiang"
+var regular = '(?:art-lojban|cel-gaulish|no-bok|no-nyn' + '|zh-(?:guoyu|hakka|min|min-nan|xiang))';
+
+// grandfathered = irregular           ; non-redundant tags registered
+//               / regular             ; during the RFC 3066 era
+var grandfathered = '(?:' + irregular + '|' + regular + ')';
+
+// langtag       = language
+//                 ["-" script]
+//                 ["-" region]
+//                 *("-" variant)
+//                 *("-" extension)
+//                 ["-" privateuse]
+var langtag = language + '(?:-' + script + ')?(?:-' + region + ')?(?:-' + variant + ')*(?:-' + extension + ')*(?:-' + privateuse + ')?';
+
+// Language-Tag  = langtag             ; normal language tags
+//               / privateuse          ; private use tag
+//               / grandfathered       ; grandfathered tags
+var expBCP47Syntax = RegExp('^(?:' + langtag + '|' + privateuse + '|' + grandfathered + ')$', 'i');
+
+// Match duplicate variants in a language tag
+var expVariantDupes = RegExp('^(?!x).*?-(' + variant + ')-(?:\\w{4,8}-(?!x-))*\\1\\b', 'i');
+
+// Match duplicate singletons in a language tag (except in private use)
+var expSingletonDupes = RegExp('^(?!x).*?-(' + singleton + ')-(?:\\w+-(?!x-))*\\1\\b', 'i');
+
+// Match all extension sequences
+var expExtSequences = RegExp('-' + extension, 'ig');
+
+// Default locale is the first-added locale data for us
+var defaultLocale = void 0;
+function setDefaultLocale(locale) {
+    defaultLocale = locale;
+}
+
+// IANA Subtag Registry redundant tag and subtag maps
+var redundantTags = {
+    tags: {
+        "art-lojban": "jbo",
+        "i-ami": "ami",
+        "i-bnn": "bnn",
+        "i-hak": "hak",
+        "i-klingon": "tlh",
+        "i-lux": "lb",
+        "i-navajo": "nv",
+        "i-pwn": "pwn",
+        "i-tao": "tao",
+        "i-tay": "tay",
+        "i-tsu": "tsu",
+        "no-bok": "nb",
+        "no-nyn": "nn",
+        "sgn-BE-FR": "sfb",
+        "sgn-BE-NL": "vgt",
+        "sgn-CH-DE": "sgg",
+        "zh-guoyu": "cmn",
+        "zh-hakka": "hak",
+        "zh-min-nan": "nan",
+        "zh-xiang": "hsn",
+        "sgn-BR": "bzs",
+        "sgn-CO": "csn",
+        "sgn-DE": "gsg",
+        "sgn-DK": "dsl",
+        "sgn-ES": "ssp",
+        "sgn-FR": "fsl",
+        "sgn-GB": "bfi",
+        "sgn-GR": "gss",
+        "sgn-IE": "isg",
+        "sgn-IT": "ise",
+        "sgn-JP": "jsl",
+        "sgn-MX": "mfs",
+        "sgn-NI": "ncs",
+        "sgn-NL": "dse",
+        "sgn-NO": "nsl",
+        "sgn-PT": "psr",
+        "sgn-SE": "swl",
+        "sgn-US": "ase",
+        "sgn-ZA": "sfs",
+        "zh-cmn": "cmn",
+        "zh-cmn-Hans": "cmn-Hans",
+        "zh-cmn-Hant": "cmn-Hant",
+        "zh-gan": "gan",
+        "zh-wuu": "wuu",
+        "zh-yue": "yue"
+    },
+    subtags: {
+        BU: "MM",
+        DD: "DE",
+        FX: "FR",
+        TP: "TL",
+        YD: "YE",
+        ZR: "CD",
+        heploc: "alalc97",
+        'in': "id",
+        iw: "he",
+        ji: "yi",
+        jw: "jv",
+        mo: "ro",
+        ayx: "nun",
+        bjd: "drl",
+        ccq: "rki",
+        cjr: "mom",
+        cka: "cmr",
+        cmk: "xch",
+        drh: "khk",
+        drw: "prs",
+        gav: "dev",
+        hrr: "jal",
+        ibi: "opa",
+        kgh: "kml",
+        lcq: "ppr",
+        mst: "mry",
+        myt: "mry",
+        sca: "hle",
+        tie: "ras",
+        tkk: "twm",
+        tlw: "weo",
+        tnf: "prs",
+        ybd: "rki",
+        yma: "lrr"
+    },
+    extLang: {
+        aao: ["aao", "ar"],
+        abh: ["abh", "ar"],
+        abv: ["abv", "ar"],
+        acm: ["acm", "ar"],
+        acq: ["acq", "ar"],
+        acw: ["acw", "ar"],
+        acx: ["acx", "ar"],
+        acy: ["acy", "ar"],
+        adf: ["adf", "ar"],
+        ads: ["ads", "sgn"],
+        aeb: ["aeb", "ar"],
+        aec: ["aec", "ar"],
+        aed: ["aed", "sgn"],
+        aen: ["aen", "sgn"],
+        afb: ["afb", "ar"],
+        afg: ["afg", "sgn"],
+        ajp: ["ajp", "ar"],
+        apc: ["apc", "ar"],
+        apd: ["apd", "ar"],
+        arb: ["arb", "ar"],
+        arq: ["arq", "ar"],
+        ars: ["ars", "ar"],
+        ary: ["ary", "ar"],
+        arz: ["arz", "ar"],
+        ase: ["ase", "sgn"],
+        asf: ["asf", "sgn"],
+        asp: ["asp", "sgn"],
+        asq: ["asq", "sgn"],
+        asw: ["asw", "sgn"],
+        auz: ["auz", "ar"],
+        avl: ["avl", "ar"],
+        ayh: ["ayh", "ar"],
+        ayl: ["ayl", "ar"],
+        ayn: ["ayn", "ar"],
+        ayp: ["ayp", "ar"],
+        bbz: ["bbz", "ar"],
+        bfi: ["bfi", "sgn"],
+        bfk: ["bfk", "sgn"],
+        bjn: ["bjn", "ms"],
+        bog: ["bog", "sgn"],
+        bqn: ["bqn", "sgn"],
+        bqy: ["bqy", "sgn"],
+        btj: ["btj", "ms"],
+        bve: ["bve", "ms"],
+        bvl: ["bvl", "sgn"],
+        bvu: ["bvu", "ms"],
+        bzs: ["bzs", "sgn"],
+        cdo: ["cdo", "zh"],
+        cds: ["cds", "sgn"],
+        cjy: ["cjy", "zh"],
+        cmn: ["cmn", "zh"],
+        coa: ["coa", "ms"],
+        cpx: ["cpx", "zh"],
+        csc: ["csc", "sgn"],
+        csd: ["csd", "sgn"],
+        cse: ["cse", "sgn"],
+        csf: ["csf", "sgn"],
+        csg: ["csg", "sgn"],
+        csl: ["csl", "sgn"],
+        csn: ["csn", "sgn"],
+        csq: ["csq", "sgn"],
+        csr: ["csr", "sgn"],
+        czh: ["czh", "zh"],
+        czo: ["czo", "zh"],
+        doq: ["doq", "sgn"],
+        dse: ["dse", "sgn"],
+        dsl: ["dsl", "sgn"],
+        dup: ["dup", "ms"],
+        ecs: ["ecs", "sgn"],
+        esl: ["esl", "sgn"],
+        esn: ["esn", "sgn"],
+        eso: ["eso", "sgn"],
+        eth: ["eth", "sgn"],
+        fcs: ["fcs", "sgn"],
+        fse: ["fse", "sgn"],
+        fsl: ["fsl", "sgn"],
+        fss: ["fss", "sgn"],
+        gan: ["gan", "zh"],
+        gds: ["gds", "sgn"],
+        gom: ["gom", "kok"],
+        gse: ["gse", "sgn"],
+        gsg: ["gsg", "sgn"],
+        gsm: ["gsm", "sgn"],
+        gss: ["gss", "sgn"],
+        gus: ["gus", "sgn"],
+        hab: ["hab", "sgn"],
+        haf: ["haf", "sgn"],
+        hak: ["hak", "zh"],
+        hds: ["hds", "sgn"],
+        hji: ["hji", "ms"],
+        hks: ["hks", "sgn"],
+        hos: ["hos", "sgn"],
+        hps: ["hps", "sgn"],
+        hsh: ["hsh", "sgn"],
+        hsl: ["hsl", "sgn"],
+        hsn: ["hsn", "zh"],
+        icl: ["icl", "sgn"],
+        ils: ["ils", "sgn"],
+        inl: ["inl", "sgn"],
+        ins: ["ins", "sgn"],
+        ise: ["ise", "sgn"],
+        isg: ["isg", "sgn"],
+        isr: ["isr", "sgn"],
+        jak: ["jak", "ms"],
+        jax: ["jax", "ms"],
+        jcs: ["jcs", "sgn"],
+        jhs: ["jhs", "sgn"],
+        jls: ["jls", "sgn"],
+        jos: ["jos", "sgn"],
+        jsl: ["jsl", "sgn"],
+        jus: ["jus", "sgn"],
+        kgi: ["kgi", "sgn"],
+        knn: ["knn", "kok"],
+        kvb: ["kvb", "ms"],
+        kvk: ["kvk", "sgn"],
+        kvr: ["kvr", "ms"],
+        kxd: ["kxd", "ms"],
+        lbs: ["lbs", "sgn"],
+        lce: ["lce", "ms"],
+        lcf: ["lcf", "ms"],
+        liw: ["liw", "ms"],
+        lls: ["lls", "sgn"],
+        lsg: ["lsg", "sgn"],
+        lsl: ["lsl", "sgn"],
+        lso: ["lso", "sgn"],
+        lsp: ["lsp", "sgn"],
+        lst: ["lst", "sgn"],
+        lsy: ["lsy", "sgn"],
+        ltg: ["ltg", "lv"],
+        lvs: ["lvs", "lv"],
+        lzh: ["lzh", "zh"],
+        max: ["max", "ms"],
+        mdl: ["mdl", "sgn"],
+        meo: ["meo", "ms"],
+        mfa: ["mfa", "ms"],
+        mfb: ["mfb", "ms"],
+        mfs: ["mfs", "sgn"],
+        min: ["min", "ms"],
+        mnp: ["mnp", "zh"],
+        mqg: ["mqg", "ms"],
+        mre: ["mre", "sgn"],
+        msd: ["msd", "sgn"],
+        msi: ["msi", "ms"],
+        msr: ["msr", "sgn"],
+        mui: ["mui", "ms"],
+        mzc: ["mzc", "sgn"],
+        mzg: ["mzg", "sgn"],
+        mzy: ["mzy", "sgn"],
+        nan: ["nan", "zh"],
+        nbs: ["nbs", "sgn"],
+        ncs: ["ncs", "sgn"],
+        nsi: ["nsi", "sgn"],
+        nsl: ["nsl", "sgn"],
+        nsp: ["nsp", "sgn"],
+        nsr: ["nsr", "sgn"],
+        nzs: ["nzs", "sgn"],
+        okl: ["okl", "sgn"],
+        orn: ["orn", "ms"],
+        ors: ["ors", "ms"],
+        pel: ["pel", "ms"],
+        pga: ["pga", "ar"],
+        pks: ["pks", "sgn"],
+        prl: ["prl", "sgn"],
+        prz: ["prz", "sgn"],
+        psc: ["psc", "sgn"],
+        psd: ["psd", "sgn"],
+        pse: ["pse", "ms"],
+        psg: ["psg", "sgn"],
+        psl: ["psl", "sgn"],
+        pso: ["pso", "sgn"],
+        psp: ["psp", "sgn"],
+        psr: ["psr", "sgn"],
+        pys: ["pys", "sgn"],
+        rms: ["rms", "sgn"],
+        rsi: ["rsi", "sgn"],
+        rsl: ["rsl", "sgn"],
+        sdl: ["sdl", "sgn"],
+        sfb: ["sfb", "sgn"],
+        sfs: ["sfs", "sgn"],
+        sgg: ["sgg", "sgn"],
+        sgx: ["sgx", "sgn"],
+        shu: ["shu", "ar"],
+        slf: ["slf", "sgn"],
+        sls: ["sls", "sgn"],
+        sqk: ["sqk", "sgn"],
+        sqs: ["sqs", "sgn"],
+        ssh: ["ssh", "ar"],
+        ssp: ["ssp", "sgn"],
+        ssr: ["ssr", "sgn"],
+        svk: ["svk", "sgn"],
+        swc: ["swc", "sw"],
+        swh: ["swh", "sw"],
+        swl: ["swl", "sgn"],
+        syy: ["syy", "sgn"],
+        tmw: ["tmw", "ms"],
+        tse: ["tse", "sgn"],
+        tsm: ["tsm", "sgn"],
+        tsq: ["tsq", "sgn"],
+        tss: ["tss", "sgn"],
+        tsy: ["tsy", "sgn"],
+        tza: ["tza", "sgn"],
+        ugn: ["ugn", "sgn"],
+        ugy: ["ugy", "sgn"],
+        ukl: ["ukl", "sgn"],
+        uks: ["uks", "sgn"],
+        urk: ["urk", "ms"],
+        uzn: ["uzn", "uz"],
+        uzs: ["uzs", "uz"],
+        vgt: ["vgt", "sgn"],
+        vkk: ["vkk", "ms"],
+        vkt: ["vkt", "ms"],
+        vsi: ["vsi", "sgn"],
+        vsl: ["vsl", "sgn"],
+        vsv: ["vsv", "sgn"],
+        wuu: ["wuu", "zh"],
+        xki: ["xki", "sgn"],
+        xml: ["xml", "sgn"],
+        xmm: ["xmm", "ms"],
+        xms: ["xms", "sgn"],
+        yds: ["yds", "sgn"],
+        ysl: ["ysl", "sgn"],
+        yue: ["yue", "zh"],
+        zib: ["zib", "sgn"],
+        zlm: ["zlm", "ms"],
+        zmi: ["zmi", "ms"],
+        zsl: ["zsl", "sgn"],
+        zsm: ["zsm", "ms"]
+    }
+};
+
+/**
+ * Convert only a-z to uppercase as per section 6.1 of the spec
+ */
+function toLatinUpperCase(str) {
+    var i = str.length;
+
+    while (i--) {
+        var ch = str.charAt(i);
+
+        if (ch >= "a" && ch <= "z") str = str.slice(0, i) + ch.toUpperCase() + str.slice(i + 1);
+    }
+
+    return str;
+}
+
+/**
+ * The IsStructurallyValidLanguageTag abstract operation verifies that the locale
+ * argument (which must be a String value)
+ *
+ * - represents a well-formed BCP 47 language tag as specified in RFC 5646 section
+ *   2.1, or successor,
+ * - does not include duplicate variant subtags, and
+ * - does not include duplicate singleton subtags.
+ *
+ * The abstract operation returns true if locale can be generated from the ABNF
+ * grammar in section 2.1 of the RFC, starting with Language-Tag, and does not
+ * contain duplicate variant or singleton subtags (other than as a private use
+ * subtag). It returns false otherwise. Terminal value characters in the grammar are
+ * interpreted as the Unicode equivalents of the ASCII octet values given.
+ */
+function /* 6.2.2 */IsStructurallyValidLanguageTag(locale) {
+    // represents a well-formed BCP 47 language tag as specified in RFC 5646
+    if (!expBCP47Syntax.test(locale)) return false;
+
+    // does not include duplicate variant subtags, and
+    if (expVariantDupes.test(locale)) return false;
+
+    // does not include duplicate singleton subtags.
+    if (expSingletonDupes.test(locale)) return false;
+
+    return true;
+}
+
+/**
+ * The CanonicalizeLanguageTag abstract operation returns the canonical and case-
+ * regularized form of the locale argument (which must be a String value that is
+ * a structurally valid BCP 47 language tag as verified by the
+ * IsStructurallyValidLanguageTag abstract operation). It takes the steps
+ * specified in RFC 5646 section 4.5, or successor, to bring the language tag
+ * into canonical form, and to regularize the case of the subtags, but does not
+ * take the steps to bring a language tag into “extlang form” and to reorder
+ * variant subtags.
+
+ * The specifications for extensions to BCP 47 language tags, such as RFC 6067,
+ * may include canonicalization rules for the extension subtag sequences they
+ * define that go beyond the canonicalization rules of RFC 5646 section 4.5.
+ * Implementations are allowed, but not required, to apply these additional rules.
+ */
+function /* 6.2.3 */CanonicalizeLanguageTag(locale) {
+    var match = void 0,
+        parts = void 0;
+
+    // A language tag is in 'canonical form' when the tag is well-formed
+    // according to the rules in Sections 2.1 and 2.2
+
+    // Section 2.1 says all subtags use lowercase...
+    locale = locale.toLowerCase();
+
+    // ...with 2 exceptions: 'two-letter and four-letter subtags that neither
+    // appear at the start of the tag nor occur after singletons.  Such two-letter
+    // subtags are all uppercase (as in the tags "en-CA-x-ca" or "sgn-BE-FR") and
+    // four-letter subtags are titlecase (as in the tag "az-Latn-x-latn").
+    parts = locale.split('-');
+    for (var i = 1, max = parts.length; i < max; i++) {
+        // Two-letter subtags are all uppercase
+        if (parts[i].length === 2) parts[i] = parts[i].toUpperCase();
+
+        // Four-letter subtags are titlecase
+        else if (parts[i].length === 4) parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1);
+
+            // Is it a singleton?
+            else if (parts[i].length === 1 && parts[i] !== 'x') break;
+    }
+    locale = arrJoin.call(parts, '-');
+
+    // The steps laid out in RFC 5646 section 4.5 are as follows:
+
+    // 1.  Extension sequences are ordered into case-insensitive ASCII order
+    //     by singleton subtag.
+    if ((match = locale.match(expExtSequences)) && match.length > 1) {
+        // The built-in sort() sorts by ASCII order, so use that
+        match.sort();
+
+        // Replace all extensions with the joined, sorted array
+        locale = locale.replace(RegExp('(?:' + expExtSequences.source + ')+', 'i'), arrJoin.call(match, ''));
+    }
+
+    // 2.  Redundant or grandfathered tags are replaced by their 'Preferred-
+    //     Value', if there is one.
+    if (hop.call(redundantTags.tags, locale)) locale = redundantTags.tags[locale];
+
+    // 3.  Subtags are replaced by their 'Preferred-Value', if there is one.
+    //     For extlangs, the original primary language subtag is also
+    //     replaced if there is a primary language subtag in the 'Preferred-
+    //     Value'.
+    parts = locale.split('-');
+
+    for (var _i = 1, _max = parts.length; _i < _max; _i++) {
+        if (hop.call(redundantTags.subtags, parts[_i])) parts[_i] = redundantTags.subtags[parts[_i]];else if (hop.call(redundantTags.extLang, parts[_i])) {
+            parts[_i] = redundantTags.extLang[parts[_i]][0];
+
+            // For extlang tags, the prefix needs to be removed if it is redundant
+            if (_i === 1 && redundantTags.extLang[parts[1]][1] === parts[0]) {
+                parts = arrSlice.call(parts, _i++);
+                _max -= 1;
+            }
+        }
+    }
+
+    return arrJoin.call(parts, '-');
+}
+
+/**
+ * The DefaultLocale abstract operation returns a String value representing the
+ * structurally valid (6.2.2) and canonicalized (6.2.3) BCP 47 language tag for the
+ * host environment’s current locale.
+ */
+function /* 6.2.4 */DefaultLocale() {
+    return defaultLocale;
+}
+
+// Sect 6.3 Currency Codes
+// =======================
+
+var expCurrencyCode = /^[A-Z]{3}$/;
+
+/**
+ * The IsWellFormedCurrencyCode abstract operation verifies that the currency argument
+ * (after conversion to a String value) represents a well-formed 3-letter ISO currency
+ * code. The following steps are taken:
+ */
+function /* 6.3.1 */IsWellFormedCurrencyCode(currency) {
+    // 1. Let `c` be ToString(currency)
+    var c = String(currency);
+
+    // 2. Let `normalized` be the result of mapping c to upper case as described
+    //    in 6.1.
+    var normalized = toLatinUpperCase(c);
+
+    // 3. If the string length of normalized is not 3, return false.
+    // 4. If normalized contains any character that is not in the range "A" to "Z"
+    //    (U+0041 to U+005A), return false.
+    if (expCurrencyCode.test(normalized) === false) return false;
+
+    // 5. Return true
+    return true;
+}
+
+var expUnicodeExSeq = /-u(?:-[0-9a-z]{2,8})+/gi; // See `extension` below
+
+function /* 9.2.1 */CanonicalizeLocaleList(locales) {
+    // The abstract operation CanonicalizeLocaleList takes the following steps:
+
+    // 1. If locales is undefined, then a. Return a new empty List
+    if (locales === undefined) return new List();
+
+    // 2. Let seen be a new empty List.
+    var seen = new List();
+
+    // 3. If locales is a String value, then
+    //    a. Let locales be a new array created as if by the expression new
+    //    Array(locales) where Array is the standard built-in constructor with
+    //    that name and locales is the value of locales.
+    locales = typeof locales === 'string' ? [locales] : locales;
+
+    // 4. Let O be ToObject(locales).
+    var O = toObject(locales);
+
+    // 5. Let lenValue be the result of calling the [[Get]] internal method of
+    //    O with the argument "length".
+    // 6. Let len be ToUint32(lenValue).
+    var len = toLength(O.length);
+
+    // 7. Let k be 0.
+    var k = 0;
+
+    // 8. Repeat, while k < len
+    while (k < len) {
+        // a. Let Pk be ToString(k).
+        var Pk = String(k);
+
+        // b. Let kPresent be the result of calling the [[HasProperty]] internal
+        //    method of O with argument Pk.
+        var kPresent = Pk in O;
+
+        // c. If kPresent is true, then
+        if (kPresent) {
+            // i. Let kValue be the result of calling the [[Get]] internal
+            //     method of O with argument Pk.
+            var kValue = O[Pk];
+
+            // ii. If the type of kValue is not String or Object, then throw a
+            //     TypeError exception.
+            if (kValue === null || typeof kValue !== 'string' && (typeof kValue === "undefined" ? "undefined" : babelHelpers$1["typeof"](kValue)) !== 'object') throw new TypeError('String or Object type expected');
+
+            // iii. Let tag be ToString(kValue).
+            var tag = String(kValue);
+
+            // iv. If the result of calling the abstract operation
+            //     IsStructurallyValidLanguageTag (defined in 6.2.2), passing tag as
+            //     the argument, is false, then throw a RangeError exception.
+            if (!IsStructurallyValidLanguageTag(tag)) throw new RangeError("'" + tag + "' is not a structurally valid language tag");
+
+            // v. Let tag be the result of calling the abstract operation
+            //    CanonicalizeLanguageTag (defined in 6.2.3), passing tag as the
+            //    argument.
+            tag = CanonicalizeLanguageTag(tag);
+
+            // vi. If tag is not an element of seen, then append tag as the last
+            //     element of seen.
+            if (arrIndexOf.call(seen, tag) === -1) arrPush.call(seen, tag);
+        }
+
+        // d. Increase k by 1.
+        k++;
+    }
+
+    // 9. Return seen.
+    return seen;
+}
+
+/**
+ * The BestAvailableLocale abstract operation compares the provided argument
+ * locale, which must be a String value with a structurally valid and
+ * canonicalized BCP 47 language tag, against the locales in availableLocales and
+ * returns either the longest non-empty prefix of locale that is an element of
+ * availableLocales, or undefined if there is no such element. It uses the
+ * fallback mechanism of RFC 4647, section 3.4. The following steps are taken:
+ */
+function /* 9.2.2 */BestAvailableLocale(availableLocales, locale) {
+    // 1. Let candidate be locale
+    var candidate = locale;
+
+    // 2. Repeat
+    while (candidate) {
+        // a. If availableLocales contains an element equal to candidate, then return
+        // candidate.
+        if (arrIndexOf.call(availableLocales, candidate) > -1) return candidate;
+
+        // b. Let pos be the character index of the last occurrence of "-"
+        // (U+002D) within candidate. If that character does not occur, return
+        // undefined.
+        var pos = candidate.lastIndexOf('-');
+
+        if (pos < 0) return;
+
+        // c. If pos ≥ 2 and the character "-" occurs at index pos-2 of candidate,
+        //    then decrease pos by 2.
+        if (pos >= 2 && candidate.charAt(pos - 2) === '-') pos -= 2;
+
+        // d. Let candidate be the substring of candidate from position 0, inclusive,
+        //    to position pos, exclusive.
+        candidate = candidate.substring(0, pos);
+    }
+}
+
+/**
+ * The LookupMatcher abstract operation compares requestedLocales, which must be
+ * a List as returned by CanonicalizeLocaleList, against the locales in
+ * availableLocales and determines the best available language to meet the
+ * request. The following steps are taken:
+ */
+function /* 9.2.3 */LookupMatcher(availableLocales, requestedLocales) {
+    // 1. Let i be 0.
+    var i = 0;
+
+    // 2. Let len be the number of elements in requestedLocales.
+    var len = requestedLocales.length;
+
+    // 3. Let availableLocale be undefined.
+    var availableLocale = void 0;
+
+    var locale = void 0,
+        noExtensionsLocale = void 0;
+
+    // 4. Repeat while i < len and availableLocale is undefined:
+    while (i < len && !availableLocale) {
+        // a. Let locale be the element of requestedLocales at 0-origined list
+        //    position i.
+        locale = requestedLocales[i];
+
+        // b. Let noExtensionsLocale be the String value that is locale with all
+        //    Unicode locale extension sequences removed.
+        noExtensionsLocale = String(locale).replace(expUnicodeExSeq, '');
+
+        // c. Let availableLocale be the result of calling the
+        //    BestAvailableLocale abstract operation (defined in 9.2.2) with
+        //    arguments availableLocales and noExtensionsLocale.
+        availableLocale = BestAvailableLocale(availableLocales, noExtensionsLocale);
+
+        // d. Increase i by 1.
+        i++;
+    }
+
+    // 5. Let result be a new Record.
+    var result = new Record();
+
+    // 6. If availableLocale is not undefined, then
+    if (availableLocale !== undefined) {
+        // a. Set result.[[locale]] to availableLocale.
+        result['[[locale]]'] = availableLocale;
+
+        // b. If locale and noExtensionsLocale are not the same String value, then
+        if (String(locale) !== String(noExtensionsLocale)) {
+            // i. Let extension be the String value consisting of the first
+            //    substring of locale that is a Unicode locale extension sequence.
+            var extension = locale.match(expUnicodeExSeq)[0];
+
+            // ii. Let extensionIndex be the character position of the initial
+            //     "-" of the first Unicode locale extension sequence within locale.
+            var extensionIndex = locale.indexOf('-u-');
+
+            // iii. Set result.[[extension]] to extension.
+            result['[[extension]]'] = extension;
+
+            // iv. Set result.[[extensionIndex]] to extensionIndex.
+            result['[[extensionIndex]]'] = extensionIndex;
+        }
+    }
+    // 7. Else
+    else
+        // a. Set result.[[locale]] to the value returned by the DefaultLocale abstract
+        //    operation (defined in 6.2.4).
+        result['[[locale]]'] = DefaultLocale();
+
+    // 8. Return result
+    return result;
+}
+
+/**
+ * The BestFitMatcher abstract operation compares requestedLocales, which must be
+ * a List as returned by CanonicalizeLocaleList, against the locales in
+ * availableLocales and determines the best available language to meet the
+ * request. The algorithm is implementation dependent, but should produce results
+ * that a typical user of the requested locales would perceive as at least as
+ * good as those produced by the LookupMatcher abstract operation. Options
+ * specified through Unicode locale extension sequences must be ignored by the
+ * algorithm. Information about such subsequences is returned separately.
+ * The abstract operation returns a record with a [[locale]] field, whose value
+ * is the language tag of the selected locale, which must be an element of
+ * availableLocales. If the language tag of the request locale that led to the
+ * selected locale contained a Unicode locale extension sequence, then the
+ * returned record also contains an [[extension]] field whose value is the first
+ * Unicode locale extension sequence, and an [[extensionIndex]] field whose value
+ * is the index of the first Unicode locale extension sequence within the request
+ * locale language tag.
+ */
+function /* 9.2.4 */BestFitMatcher(availableLocales, requestedLocales) {
+    return LookupMatcher(availableLocales, requestedLocales);
+}
+
+/**
+ * The ResolveLocale abstract operation compares a BCP 47 language priority list
+ * requestedLocales against the locales in availableLocales and determines the
+ * best available language to meet the request. availableLocales and
+ * requestedLocales must be provided as List values, options as a Record.
+ */
+function /* 9.2.5 */ResolveLocale(availableLocales, requestedLocales, options, relevantExtensionKeys, localeData) {
+    if (availableLocales.length === 0) {
+        throw new ReferenceError('No locale data has been provided for this object yet.');
+    }
+
+    // The following steps are taken:
+    // 1. Let matcher be the value of options.[[localeMatcher]].
+    var matcher = options['[[localeMatcher]]'];
+
+    var r = void 0;
+
+    // 2. If matcher is "lookup", then
+    if (matcher === 'lookup')
+        // a. Let r be the result of calling the LookupMatcher abstract operation
+        //    (defined in 9.2.3) with arguments availableLocales and
+        //    requestedLocales.
+        r = LookupMatcher(availableLocales, requestedLocales);
+
+        // 3. Else
+    else
+        // a. Let r be the result of calling the BestFitMatcher abstract
+        //    operation (defined in 9.2.4) with arguments availableLocales and
+        //    requestedLocales.
+        r = BestFitMatcher(availableLocales, requestedLocales);
+
+    // 4. Let foundLocale be the value of r.[[locale]].
+    var foundLocale = r['[[locale]]'];
+
+    var extensionSubtags = void 0,
+        extensionSubtagsLength = void 0;
+
+    // 5. If r has an [[extension]] field, then
+    if (hop.call(r, '[[extension]]')) {
+        // a. Let extension be the value of r.[[extension]].
+        var extension = r['[[extension]]'];
+        // b. Let split be the standard built-in function object defined in ES5,
+        //    15.5.4.14.
+        var split = String.prototype.split;
+        // c. Let extensionSubtags be the result of calling the [[Call]] internal
+        //    method of split with extension as the this value and an argument
+        //    list containing the single item "-".
+        extensionSubtags = split.call(extension, '-');
+        // d. Let extensionSubtagsLength be the result of calling the [[Get]]
+        //    internal method of extensionSubtags with argument "length".
+        extensionSubtagsLength = extensionSubtags.length;
+    }
+
+    // 6. Let result be a new Record.
+    var result = new Record();
+
+    // 7. Set result.[[dataLocale]] to foundLocale.
+    result['[[dataLocale]]'] = foundLocale;
+
+    // 8. Let supportedExtension be "-u".
+    var supportedExtension = '-u';
+    // 9. Let i be 0.
+    var i = 0;
+    // 10. Let len be the result of calling the [[Get]] internal method of
+    //     relevantExtensionKeys with argument "length".
+    var len = relevantExtensionKeys.length;
+
+    // 11 Repeat while i < len:
+    while (i < len) {
+        // a. Let key be the result of calling the [[Get]] internal method of
+        //    relevantExtensionKeys with argument ToString(i).
+        var key = relevantExtensionKeys[i];
+        // b. Let foundLocaleData be the result of calling the [[Get]] internal
+        //    method of localeData with the argument foundLocale.
+        var foundLocaleData = localeData[foundLocale];
+        // c. Let keyLocaleData be the result of calling the [[Get]] internal
+        //    method of foundLocaleData with the argument key.
+        var keyLocaleData = foundLocaleData[key];
+        // d. Let value be the result of calling the [[Get]] internal method of
+        //    keyLocaleData with argument "0".
+        var value = keyLocaleData['0'];
+        // e. Let supportedExtensionAddition be "".
+        var supportedExtensionAddition = '';
+        // f. Let indexOf be the standard built-in function object defined in
+        //    ES5, 15.4.4.14.
+        var indexOf = arrIndexOf;
+
+        // g. If extensionSubtags is not undefined, then
+        if (extensionSubtags !== undefined) {
+            // i. Let keyPos be the result of calling the [[Call]] internal
+            //    method of indexOf with extensionSubtags as the this value and
+            // an argument list containing the single item key.
+            var keyPos = indexOf.call(extensionSubtags, key);
+
+            // ii. If keyPos ≠ -1, then
+            if (keyPos !== -1) {
+                // 1. If keyPos + 1 < extensionSubtagsLength and the length of the
+                //    result of calling the [[Get]] internal method of
+                //    extensionSubtags with argument ToString(keyPos +1) is greater
+                //    than 2, then
+                if (keyPos + 1 < extensionSubtagsLength && extensionSubtags[keyPos + 1].length > 2) {
+                    // a. Let requestedValue be the result of calling the [[Get]]
+                    //    internal method of extensionSubtags with argument
+                    //    ToString(keyPos + 1).
+                    var requestedValue = extensionSubtags[keyPos + 1];
+                    // b. Let valuePos be the result of calling the [[Call]]
+                    //    internal method of indexOf with keyLocaleData as the
+                    //    this value and an argument list containing the single
+                    //    item requestedValue.
+                    var valuePos = indexOf.call(keyLocaleData, requestedValue);
+
+                    // c. If valuePos ≠ -1, then
+                    if (valuePos !== -1) {
+                        // i. Let value be requestedValue.
+                        value = requestedValue,
+                        // ii. Let supportedExtensionAddition be the
+                        //     concatenation of "-", key, "-", and value.
+                        supportedExtensionAddition = '-' + key + '-' + value;
+                    }
+                }
+                // 2. Else
+                else {
+                        // a. Let valuePos be the result of calling the [[Call]]
+                        // internal method of indexOf with keyLocaleData as the this
+                        // value and an argument list containing the single item
+                        // "true".
+                        var _valuePos = indexOf(keyLocaleData, 'true');
+
+                        // b. If valuePos ≠ -1, then
+                        if (_valuePos !== -1)
+                            // i. Let value be "true".
+                            value = 'true';
+                    }
+            }
+        }
+        // h. If options has a field [[<key>]], then
+        if (hop.call(options, '[[' + key + ']]')) {
+            // i. Let optionsValue be the value of options.[[<key>]].
+            var optionsValue = options['[[' + key + ']]'];
+
+            // ii. If the result of calling the [[Call]] internal method of indexOf
+            //     with keyLocaleData as the this value and an argument list
+            //     containing the single item optionsValue is not -1, then
+            if (indexOf.call(keyLocaleData, optionsValue) !== -1) {
+                // 1. If optionsValue is not equal to value, then
+                if (optionsValue !== value) {
+                    // a. Let value be optionsValue.
+                    value = optionsValue;
+                    // b. Let supportedExtensionAddition be "".
+                    supportedExtensionAddition = '';
+                }
+            }
+        }
+        // i. Set result.[[<key>]] to value.
+        result['[[' + key + ']]'] = value;
+
+        // j. Append supportedExtensionAddition to supportedExtension.
+        supportedExtension += supportedExtensionAddition;
+
+        // k. Increase i by 1.
+        i++;
+    }
+    // 12. If the length of supportedExtension is greater than 2, then
+    if (supportedExtension.length > 2) {
+        // a.
+        var privateIndex = foundLocale.indexOf("-x-");
+        // b.
+        if (privateIndex === -1) {
+            // i.
+            foundLocale = foundLocale + supportedExtension;
+        }
+        // c.
+        else {
+                // i.
+                var preExtension = foundLocale.substring(0, privateIndex);
+                // ii.
+                var postExtension = foundLocale.substring(privateIndex);
+                // iii.
+                foundLocale = preExtension + supportedExtension + postExtension;
+            }
+        // d. asserting - skipping
+        // e.
+        foundLocale = CanonicalizeLanguageTag(foundLocale);
+    }
+    // 13. Set result.[[locale]] to foundLocale.
+    result['[[locale]]'] = foundLocale;
+
+    // 14. Return result.
+    return result;
+}
+
+/**
+ * The LookupSupportedLocales abstract operation returns the subset of the
+ * provided BCP 47 language priority list requestedLocales for which
+ * availableLocales has a matching locale when using the BCP 47 Lookup algorithm.
+ * Locales appear in the same order in the returned list as in requestedLocales.
+ * The following steps are taken:
+ */
+function /* 9.2.6 */LookupSupportedLocales(availableLocales, requestedLocales) {
+    // 1. Let len be the number of elements in requestedLocales.
+    var len = requestedLocales.length;
+    // 2. Let subset be a new empty List.
+    var subset = new List();
+    // 3. Let k be 0.
+    var k = 0;
+
+    // 4. Repeat while k < len
+    while (k < len) {
+        // a. Let locale be the element of requestedLocales at 0-origined list
+        //    position k.
+        var locale = requestedLocales[k];
+        // b. Let noExtensionsLocale be the String value that is locale with all
+        //    Unicode locale extension sequences removed.
+        var noExtensionsLocale = String(locale).replace(expUnicodeExSeq, '');
+        // c. Let availableLocale be the result of calling the
+        //    BestAvailableLocale abstract operation (defined in 9.2.2) with
+        //    arguments availableLocales and noExtensionsLocale.
+        var availableLocale = BestAvailableLocale(availableLocales, noExtensionsLocale);
+
+        // d. If availableLocale is not undefined, then append locale to the end of
+        //    subset.
+        if (availableLocale !== undefined) arrPush.call(subset, locale);
+
+        // e. Increment k by 1.
+        k++;
+    }
+
+    // 5. Let subsetArray be a new Array object whose elements are the same
+    //    values in the same order as the elements of subset.
+    var subsetArray = arrSlice.call(subset);
+
+    // 6. Return subsetArray.
+    return subsetArray;
+}
+
+/**
+ * The BestFitSupportedLocales abstract operation returns the subset of the
+ * provided BCP 47 language priority list requestedLocales for which
+ * availableLocales has a matching locale when using the Best Fit Matcher
+ * algorithm. Locales appear in the same order in the returned list as in
+ * requestedLocales. The steps taken are implementation dependent.
+ */
+function /*9.2.7 */BestFitSupportedLocales(availableLocales, requestedLocales) {
+    // ###TODO: implement this function as described by the specification###
+    return LookupSupportedLocales(availableLocales, requestedLocales);
+}
+
+/**
+ * The SupportedLocales abstract operation returns the subset of the provided BCP
+ * 47 language priority list requestedLocales for which availableLocales has a
+ * matching locale. Two algorithms are available to match the locales: the Lookup
+ * algorithm described in RFC 4647 section 3.4, and an implementation dependent
+ * best-fit algorithm. Locales appear in the same order in the returned list as
+ * in requestedLocales. The following steps are taken:
+ */
+function /*9.2.8 */SupportedLocales(availableLocales, requestedLocales, options) {
+    var matcher = void 0,
+        subset = void 0;
+
+    // 1. If options is not undefined, then
+    if (options !== undefined) {
+        // a. Let options be ToObject(options).
+        options = new Record(toObject(options));
+        // b. Let matcher be the result of calling the [[Get]] internal method of
+        //    options with argument "localeMatcher".
+        matcher = options.localeMatcher;
+
+        // c. If matcher is not undefined, then
+        if (matcher !== undefined) {
+            // i. Let matcher be ToString(matcher).
+            matcher = String(matcher);
+
+            // ii. If matcher is not "lookup" or "best fit", then throw a RangeError
+            //     exception.
+            if (matcher !== 'lookup' && matcher !== 'best fit') throw new RangeError('matcher should be "lookup" or "best fit"');
+        }
+    }
+    // 2. If matcher is undefined or "best fit", then
+    if (matcher === undefined || matcher === 'best fit')
+        // a. Let subset be the result of calling the BestFitSupportedLocales
+        //    abstract operation (defined in 9.2.7) with arguments
+        //    availableLocales and requestedLocales.
+        subset = BestFitSupportedLocales(availableLocales, requestedLocales);
+        // 3. Else
+    else
+        // a. Let subset be the result of calling the LookupSupportedLocales
+        //    abstract operation (defined in 9.2.6) with arguments
+        //    availableLocales and requestedLocales.
+        subset = LookupSupportedLocales(availableLocales, requestedLocales);
+
+    // 4. For each named own property name P of subset,
+    for (var P in subset) {
+        if (!hop.call(subset, P)) continue;
+
+        // a. Let desc be the result of calling the [[GetOwnProperty]] internal
+        //    method of subset with P.
+        // b. Set desc.[[Writable]] to false.
+        // c. Set desc.[[Configurable]] to false.
+        // d. Call the [[DefineOwnProperty]] internal method of subset with P, desc,
+        //    and true as arguments.
+        defineProperty(subset, P, {
+            writable: false, configurable: false, value: subset[P]
+        });
+    }
+    // "Freeze" the array so no new elements can be added
+    defineProperty(subset, 'length', { writable: false });
+
+    // 5. Return subset
+    return subset;
+}
+
+/**
+ * The GetOption abstract operation extracts the value of the property named
+ * property from the provided options object, converts it to the required type,
+ * checks whether it is one of a List of allowed values, and fills in a fallback
+ * value if necessary.
+ */
+function /*9.2.9 */GetOption(options, property, type, values, fallback) {
+    // 1. Let value be the result of calling the [[Get]] internal method of
+    //    options with argument property.
+    var value = options[property];
+
+    // 2. If value is not undefined, then
+    if (value !== undefined) {
+        // a. Assert: type is "boolean" or "string".
+        // b. If type is "boolean", then let value be ToBoolean(value).
+        // c. If type is "string", then let value be ToString(value).
+        value = type === 'boolean' ? Boolean(value) : type === 'string' ? String(value) : value;
+
+        // d. If values is not undefined, then
+        if (values !== undefined) {
+            // i. If values does not contain an element equal to value, then throw a
+            //    RangeError exception.
+            if (arrIndexOf.call(values, value) === -1) throw new RangeError("'" + value + "' is not an allowed value for `" + property + '`');
+        }
+
+        // e. Return value.
+        return value;
+    }
+    // Else return fallback.
+    return fallback;
+}
+
+/**
+ * The GetNumberOption abstract operation extracts a property value from the
+ * provided options object, converts it to a Number value, checks whether it is
+ * in the allowed range, and fills in a fallback value if necessary.
+ */
+function /* 9.2.10 */GetNumberOption(options, property, minimum, maximum, fallback) {
+    // 1. Let value be the result of calling the [[Get]] internal method of
+    //    options with argument property.
+    var value = options[property];
+
+    // 2. If value is not undefined, then
+    if (value !== undefined) {
+        // a. Let value be ToNumber(value).
+        value = Number(value);
+
+        // b. If value is NaN or less than minimum or greater than maximum, throw a
+        //    RangeError exception.
+        if (isNaN(value) || value < minimum || value > maximum) throw new RangeError('Value is not a number or outside accepted range');
+
+        // c. Return floor(value).
+        return Math.floor(value);
+    }
+    // 3. Else return fallback.
+    return fallback;
+}
+
+// 8 The Intl Object
+var Intl = {};
+
+// 8.2 Function Properties of the Intl Object
+
+// 8.2.1
+// @spec[tc39/ecma402/master/spec/intl.html]
+// @clause[sec-intl.getcanonicallocales]
+function getCanonicalLocales(locales) {
+    // 1. Let ll be ? CanonicalizeLocaleList(locales).
+    var ll = CanonicalizeLocaleList(locales);
+    // 2. Return CreateArrayFromList(ll).
+    {
+        var result = [];
+
+        var len = ll.length;
+        var k = 0;
+
+        while (k < len) {
+            result[k] = ll[k];
+            k++;
+        }
+        return result;
+    }
+}
+
+Object.defineProperty(Intl, 'getCanonicalLocales', {
+    enumerable: false,
+    configurable: true,
+    writable: true,
+    value: getCanonicalLocales
+});
+
+// Currency minor units output from get-4217 grunt task, formatted
+var currencyMinorUnits = {
+    BHD: 3, BYR: 0, XOF: 0, BIF: 0, XAF: 0, CLF: 4, CLP: 0, KMF: 0, DJF: 0,
+    XPF: 0, GNF: 0, ISK: 0, IQD: 3, JPY: 0, JOD: 3, KRW: 0, KWD: 3, LYD: 3,
+    OMR: 3, PYG: 0, RWF: 0, TND: 3, UGX: 0, UYI: 0, VUV: 0, VND: 0
+};
+
+// Define the NumberFormat constructor internally so it cannot be tainted
+function NumberFormatConstructor() {
+    var locales = arguments[0];
+    var options = arguments[1];
+
+    if (!this || this === Intl) {
+        return new Intl.NumberFormat(locales, options);
+    }
+
+    return InitializeNumberFormat(toObject(this), locales, options);
+}
+
+defineProperty(Intl, 'NumberFormat', {
+    configurable: true,
+    writable: true,
+    value: NumberFormatConstructor
+});
+
+// Must explicitly set prototypes as unwritable
+defineProperty(Intl.NumberFormat, 'prototype', {
+    writable: false
+});
+
+/**
+ * The abstract operation InitializeNumberFormat accepts the arguments
+ * numberFormat (which must be an object), locales, and options. It initializes
+ * numberFormat as a NumberFormat object.
+ */
+function /*11.1.1.1 */InitializeNumberFormat(numberFormat, locales, options) {
+    // This will be a internal properties object if we're not already initialized
+    var internal = getInternalProperties(numberFormat);
+
+    // Create an object whose props can be used to restore the values of RegExp props
+    var regexpRestore = createRegExpRestore();
+
+    // 1. If numberFormat has an [[initializedIntlObject]] internal property with
+    // value true, throw a TypeError exception.
+    if (internal['[[initializedIntlObject]]'] === true) throw new TypeError('`this` object has already been initialized as an Intl object');
+
+    // Need this to access the `internal` object
+    defineProperty(numberFormat, '__getInternalProperties', {
+        value: function value() {
+            // NOTE: Non-standard, for internal use only
+            if (arguments[0] === secret) return internal;
+        }
+    });
+
+    // 2. Set the [[initializedIntlObject]] internal property of numberFormat to true.
+    internal['[[initializedIntlObject]]'] = true;
+
+    // 3. Let requestedLocales be the result of calling the CanonicalizeLocaleList
+    //    abstract operation (defined in 9.2.1) with argument locales.
+    var requestedLocales = CanonicalizeLocaleList(locales);
+
+    // 4. If options is undefined, then
+    if (options === undefined)
+        // a. Let options be the result of creating a new object as if by the
+        // expression new Object() where Object is the standard built-in constructor
+        // with that name.
+        options = {};
+
+        // 5. Else
+    else
+        // a. Let options be ToObject(options).
+        options = toObject(options);
+
+    // 6. Let opt be a new Record.
+    var opt = new Record(),
+
+
+    // 7. Let matcher be the result of calling the GetOption abstract operation
+    //    (defined in 9.2.9) with the arguments options, "localeMatcher", "string",
+    //    a List containing the two String values "lookup" and "best fit", and
+    //    "best fit".
+    matcher = GetOption(options, 'localeMatcher', 'string', new List('lookup', 'best fit'), 'best fit');
+
+    // 8. Set opt.[[localeMatcher]] to matcher.
+    opt['[[localeMatcher]]'] = matcher;
+
+    // 9. Let NumberFormat be the standard built-in object that is the initial value
+    //    of Intl.NumberFormat.
+    // 10. Let localeData be the value of the [[localeData]] internal property of
+    //     NumberFormat.
+    var localeData = internals.NumberFormat['[[localeData]]'];
+
+    // 11. Let r be the result of calling the ResolveLocale abstract operation
+    //     (defined in 9.2.5) with the [[availableLocales]] internal property of
+    //     NumberFormat, requestedLocales, opt, the [[relevantExtensionKeys]]
+    //     internal property of NumberFormat, and localeData.
+    var r = ResolveLocale(internals.NumberFormat['[[availableLocales]]'], requestedLocales, opt, internals.NumberFormat['[[relevantExtensionKeys]]'], localeData);
+
+    // 12. Set the [[locale]] internal property of numberFormat to the value of
+    //     r.[[locale]].
+    internal['[[locale]]'] = r['[[locale]]'];
+
+    // 13. Set the [[numberingSystem]] internal property of numberFormat to the value
+    //     of r.[[nu]].
+    internal['[[numberingSystem]]'] = r['[[nu]]'];
+
+    // The specification doesn't tell us to do this, but it's helpful later on
+    internal['[[dataLocale]]'] = r['[[dataLocale]]'];
+
+    // 14. Let dataLocale be the value of r.[[dataLocale]].
+    var dataLocale = r['[[dataLocale]]'];
+
+    // 15. Let s be the result of calling the GetOption abstract operation with the
+    //     arguments options, "style", "string", a List containing the three String
+    //     values "decimal", "percent", and "currency", and "decimal".
+    var s = GetOption(options, 'style', 'string', new List('decimal', 'percent', 'currency'), 'decimal');
+
+    // 16. Set the [[style]] internal property of numberFormat to s.
+    internal['[[style]]'] = s;
+
+    // 17. Let c be the result of calling the GetOption abstract operation with the
+    //     arguments options, "currency", "string", undefined, and undefined.
+    var c = GetOption(options, 'currency', 'string');
+
+    // 18. If c is not undefined and the result of calling the
+    //     IsWellFormedCurrencyCode abstract operation (defined in 6.3.1) with
+    //     argument c is false, then throw a RangeError exception.
+    if (c !== undefined && !IsWellFormedCurrencyCode(c)) throw new RangeError("'" + c + "' is not a valid currency code");
+
+    // 19. If s is "currency" and c is undefined, throw a TypeError exception.
+    if (s === 'currency' && c === undefined) throw new TypeError('Currency code is required when style is currency');
+
+    var cDigits = void 0;
+
+    // 20. If s is "currency", then
+    if (s === 'currency') {
+        // a. Let c be the result of converting c to upper case as specified in 6.1.
+        c = c.toUpperCase();
+
+        // b. Set the [[currency]] internal property of numberFormat to c.
+        internal['[[currency]]'] = c;
+
+        // c. Let cDigits be the result of calling the CurrencyDigits abstract
+        //    operation (defined below) with argument c.
+        cDigits = CurrencyDigits(c);
+    }
+
+    // 21. Let cd be the result of calling the GetOption abstract operation with the
+    //     arguments options, "currencyDisplay", "string", a List containing the
+    //     three String values "code", "symbol", and "name", and "symbol".
+    var cd = GetOption(options, 'currencyDisplay', 'string', new List('code', 'symbol', 'name'), 'symbol');
+
+    // 22. If s is "currency", then set the [[currencyDisplay]] internal property of
+    //     numberFormat to cd.
+    if (s === 'currency') internal['[[currencyDisplay]]'] = cd;
+
+    // 23. Let mnid be the result of calling the GetNumberOption abstract operation
+    //     (defined in 9.2.10) with arguments options, "minimumIntegerDigits", 1, 21,
+    //     and 1.
+    var mnid = GetNumberOption(options, 'minimumIntegerDigits', 1, 21, 1);
+
+    // 24. Set the [[minimumIntegerDigits]] internal property of numberFormat to mnid.
+    internal['[[minimumIntegerDigits]]'] = mnid;
+
+    // 25. If s is "currency", then let mnfdDefault be cDigits; else let mnfdDefault
+    //     be 0.
+    var mnfdDefault = s === 'currency' ? cDigits : 0;
+
+    // 26. Let mnfd be the result of calling the GetNumberOption abstract operation
+    //     with arguments options, "minimumFractionDigits", 0, 20, and mnfdDefault.
+    var mnfd = GetNumberOption(options, 'minimumFractionDigits', 0, 20, mnfdDefault);
+
+    // 27. Set the [[minimumFractionDigits]] internal property of numberFormat to mnfd.
+    internal['[[minimumFractionDigits]]'] = mnfd;
+
+    // 28. If s is "currency", then let mxfdDefault be max(mnfd, cDigits); else if s
+    //     is "percent", then let mxfdDefault be max(mnfd, 0); else let mxfdDefault
+    //     be max(mnfd, 3).
+    var mxfdDefault = s === 'currency' ? Math.max(mnfd, cDigits) : s === 'percent' ? Math.max(mnfd, 0) : Math.max(mnfd, 3);
+
+    // 29. Let mxfd be the result of calling the GetNumberOption abstract operation
+    //     with arguments options, "maximumFractionDigits", mnfd, 20, and mxfdDefault.
+    var mxfd = GetNumberOption(options, 'maximumFractionDigits', mnfd, 20, mxfdDefault);
+
+    // 30. Set the [[maximumFractionDigits]] internal property of numberFormat to mxfd.
+    internal['[[maximumFractionDigits]]'] = mxfd;
+
+    // 31. Let mnsd be the result of calling the [[Get]] internal method of options
+    //     with argument "minimumSignificantDigits".
+    var mnsd = options.minimumSignificantDigits;
+
+    // 32. Let mxsd be the result of calling the [[Get]] internal method of options
+    //     with argument "maximumSignificantDigits".
+    var mxsd = options.maximumSignificantDigits;
+
+    // 33. If mnsd is not undefined or mxsd is not undefined, then:
+    if (mnsd !== undefined || mxsd !== undefined) {
+        // a. Let mnsd be the result of calling the GetNumberOption abstract
+        //    operation with arguments options, "minimumSignificantDigits", 1, 21,
+        //    and 1.
+        mnsd = GetNumberOption(options, 'minimumSignificantDigits', 1, 21, 1);
+
+        // b. Let mxsd be the result of calling the GetNumberOption abstract
+        //     operation with arguments options, "maximumSignificantDigits", mnsd,
+        //     21, and 21.
+        mxsd = GetNumberOption(options, 'maximumSignificantDigits', mnsd, 21, 21);
+
+        // c. Set the [[minimumSignificantDigits]] internal property of numberFormat
+        //    to mnsd, and the [[maximumSignificantDigits]] internal property of
+        //    numberFormat to mxsd.
+        internal['[[minimumSignificantDigits]]'] = mnsd;
+        internal['[[maximumSignificantDigits]]'] = mxsd;
+    }
+    // 34. Let g be the result of calling the GetOption abstract operation with the
+    //     arguments options, "useGrouping", "boolean", undefined, and true.
+    var g = GetOption(options, 'useGrouping', 'boolean', undefined, true);
+
+    // 35. Set the [[useGrouping]] internal property of numberFormat to g.
+    internal['[[useGrouping]]'] = g;
+
+    // 36. Let dataLocaleData be the result of calling the [[Get]] internal method of
+    //     localeData with argument dataLocale.
+    var dataLocaleData = localeData[dataLocale];
+
+    // 37. Let patterns be the result of calling the [[Get]] internal method of
+    //     dataLocaleData with argument "patterns".
+    var patterns = dataLocaleData.patterns;
+
+    // 38. Assert: patterns is an object (see 11.2.3)
+
+    // 39. Let stylePatterns be the result of calling the [[Get]] internal method of
+    //     patterns with argument s.
+    var stylePatterns = patterns[s];
+
+    // 40. Set the [[positivePattern]] internal property of numberFormat to the
+    //     result of calling the [[Get]] internal method of stylePatterns with the
+    //     argument "positivePattern".
+    internal['[[positivePattern]]'] = stylePatterns.positivePattern;
+
+    // 41. Set the [[negativePattern]] internal property of numberFormat to the
+    //     result of calling the [[Get]] internal method of stylePatterns with the
+    //     argument "negativePattern".
+    internal['[[negativePattern]]'] = stylePatterns.negativePattern;
+
+    // 42. Set the [[boundFormat]] internal property of numberFormat to undefined.
+    internal['[[boundFormat]]'] = undefined;
+
+    // 43. Set the [[initializedNumberFormat]] internal property of numberFormat to
+    //     true.
+    internal['[[initializedNumberFormat]]'] = true;
+
+    // In ES3, we need to pre-bind the format() function
+    if (es3) numberFormat.format = GetFormatNumber.call(numberFormat);
+
+    // Restore the RegExp properties
+    regexpRestore();
+
+    // Return the newly initialised object
+    return numberFormat;
+}
+
+function CurrencyDigits(currency) {
+    // When the CurrencyDigits abstract operation is called with an argument currency
+    // (which must be an upper case String value), the following steps are taken:
+
+    // 1. If the ISO 4217 currency and funds code list contains currency as an
+    // alphabetic code, then return the minor unit value corresponding to the
+    // currency from the list; else return 2.
+    return currencyMinorUnits[currency] !== undefined ? currencyMinorUnits[currency] : 2;
+}
+
+/* 11.2.3 */internals.NumberFormat = {
+    '[[availableLocales]]': [],
+    '[[relevantExtensionKeys]]': ['nu'],
+    '[[localeData]]': {}
+};
+
+/**
+ * When the supportedLocalesOf method of Intl.NumberFormat is called, the
+ * following steps are taken:
+ */
+/* 11.2.2 */
+defineProperty(Intl.NumberFormat, 'supportedLocalesOf', {
+    configurable: true,
+    writable: true,
+    value: fnBind.call(function (locales) {
+        // Bound functions only have the `this` value altered if being used as a constructor,
+        // this lets us imitate a native function that has no constructor
+        if (!hop.call(this, '[[availableLocales]]')) throw new TypeError('supportedLocalesOf() is not a constructor');
+
+        // Create an object whose props can be used to restore the values of RegExp props
+        var regexpRestore = createRegExpRestore(),
+
+
+        // 1. If options is not provided, then let options be undefined.
+        options = arguments[1],
+
+
+        // 2. Let availableLocales be the value of the [[availableLocales]] internal
+        //    property of the standard built-in object that is the initial value of
+        //    Intl.NumberFormat.
+
+        availableLocales = this['[[availableLocales]]'],
+
+
+        // 3. Let requestedLocales be the result of calling the CanonicalizeLocaleList
+        //    abstract operation (defined in 9.2.1) with argument locales.
+        requestedLocales = CanonicalizeLocaleList(locales);
+
+        // Restore the RegExp properties
+        regexpRestore();
+
+        // 4. Return the result of calling the SupportedLocales abstract operation
+        //    (defined in 9.2.8) with arguments availableLocales, requestedLocales,
+        //    and options.
+        return SupportedLocales(availableLocales, requestedLocales, options);
+    }, internals.NumberFormat)
+});
+
+/**
+ * This named accessor property returns a function that formats a number
+ * according to the effective locale and the formatting options of this
+ * NumberFormat object.
+ */
+/* 11.3.2 */defineProperty(Intl.NumberFormat.prototype, 'format', {
+    configurable: true,
+    get: GetFormatNumber
+});
+
+function GetFormatNumber() {
+    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+
+    // Satisfy test 11.3_b
+    if (!internal || !internal['[[initializedNumberFormat]]']) throw new TypeError('`this` value for format() is not an initialized Intl.NumberFormat object.');
+
+    // The value of the [[Get]] attribute is a function that takes the following
+    // steps:
+
+    // 1. If the [[boundFormat]] internal property of this NumberFormat object
+    //    is undefined, then:
+    if (internal['[[boundFormat]]'] === undefined) {
+        // a. Let F be a Function object, with internal properties set as
+        //    specified for built-in functions in ES5, 15, or successor, and the
+        //    length property set to 1, that takes the argument value and
+        //    performs the following steps:
+        var F = function F(value) {
+            // i. If value is not provided, then let value be undefined.
+            // ii. Let x be ToNumber(value).
+            // iii. Return the result of calling the FormatNumber abstract
+            //      operation (defined below) with arguments this and x.
+            return FormatNumber(this, /* x = */Number(value));
+        };
+
+        // b. Let bind be the standard built-in function object defined in ES5,
+        //    15.3.4.5.
+        // c. Let bf be the result of calling the [[Call]] internal method of
+        //    bind with F as the this value and an argument list containing
+        //    the single item this.
+        var bf = fnBind.call(F, this);
+
+        // d. Set the [[boundFormat]] internal property of this NumberFormat
+        //    object to bf.
+        internal['[[boundFormat]]'] = bf;
+    }
+    // Return the value of the [[boundFormat]] internal property of this
+    // NumberFormat object.
+    return internal['[[boundFormat]]'];
+}
+
+function formatToParts() {
+    var value = arguments.length <= 0 || arguments[0] === undefined ? undefined : arguments[0];
+
+    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+    if (!internal || !internal['[[initializedNumberFormat]]']) throw new TypeError('`this` value for formatToParts() is not an initialized Intl.NumberFormat object.');
+
+    var x = Number(value);
+    return FormatNumberToParts(this, x);
+}
+
+Object.defineProperty(Intl.NumberFormat.prototype, 'formatToParts', {
+    configurable: true,
+    enumerable: false,
+    writable: true,
+    value: formatToParts
+});
+
+/*
+ * @spec[stasm/ecma402/number-format-to-parts/spec/numberformat.html]
+ * @clause[sec-formatnumbertoparts]
+ */
+function FormatNumberToParts(numberFormat, x) {
+    // 1. Let parts be ? PartitionNumberPattern(numberFormat, x).
+    var parts = PartitionNumberPattern(numberFormat, x);
+    // 2. Let result be ArrayCreate(0).
+    var result = [];
+    // 3. Let n be 0.
+    var n = 0;
+    // 4. For each part in parts, do:
+    for (var i = 0; parts.length > i; i++) {
+        var part = parts[i];
+        // a. Let O be ObjectCreate(%ObjectPrototype%).
+        var O = {};
+        // a. Perform ? CreateDataPropertyOrThrow(O, "type", part.[[type]]).
+        O.type = part['[[type]]'];
+        // a. Perform ? CreateDataPropertyOrThrow(O, "value", part.[[value]]).
+        O.value = part['[[value]]'];
+        // a. Perform ? CreateDataPropertyOrThrow(result, ? ToString(n), O).
+        result[n] = O;
+        // a. Increment n by 1.
+        n += 1;
+    }
+    // 5. Return result.
+    return result;
+}
+
+/*
+ * @spec[stasm/ecma402/number-format-to-parts/spec/numberformat.html]
+ * @clause[sec-partitionnumberpattern]
+ */
+function PartitionNumberPattern(numberFormat, x) {
+
+    var internal = getInternalProperties(numberFormat),
+        locale = internal['[[dataLocale]]'],
+        nums = internal['[[numberingSystem]]'],
+        data = internals.NumberFormat['[[localeData]]'][locale],
+        ild = data.symbols[nums] || data.symbols.latn,
+        pattern = void 0;
+
+    // 1. If x is not NaN and x < 0, then:
+    if (!isNaN(x) && x < 0) {
+        // a. Let x be -x.
+        x = -x;
+        // a. Let pattern be the value of numberFormat.[[negativePattern]].
+        pattern = internal['[[negativePattern]]'];
+    }
+    // 2. Else,
+    else {
+            // a. Let pattern be the value of numberFormat.[[positivePattern]].
+            pattern = internal['[[positivePattern]]'];
+        }
+    // 3. Let result be a new empty List.
+    var result = new List();
+    // 4. Let beginIndex be Call(%StringProto_indexOf%, pattern, "{", 0).
+    var beginIndex = pattern.indexOf('{', 0);
+    // 5. Let endIndex be 0.
+    var endIndex = 0;
+    // 6. Let nextIndex be 0.
+    var nextIndex = 0;
+    // 7. Let length be the number of code units in pattern.
+    var length = pattern.length;
+    // 8. Repeat while beginIndex is an integer index into pattern:
+    while (beginIndex > -1 && beginIndex < length) {
+        // a. Set endIndex to Call(%StringProto_indexOf%, pattern, "}", beginIndex)
+        endIndex = pattern.indexOf('}', beginIndex);
+        // a. If endIndex = -1, throw new Error exception.
+        if (endIndex === -1) throw new Error();
+        // a. If beginIndex is greater than nextIndex, then:
+        if (beginIndex > nextIndex) {
+            // i. Let literal be a substring of pattern from position nextIndex, inclusive, to position beginIndex, exclusive.
+            var literal = pattern.substring(nextIndex, beginIndex);
+            // ii. Add new part record { [[type]]: "literal", [[value]]: literal } as a new element of the list result.
+            arrPush.call(result, { '[[type]]': 'literal', '[[value]]': literal });
+        }
+        // a. Let p be the substring of pattern from position beginIndex, exclusive, to position endIndex, exclusive.
+        var p = pattern.substring(beginIndex + 1, endIndex);
+        // a. If p is equal "number", then:
+        if (p === "number") {
+            // i. If x is NaN,
+            if (isNaN(x)) {
+                // 1. Let n be an ILD String value indicating the NaN value.
+                var n = ild.nan;
+                // 2. Add new part record { [[type]]: "nan", [[value]]: n } as a new element of the list result.
+                arrPush.call(result, { '[[type]]': 'nan', '[[value]]': n });
+            }
+            // ii. Else if isFinite(x) is false,
+            else if (!isFinite(x)) {
+                    // 1. Let n be an ILD String value indicating infinity.
+                    var _n = ild.infinity;
+                    // 2. Add new part record { [[type]]: "infinity", [[value]]: n } as a new element of the list result.
+                    arrPush.call(result, { '[[type]]': 'infinity', '[[value]]': _n });
+                }
+                // iii. Else,
+                else {
+                        // 1. If the value of numberFormat.[[style]] is "percent" and isFinite(x), let x be 100 × x.
+                        if (internal['[[style]]'] === 'percent' && isFinite(x)) x *= 100;
+
+                        var _n2 = void 0;
+                        // 2. If the numberFormat.[[minimumSignificantDigits]] and numberFormat.[[maximumSignificantDigits]] are present, then
+                        if (hop.call(internal, '[[minimumSignificantDigits]]') && hop.call(internal, '[[maximumSignificantDigits]]')) {
+                            // a. Let n be ToRawPrecision(x, numberFormat.[[minimumSignificantDigits]], numberFormat.[[maximumSignificantDigits]]).
+                            _n2 = ToRawPrecision(x, internal['[[minimumSignificantDigits]]'], internal['[[maximumSignificantDigits]]']);
+                        }
+                        // 3. Else,
+                        else {
+                                // a. Let n be ToRawFixed(x, numberFormat.[[minimumIntegerDigits]], numberFormat.[[minimumFractionDigits]], numberFormat.[[maximumFractionDigits]]).
+                                _n2 = ToRawFixed(x, internal['[[minimumIntegerDigits]]'], internal['[[minimumFractionDigits]]'], internal['[[maximumFractionDigits]]']);
+                            }
+                        // 4. If the value of the numberFormat.[[numberingSystem]] matches one of the values in the "Numbering System" column of Table 2 below, then
+                        if (numSys[nums]) {
+                            (function () {
+                                // a. Let digits be an array whose 10 String valued elements are the UTF-16 string representations of the 10 digits specified in the "Digits" column of the matching row in Table 2.
+                                var digits = numSys[nums];
+                                // a. Replace each digit in n with the value of digits[digit].
+                                _n2 = String(_n2).replace(/\d/g, function (digit) {
+                                    return digits[digit];
+                                });
+                            })();
+                        }
+                        // 5. Else use an implementation dependent algorithm to map n to the appropriate representation of n in the given numbering system.
+                        else _n2 = String(_n2); // ###TODO###
+
+                        var integer = void 0;
+                        var fraction = void 0;
+                        // 6. Let decimalSepIndex be Call(%StringProto_indexOf%, n, ".", 0).
+                        var decimalSepIndex = _n2.indexOf('.', 0);
+                        // 7. If decimalSepIndex > 0, then:
+                        if (decimalSepIndex > 0) {
+                            // a. Let integer be the substring of n from position 0, inclusive, to position decimalSepIndex, exclusive.
+                            integer = _n2.substring(0, decimalSepIndex);
+                            // a. Let fraction be the substring of n from position decimalSepIndex, exclusive, to the end of n.
+                            fraction = _n2.substring(decimalSepIndex + 1, decimalSepIndex.length);
+                        }
+                        // 8. Else:
+                        else {
+                                // a. Let integer be n.
+                                integer = _n2;
+                                // a. Let fraction be undefined.
+                                fraction = undefined;
+                            }
+                        // 9. If the value of the numberFormat.[[useGrouping]] is true,
+                        if (internal['[[useGrouping]]'] === true) {
+                            // a. Let groupSepSymbol be the ILND String representing the grouping separator.
+                            var groupSepSymbol = ild.group;
+                            // a. Let groups be a List whose elements are, in left to right order, the substrings defined by ILND set of locations within the integer.
+                            var groups = [];
+                            // ----> implementation:
+                            // Primary group represents the group closest to the decimal
+                            var pgSize = data.patterns.primaryGroupSize || 3;
+                            // Secondary group is every other group
+                            var sgSize = data.patterns.secondaryGroupSize || pgSize;
+                            // Group only if necessary
+                            if (integer.length > pgSize) {
+                                // Index of the primary grouping separator
+                                var end = integer.length - pgSize;
+                                // Starting index for our loop
+                                var idx = end % sgSize;
+                                var start = integer.slice(0, idx);
+                                if (start.length) arrPush.call(groups, start);
+                                // Loop to separate into secondary grouping digits
+                                while (idx < end) {
+                                    arrPush.call(groups, integer.slice(idx, idx + sgSize));
+                                    idx += sgSize;
+                                }
+                                // Add the primary grouping digits
+                                arrPush.call(groups, integer.slice(end));
+                            } else {
+                                arrPush.call(groups, integer);
+                            }
+                            // a. Assert: The number of elements in groups List is greater than 0.
+                            if (groups.length === 0) throw new Error();
+                            // a. Repeat, while groups List is not empty:
+                            while (groups.length) {
+                                // i. Remove the first element from groups and let integerGroup be the value of that element.
+                                var integerGroup = arrShift.call(groups);
+                                // ii. Add new part record { [[type]]: "integer", [[value]]: integerGroup } as a new element of the list result.
+                                arrPush.call(result, { '[[type]]': 'integer', '[[value]]': integerGroup });
+                                // iii. If groups List is not empty, then:
+                                if (groups.length) {
+                                    // 1. Add new part record { [[type]]: "group", [[value]]: groupSepSymbol } as a new element of the list result.
+                                    arrPush.call(result, { '[[type]]': 'group', '[[value]]': groupSepSymbol });
+                                }
+                            }
+                        }
+                        // 10. Else,
+                        else {
+                                // a. Add new part record { [[type]]: "integer", [[value]]: integer } as a new element of the list result.
+                                arrPush.call(result, { '[[type]]': 'integer', '[[value]]': integer });
+                            }
+                        // 11. If fraction is not undefined, then:
+                        if (fraction !== undefined) {
+                            // a. Let decimalSepSymbol be the ILND String representing the decimal separator.
+                            var decimalSepSymbol = ild.decimal;
+                            // a. Add new part record { [[type]]: "decimal", [[value]]: decimalSepSymbol } as a new element of the list result.
+                            arrPush.call(result, { '[[type]]': 'decimal', '[[value]]': decimalSepSymbol });
+                            // a. Add new part record { [[type]]: "fraction", [[value]]: fraction } as a new element of the list result.
+                            arrPush.call(result, { '[[type]]': 'fraction', '[[value]]': fraction });
+                        }
+                    }
+        }
+        // a. Else if p is equal "plusSign", then:
+        else if (p === "plusSign") {
+                // i. Let plusSignSymbol be the ILND String representing the plus sign.
+                var plusSignSymbol = ild.plusSign;
+                // ii. Add new part record { [[type]]: "plusSign", [[value]]: plusSignSymbol } as a new element of the list result.
+                arrPush.call(result, { '[[type]]': 'plusSign', '[[value]]': plusSignSymbol });
+            }
+            // a. Else if p is equal "minusSign", then:
+            else if (p === "minusSign") {
+                    // i. Let minusSignSymbol be the ILND String representing the minus sign.
+                    var minusSignSymbol = ild.minusSign;
+                    // ii. Add new part record { [[type]]: "minusSign", [[value]]: minusSignSymbol } as a new element of the list result.
+                    arrPush.call(result, { '[[type]]': 'minusSign', '[[value]]': minusSignSymbol });
+                }
+                // a. Else if p is equal "percentSign" and numberFormat.[[style]] is "percent", then:
+                else if (p === "percentSign" && internal['[[style]]'] === "percent") {
+                        // i. Let percentSignSymbol be the ILND String representing the percent sign.
+                        var percentSignSymbol = ild.percentSign;
+                        // ii. Add new part record { [[type]]: "percentSign", [[value]]: percentSignSymbol } as a new element of the list result.
+                        arrPush.call(result, { '[[type]]': 'literal', '[[value]]': percentSignSymbol });
+                    }
+                    // a. Else if p is equal "currency" and numberFormat.[[style]] is "currency", then:
+                    else if (p === "currency" && internal['[[style]]'] === "currency") {
+                            // i. Let currency be the value of numberFormat.[[currency]].
+                            var currency = internal['[[currency]]'];
+
+                            var cd = void 0;
+
+                            // ii. If numberFormat.[[currencyDisplay]] is "code", then
+                            if (internal['[[currencyDisplay]]'] === "code") {
+                                // 1. Let cd be currency.
+                                cd = currency;
+                            }
+                            // iii. Else if numberFormat.[[currencyDisplay]] is "symbol", then
+                            else if (internal['[[currencyDisplay]]'] === "symbol") {
+                                    // 1. Let cd be an ILD string representing currency in short form. If the implementation does not have such a representation of currency, use currency itself.
+                                    cd = data.currencies[currency] || currency;
+                                }
+                                // iv. Else if numberFormat.[[currencyDisplay]] is "name", then
+                                else if (internal['[[currencyDisplay]]'] === "name") {
+                                        // 1. Let cd be an ILD string representing currency in long form. If the implementation does not have such a representation of currency, then use currency itself.
+                                        cd = currency;
+                                    }
+                            // v. Add new part record { [[type]]: "currency", [[value]]: cd } as a new element of the list result.
+                            arrPush.call(result, { '[[type]]': 'currency', '[[value]]': cd });
+                        }
+                        // a. Else,
+                        else {
+                                // i. Let literal be the substring of pattern from position beginIndex, inclusive, to position endIndex, inclusive.
+                                var _literal = pattern.substring(beginIndex, endIndex);
+                                // ii. Add new part record { [[type]]: "literal", [[value]]: literal } as a new element of the list result.
+                                arrPush.call(result, { '[[type]]': 'literal', '[[value]]': _literal });
+                            }
+        // a. Set nextIndex to endIndex + 1.
+        nextIndex = endIndex + 1;
+        // a. Set beginIndex to Call(%StringProto_indexOf%, pattern, "{", nextIndex)
+        beginIndex = pattern.indexOf('{', nextIndex);
+    }
+    // 9. If nextIndex is less than length, then:
+    if (nextIndex < length) {
+        // a. Let literal be the substring of pattern from position nextIndex, inclusive, to position length, exclusive.
+        var _literal2 = pattern.substring(nextIndex, length);
+        // a. Add new part record { [[type]]: "literal", [[value]]: literal } as a new element of the list result.
+        arrPush.call(result, { '[[type]]': 'literal', '[[value]]': _literal2 });
+    }
+    // 10. Return result.
+    return result;
+}
+
+/*
+ * @spec[stasm/ecma402/number-format-to-parts/spec/numberformat.html]
+ * @clause[sec-formatnumber]
+ */
+function FormatNumber(numberFormat, x) {
+    // 1. Let parts be ? PartitionNumberPattern(numberFormat, x).
+    var parts = PartitionNumberPattern(numberFormat, x);
+    // 2. Let result be an empty String.
+    var result = '';
+    // 3. For each part in parts, do:
+    for (var i = 0; parts.length > i; i++) {
+        var part = parts[i];
+        // a. Set result to a String value produced by concatenating result and part.[[value]].
+        result += part['[[value]]'];
+    }
+    // 4. Return result.
+    return result;
+}
+
+/**
+ * When the ToRawPrecision abstract operation is called with arguments x (which
+ * must be a finite non-negative number), minPrecision, and maxPrecision (both
+ * must be integers between 1 and 21) the following steps are taken:
+ */
+function ToRawPrecision(x, minPrecision, maxPrecision) {
+    // 1. Let p be maxPrecision.
+    var p = maxPrecision;
+
+    var m = void 0,
+        e = void 0;
+
+    // 2. If x = 0, then
+    if (x === 0) {
+        // a. Let m be the String consisting of p occurrences of the character "0".
+        m = arrJoin.call(Array(p + 1), '0');
+        // b. Let e be 0.
+        e = 0;
+    }
+    // 3. Else
+    else {
+            // a. Let e and n be integers such that 10ᵖ⁻¹ ≤ n < 10ᵖ and for which the
+            //    exact mathematical value of n × 10ᵉ⁻ᵖ⁺¹ – x is as close to zero as
+            //    possible. If there are two such sets of e and n, pick the e and n for
+            //    which n × 10ᵉ⁻ᵖ⁺¹ is larger.
+            e = log10Floor(Math.abs(x));
+
+            // Easier to get to m from here
+            var f = Math.round(Math.exp(Math.abs(e - p + 1) * Math.LN10));
+
+            // b. Let m be the String consisting of the digits of the decimal
+            //    representation of n (in order, with no leading zeroes)
+            m = String(Math.round(e - p + 1 < 0 ? x * f : x / f));
+        }
+
+    // 4. If e ≥ p, then
+    if (e >= p)
+        // a. Return the concatenation of m and e-p+1 occurrences of the character "0".
+        return m + arrJoin.call(Array(e - p + 1 + 1), '0');
+
+        // 5. If e = p-1, then
+    else if (e === p - 1)
+            // a. Return m.
+            return m;
+
+            // 6. If e ≥ 0, then
+        else if (e >= 0)
+                // a. Let m be the concatenation of the first e+1 characters of m, the character
+                //    ".", and the remaining p–(e+1) characters of m.
+                m = m.slice(0, e + 1) + '.' + m.slice(e + 1);
+
+                // 7. If e < 0, then
+            else if (e < 0)
+                    // a. Let m be the concatenation of the String "0.", –(e+1) occurrences of the
+                    //    character "0", and the string m.
+                    m = '0.' + arrJoin.call(Array(-(e + 1) + 1), '0') + m;
+
+    // 8. If m contains the character ".", and maxPrecision > minPrecision, then
+    if (m.indexOf(".") >= 0 && maxPrecision > minPrecision) {
+        // a. Let cut be maxPrecision – minPrecision.
+        var cut = maxPrecision - minPrecision;
+
+        // b. Repeat while cut > 0 and the last character of m is "0":
+        while (cut > 0 && m.charAt(m.length - 1) === '0') {
+            //  i. Remove the last character from m.
+            m = m.slice(0, -1);
+
+            //  ii. Decrease cut by 1.
+            cut--;
+        }
+
+        // c. If the last character of m is ".", then
+        if (m.charAt(m.length - 1) === '.')
+            //    i. Remove the last character from m.
+            m = m.slice(0, -1);
+    }
+    // 9. Return m.
+    return m;
+}
+
+/**
+ * @spec[tc39/ecma402/master/spec/numberformat.html]
+ * @clause[sec-torawfixed]
+ * When the ToRawFixed abstract operation is called with arguments x (which must
+ * be a finite non-negative number), minInteger (which must be an integer between
+ * 1 and 21), minFraction, and maxFraction (which must be integers between 0 and
+ * 20) the following steps are taken:
+ */
+function ToRawFixed(x, minInteger, minFraction, maxFraction) {
+    // 1. Let f be maxFraction.
+    var f = maxFraction;
+    // 2. Let n be an integer for which the exact mathematical value of n ÷ 10f – x is as close to zero as possible. If there are two such n, pick the larger n.
+    var n = Math.pow(10, f) * x; // diverging...
+    // 3. If n = 0, let m be the String "0". Otherwise, let m be the String consisting of the digits of the decimal representation of n (in order, with no leading zeroes).
+    var m = n === 0 ? "0" : n.toFixed(0); // divering...
+
+    {
+        // this diversion is needed to take into consideration big numbers, e.g.:
+        // 1.2344501e+37 -> 12344501000000000000000000000000000000
+        var idx = void 0;
+        var exp = (idx = m.indexOf('e')) > -1 ? m.slice(idx + 1) : 0;
+        if (exp) {
+            m = m.slice(0, idx).replace('.', '');
+            m += arrJoin.call(Array(exp - (m.length - 1) + 1), '0');
+        }
+    }
+
+    var int = void 0;
+    // 4. If f ≠ 0, then
+    if (f !== 0) {
+        // a. Let k be the number of characters in m.
+        var k = m.length;
+        // a. If k ≤ f, then
+        if (k <= f) {
+            // i. Let z be the String consisting of f+1–k occurrences of the character "0".
+            var z = arrJoin.call(Array(f + 1 - k + 1), '0');
+            // ii. Let m be the concatenation of Strings z and m.
+            m = z + m;
+            // iii. Let k be f+1.
+            k = f + 1;
+        }
+        // a. Let a be the first k–f characters of m, and let b be the remaining f characters of m.
+        var a = m.substring(0, k - f),
+            b = m.substring(k - f, m.length);
+        // a. Let m be the concatenation of the three Strings a, ".", and b.
+        m = a + "." + b;
+        // a. Let int be the number of characters in a.
+        int = a.length;
+    }
+    // 5. Else, let int be the number of characters in m.
+    else int = m.length;
+    // 6. Let cut be maxFraction – minFraction.
+    var cut = maxFraction - minFraction;
+    // 7. Repeat while cut > 0 and the last character of m is "0":
+    while (cut > 0 && m.slice(-1) === "0") {
+        // a. Remove the last character from m.
+        m = m.slice(0, -1);
+        // a. Decrease cut by 1.
+        cut--;
+    }
+    // 8. If the last character of m is ".", then
+    if (m.slice(-1) === ".") {
+        // a. Remove the last character from m.
+        m = m.slice(0, -1);
+    }
+    // 9. If int < minInteger, then
+    if (int < minInteger) {
+        // a. Let z be the String consisting of minInteger–int occurrences of the character "0".
+        var _z = arrJoin.call(Array(minInteger - int + 1), '0');
+        // a. Let m be the concatenation of Strings z and m.
+        m = _z + m;
+    }
+    // 10. Return m.
+    return m;
+}
+
+// Sect 11.3.2 Table 2, Numbering systems
+// ======================================
+var numSys = {
+    arab: ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"],
+    arabext: ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"],
+    bali: ["᭐", "᭑", "᭒", "᭓", "᭔", "᭕", "᭖", "᭗", "᭘", "᭙"],
+    beng: ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"],
+    deva: ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"],
+    fullwide: ["０", "１", "２", "３", "４", "５", "６", "７", "８", "９"],
+    gujr: ["૦", "૧", "૨", "૩", "૪", "૫", "૬", "૭", "૮", "૯"],
+    guru: ["੦", "੧", "੨", "੩", "੪", "੫", "੬", "੭", "੮", "੯"],
+    hanidec: ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九"],
+    khmr: ["០", "១", "២", "៣", "៤", "៥", "៦", "៧", "៨", "៩"],
+    knda: ["೦", "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯"],
+    laoo: ["໐", "໑", "໒", "໓", "໔", "໕", "໖", "໗", "໘", "໙"],
+    latn: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    limb: ["᥆", "᥇", "᥈", "᥉", "᥊", "᥋", "᥌", "᥍", "᥎", "᥏"],
+    mlym: ["൦", "൧", "൨", "൩", "൪", "൫", "൬", "൭", "൮", "൯"],
+    mong: ["᠐", "᠑", "᠒", "᠓", "᠔", "᠕", "᠖", "᠗", "᠘", "᠙"],
+    mymr: ["၀", "၁", "၂", "၃", "၄", "၅", "၆", "၇", "၈", "၉"],
+    orya: ["୦", "୧", "୨", "୩", "୪", "୫", "୬", "୭", "୮", "୯"],
+    tamldec: ["௦", "௧", "௨", "௩", "௪", "௫", "௬", "௭", "௮", "௯"],
+    telu: ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯"],
+    thai: ["๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙"],
+    tibt: ["༠", "༡", "༢", "༣", "༤", "༥", "༦", "༧", "༨", "༩"]
+};
+
+/**
+ * This function provides access to the locale and formatting options computed
+ * during initialization of the object.
+ *
+ * The function returns a new object whose properties and attributes are set as
+ * if constructed by an object literal assigning to each of the following
+ * properties the value of the corresponding internal property of this
+ * NumberFormat object (see 11.4): locale, numberingSystem, style, currency,
+ * currencyDisplay, minimumIntegerDigits, minimumFractionDigits,
+ * maximumFractionDigits, minimumSignificantDigits, maximumSignificantDigits, and
+ * useGrouping. Properties whose corresponding internal properties are not present
+ * are not assigned.
+ */
+/* 11.3.3 */defineProperty(Intl.NumberFormat.prototype, 'resolvedOptions', {
+    configurable: true,
+    writable: true,
+    value: function value() {
+        var prop = void 0,
+            descs = new Record(),
+            props = ['locale', 'numberingSystem', 'style', 'currency', 'currencyDisplay', 'minimumIntegerDigits', 'minimumFractionDigits', 'maximumFractionDigits', 'minimumSignificantDigits', 'maximumSignificantDigits', 'useGrouping'],
+            internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+
+        // Satisfy test 11.3_b
+        if (!internal || !internal['[[initializedNumberFormat]]']) throw new TypeError('`this` value for resolvedOptions() is not an initialized Intl.NumberFormat object.');
+
+        for (var i = 0, max = props.length; i < max; i++) {
+            if (hop.call(internal, prop = '[[' + props[i] + ']]')) descs[props[i]] = { value: internal[prop], writable: true, configurable: true, enumerable: true };
+        }
+
+        return objCreate({}, descs);
+    }
+});
+
+/* jslint esnext: true */
+
+// Match these datetime components in a CLDR pattern, except those in single quotes
+var expDTComponents = /(?:[Eec]{1,6}|G{1,5}|[Qq]{1,5}|(?:[yYur]+|U{1,5})|[ML]{1,5}|d{1,2}|D{1,3}|F{1}|[abB]{1,5}|[hkHK]{1,2}|w{1,2}|W{1}|m{1,2}|s{1,2}|[zZOvVxX]{1,4})(?=([^']*'[^']*')*[^']*$)/g;
+// trim patterns after transformations
+var expPatternTrimmer = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+// Skip over patterns with these datetime components because we don't have data
+// to back them up:
+// timezone, weekday, amoung others
+var unwantedDTCs = /[rqQASjJgwWIQq]/; // xXVO were removed from this list in favor of computing matches with timeZoneName values but printing as empty string
+
+var dtKeys = ["era", "year", "month", "day", "weekday", "quarter"];
+var tmKeys = ["hour", "minute", "second", "hour12", "timeZoneName"];
+
+function isDateFormatOnly(obj) {
+    for (var i = 0; i < tmKeys.length; i += 1) {
+        if (obj.hasOwnProperty(tmKeys[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function isTimeFormatOnly(obj) {
+    for (var i = 0; i < dtKeys.length; i += 1) {
+        if (obj.hasOwnProperty(dtKeys[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function joinDateAndTimeFormats(dateFormatObj, timeFormatObj) {
+    var o = { _: {} };
+    for (var i = 0; i < dtKeys.length; i += 1) {
+        if (dateFormatObj[dtKeys[i]]) {
+            o[dtKeys[i]] = dateFormatObj[dtKeys[i]];
+        }
+        if (dateFormatObj._[dtKeys[i]]) {
+            o._[dtKeys[i]] = dateFormatObj._[dtKeys[i]];
+        }
+    }
+    for (var j = 0; j < tmKeys.length; j += 1) {
+        if (timeFormatObj[tmKeys[j]]) {
+            o[tmKeys[j]] = timeFormatObj[tmKeys[j]];
+        }
+        if (timeFormatObj._[tmKeys[j]]) {
+            o._[tmKeys[j]] = timeFormatObj._[tmKeys[j]];
+        }
+    }
+    return o;
+}
+
+function computeFinalPatterns(formatObj) {
+    // From http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns:
+    //  'In patterns, two single quotes represents a literal single quote, either
+    //   inside or outside single quotes. Text within single quotes is not
+    //   interpreted in any way (except for two adjacent single quotes).'
+    formatObj.pattern12 = formatObj.extendedPattern.replace(/'([^']*)'/g, function ($0, literal) {
+        return literal ? literal : "'";
+    });
+
+    // pattern 12 is always the default. we can produce the 24 by removing {ampm}
+    formatObj.pattern = formatObj.pattern12.replace('{ampm}', '').replace(expPatternTrimmer, '');
+    return formatObj;
+}
+
+function expDTComponentsMeta($0, formatObj) {
+    switch ($0.charAt(0)) {
+        // --- Era
+        case 'G':
+            formatObj.era = ['short', 'short', 'short', 'long', 'narrow'][$0.length - 1];
+            return '{era}';
+
+        // --- Year
+        case 'y':
+        case 'Y':
+        case 'u':
+        case 'U':
+        case 'r':
+            formatObj.year = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{year}';
+
+        // --- Quarter (not supported in this polyfill)
+        case 'Q':
+        case 'q':
+            formatObj.quarter = ['numeric', '2-digit', 'short', 'long', 'narrow'][$0.length - 1];
+            return '{quarter}';
+
+        // --- Month
+        case 'M':
+        case 'L':
+            formatObj.month = ['numeric', '2-digit', 'short', 'long', 'narrow'][$0.length - 1];
+            return '{month}';
+
+        // --- Week (not supported in this polyfill)
+        case 'w':
+            // week of the year
+            formatObj.week = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{weekday}';
+        case 'W':
+            // week of the month
+            formatObj.week = 'numeric';
+            return '{weekday}';
+
+        // --- Day
+        case 'd':
+            // day of the month
+            formatObj.day = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{day}';
+        case 'D': // day of the year
+        case 'F': // day of the week
+        case 'g':
+            // 1..n: Modified Julian day
+            formatObj.day = 'numeric';
+            return '{day}';
+
+        // --- Week Day
+        case 'E':
+            // day of the week
+            formatObj.weekday = ['short', 'short', 'short', 'long', 'narrow', 'short'][$0.length - 1];
+            return '{weekday}';
+        case 'e':
+            // local day of the week
+            formatObj.weekday = ['numeric', '2-digit', 'short', 'long', 'narrow', 'short'][$0.length - 1];
+            return '{weekday}';
+        case 'c':
+            // stand alone local day of the week
+            formatObj.weekday = ['numeric', undefined, 'short', 'long', 'narrow', 'short'][$0.length - 1];
+            return '{weekday}';
+
+        // --- Period
+        case 'a': // AM, PM
+        case 'b': // am, pm, noon, midnight
+        case 'B':
+            // flexible day periods
+            formatObj.hour12 = true;
+            return '{ampm}';
+
+        // --- Hour
+        case 'h':
+        case 'H':
+            formatObj.hour = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{hour}';
+        case 'k':
+        case 'K':
+            formatObj.hour12 = true; // 12-hour-cycle time formats (using h or K)
+            formatObj.hour = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{hour}';
+
+        // --- Minute
+        case 'm':
+            formatObj.minute = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{minute}';
+
+        // --- Second
+        case 's':
+            formatObj.second = $0.length === 2 ? '2-digit' : 'numeric';
+            return '{second}';
+        case 'S':
+        case 'A':
+            formatObj.second = 'numeric';
+            return '{second}';
+
+        // --- Timezone
+        case 'z': // 1..3, 4: specific non-location format
+        case 'Z': // 1..3, 4, 5: The ISO8601 varios formats
+        case 'O': // 1, 4: miliseconds in day short, long
+        case 'v': // 1, 4: generic non-location format
+        case 'V': // 1, 2, 3, 4: time zone ID or city
+        case 'X': // 1, 2, 3, 4: The ISO8601 varios formats
+        case 'x':
+            // 1, 2, 3, 4: The ISO8601 varios formats
+            // this polyfill only supports much, for now, we are just doing something dummy
+            formatObj.timeZoneName = $0.length < 4 ? 'short' : 'long';
+            return '{timeZoneName}';
+    }
+}
+
+/**
+ * Converts the CLDR availableFormats into the objects and patterns required by
+ * the ECMAScript Internationalization API specification.
+ */
+function createDateTimeFormat(skeleton, pattern) {
+    // we ignore certain patterns that are unsupported to avoid this expensive op.
+    if (unwantedDTCs.test(pattern)) return undefined;
+
+    var formatObj = {
+        originalPattern: pattern,
+        _: {}
+    };
+
+    // Replace the pattern string with the one required by the specification, whilst
+    // at the same time evaluating it for the subsets and formats
+    formatObj.extendedPattern = pattern.replace(expDTComponents, function ($0) {
+        // See which symbol we're dealing with
+        return expDTComponentsMeta($0, formatObj._);
+    });
+
+    // Match the skeleton string with the one required by the specification
+    // this implementation is based on the Date Field Symbol Table:
+    // http://unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table
+    // Note: we are adding extra data to the formatObject even though this polyfill
+    //       might not support it.
+    skeleton.replace(expDTComponents, function ($0) {
+        // See which symbol we're dealing with
+        return expDTComponentsMeta($0, formatObj);
+    });
+
+    return computeFinalPatterns(formatObj);
+}
+
+/**
+ * Processes DateTime formats from CLDR to an easier-to-parse format.
+ * the result of this operation should be cached the first time a particular
+ * calendar is analyzed.
+ *
+ * The specification requires we support at least the following subsets of
+ * date/time components:
+ *
+ *   - 'weekday', 'year', 'month', 'day', 'hour', 'minute', 'second'
+ *   - 'weekday', 'year', 'month', 'day'
+ *   - 'year', 'month', 'day'
+ *   - 'year', 'month'
+ *   - 'month', 'day'
+ *   - 'hour', 'minute', 'second'
+ *   - 'hour', 'minute'
+ *
+ * We need to cherry pick at least these subsets from the CLDR data and convert
+ * them into the pattern objects used in the ECMA-402 API.
+ */
+function createDateTimeFormats(formats) {
+    var availableFormats = formats.availableFormats;
+    var timeFormats = formats.timeFormats;
+    var dateFormats = formats.dateFormats;
+    var result = [];
+    var skeleton = void 0,
+        pattern = void 0,
+        computed = void 0,
+        i = void 0,
+        j = void 0;
+    var timeRelatedFormats = [];
+    var dateRelatedFormats = [];
+
+    // Map available (custom) formats into a pattern for createDateTimeFormats
+    for (skeleton in availableFormats) {
+        if (availableFormats.hasOwnProperty(skeleton)) {
+            pattern = availableFormats[skeleton];
+            computed = createDateTimeFormat(skeleton, pattern);
+            if (computed) {
+                result.push(computed);
+                // in some cases, the format is only displaying date specific props
+                // or time specific props, in which case we need to also produce the
+                // combined formats.
+                if (isDateFormatOnly(computed)) {
+                    dateRelatedFormats.push(computed);
+                } else if (isTimeFormatOnly(computed)) {
+                    timeRelatedFormats.push(computed);
+                }
+            }
+        }
+    }
+
+    // Map time formats into a pattern for createDateTimeFormats
+    for (skeleton in timeFormats) {
+        if (timeFormats.hasOwnProperty(skeleton)) {
+            pattern = timeFormats[skeleton];
+            computed = createDateTimeFormat(skeleton, pattern);
+            if (computed) {
+                result.push(computed);
+                timeRelatedFormats.push(computed);
+            }
+        }
+    }
+
+    // Map date formats into a pattern for createDateTimeFormats
+    for (skeleton in dateFormats) {
+        if (dateFormats.hasOwnProperty(skeleton)) {
+            pattern = dateFormats[skeleton];
+            computed = createDateTimeFormat(skeleton, pattern);
+            if (computed) {
+                result.push(computed);
+                dateRelatedFormats.push(computed);
+            }
+        }
+    }
+
+    // combine custom time and custom date formats when they are orthogonals to complete the
+    // formats supported by CLDR.
+    // This Algo is based on section "Missing Skeleton Fields" from:
+    // http://unicode.org/reports/tr35/tr35-dates.html#availableFormats_appendItems
+    for (i = 0; i < timeRelatedFormats.length; i += 1) {
+        for (j = 0; j < dateRelatedFormats.length; j += 1) {
+            if (dateRelatedFormats[j].month === 'long') {
+                pattern = dateRelatedFormats[j].weekday ? formats.full : formats.long;
+            } else if (dateRelatedFormats[j].month === 'short') {
+                pattern = formats.medium;
+            } else {
+                pattern = formats.short;
+            }
+            computed = joinDateAndTimeFormats(dateRelatedFormats[j], timeRelatedFormats[i]);
+            computed.originalPattern = pattern;
+            computed.extendedPattern = pattern.replace('{0}', timeRelatedFormats[i].extendedPattern).replace('{1}', dateRelatedFormats[j].extendedPattern).replace(/^[,\s]+|[,\s]+$/gi, '');
+            result.push(computeFinalPatterns(computed));
+        }
+    }
+
+    return result;
+}
+
+// this represents the exceptions of the rule that are not covered by CLDR availableFormats
+// for single property configurations, they play no role when using multiple properties, and
+// those that are not in this table, are not exceptions or are not covered by the data we
+// provide.
+var validSyntheticProps = {
+    second: {
+        numeric: 's',
+        '2-digit': 'ss'
+    },
+    minute: {
+        numeric: 'm',
+        '2-digit': 'mm'
+    },
+    year: {
+        numeric: 'y',
+        '2-digit': 'yy'
+    },
+    day: {
+        numeric: 'd',
+        '2-digit': 'dd'
+    },
+    month: {
+        numeric: 'L',
+        '2-digit': 'LL',
+        narrow: 'LLLLL',
+        short: 'LLL',
+        long: 'LLLL'
+    },
+    weekday: {
+        narrow: 'ccccc',
+        short: 'ccc',
+        long: 'cccc'
+    }
+};
+
+function generateSyntheticFormat(propName, propValue) {
+    if (validSyntheticProps[propName] && validSyntheticProps[propName][propValue]) {
+        var _ref2;
+
+        return _ref2 = {
+            originalPattern: validSyntheticProps[propName][propValue],
+            _: defineProperty$1({}, propName, propValue),
+            extendedPattern: "{" + propName + "}"
+        }, defineProperty$1(_ref2, propName, propValue), defineProperty$1(_ref2, "pattern12", "{" + propName + "}"), defineProperty$1(_ref2, "pattern", "{" + propName + "}"), _ref2;
+    }
+}
+
+// An object map of date component keys, saves using a regex later
+var dateWidths = objCreate(null, { narrow: {}, short: {}, long: {} });
+
+/**
+ * Returns a string for a date component, resolved using multiple inheritance as specified
+ * as specified in the Unicode Technical Standard 35.
+ */
+function resolveDateString(data, ca, component, width, key) {
+    // From http://www.unicode.org/reports/tr35/tr35.html#Multiple_Inheritance:
+    // 'In clearly specified instances, resources may inherit from within the same locale.
+    //  For example, ... the Buddhist calendar inherits from the Gregorian calendar.'
+    var obj = data[ca] && data[ca][component] ? data[ca][component] : data.gregory[component],
+
+
+    // "sideways" inheritance resolves strings when a key doesn't exist
+    alts = {
+        narrow: ['short', 'long'],
+        short: ['long', 'narrow'],
+        long: ['short', 'narrow']
+    },
+
+
+    //
+    resolved = hop.call(obj, width) ? obj[width] : hop.call(obj, alts[width][0]) ? obj[alts[width][0]] : obj[alts[width][1]];
+
+    // `key` wouldn't be specified for components 'dayPeriods'
+    return key !== null ? resolved[key] : resolved;
+}
+
+// Define the DateTimeFormat constructor internally so it cannot be tainted
+function DateTimeFormatConstructor() {
+    var locales = arguments[0];
+    var options = arguments[1];
+
+    if (!this || this === Intl) {
+        return new Intl.DateTimeFormat(locales, options);
+    }
+    return InitializeDateTimeFormat(toObject(this), locales, options);
+}
+
+defineProperty(Intl, 'DateTimeFormat', {
+    configurable: true,
+    writable: true,
+    value: DateTimeFormatConstructor
+});
+
+// Must explicitly set prototypes as unwritable
+defineProperty(DateTimeFormatConstructor, 'prototype', {
+    writable: false
+});
+
+/**
+ * The abstract operation InitializeDateTimeFormat accepts the arguments dateTimeFormat
+ * (which must be an object), locales, and options. It initializes dateTimeFormat as a
+ * DateTimeFormat object.
+ */
+function /* 12.1.1.1 */InitializeDateTimeFormat(dateTimeFormat, locales, options) {
+    // This will be a internal properties object if we're not already initialized
+    var internal = getInternalProperties(dateTimeFormat);
+
+    // Create an object whose props can be used to restore the values of RegExp props
+    var regexpRestore = createRegExpRestore();
+
+    // 1. If dateTimeFormat has an [[initializedIntlObject]] internal property with
+    //    value true, throw a TypeError exception.
+    if (internal['[[initializedIntlObject]]'] === true) throw new TypeError('`this` object has already been initialized as an Intl object');
+
+    // Need this to access the `internal` object
+    defineProperty(dateTimeFormat, '__getInternalProperties', {
+        value: function value() {
+            // NOTE: Non-standard, for internal use only
+            if (arguments[0] === secret) return internal;
+        }
+    });
+
+    // 2. Set the [[initializedIntlObject]] internal property of numberFormat to true.
+    internal['[[initializedIntlObject]]'] = true;
+
+    // 3. Let requestedLocales be the result of calling the CanonicalizeLocaleList
+    //    abstract operation (defined in 9.2.1) with argument locales.
+    var requestedLocales = CanonicalizeLocaleList(locales);
+
+    // 4. Let options be the result of calling the ToDateTimeOptions abstract
+    //    operation (defined below) with arguments options, "any", and "date".
+    options = ToDateTimeOptions(options, 'any', 'date');
+
+    // 5. Let opt be a new Record.
+    var opt = new Record();
+
+    // 6. Let matcher be the result of calling the GetOption abstract operation
+    //    (defined in 9.2.9) with arguments options, "localeMatcher", "string", a List
+    //    containing the two String values "lookup" and "best fit", and "best fit".
+    var matcher = GetOption(options, 'localeMatcher', 'string', new List('lookup', 'best fit'), 'best fit');
+
+    // 7. Set opt.[[localeMatcher]] to matcher.
+    opt['[[localeMatcher]]'] = matcher;
+
+    // 8. Let DateTimeFormat be the standard built-in object that is the initial
+    //    value of Intl.DateTimeFormat.
+    var DateTimeFormat = internals.DateTimeFormat; // This is what we *really* need
+
+    // 9. Let localeData be the value of the [[localeData]] internal property of
+    //    DateTimeFormat.
+    var localeData = DateTimeFormat['[[localeData]]'];
+
+    // 10. Let r be the result of calling the ResolveLocale abstract operation
+    //     (defined in 9.2.5) with the [[availableLocales]] internal property of
+    //      DateTimeFormat, requestedLocales, opt, the [[relevantExtensionKeys]]
+    //      internal property of DateTimeFormat, and localeData.
+    var r = ResolveLocale(DateTimeFormat['[[availableLocales]]'], requestedLocales, opt, DateTimeFormat['[[relevantExtensionKeys]]'], localeData);
+
+    // 11. Set the [[locale]] internal property of dateTimeFormat to the value of
+    //     r.[[locale]].
+    internal['[[locale]]'] = r['[[locale]]'];
+
+    // 12. Set the [[calendar]] internal property of dateTimeFormat to the value of
+    //     r.[[ca]].
+    internal['[[calendar]]'] = r['[[ca]]'];
+
+    // 13. Set the [[numberingSystem]] internal property of dateTimeFormat to the value of
+    //     r.[[nu]].
+    internal['[[numberingSystem]]'] = r['[[nu]]'];
+
+    // The specification doesn't tell us to do this, but it's helpful later on
+    internal['[[dataLocale]]'] = r['[[dataLocale]]'];
+
+    // 14. Let dataLocale be the value of r.[[dataLocale]].
+    var dataLocale = r['[[dataLocale]]'];
+
+    // 15. Let tz be the result of calling the [[Get]] internal method of options with
+    //     argument "timeZone".
+    var tz = options.timeZone;
+
+    // 16. If tz is not undefined, then
+    if (tz !== undefined) {
+        // a. Let tz be ToString(tz).
+        // b. Convert tz to upper case as described in 6.1.
+        //    NOTE: If an implementation accepts additional time zone values, as permitted
+        //          under certain conditions by the Conformance clause, different casing
+        //          rules apply.
+        tz = toLatinUpperCase(tz);
+
+        // c. If tz is not "UTC", then throw a RangeError exception.
+        // ###TODO: accept more time zones###
+        if (tz !== 'UTC') throw new RangeError('timeZone is not supported.');
+    }
+
+    // 17. Set the [[timeZone]] internal property of dateTimeFormat to tz.
+    internal['[[timeZone]]'] = tz;
+
+    // 18. Let opt be a new Record.
+    opt = new Record();
+
+    // 19. For each row of Table 3, except the header row, do:
+    for (var prop in dateTimeComponents) {
+        if (!hop.call(dateTimeComponents, prop)) continue;
+
+        // 20. Let prop be the name given in the Property column of the row.
+        // 21. Let value be the result of calling the GetOption abstract operation,
+        //     passing as argument options, the name given in the Property column of the
+        //     row, "string", a List containing the strings given in the Values column of
+        //     the row, and undefined.
+        var value = GetOption(options, prop, 'string', dateTimeComponents[prop]);
+
+        // 22. Set opt.[[<prop>]] to value.
+        opt['[[' + prop + ']]'] = value;
+    }
+
+    // Assigned a value below
+    var bestFormat = void 0;
+
+    // 23. Let dataLocaleData be the result of calling the [[Get]] internal method of
+    //     localeData with argument dataLocale.
+    var dataLocaleData = localeData[dataLocale];
+
+    // 24. Let formats be the result of calling the [[Get]] internal method of
+    //     dataLocaleData with argument "formats".
+    //     Note: we process the CLDR formats into the spec'd structure
+    var formats = ToDateTimeFormats(dataLocaleData.formats);
+
+    // 25. Let matcher be the result of calling the GetOption abstract operation with
+    //     arguments options, "formatMatcher", "string", a List containing the two String
+    //     values "basic" and "best fit", and "best fit".
+    matcher = GetOption(options, 'formatMatcher', 'string', new List('basic', 'best fit'), 'best fit');
+
+    // Optimization: caching the processed formats as a one time operation by
+    // replacing the initial structure from localeData
+    dataLocaleData.formats = formats;
+
+    // 26. If matcher is "basic", then
+    if (matcher === 'basic') {
+        // 27. Let bestFormat be the result of calling the BasicFormatMatcher abstract
+        //     operation (defined below) with opt and formats.
+        bestFormat = BasicFormatMatcher(opt, formats);
+
+        // 28. Else
+    } else {
+        {
+            // diverging
+            var _hr = GetOption(options, 'hour12', 'boolean' /*, undefined, undefined*/);
+            opt.hour12 = _hr === undefined ? dataLocaleData.hour12 : _hr;
+        }
+        // 29. Let bestFormat be the result of calling the BestFitFormatMatcher
+        //     abstract operation (defined below) with opt and formats.
+        bestFormat = BestFitFormatMatcher(opt, formats);
+    }
+
+    // 30. For each row in Table 3, except the header row, do
+    for (var _prop in dateTimeComponents) {
+        if (!hop.call(dateTimeComponents, _prop)) continue;
+
+        // a. Let prop be the name given in the Property column of the row.
+        // b. Let pDesc be the result of calling the [[GetOwnProperty]] internal method of
+        //    bestFormat with argument prop.
+        // c. If pDesc is not undefined, then
+        if (hop.call(bestFormat, _prop)) {
+            // i. Let p be the result of calling the [[Get]] internal method of bestFormat
+            //    with argument prop.
+            var p = bestFormat[_prop];
+            {
+                // diverging
+                p = bestFormat._ && hop.call(bestFormat._, _prop) ? bestFormat._[_prop] : p;
+            }
+
+            // ii. Set the [[<prop>]] internal property of dateTimeFormat to p.
+            internal['[[' + _prop + ']]'] = p;
+        }
+    }
+
+    var pattern = void 0; // Assigned a value below
+
+    // 31. Let hr12 be the result of calling the GetOption abstract operation with
+    //     arguments options, "hour12", "boolean", undefined, and undefined.
+    var hr12 = GetOption(options, 'hour12', 'boolean' /*, undefined, undefined*/);
+
+    // 32. If dateTimeFormat has an internal property [[hour]], then
+    if (internal['[[hour]]']) {
+        // a. If hr12 is undefined, then let hr12 be the result of calling the [[Get]]
+        //    internal method of dataLocaleData with argument "hour12".
+        hr12 = hr12 === undefined ? dataLocaleData.hour12 : hr12;
+
+        // b. Set the [[hour12]] internal property of dateTimeFormat to hr12.
+        internal['[[hour12]]'] = hr12;
+
+        // c. If hr12 is true, then
+        if (hr12 === true) {
+            // i. Let hourNo0 be the result of calling the [[Get]] internal method of
+            //    dataLocaleData with argument "hourNo0".
+            var hourNo0 = dataLocaleData.hourNo0;
+
+            // ii. Set the [[hourNo0]] internal property of dateTimeFormat to hourNo0.
+            internal['[[hourNo0]]'] = hourNo0;
+
+            // iii. Let pattern be the result of calling the [[Get]] internal method of
+            //      bestFormat with argument "pattern12".
+            pattern = bestFormat.pattern12;
+        }
+
+        // d. Else
+        else
+            // i. Let pattern be the result of calling the [[Get]] internal method of
+            //    bestFormat with argument "pattern".
+            pattern = bestFormat.pattern;
+    }
+
+    // 33. Else
+    else
+        // a. Let pattern be the result of calling the [[Get]] internal method of
+        //    bestFormat with argument "pattern".
+        pattern = bestFormat.pattern;
+
+    // 34. Set the [[pattern]] internal property of dateTimeFormat to pattern.
+    internal['[[pattern]]'] = pattern;
+
+    // 35. Set the [[boundFormat]] internal property of dateTimeFormat to undefined.
+    internal['[[boundFormat]]'] = undefined;
+
+    // 36. Set the [[initializedDateTimeFormat]] internal property of dateTimeFormat to
+    //     true.
+    internal['[[initializedDateTimeFormat]]'] = true;
+
+    // In ES3, we need to pre-bind the format() function
+    if (es3) dateTimeFormat.format = GetFormatDateTime.call(dateTimeFormat);
+
+    // Restore the RegExp properties
+    regexpRestore();
+
+    // Return the newly initialised object
+    return dateTimeFormat;
+}
+
+/**
+ * Several DateTimeFormat algorithms use values from the following table, which provides
+ * property names and allowable values for the components of date and time formats:
+ */
+var dateTimeComponents = {
+    weekday: ["narrow", "short", "long"],
+    era: ["narrow", "short", "long"],
+    year: ["2-digit", "numeric"],
+    month: ["2-digit", "numeric", "narrow", "short", "long"],
+    day: ["2-digit", "numeric"],
+    hour: ["2-digit", "numeric"],
+    minute: ["2-digit", "numeric"],
+    second: ["2-digit", "numeric"],
+    timeZoneName: ["short", "long"]
+};
+
+/**
+ * When the ToDateTimeOptions abstract operation is called with arguments options,
+ * required, and defaults, the following steps are taken:
+ */
+function ToDateTimeFormats(formats) {
+    if (Object.prototype.toString.call(formats) === '[object Array]') {
+        return formats;
+    }
+    return createDateTimeFormats(formats);
+}
+
+/**
+ * When the ToDateTimeOptions abstract operation is called with arguments options,
+ * required, and defaults, the following steps are taken:
+ */
+function ToDateTimeOptions(options, required, defaults) {
+    // 1. If options is undefined, then let options be null, else let options be
+    //    ToObject(options).
+    if (options === undefined) options = null;else {
+        // (#12) options needs to be a Record, but it also needs to inherit properties
+        var opt2 = toObject(options);
+        options = new Record();
+
+        for (var k in opt2) {
+            options[k] = opt2[k];
+        }
+    }
+
+    // 2. Let create be the standard built-in function object defined in ES5, 15.2.3.5.
+    var create = objCreate;
+
+    // 3. Let options be the result of calling the [[Call]] internal method of create with
+    //    undefined as the this value and an argument list containing the single item
+    //    options.
+    options = create(options);
+
+    // 4. Let needDefaults be true.
+    var needDefaults = true;
+
+    // 5. If required is "date" or "any", then
+    if (required === 'date' || required === 'any') {
+        // a. For each of the property names "weekday", "year", "month", "day":
+        // i. If the result of calling the [[Get]] internal method of options with the
+        //    property name is not undefined, then let needDefaults be false.
+        if (options.weekday !== undefined || options.year !== undefined || options.month !== undefined || options.day !== undefined) needDefaults = false;
+    }
+
+    // 6. If required is "time" or "any", then
+    if (required === 'time' || required === 'any') {
+        // a. For each of the property names "hour", "minute", "second":
+        // i. If the result of calling the [[Get]] internal method of options with the
+        //    property name is not undefined, then let needDefaults be false.
+        if (options.hour !== undefined || options.minute !== undefined || options.second !== undefined) needDefaults = false;
+    }
+
+    // 7. If needDefaults is true and defaults is either "date" or "all", then
+    if (needDefaults && (defaults === 'date' || defaults === 'all'))
+        // a. For each of the property names "year", "month", "day":
+        // i. Call the [[DefineOwnProperty]] internal method of options with the
+        //    property name, Property Descriptor {[[Value]]: "numeric", [[Writable]]:
+        //    true, [[Enumerable]]: true, [[Configurable]]: true}, and false.
+        options.year = options.month = options.day = 'numeric';
+
+    // 8. If needDefaults is true and defaults is either "time" or "all", then
+    if (needDefaults && (defaults === 'time' || defaults === 'all'))
+        // a. For each of the property names "hour", "minute", "second":
+        // i. Call the [[DefineOwnProperty]] internal method of options with the
+        //    property name, Property Descriptor {[[Value]]: "numeric", [[Writable]]:
+        //    true, [[Enumerable]]: true, [[Configurable]]: true}, and false.
+        options.hour = options.minute = options.second = 'numeric';
+
+    // 9. Return options.
+    return options;
+}
+
+/**
+ * When the BasicFormatMatcher abstract operation is called with two arguments options and
+ * formats, the following steps are taken:
+ */
+function BasicFormatMatcher(options, formats) {
+    // 1. Let removalPenalty be 120.
+    var removalPenalty = 120;
+
+    // 2. Let additionPenalty be 20.
+    var additionPenalty = 20;
+
+    // 3. Let longLessPenalty be 8.
+    var longLessPenalty = 8;
+
+    // 4. Let longMorePenalty be 6.
+    var longMorePenalty = 6;
+
+    // 5. Let shortLessPenalty be 6.
+    var shortLessPenalty = 6;
+
+    // 6. Let shortMorePenalty be 3.
+    var shortMorePenalty = 3;
+
+    // 7. Let bestScore be -Infinity.
+    var bestScore = -Infinity;
+
+    // 8. Let bestFormat be undefined.
+    var bestFormat = void 0;
+
+    // 9. Let i be 0.
+    var i = 0;
+
+    // 10. Assert: formats is an Array object.
+
+    // 11. Let len be the result of calling the [[Get]] internal method of formats with argument "length".
+    var len = formats.length;
+
+    // 12. Repeat while i < len:
+    while (i < len) {
+        // a. Let format be the result of calling the [[Get]] internal method of formats with argument ToString(i).
+        var format = formats[i];
+
+        // b. Let score be 0.
+        var score = 0;
+
+        // c. For each property shown in Table 3:
+        for (var property in dateTimeComponents) {
+            if (!hop.call(dateTimeComponents, property)) continue;
+
+            // i. Let optionsProp be options.[[<property>]].
+            var optionsProp = options['[[' + property + ']]'];
+
+            // ii. Let formatPropDesc be the result of calling the [[GetOwnProperty]] internal method of format
+            //     with argument property.
+            // iii. If formatPropDesc is not undefined, then
+            //     1. Let formatProp be the result of calling the [[Get]] internal method of format with argument property.
+            var formatProp = hop.call(format, property) ? format[property] : undefined;
+
+            // iv. If optionsProp is undefined and formatProp is not undefined, then decrease score by
+            //     additionPenalty.
+            if (optionsProp === undefined && formatProp !== undefined) score -= additionPenalty;
+
+            // v. Else if optionsProp is not undefined and formatProp is undefined, then decrease score by
+            //    removalPenalty.
+            else if (optionsProp !== undefined && formatProp === undefined) score -= removalPenalty;
+
+                // vi. Else
+                else {
+                        // 1. Let values be the array ["2-digit", "numeric", "narrow", "short",
+                        //    "long"].
+                        var values = ['2-digit', 'numeric', 'narrow', 'short', 'long'];
+
+                        // 2. Let optionsPropIndex be the index of optionsProp within values.
+                        var optionsPropIndex = arrIndexOf.call(values, optionsProp);
+
+                        // 3. Let formatPropIndex be the index of formatProp within values.
+                        var formatPropIndex = arrIndexOf.call(values, formatProp);
+
+                        // 4. Let delta be max(min(formatPropIndex - optionsPropIndex, 2), -2).
+                        var delta = Math.max(Math.min(formatPropIndex - optionsPropIndex, 2), -2);
+
+                        // 5. If delta = 2, decrease score by longMorePenalty.
+                        if (delta === 2) score -= longMorePenalty;
+
+                        // 6. Else if delta = 1, decrease score by shortMorePenalty.
+                        else if (delta === 1) score -= shortMorePenalty;
+
+                            // 7. Else if delta = -1, decrease score by shortLessPenalty.
+                            else if (delta === -1) score -= shortLessPenalty;
+
+                                // 8. Else if delta = -2, decrease score by longLessPenalty.
+                                else if (delta === -2) score -= longLessPenalty;
+                    }
+        }
+
+        // d. If score > bestScore, then
+        if (score > bestScore) {
+            // i. Let bestScore be score.
+            bestScore = score;
+
+            // ii. Let bestFormat be format.
+            bestFormat = format;
+        }
+
+        // e. Increase i by 1.
+        i++;
+    }
+
+    // 13. Return bestFormat.
+    return bestFormat;
+}
+
+/**
+ * When the BestFitFormatMatcher abstract operation is called with two arguments options
+ * and formats, it performs implementation dependent steps, which should return a set of
+ * component representations that a typical user of the selected locale would perceive as
+ * at least as good as the one returned by BasicFormatMatcher.
+ *
+ * This polyfill defines the algorithm to be the same as BasicFormatMatcher,
+ * with the addition of bonus points awarded where the requested format is of
+ * the same data type as the potentially matching format.
+ *
+ * This algo relies on the concept of closest distance matching described here:
+ * http://unicode.org/reports/tr35/tr35-dates.html#Matching_Skeletons
+ * Typically a “best match” is found using a closest distance match, such as:
+ *
+ * Symbols requesting a best choice for the locale are replaced.
+ *      j → one of {H, k, h, K}; C → one of {a, b, B}
+ * -> Covered by cldr.js matching process
+ *
+ * For fields with symbols representing the same type (year, month, day, etc):
+ *     Most symbols have a small distance from each other.
+ *         M ≅ L; E ≅ c; a ≅ b ≅ B; H ≅ k ≅ h ≅ K; ...
+ *     -> Covered by cldr.js matching process
+ *
+ *     Width differences among fields, other than those marking text vs numeric, are given small distance from each other.
+ *         MMM ≅ MMMM
+ *         MM ≅ M
+ *     Numeric and text fields are given a larger distance from each other.
+ *         MMM ≈ MM
+ *     Symbols representing substantial differences (week of year vs week of month) are given much larger a distances from each other.
+ *         d ≋ D; ...
+ *     Missing or extra fields cause a match to fail. (But see Missing Skeleton Fields).
+ *
+ *
+ * For example,
+ *
+ *     { month: 'numeric', day: 'numeric' }
+ *
+ * should match
+ *
+ *     { month: '2-digit', day: '2-digit' }
+ *
+ * rather than
+ *
+ *     { month: 'short', day: 'numeric' }
+ *
+ * This makes sense because a user requesting a formatted date with numeric parts would
+ * not expect to see the returned format containing narrow, short or long part names
+ */
+function BestFitFormatMatcher(options, formats) {
+    /** Diverging: this block implements the hack for single property configuration, eg.:
+     *
+     *      `new Intl.DateTimeFormat('en', {day: 'numeric'})`
+     *
+     * should produce a single digit with the day of the month. This is needed because
+     * CLDR `availableFormats` data structure doesn't cover these cases.
+     */
+    {
+        var optionsPropNames = [];
+        for (var property in dateTimeComponents) {
+            if (!hop.call(dateTimeComponents, property)) continue;
+
+            if (options['[[' + property + ']]'] !== undefined) {
+                optionsPropNames.push(property);
+            }
+        }
+        if (optionsPropNames.length === 1) {
+            var _bestFormat = generateSyntheticFormat(optionsPropNames[0], options['[[' + optionsPropNames[0] + ']]']);
+            if (_bestFormat) {
+                return _bestFormat;
+            }
+        }
+    }
+
+    // 1. Let removalPenalty be 120.
+    var removalPenalty = 120;
+
+    // 2. Let additionPenalty be 20.
+    var additionPenalty = 20;
+
+    // 3. Let longLessPenalty be 8.
+    var longLessPenalty = 8;
+
+    // 4. Let longMorePenalty be 6.
+    var longMorePenalty = 6;
+
+    // 5. Let shortLessPenalty be 6.
+    var shortLessPenalty = 6;
+
+    // 6. Let shortMorePenalty be 3.
+    var shortMorePenalty = 3;
+
+    var patternPenalty = 2;
+
+    var hour12Penalty = 1;
+
+    // 7. Let bestScore be -Infinity.
+    var bestScore = -Infinity;
+
+    // 8. Let bestFormat be undefined.
+    var bestFormat = void 0;
+
+    // 9. Let i be 0.
+    var i = 0;
+
+    // 10. Assert: formats is an Array object.
+
+    // 11. Let len be the result of calling the [[Get]] internal method of formats with argument "length".
+    var len = formats.length;
+
+    // 12. Repeat while i < len:
+    while (i < len) {
+        // a. Let format be the result of calling the [[Get]] internal method of formats with argument ToString(i).
+        var format = formats[i];
+
+        // b. Let score be 0.
+        var score = 0;
+
+        // c. For each property shown in Table 3:
+        for (var _property in dateTimeComponents) {
+            if (!hop.call(dateTimeComponents, _property)) continue;
+
+            // i. Let optionsProp be options.[[<property>]].
+            var optionsProp = options['[[' + _property + ']]'];
+
+            // ii. Let formatPropDesc be the result of calling the [[GetOwnProperty]] internal method of format
+            //     with argument property.
+            // iii. If formatPropDesc is not undefined, then
+            //     1. Let formatProp be the result of calling the [[Get]] internal method of format with argument property.
+            var formatProp = hop.call(format, _property) ? format[_property] : undefined;
+
+            // Diverging: using the default properties produced by the pattern/skeleton
+            // to match it with user options, and apply a penalty
+            var patternProp = hop.call(format._, _property) ? format._[_property] : undefined;
+            if (optionsProp !== patternProp) {
+                score -= patternPenalty;
+            }
+
+            // iv. If optionsProp is undefined and formatProp is not undefined, then decrease score by
+            //     additionPenalty.
+            if (optionsProp === undefined && formatProp !== undefined) score -= additionPenalty;
+
+            // v. Else if optionsProp is not undefined and formatProp is undefined, then decrease score by
+            //    removalPenalty.
+            else if (optionsProp !== undefined && formatProp === undefined) score -= removalPenalty;
+
+                // vi. Else
+                else {
+                        // 1. Let values be the array ["2-digit", "numeric", "narrow", "short",
+                        //    "long"].
+                        var values = ['2-digit', 'numeric', 'narrow', 'short', 'long'];
+
+                        // 2. Let optionsPropIndex be the index of optionsProp within values.
+                        var optionsPropIndex = arrIndexOf.call(values, optionsProp);
+
+                        // 3. Let formatPropIndex be the index of formatProp within values.
+                        var formatPropIndex = arrIndexOf.call(values, formatProp);
+
+                        // 4. Let delta be max(min(formatPropIndex - optionsPropIndex, 2), -2).
+                        var delta = Math.max(Math.min(formatPropIndex - optionsPropIndex, 2), -2);
+
+                        {
+                            // diverging from spec
+                            // When the bestFit argument is true, subtract additional penalty where data types are not the same
+                            if (formatPropIndex <= 1 && optionsPropIndex >= 2 || formatPropIndex >= 2 && optionsPropIndex <= 1) {
+                                // 5. If delta = 2, decrease score by longMorePenalty.
+                                if (delta > 0) score -= longMorePenalty;else if (delta < 0) score -= longLessPenalty;
+                            } else {
+                                // 5. If delta = 2, decrease score by longMorePenalty.
+                                if (delta > 1) score -= shortMorePenalty;else if (delta < -1) score -= shortLessPenalty;
+                            }
+                        }
+                    }
+        }
+
+        {
+            // diverging to also take into consideration differences between 12 or 24 hours
+            // which is special for the best fit only.
+            if (format._.hour12 !== options.hour12) {
+                score -= hour12Penalty;
+            }
+        }
+
+        // d. If score > bestScore, then
+        if (score > bestScore) {
+            // i. Let bestScore be score.
+            bestScore = score;
+            // ii. Let bestFormat be format.
+            bestFormat = format;
+        }
+
+        // e. Increase i by 1.
+        i++;
+    }
+
+    // 13. Return bestFormat.
+    return bestFormat;
+}
+
+/* 12.2.3 */internals.DateTimeFormat = {
+    '[[availableLocales]]': [],
+    '[[relevantExtensionKeys]]': ['ca', 'nu'],
+    '[[localeData]]': {}
+};
+
+/**
+ * When the supportedLocalesOf method of Intl.DateTimeFormat is called, the
+ * following steps are taken:
+ */
+/* 12.2.2 */
+defineProperty(Intl.DateTimeFormat, 'supportedLocalesOf', {
+    configurable: true,
+    writable: true,
+    value: fnBind.call(function (locales) {
+        // Bound functions only have the `this` value altered if being used as a constructor,
+        // this lets us imitate a native function that has no constructor
+        if (!hop.call(this, '[[availableLocales]]')) throw new TypeError('supportedLocalesOf() is not a constructor');
+
+        // Create an object whose props can be used to restore the values of RegExp props
+        var regexpRestore = createRegExpRestore(),
+
+
+        // 1. If options is not provided, then let options be undefined.
+        options = arguments[1],
+
+
+        // 2. Let availableLocales be the value of the [[availableLocales]] internal
+        //    property of the standard built-in object that is the initial value of
+        //    Intl.NumberFormat.
+
+        availableLocales = this['[[availableLocales]]'],
+
+
+        // 3. Let requestedLocales be the result of calling the CanonicalizeLocaleList
+        //    abstract operation (defined in 9.2.1) with argument locales.
+        requestedLocales = CanonicalizeLocaleList(locales);
+
+        // Restore the RegExp properties
+        regexpRestore();
+
+        // 4. Return the result of calling the SupportedLocales abstract operation
+        //    (defined in 9.2.8) with arguments availableLocales, requestedLocales,
+        //    and options.
+        return SupportedLocales(availableLocales, requestedLocales, options);
+    }, internals.NumberFormat)
+});
+
+/**
+ * This named accessor property returns a function that formats a number
+ * according to the effective locale and the formatting options of this
+ * DateTimeFormat object.
+ */
+/* 12.3.2 */defineProperty(Intl.DateTimeFormat.prototype, 'format', {
+    configurable: true,
+    get: GetFormatDateTime
+});
+
+function GetFormatDateTime() {
+    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+
+    // Satisfy test 12.3_b
+    if (!internal || !internal['[[initializedDateTimeFormat]]']) throw new TypeError('`this` value for format() is not an initialized Intl.DateTimeFormat object.');
+
+    // The value of the [[Get]] attribute is a function that takes the following
+    // steps:
+
+    // 1. If the [[boundFormat]] internal property of this DateTimeFormat object
+    //    is undefined, then:
+    if (internal['[[boundFormat]]'] === undefined) {
+        // a. Let F be a Function object, with internal properties set as
+        //    specified for built-in functions in ES5, 15, or successor, and the
+        //    length property set to 0, that takes the argument date and
+        //    performs the following steps:
+        var F = function F() {
+            var date = arguments.length <= 0 || arguments[0] === undefined ? undefined : arguments[0];
+
+            //   i. If date is not provided or is undefined, then let x be the
+            //      result as if by the expression Date.now() where Date.now is
+            //      the standard built-in function defined in ES5, 15.9.4.4.
+            //  ii. Else let x be ToNumber(date).
+            // iii. Return the result of calling the FormatDateTime abstract
+            //      operation (defined below) with arguments this and x.
+            var x = date === undefined ? Date.now() : toNumber(date);
+            return FormatDateTime(this, x);
+        };
+        // b. Let bind be the standard built-in function object defined in ES5,
+        //    15.3.4.5.
+        // c. Let bf be the result of calling the [[Call]] internal method of
+        //    bind with F as the this value and an argument list containing
+        //    the single item this.
+        var bf = fnBind.call(F, this);
+        // d. Set the [[boundFormat]] internal property of this NumberFormat
+        //    object to bf.
+        internal['[[boundFormat]]'] = bf;
+    }
+    // Return the value of the [[boundFormat]] internal property of this
+    // NumberFormat object.
+    return internal['[[boundFormat]]'];
+}
+
+function formatToParts$1() {
+    var date = arguments.length <= 0 || arguments[0] === undefined ? undefined : arguments[0];
+
+    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+
+    if (!internal || !internal['[[initializedDateTimeFormat]]']) throw new TypeError('`this` value for formatToParts() is not an initialized Intl.DateTimeFormat object.');
+
+    var x = date === undefined ? Date.now() : toNumber(date);
+    return FormatToPartsDateTime(this, x);
+}
+
+Object.defineProperty(Intl.DateTimeFormat.prototype, 'formatToParts', {
+    enumerable: false,
+    writable: true,
+    configurable: true,
+    value: formatToParts$1
+});
+
+function CreateDateTimeParts(dateTimeFormat, x) {
+    // 1. If x is not a finite Number, then throw a RangeError exception.
+    if (!isFinite(x)) throw new RangeError('Invalid valid date passed to format');
+
+    var internal = dateTimeFormat.__getInternalProperties(secret);
+
+    // Creating restore point for properties on the RegExp object... please wait
+    /* let regexpRestore = */createRegExpRestore(); // ###TODO: review this
+
+    // 2. Let locale be the value of the [[locale]] internal property of dateTimeFormat.
+    var locale = internal['[[locale]]'];
+
+    // 3. Let nf be the result of creating a new NumberFormat object as if by the
+    // expression new Intl.NumberFormat([locale], {useGrouping: false}) where
+    // Intl.NumberFormat is the standard built-in constructor defined in 11.1.3.
+    var nf = new Intl.NumberFormat([locale], { useGrouping: false });
+
+    // 4. Let nf2 be the result of creating a new NumberFormat object as if by the
+    // expression new Intl.NumberFormat([locale], {minimumIntegerDigits: 2, useGrouping:
+    // false}) where Intl.NumberFormat is the standard built-in constructor defined in
+    // 11.1.3.
+    var nf2 = new Intl.NumberFormat([locale], { minimumIntegerDigits: 2, useGrouping: false });
+
+    // 5. Let tm be the result of calling the ToLocalTime abstract operation (defined
+    // below) with x, the value of the [[calendar]] internal property of dateTimeFormat,
+    // and the value of the [[timeZone]] internal property of dateTimeFormat.
+    var tm = ToLocalTime(x, internal['[[calendar]]'], internal['[[timeZone]]']);
+
+    // 6. Let result be the value of the [[pattern]] internal property of dateTimeFormat.
+    var pattern = internal['[[pattern]]'];
+
+    // 7.
+    var result = new List();
+
+    // 8.
+    var index = 0;
+
+    // 9.
+    var beginIndex = pattern.indexOf('{');
+
+    // 10.
+    var endIndex = 0;
+
+    // Need the locale minus any extensions
+    var dataLocale = internal['[[dataLocale]]'];
+
+    // Need the calendar data from CLDR
+    var localeData = internals.DateTimeFormat['[[localeData]]'][dataLocale].calendars;
+    var ca = internal['[[calendar]]'];
+
+    // 11.
+    while (beginIndex !== -1) {
+        var fv = void 0;
+        // a.
+        endIndex = pattern.indexOf('}', beginIndex);
+        // b.
+        if (endIndex === -1) {
+            throw new Error('Unclosed pattern');
+        }
+        // c.
+        if (beginIndex > index) {
+            arrPush.call(result, {
+                type: 'literal',
+                value: pattern.substring(index, beginIndex)
+            });
+        }
+        // d.
+        var p = pattern.substring(beginIndex + 1, endIndex);
+        // e.
+        if (dateTimeComponents.hasOwnProperty(p)) {
+            //   i. Let f be the value of the [[<p>]] internal property of dateTimeFormat.
+            var f = internal['[[' + p + ']]'];
+            //  ii. Let v be the value of tm.[[<p>]].
+            var v = tm['[[' + p + ']]'];
+            // iii. If p is "year" and v ≤ 0, then let v be 1 - v.
+            if (p === 'year' && v <= 0) {
+                v = 1 - v;
+            }
+            //  iv. If p is "month", then increase v by 1.
+            else if (p === 'month') {
+                    v++;
+                }
+                //   v. If p is "hour" and the value of the [[hour12]] internal property of
+                //      dateTimeFormat is true, then
+                else if (p === 'hour' && internal['[[hour12]]'] === true) {
+                        // 1. Let v be v modulo 12.
+                        v = v % 12;
+                        // 2. If v is 0 and the value of the [[hourNo0]] internal property of
+                        //    dateTimeFormat is true, then let v be 12.
+                        if (v === 0 && internal['[[hourNo0]]'] === true) {
+                            v = 12;
+                        }
+                    }
+
+            //  vi. If f is "numeric", then
+            if (f === 'numeric') {
+                // 1. Let fv be the result of calling the FormatNumber abstract operation
+                //    (defined in 11.3.2) with arguments nf and v.
+                fv = FormatNumber(nf, v);
+            }
+            // vii. Else if f is "2-digit", then
+            else if (f === '2-digit') {
+                    // 1. Let fv be the result of calling the FormatNumber abstract operation
+                    //    with arguments nf2 and v.
+                    fv = FormatNumber(nf2, v);
+                    // 2. If the length of fv is greater than 2, let fv be the substring of fv
+                    //    containing the last two characters.
+                    if (fv.length > 2) {
+                        fv = fv.slice(-2);
+                    }
+                }
+                // viii. Else if f is "narrow", "short", or "long", then let fv be a String
+                //     value representing f in the desired form; the String value depends upon
+                //     the implementation and the effective locale and calendar of
+                //     dateTimeFormat. If p is "month", then the String value may also depend
+                //     on whether dateTimeFormat has a [[day]] internal property. If p is
+                //     "timeZoneName", then the String value may also depend on the value of
+                //     the [[inDST]] field of tm.
+                else if (f in dateWidths) {
+                        switch (p) {
+                            case 'month':
+                                fv = resolveDateString(localeData, ca, 'months', f, tm['[[' + p + ']]']);
+                                break;
+
+                            case 'weekday':
+                                try {
+                                    fv = resolveDateString(localeData, ca, 'days', f, tm['[[' + p + ']]']);
+                                    // fv = resolveDateString(ca.days, f)[tm['[['+ p +']]']];
+                                } catch (e) {
+                                    throw new Error('Could not find weekday data for locale ' + locale);
+                                }
+                                break;
+
+                            case 'timeZoneName':
+                                fv = ''; // ###TODO
+                                break;
+
+                            case 'era':
+                                try {
+                                    fv = resolveDateString(localeData, ca, 'eras', f, tm['[[' + p + ']]']);
+                                } catch (e) {
+                                    throw new Error('Could not find era data for locale ' + locale);
+                                }
+                                break;
+
+                            default:
+                                fv = tm['[[' + p + ']]'];
+                        }
+                    }
+            // ix
+            arrPush.call(result, {
+                type: p,
+                value: fv
+            });
+            // f.
+        } else if (p === 'ampm') {
+            // i.
+            var _v = tm['[[hour]]'];
+            // ii./iii.
+            fv = resolveDateString(localeData, ca, 'dayPeriods', _v > 11 ? 'pm' : 'am', null);
+            // iv.
+            arrPush.call(result, {
+                type: 'dayPeriod',
+                value: fv
+            });
+            // g.
+        } else {
+            arrPush.call(result, {
+                type: 'literal',
+                value: pattern.substring(beginIndex, endIndex + 1)
+            });
+        }
+        // h.
+        index = endIndex + 1;
+        // i.
+        beginIndex = pattern.indexOf('{', index);
+    }
+    // 12.
+    if (endIndex < pattern.length - 1) {
+        arrPush.call(result, {
+            type: 'literal',
+            value: pattern.substr(endIndex + 1)
+        });
+    }
+    // 13.
+    return result;
+}
+
+/**
+ * When the FormatDateTime abstract operation is called with arguments dateTimeFormat
+ * (which must be an object initialized as a DateTimeFormat) and x (which must be a Number
+ * value), it returns a String value representing x (interpreted as a time value as
+ * specified in ES5, 15.9.1.1) according to the effective locale and the formatting
+ * options of dateTimeFormat.
+ */
+function FormatDateTime(dateTimeFormat, x) {
+    var parts = CreateDateTimeParts(dateTimeFormat, x);
+    var result = '';
+
+    for (var i = 0; parts.length > i; i++) {
+        var part = parts[i];
+        result += part.value;
+    }
+    return result;
+}
+
+function FormatToPartsDateTime(dateTimeFormat, x) {
+    var parts = CreateDateTimeParts(dateTimeFormat, x);
+    var result = [];
+    for (var i = 0; parts.length > i; i++) {
+        var part = parts[i];
+        result.push({
+            type: part.type,
+            value: part.value
+        });
+    }
+    return result;
+}
+
+/**
+ * When the ToLocalTime abstract operation is called with arguments date, calendar, and
+ * timeZone, the following steps are taken:
+ */
+function ToLocalTime(date, calendar, timeZone) {
+    // 1. Apply calendrical calculations on date for the given calendar and time zone to
+    //    produce weekday, era, year, month, day, hour, minute, second, and inDST values.
+    //    The calculations should use best available information about the specified
+    //    calendar and time zone. If the calendar is "gregory", then the calculations must
+    //    match the algorithms specified in ES5, 15.9.1, except that calculations are not
+    //    bound by the restrictions on the use of best available information on time zones
+    //    for local time zone adjustment and daylight saving time adjustment imposed by
+    //    ES5, 15.9.1.7 and 15.9.1.8.
+    // ###TODO###
+    var d = new Date(date),
+        m = 'get' + (timeZone || '');
+
+    // 2. Return a Record with fields [[weekday]], [[era]], [[year]], [[month]], [[day]],
+    //    [[hour]], [[minute]], [[second]], and [[inDST]], each with the corresponding
+    //    calculated value.
+    return new Record({
+        '[[weekday]]': d[m + 'Day'](),
+        '[[era]]': +(d[m + 'FullYear']() >= 0),
+        '[[year]]': d[m + 'FullYear'](),
+        '[[month]]': d[m + 'Month'](),
+        '[[day]]': d[m + 'Date'](),
+        '[[hour]]': d[m + 'Hours'](),
+        '[[minute]]': d[m + 'Minutes'](),
+        '[[second]]': d[m + 'Seconds'](),
+        '[[inDST]]': false // ###TODO###
+    });
+}
+
+/**
+ * The function returns a new object whose properties and attributes are set as if
+ * constructed by an object literal assigning to each of the following properties the
+ * value of the corresponding internal property of this DateTimeFormat object (see 12.4):
+ * locale, calendar, numberingSystem, timeZone, hour12, weekday, era, year, month, day,
+ * hour, minute, second, and timeZoneName. Properties whose corresponding internal
+ * properties are not present are not assigned.
+ */
+/* 12.3.3 */defineProperty(Intl.DateTimeFormat.prototype, 'resolvedOptions', {
+    writable: true,
+    configurable: true,
+    value: function value() {
+        var prop = void 0,
+            descs = new Record(),
+            props = ['locale', 'calendar', 'numberingSystem', 'timeZone', 'hour12', 'weekday', 'era', 'year', 'month', 'day', 'hour', 'minute', 'second', 'timeZoneName'],
+            internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+
+        // Satisfy test 12.3_b
+        if (!internal || !internal['[[initializedDateTimeFormat]]']) throw new TypeError('`this` value for resolvedOptions() is not an initialized Intl.DateTimeFormat object.');
+
+        for (var i = 0, max = props.length; i < max; i++) {
+            if (hop.call(internal, prop = '[[' + props[i] + ']]')) descs[props[i]] = { value: internal[prop], writable: true, configurable: true, enumerable: true };
+        }
+
+        return objCreate({}, descs);
+    }
+});
+
+var ls = Intl.__localeSensitiveProtos = {
+    Number: {},
+    Date: {}
+};
+
+/**
+ * When the toLocaleString method is called with optional arguments locales and options,
+ * the following steps are taken:
+ */
+/* 13.2.1 */ls.Number.toLocaleString = function () {
+    // Satisfy test 13.2.1_1
+    if (Object.prototype.toString.call(this) !== '[object Number]') throw new TypeError('`this` value must be a number for Number.prototype.toLocaleString()');
+
+    // 1. Let x be this Number value (as defined in ES5, 15.7.4).
+    // 2. If locales is not provided, then let locales be undefined.
+    // 3. If options is not provided, then let options be undefined.
+    // 4. Let numberFormat be the result of creating a new object as if by the
+    //    expression new Intl.NumberFormat(locales, options) where
+    //    Intl.NumberFormat is the standard built-in constructor defined in 11.1.3.
+    // 5. Return the result of calling the FormatNumber abstract operation
+    //    (defined in 11.3.2) with arguments numberFormat and x.
+    return FormatNumber(new NumberFormatConstructor(arguments[0], arguments[1]), this);
+};
+
+/**
+ * When the toLocaleString method is called with optional arguments locales and options,
+ * the following steps are taken:
+ */
+/* 13.3.1 */ls.Date.toLocaleString = function () {
+    // Satisfy test 13.3.0_1
+    if (Object.prototype.toString.call(this) !== '[object Date]') throw new TypeError('`this` value must be a Date instance for Date.prototype.toLocaleString()');
+
+    // 1. Let x be this time value (as defined in ES5, 15.9.5).
+    var x = +this;
+
+    // 2. If x is NaN, then return "Invalid Date".
+    if (isNaN(x)) return 'Invalid Date';
+
+    // 3. If locales is not provided, then let locales be undefined.
+    var locales = arguments[0];
+
+    // 4. If options is not provided, then let options be undefined.
+    var options = arguments[1];
+
+    // 5. Let options be the result of calling the ToDateTimeOptions abstract
+    //    operation (defined in 12.1.1) with arguments options, "any", and "all".
+    options = ToDateTimeOptions(options, 'any', 'all');
+
+    // 6. Let dateTimeFormat be the result of creating a new object as if by the
+    //    expression new Intl.DateTimeFormat(locales, options) where
+    //    Intl.DateTimeFormat is the standard built-in constructor defined in 12.1.3.
+    var dateTimeFormat = new DateTimeFormatConstructor(locales, options);
+
+    // 7. Return the result of calling the FormatDateTime abstract operation (defined
+    //    in 12.3.2) with arguments dateTimeFormat and x.
+    return FormatDateTime(dateTimeFormat, x);
+};
+
+/**
+ * When the toLocaleDateString method is called with optional arguments locales and
+ * options, the following steps are taken:
+ */
+/* 13.3.2 */ls.Date.toLocaleDateString = function () {
+    // Satisfy test 13.3.0_1
+    if (Object.prototype.toString.call(this) !== '[object Date]') throw new TypeError('`this` value must be a Date instance for Date.prototype.toLocaleDateString()');
+
+    // 1. Let x be this time value (as defined in ES5, 15.9.5).
+    var x = +this;
+
+    // 2. If x is NaN, then return "Invalid Date".
+    if (isNaN(x)) return 'Invalid Date';
+
+    // 3. If locales is not provided, then let locales be undefined.
+    var locales = arguments[0],
+
+
+    // 4. If options is not provided, then let options be undefined.
+    options = arguments[1];
+
+    // 5. Let options be the result of calling the ToDateTimeOptions abstract
+    //    operation (defined in 12.1.1) with arguments options, "date", and "date".
+    options = ToDateTimeOptions(options, 'date', 'date');
+
+    // 6. Let dateTimeFormat be the result of creating a new object as if by the
+    //    expression new Intl.DateTimeFormat(locales, options) where
+    //    Intl.DateTimeFormat is the standard built-in constructor defined in 12.1.3.
+    var dateTimeFormat = new DateTimeFormatConstructor(locales, options);
+
+    // 7. Return the result of calling the FormatDateTime abstract operation (defined
+    //    in 12.3.2) with arguments dateTimeFormat and x.
+    return FormatDateTime(dateTimeFormat, x);
+};
+
+/**
+ * When the toLocaleTimeString method is called with optional arguments locales and
+ * options, the following steps are taken:
+ */
+/* 13.3.3 */ls.Date.toLocaleTimeString = function () {
+    // Satisfy test 13.3.0_1
+    if (Object.prototype.toString.call(this) !== '[object Date]') throw new TypeError('`this` value must be a Date instance for Date.prototype.toLocaleTimeString()');
+
+    // 1. Let x be this time value (as defined in ES5, 15.9.5).
+    var x = +this;
+
+    // 2. If x is NaN, then return "Invalid Date".
+    if (isNaN(x)) return 'Invalid Date';
+
+    // 3. If locales is not provided, then let locales be undefined.
+    var locales = arguments[0];
+
+    // 4. If options is not provided, then let options be undefined.
+    var options = arguments[1];
+
+    // 5. Let options be the result of calling the ToDateTimeOptions abstract
+    //    operation (defined in 12.1.1) with arguments options, "time", and "time".
+    options = ToDateTimeOptions(options, 'time', 'time');
+
+    // 6. Let dateTimeFormat be the result of creating a new object as if by the
+    //    expression new Intl.DateTimeFormat(locales, options) where
+    //    Intl.DateTimeFormat is the standard built-in constructor defined in 12.1.3.
+    var dateTimeFormat = new DateTimeFormatConstructor(locales, options);
+
+    // 7. Return the result of calling the FormatDateTime abstract operation (defined
+    //    in 12.3.2) with arguments dateTimeFormat and x.
+    return FormatDateTime(dateTimeFormat, x);
+};
+
+defineProperty(Intl, '__applyLocaleSensitivePrototypes', {
+    writable: true,
+    configurable: true,
+    value: function value() {
+        defineProperty(Number.prototype, 'toLocaleString', { writable: true, configurable: true, value: ls.Number.toLocaleString });
+        // Need this here for IE 8, to avoid the _DontEnum_ bug
+        defineProperty(Date.prototype, 'toLocaleString', { writable: true, configurable: true, value: ls.Date.toLocaleString });
+
+        for (var k in ls.Date) {
+            if (hop.call(ls.Date, k)) defineProperty(Date.prototype, k, { writable: true, configurable: true, value: ls.Date[k] });
+        }
+    }
+});
+
+/**
+ * Can't really ship a single script with data for hundreds of locales, so we provide
+ * this __addLocaleData method as a means for the developer to add the data on an
+ * as-needed basis
+ */
+defineProperty(Intl, '__addLocaleData', {
+    value: function value(data) {
+        if (!IsStructurallyValidLanguageTag(data.locale)) throw new Error("Object passed doesn't identify itself with a valid language tag");
+
+        addLocaleData(data, data.locale);
+    }
+});
+
+function addLocaleData(data, tag) {
+    // Both NumberFormat and DateTimeFormat require number data, so throw if it isn't present
+    if (!data.number) throw new Error("Object passed doesn't contain locale data for Intl.NumberFormat");
+
+    var locale = void 0,
+        locales = [tag],
+        parts = tag.split('-');
+
+    // Create fallbacks for locale data with scripts, e.g. Latn, Hans, Vaii, etc
+    if (parts.length > 2 && parts[1].length === 4) arrPush.call(locales, parts[0] + '-' + parts[2]);
+
+    while (locale = arrShift.call(locales)) {
+        // Add to NumberFormat internal properties as per 11.2.3
+        arrPush.call(internals.NumberFormat['[[availableLocales]]'], locale);
+        internals.NumberFormat['[[localeData]]'][locale] = data.number;
+
+        // ...and DateTimeFormat internal properties as per 12.2.3
+        if (data.date) {
+            data.date.nu = data.number.nu;
+            arrPush.call(internals.DateTimeFormat['[[availableLocales]]'], locale);
+            internals.DateTimeFormat['[[localeData]]'][locale] = data.date;
+        }
+    }
+
+    // If this is the first set of locale data added, make it the default
+    if (defaultLocale === undefined) setDefaultLocale(tag);
+}
+
+defineProperty(Intl, '__disableRegExpRestore', {
+    value: function value() {
+        internals.disableRegExpRestore = true;
+    }
+});
+
+module.exports = Intl;
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],26:[function(require,module,exports){
+IntlPolyfill.__addLocaleData({locale:"en-US",date:{ca:["gregory","buddhist","chinese","coptic","dangi","ethioaa","ethiopic","generic","hebrew","indian","islamic","islamicc","japanese","persian","roc"],hourNo0:true,hour12:true,formats:{short:"{1}, {0}",medium:"{1}, {0}",full:"{1} 'at' {0}",long:"{1} 'at' {0}",availableFormats:{"d":"d","E":"ccc",Ed:"d E",Ehm:"E h:mm a",EHm:"E HH:mm",Ehms:"E h:mm:ss a",EHms:"E HH:mm:ss",Gy:"y G",GyMMM:"MMM y G",GyMMMd:"MMM d, y G",GyMMMEd:"E, MMM d, y G","h":"h a","H":"HH",hm:"h:mm a",Hm:"HH:mm",hms:"h:mm:ss a",Hms:"HH:mm:ss",hmsv:"h:mm:ss a v",Hmsv:"HH:mm:ss v",hmv:"h:mm a v",Hmv:"HH:mm v","M":"L",Md:"M/d",MEd:"E, M/d",MMM:"LLL",MMMd:"MMM d",MMMEd:"E, MMM d",MMMMd:"MMMM d",ms:"mm:ss","y":"y",yM:"M/y",yMd:"M/d/y",yMEd:"E, M/d/y",yMMM:"MMM y",yMMMd:"MMM d, y",yMMMEd:"E, MMM d, y",yMMMM:"MMMM y",yQQQ:"QQQ y",yQQQQ:"QQQQ y"},dateFormats:{yMMMMEEEEd:"EEEE, MMMM d, y",yMMMMd:"MMMM d, y",yMMMd:"MMM d, y",yMd:"M/d/yy"},timeFormats:{hmmsszzzz:"h:mm:ss a zzzz",hmsz:"h:mm:ss a z",hms:"h:mm:ss a",hm:"h:mm a"}},calendars:{buddhist:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["BE"],short:["BE"],long:["BE"]},dayPeriods:{am:"AM",pm:"PM"}},chinese:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Mo1","Mo2","Mo3","Mo4","Mo5","Mo6","Mo7","Mo8","Mo9","Mo10","Mo11","Mo12"],long:["Month1","Month2","Month3","Month4","Month5","Month6","Month7","Month8","Month9","Month10","Month11","Month12"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},dayPeriods:{am:"AM",pm:"PM"}},coptic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"],long:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"AM",pm:"PM"}},dangi:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Mo1","Mo2","Mo3","Mo4","Mo5","Mo6","Mo7","Mo8","Mo9","Mo10","Mo11","Mo12"],long:["Month1","Month2","Month3","Month4","Month5","Month6","Month7","Month8","Month9","Month10","Month11","Month12"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},dayPeriods:{am:"AM",pm:"PM"}},ethiopic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"AM",pm:"PM"}},ethioaa:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0"],short:["ERA0"],long:["ERA0"]},dayPeriods:{am:"AM",pm:"PM"}},generic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"AM",pm:"PM"}},gregory:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["B","A","BCE","CE"],short:["BC","AD","BCE","CE"],long:["Before Christ","Anno Domini","Before Common Era","Common Era"]},dayPeriods:{am:"AM",pm:"PM"}},hebrew:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13","7"],short:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"],long:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AM"],short:["AM"],long:["AM"]},dayPeriods:{am:"AM",pm:"PM"}},indian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"],long:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["Saka"],short:["Saka"],long:["Saka"]},dayPeriods:{am:"AM",pm:"PM"}},islamic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"AM",pm:"PM"}},islamicc:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"AM",pm:"PM"}},japanese:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","M","T","S","H"],short:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"],long:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"]},dayPeriods:{am:"AM",pm:"PM"}},persian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"],long:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["AP"],short:["AP"],long:["AP"]},dayPeriods:{am:"AM",pm:"PM"}},roc:{months:{narrow:["J","F","M","A","M","J","J","A","S","O","N","D"],short:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],long:["January","February","March","April","May","June","July","August","September","October","November","December"]},days:{narrow:["S","M","T","W","T","F","S"],short:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],long:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]},eras:{narrow:["Before R.O.C.","Minguo"],short:["Before R.O.C.","Minguo"],long:["Before R.O.C.","Minguo"]},dayPeriods:{am:"AM",pm:"PM"}}}},number:{nu:["latn"],patterns:{decimal:{positivePattern:"{number}",negativePattern:"{minusSign}{number}"},currency:{positivePattern:"{currency}{number}",negativePattern:"{minusSign}{currency}{number}"},percent:{positivePattern:"{number}{percentSign}",negativePattern:"{minusSign}{number}{percentSign}"}},symbols:{latn:{decimal:".",group:",",nan:"NaN",plusSign:"+",minusSign:"-",percentSign:"%",infinity:"∞"}},currencies:{AUD:"A$",BRL:"R$",CAD:"CA$",CNY:"CN¥",EUR:"€",GBP:"£",HKD:"HK$",ILS:"₪",INR:"₹",JPY:"¥",KRW:"₩",MXN:"MX$",NZD:"NZ$",TWD:"NT$",USD:"$",VND:"₫",XAF:"FCFA",XCD:"EC$",XOF:"CFA",XPF:"CFPF"}}});
+},{}],27:[function(require,module,exports){
+IntlPolyfill.__addLocaleData({locale:"es",date:{ca:["gregory","buddhist","chinese","coptic","dangi","ethioaa","ethiopic","generic","hebrew","indian","islamic","islamicc","japanese","persian","roc"],hourNo0:true,hour12:false,formats:{short:"{1} {0}",medium:"{1} {0}",full:"{1}, {0}",long:"{1}, {0}",availableFormats:{"d":"d","E":"ccc",Ed:"E d",Ehm:"E, h:mm a",EHm:"E, H:mm",Ehms:"E, h:mm:ss a",EHms:"E, H:mm:ss",Gy:"y G",GyMMM:"MMM y G",GyMMMd:"d MMM y G",GyMMMEd:"E, d MMM y G",GyMMMM:"MMMM 'de' y G",GyMMMMd:"d 'de' MMMM 'de' y G",GyMMMMEd:"E, d 'de' MMMM 'de' y G","h":"h a","H":"H",hm:"h:mm a",Hm:"H:mm",hms:"h:mm:ss a",Hms:"H:mm:ss",hmsv:"h:mm:ss a v",Hmsv:"H:mm:ss v",hmsvvvv:"h:mm:ss a (vvvv)",Hmsvvvv:"H:mm:ss (vvvv)",hmv:"h:mm a v",Hmv:"H:mm v","M":"L",Md:"d/M",MEd:"E, d/M",MMd:"d/M",MMdd:"d/M",MMM:"LLL",MMMd:"d MMM",MMMEd:"E, d MMM",MMMMd:"d 'de' MMMM",MMMMEd:"E, d 'de' MMMM",ms:"mm:ss","y":"y",yM:"M/y",yMd:"d/M/y",yMEd:"EEE, d/M/y",yMM:"M/y",yMMM:"MMM y",yMMMd:"d MMM y",yMMMEd:"EEE, d MMM y",yMMMM:"MMMM 'de' y",yMMMMd:"d 'de' MMMM 'de' y",yMMMMEd:"EEE, d 'de' MMMM 'de' y",yQQQ:"QQQ y",yQQQQ:"QQQQ 'de' y"},dateFormats:{yMMMMEEEEd:"EEEE, d 'de' MMMM 'de' y",yMMMMd:"d 'de' MMMM 'de' y",yMMMd:"d MMM y",yMd:"d/M/yy"},timeFormats:{hmmsszzzz:"H:mm:ss (zzzz)",hmsz:"H:mm:ss z",hms:"H:mm:ss",hm:"H:mm"}},calendars:{buddhist:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["BE"],short:["BE"],long:["BE"]},dayPeriods:{am:"a. m.",pm:"p. m."}},chinese:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},dayPeriods:{am:"a. m.",pm:"p. m."}},coptic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"],long:["Tout","Baba","Hator","Kiahk","Toba","Amshir","Baramhat","Baramouda","Bashans","Paona","Epep","Mesra","Nasie"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"a. m.",pm:"p. m."}},dangi:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},dayPeriods:{am:"a. m.",pm:"p. m."}},ethiopic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"a. m.",pm:"p. m."}},ethioaa:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13"],short:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"],long:["Meskerem","Tekemt","Hedar","Tahsas","Ter","Yekatit","Megabit","Miazia","Genbot","Sene","Hamle","Nehasse","Pagumen"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0"],short:["ERA0"],long:["ERA0"]},dayPeriods:{am:"a. m.",pm:"p. m."}},generic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"],long:["M01","M02","M03","M04","M05","M06","M07","M08","M09","M10","M11","M12"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["ERA0","ERA1"],short:["ERA0","ERA1"],long:["ERA0","ERA1"]},dayPeriods:{am:"a. m.",pm:"p. m."}},gregory:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["a. C.","d. C.","a. e. c.","e. c."],short:["a. C.","d. C.","a. e. c.","e. c."],long:["antes de Cristo","después de Cristo","antes de la era común","era común"]},dayPeriods:{am:"a. m.",pm:"p. m."}},hebrew:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12","13","7"],short:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"],long:["Tishri","Heshvan","Kislev","Tevet","Shevat","Adar I","Adar","Nisan","Iyar","Sivan","Tamuz","Av","Elul","Adar II"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AM"],short:["AM"],long:["AM"]},dayPeriods:{am:"a. m.",pm:"p. m."}},indian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"],long:["Chaitra","Vaisakha","Jyaistha","Asadha","Sravana","Bhadra","Asvina","Kartika","Agrahayana","Pausa","Magha","Phalguna"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["Saka"],short:["Saka"],long:["Saka"]},dayPeriods:{am:"a. m.",pm:"p. m."}},islamic:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"a. m.",pm:"p. m."}},islamicc:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Muh.","Saf.","Rab. I","Rab. II","Jum. I","Jum. II","Raj.","Sha.","Ram.","Shaw.","Dhuʻl-Q.","Dhuʻl-H."],long:["Muharram","Safar","Rabiʻ I","Rabiʻ II","Jumada I","Jumada II","Rajab","Shaʻban","Ramadan","Shawwal","Dhuʻl-Qiʻdah","Dhuʻl-Hijjah"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AH"],short:["AH"],long:["AH"]},dayPeriods:{am:"a. m.",pm:"p. m."}},japanese:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","M","T","S","H"],short:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"],long:["Taika (645–650)","Hakuchi (650–671)","Hakuhō (672–686)","Shuchō (686–701)","Taihō (701–704)","Keiun (704–708)","Wadō (708–715)","Reiki (715–717)","Yōrō (717–724)","Jinki (724–729)","Tenpyō (729–749)","Tenpyō-kampō (749-749)","Tenpyō-shōhō (749-757)","Tenpyō-hōji (757-765)","Tenpyō-jingo (765-767)","Jingo-keiun (767-770)","Hōki (770–780)","Ten-ō (781-782)","Enryaku (782–806)","Daidō (806–810)","Kōnin (810–824)","Tenchō (824–834)","Jōwa (834–848)","Kajō (848–851)","Ninju (851–854)","Saikō (854–857)","Ten-an (857-859)","Jōgan (859–877)","Gangyō (877–885)","Ninna (885–889)","Kanpyō (889–898)","Shōtai (898–901)","Engi (901–923)","Enchō (923–931)","Jōhei (931–938)","Tengyō (938–947)","Tenryaku (947–957)","Tentoku (957–961)","Ōwa (961–964)","Kōhō (964–968)","Anna (968–970)","Tenroku (970–973)","Ten’en (973–976)","Jōgen (976–978)","Tengen (978–983)","Eikan (983–985)","Kanna (985–987)","Eien (987–989)","Eiso (989–990)","Shōryaku (990–995)","Chōtoku (995–999)","Chōhō (999–1004)","Kankō (1004–1012)","Chōwa (1012–1017)","Kannin (1017–1021)","Jian (1021–1024)","Manju (1024–1028)","Chōgen (1028–1037)","Chōryaku (1037–1040)","Chōkyū (1040–1044)","Kantoku (1044–1046)","Eishō (1046–1053)","Tengi (1053–1058)","Kōhei (1058–1065)","Jiryaku (1065–1069)","Enkyū (1069–1074)","Shōho (1074–1077)","Shōryaku (1077–1081)","Eihō (1081–1084)","Ōtoku (1084–1087)","Kanji (1087–1094)","Kahō (1094–1096)","Eichō (1096–1097)","Jōtoku (1097–1099)","Kōwa (1099–1104)","Chōji (1104–1106)","Kashō (1106–1108)","Tennin (1108–1110)","Ten-ei (1110-1113)","Eikyū (1113–1118)","Gen’ei (1118–1120)","Hōan (1120–1124)","Tenji (1124–1126)","Daiji (1126–1131)","Tenshō (1131–1132)","Chōshō (1132–1135)","Hōen (1135–1141)","Eiji (1141–1142)","Kōji (1142–1144)","Ten’yō (1144–1145)","Kyūan (1145–1151)","Ninpei (1151–1154)","Kyūju (1154–1156)","Hōgen (1156–1159)","Heiji (1159–1160)","Eiryaku (1160–1161)","Ōho (1161–1163)","Chōkan (1163–1165)","Eiman (1165–1166)","Nin’an (1166–1169)","Kaō (1169–1171)","Shōan (1171–1175)","Angen (1175–1177)","Jishō (1177–1181)","Yōwa (1181–1182)","Juei (1182–1184)","Genryaku (1184–1185)","Bunji (1185–1190)","Kenkyū (1190–1199)","Shōji (1199–1201)","Kennin (1201–1204)","Genkyū (1204–1206)","Ken’ei (1206–1207)","Jōgen (1207–1211)","Kenryaku (1211–1213)","Kenpō (1213–1219)","Jōkyū (1219–1222)","Jōō (1222–1224)","Gennin (1224–1225)","Karoku (1225–1227)","Antei (1227–1229)","Kanki (1229–1232)","Jōei (1232–1233)","Tenpuku (1233–1234)","Bunryaku (1234–1235)","Katei (1235–1238)","Ryakunin (1238–1239)","En’ō (1239–1240)","Ninji (1240–1243)","Kangen (1243–1247)","Hōji (1247–1249)","Kenchō (1249–1256)","Kōgen (1256–1257)","Shōka (1257–1259)","Shōgen (1259–1260)","Bun’ō (1260–1261)","Kōchō (1261–1264)","Bun’ei (1264–1275)","Kenji (1275–1278)","Kōan (1278–1288)","Shōō (1288–1293)","Einin (1293–1299)","Shōan (1299–1302)","Kengen (1302–1303)","Kagen (1303–1306)","Tokuji (1306–1308)","Enkyō (1308–1311)","Ōchō (1311–1312)","Shōwa (1312–1317)","Bunpō (1317–1319)","Genō (1319–1321)","Genkō (1321–1324)","Shōchū (1324–1326)","Karyaku (1326–1329)","Gentoku (1329–1331)","Genkō (1331–1334)","Kenmu (1334–1336)","Engen (1336–1340)","Kōkoku (1340–1346)","Shōhei (1346–1370)","Kentoku (1370–1372)","Bunchū (1372–1375)","Tenju (1375–1379)","Kōryaku (1379–1381)","Kōwa (1381–1384)","Genchū (1384–1392)","Meitoku (1384–1387)","Kakei (1387–1389)","Kōō (1389–1390)","Meitoku (1390–1394)","Ōei (1394–1428)","Shōchō (1428–1429)","Eikyō (1429–1441)","Kakitsu (1441–1444)","Bun’an (1444–1449)","Hōtoku (1449–1452)","Kyōtoku (1452–1455)","Kōshō (1455–1457)","Chōroku (1457–1460)","Kanshō (1460–1466)","Bunshō (1466–1467)","Ōnin (1467–1469)","Bunmei (1469–1487)","Chōkyō (1487–1489)","Entoku (1489–1492)","Meiō (1492–1501)","Bunki (1501–1504)","Eishō (1504–1521)","Taiei (1521–1528)","Kyōroku (1528–1532)","Tenbun (1532–1555)","Kōji (1555–1558)","Eiroku (1558–1570)","Genki (1570–1573)","Tenshō (1573–1592)","Bunroku (1592–1596)","Keichō (1596–1615)","Genna (1615–1624)","Kan’ei (1624–1644)","Shōho (1644–1648)","Keian (1648–1652)","Jōō (1652–1655)","Meireki (1655–1658)","Manji (1658–1661)","Kanbun (1661–1673)","Enpō (1673–1681)","Tenna (1681–1684)","Jōkyō (1684–1688)","Genroku (1688–1704)","Hōei (1704–1711)","Shōtoku (1711–1716)","Kyōhō (1716–1736)","Genbun (1736–1741)","Kanpō (1741–1744)","Enkyō (1744–1748)","Kan’en (1748–1751)","Hōreki (1751–1764)","Meiwa (1764–1772)","An’ei (1772–1781)","Tenmei (1781–1789)","Kansei (1789–1801)","Kyōwa (1801–1804)","Bunka (1804–1818)","Bunsei (1818–1830)","Tenpō (1830–1844)","Kōka (1844–1848)","Kaei (1848–1854)","Ansei (1854–1860)","Man’en (1860–1861)","Bunkyū (1861–1864)","Genji (1864–1865)","Keiō (1865–1868)","Meiji","Taishō","Shōwa","Heisei"]},dayPeriods:{am:"a. m.",pm:"p. m."}},persian:{months:{narrow:["1","2","3","4","5","6","7","8","9","10","11","12"],short:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"],long:["Farvardin","Ordibehesht","Khordad","Tir","Mordad","Shahrivar","Mehr","Aban","Azar","Dey","Bahman","Esfand"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["AP"],short:["AP"],long:["AP"]},dayPeriods:{am:"a. m.",pm:"p. m."}},roc:{months:{narrow:["E","F","M","A","M","J","J","A","S","O","N","D"],short:["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sept.","oct.","nov.","dic."],long:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]},days:{narrow:["D","L","M","X","J","V","S"],short:["dom.","lun.","mar.","mié.","jue.","vie.","sáb."],long:["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]},eras:{narrow:["antes de R.O.C.","R.O.C."],short:["antes de R.O.C.","R.O.C."],long:["antes de R.O.C.","R.O.C."]},dayPeriods:{am:"a. m.",pm:"p. m."}}}},number:{nu:["latn"],patterns:{decimal:{positivePattern:"{number}",negativePattern:"{minusSign}{number}"},currency:{positivePattern:"{number} {currency}",negativePattern:"{minusSign}{number} {currency}"},percent:{positivePattern:"{number} {percentSign}",negativePattern:"{minusSign}{number} {percentSign}"}},symbols:{latn:{decimal:",",group:".",nan:"NaN",plusSign:"+",minusSign:"-",percentSign:"%",infinity:"∞"}},currencies:{CAD:"CA$",ESP:"₧",EUR:"€",THB:"฿",USD:"$",VND:"₫",XPF:"CFPF"}}});
+},{}],28:[function(require,module,exports){
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+},{}],29:[function(require,module,exports){
+'use strict';
+
+var range; // Create a range object for efficently rendering strings to elements.
+var NS_XHTML = 'http://www.w3.org/1999/xhtml';
+
+var doc = typeof document === 'undefined' ? undefined : document;
+
+var testEl = doc ?
+    doc.body || doc.createElement('div') :
+    {};
+
+// Fixes <https://github.com/patrick-steele-idem/morphdom/issues/32>
+// (IE7+ support) <=IE7 does not support el.hasAttribute(name)
+var actualHasAttributeNS;
+
+if (testEl.hasAttributeNS) {
+    actualHasAttributeNS = function(el, namespaceURI, name) {
+        return el.hasAttributeNS(namespaceURI, name);
+    };
+} else if (testEl.hasAttribute) {
+    actualHasAttributeNS = function(el, namespaceURI, name) {
+        return el.hasAttribute(name);
+    };
+} else {
+    actualHasAttributeNS = function(el, namespaceURI, name) {
+        return el.getAttributeNode(namespaceURI, name) != null;
+    };
+}
+
+var hasAttributeNS = actualHasAttributeNS;
+
+
+function toElement(str) {
+    if (!range && doc.createRange) {
+        range = doc.createRange();
+        range.selectNode(doc.body);
+    }
+
+    var fragment;
+    if (range && range.createContextualFragment) {
+        fragment = range.createContextualFragment(str);
+    } else {
+        fragment = doc.createElement('body');
+        fragment.innerHTML = str;
+    }
+    return fragment.childNodes[0];
+}
+
+/**
+ * Returns true if two node's names are the same.
+ *
+ * NOTE: We don't bother checking `namespaceURI` because you will never find two HTML elements with the same
+ *       nodeName and different namespace URIs.
+ *
+ * @param {Element} a
+ * @param {Element} b The target element
+ * @return {boolean}
+ */
+function compareNodeNames(fromEl, toEl) {
+    var fromNodeName = fromEl.nodeName;
+    var toNodeName = toEl.nodeName;
+
+    if (fromNodeName === toNodeName) {
+        return true;
+    }
+
+    if (toEl.actualize &&
+        fromNodeName.charCodeAt(0) < 91 && /* from tag name is upper case */
+        toNodeName.charCodeAt(0) > 90 /* target tag name is lower case */) {
+        // If the target element is a virtual DOM node then we may need to normalize the tag name
+        // before comparing. Normal HTML elements that are in the "http://www.w3.org/1999/xhtml"
+        // are converted to upper case
+        return fromNodeName === toNodeName.toUpperCase();
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Create an element, optionally with a known namespace URI.
+ *
+ * @param {string} name the element name, e.g. 'div' or 'svg'
+ * @param {string} [namespaceURI] the element's namespace URI, i.e. the value of
+ * its `xmlns` attribute or its inferred namespace.
+ *
+ * @return {Element}
+ */
+function createElementNS(name, namespaceURI) {
+    return !namespaceURI || namespaceURI === NS_XHTML ?
+        doc.createElement(name) :
+        doc.createElementNS(namespaceURI, name);
+}
+
+/**
+ * Copies the children of one DOM element to another DOM element
+ */
+function moveChildren(fromEl, toEl) {
+    var curChild = fromEl.firstChild;
+    while (curChild) {
+        var nextChild = curChild.nextSibling;
+        toEl.appendChild(curChild);
+        curChild = nextChild;
+    }
+    return toEl;
+}
+
+function morphAttrs(fromNode, toNode) {
+    var attrs = toNode.attributes;
+    var i;
+    var attr;
+    var attrName;
+    var attrNamespaceURI;
+    var attrValue;
+    var fromValue;
+
+    for (i = attrs.length - 1; i >= 0; --i) {
+        attr = attrs[i];
+        attrName = attr.name;
+        attrNamespaceURI = attr.namespaceURI;
+        attrValue = attr.value;
+
+        if (attrNamespaceURI) {
+            attrName = attr.localName || attrName;
+            fromValue = fromNode.getAttributeNS(attrNamespaceURI, attrName);
+
+            if (fromValue !== attrValue) {
+                fromNode.setAttributeNS(attrNamespaceURI, attrName, attrValue);
+            }
+        } else {
+            fromValue = fromNode.getAttribute(attrName);
+
+            if (fromValue !== attrValue) {
+                fromNode.setAttribute(attrName, attrValue);
+            }
+        }
+    }
+
+    // Remove any extra attributes found on the original DOM element that
+    // weren't found on the target element.
+    attrs = fromNode.attributes;
+
+    for (i = attrs.length - 1; i >= 0; --i) {
+        attr = attrs[i];
+        if (attr.specified !== false) {
+            attrName = attr.name;
+            attrNamespaceURI = attr.namespaceURI;
+
+            if (attrNamespaceURI) {
+                attrName = attr.localName || attrName;
+
+                if (!hasAttributeNS(toNode, attrNamespaceURI, attrName)) {
+                    fromNode.removeAttributeNS(attrNamespaceURI, attrName);
+                }
+            } else {
+                if (!hasAttributeNS(toNode, null, attrName)) {
+                    fromNode.removeAttribute(attrName);
+                }
+            }
+        }
+    }
+}
+
+function syncBooleanAttrProp(fromEl, toEl, name) {
+    if (fromEl[name] !== toEl[name]) {
+        fromEl[name] = toEl[name];
+        if (fromEl[name]) {
+            fromEl.setAttribute(name, '');
+        } else {
+            fromEl.removeAttribute(name, '');
+        }
+    }
+}
+
+var specialElHandlers = {
+    /**
+     * Needed for IE. Apparently IE doesn't think that "selected" is an
+     * attribute when reading over the attributes using selectEl.attributes
+     */
+    OPTION: function(fromEl, toEl) {
+        syncBooleanAttrProp(fromEl, toEl, 'selected');
+    },
+    /**
+     * The "value" attribute is special for the <input> element since it sets
+     * the initial value. Changing the "value" attribute without changing the
+     * "value" property will have no effect since it is only used to the set the
+     * initial value.  Similar for the "checked" attribute, and "disabled".
+     */
+    INPUT: function(fromEl, toEl) {
+        syncBooleanAttrProp(fromEl, toEl, 'checked');
+        syncBooleanAttrProp(fromEl, toEl, 'disabled');
+
+        if (fromEl.value !== toEl.value) {
+            fromEl.value = toEl.value;
+        }
+
+        if (!hasAttributeNS(toEl, null, 'value')) {
+            fromEl.removeAttribute('value');
+        }
+    },
+
+    TEXTAREA: function(fromEl, toEl) {
+        var newValue = toEl.value;
+        if (fromEl.value !== newValue) {
+            fromEl.value = newValue;
+        }
+
+        var firstChild = fromEl.firstChild;
+        if (firstChild) {
+            // Needed for IE. Apparently IE sets the placeholder as the
+            // node value and vise versa. This ignores an empty update.
+            var oldValue = firstChild.nodeValue;
+
+            if (oldValue == newValue || (!newValue && oldValue == fromEl.placeholder)) {
+                return;
+            }
+
+            firstChild.nodeValue = newValue;
+        }
+    },
+    SELECT: function(fromEl, toEl) {
+        if (!hasAttributeNS(toEl, null, 'multiple')) {
+            var selectedIndex = -1;
+            var i = 0;
+            var curChild = toEl.firstChild;
+            while(curChild) {
+                var nodeName = curChild.nodeName;
+                if (nodeName && nodeName.toUpperCase() === 'OPTION') {
+                    if (hasAttributeNS(curChild, null, 'selected')) {
+                        selectedIndex = i;
+                        break;
+                    }
+                    i++;
+                }
+                curChild = curChild.nextSibling;
+            }
+
+            fromEl.selectedIndex = i;
+        }
+    }
+};
+
+var ELEMENT_NODE = 1;
+var TEXT_NODE = 3;
+var COMMENT_NODE = 8;
+
+function noop() {}
+
+function defaultGetNodeKey(node) {
+    return node.id;
+}
+
+function morphdomFactory(morphAttrs) {
+
+    return function morphdom(fromNode, toNode, options) {
+        if (!options) {
+            options = {};
+        }
+
+        if (typeof toNode === 'string') {
+            if (fromNode.nodeName === '#document' || fromNode.nodeName === 'HTML') {
+                var toNodeHtml = toNode;
+                toNode = doc.createElement('html');
+                toNode.innerHTML = toNodeHtml;
+            } else {
+                toNode = toElement(toNode);
+            }
+        }
+
+        var getNodeKey = options.getNodeKey || defaultGetNodeKey;
+        var onBeforeNodeAdded = options.onBeforeNodeAdded || noop;
+        var onNodeAdded = options.onNodeAdded || noop;
+        var onBeforeElUpdated = options.onBeforeElUpdated || noop;
+        var onElUpdated = options.onElUpdated || noop;
+        var onBeforeNodeDiscarded = options.onBeforeNodeDiscarded || noop;
+        var onNodeDiscarded = options.onNodeDiscarded || noop;
+        var onBeforeElChildrenUpdated = options.onBeforeElChildrenUpdated || noop;
+        var childrenOnly = options.childrenOnly === true;
+
+        // This object is used as a lookup to quickly find all keyed elements in the original DOM tree.
+        var fromNodesLookup = {};
+        var keyedRemovalList;
+
+        function addKeyedRemoval(key) {
+            if (keyedRemovalList) {
+                keyedRemovalList.push(key);
+            } else {
+                keyedRemovalList = [key];
+            }
+        }
+
+        function walkDiscardedChildNodes(node, skipKeyedNodes) {
+            if (node.nodeType === ELEMENT_NODE) {
+                var curChild = node.firstChild;
+                while (curChild) {
+
+                    var key = undefined;
+
+                    if (skipKeyedNodes && (key = getNodeKey(curChild))) {
+                        // If we are skipping keyed nodes then we add the key
+                        // to a list so that it can be handled at the very end.
+                        addKeyedRemoval(key);
+                    } else {
+                        // Only report the node as discarded if it is not keyed. We do this because
+                        // at the end we loop through all keyed elements that were unmatched
+                        // and then discard them in one final pass.
+                        onNodeDiscarded(curChild);
+                        if (curChild.firstChild) {
+                            walkDiscardedChildNodes(curChild, skipKeyedNodes);
+                        }
+                    }
+
+                    curChild = curChild.nextSibling;
+                }
+            }
+        }
+
+        /**
+         * Removes a DOM node out of the original DOM
+         *
+         * @param  {Node} node The node to remove
+         * @param  {Node} parentNode The nodes parent
+         * @param  {Boolean} skipKeyedNodes If true then elements with keys will be skipped and not discarded.
+         * @return {undefined}
+         */
+        function removeNode(node, parentNode, skipKeyedNodes) {
+            if (onBeforeNodeDiscarded(node) === false) {
+                return;
+            }
+
+            if (parentNode) {
+                parentNode.removeChild(node);
+            }
+
+            onNodeDiscarded(node);
+            walkDiscardedChildNodes(node, skipKeyedNodes);
+        }
+
+        // // TreeWalker implementation is no faster, but keeping this around in case this changes in the future
+        // function indexTree(root) {
+        //     var treeWalker = document.createTreeWalker(
+        //         root,
+        //         NodeFilter.SHOW_ELEMENT);
+        //
+        //     var el;
+        //     while((el = treeWalker.nextNode())) {
+        //         var key = getNodeKey(el);
+        //         if (key) {
+        //             fromNodesLookup[key] = el;
+        //         }
+        //     }
+        // }
+
+        // // NodeIterator implementation is no faster, but keeping this around in case this changes in the future
+        //
+        // function indexTree(node) {
+        //     var nodeIterator = document.createNodeIterator(node, NodeFilter.SHOW_ELEMENT);
+        //     var el;
+        //     while((el = nodeIterator.nextNode())) {
+        //         var key = getNodeKey(el);
+        //         if (key) {
+        //             fromNodesLookup[key] = el;
+        //         }
+        //     }
+        // }
+
+        function indexTree(node) {
+            if (node.nodeType === ELEMENT_NODE) {
+                var curChild = node.firstChild;
+                while (curChild) {
+                    var key = getNodeKey(curChild);
+                    if (key) {
+                        fromNodesLookup[key] = curChild;
+                    }
+
+                    // Walk recursively
+                    indexTree(curChild);
+
+                    curChild = curChild.nextSibling;
+                }
+            }
+        }
+
+        indexTree(fromNode);
+
+        function handleNodeAdded(el) {
+            onNodeAdded(el);
+
+            var curChild = el.firstChild;
+            while (curChild) {
+                var nextSibling = curChild.nextSibling;
+
+                var key = getNodeKey(curChild);
+                if (key) {
+                    var unmatchedFromEl = fromNodesLookup[key];
+                    if (unmatchedFromEl && compareNodeNames(curChild, unmatchedFromEl)) {
+                        curChild.parentNode.replaceChild(unmatchedFromEl, curChild);
+                        morphEl(unmatchedFromEl, curChild);
+                    }
+                }
+
+                handleNodeAdded(curChild);
+                curChild = nextSibling;
+            }
+        }
+
+        function morphEl(fromEl, toEl, childrenOnly) {
+            var toElKey = getNodeKey(toEl);
+            var curFromNodeKey;
+
+            if (toElKey) {
+                // If an element with an ID is being morphed then it is will be in the final
+                // DOM so clear it out of the saved elements collection
+                delete fromNodesLookup[toElKey];
+            }
+
+            if (toNode.isSameNode && toNode.isSameNode(fromNode)) {
+                return;
+            }
+
+            if (!childrenOnly) {
+                if (onBeforeElUpdated(fromEl, toEl) === false) {
+                    return;
+                }
+
+                morphAttrs(fromEl, toEl);
+                onElUpdated(fromEl);
+
+                if (onBeforeElChildrenUpdated(fromEl, toEl) === false) {
+                    return;
+                }
+            }
+
+            if (fromEl.nodeName !== 'TEXTAREA') {
+                var curToNodeChild = toEl.firstChild;
+                var curFromNodeChild = fromEl.firstChild;
+                var curToNodeKey;
+
+                var fromNextSibling;
+                var toNextSibling;
+                var matchingFromEl;
+
+                outer: while (curToNodeChild) {
+                    toNextSibling = curToNodeChild.nextSibling;
+                    curToNodeKey = getNodeKey(curToNodeChild);
+
+                    while (curFromNodeChild) {
+                        fromNextSibling = curFromNodeChild.nextSibling;
+
+                        if (curToNodeChild.isSameNode && curToNodeChild.isSameNode(curFromNodeChild)) {
+                            curToNodeChild = toNextSibling;
+                            curFromNodeChild = fromNextSibling;
+                            continue outer;
+                        }
+
+                        curFromNodeKey = getNodeKey(curFromNodeChild);
+
+                        var curFromNodeType = curFromNodeChild.nodeType;
+
+                        var isCompatible = undefined;
+
+                        if (curFromNodeType === curToNodeChild.nodeType) {
+                            if (curFromNodeType === ELEMENT_NODE) {
+                                // Both nodes being compared are Element nodes
+
+                                if (curToNodeKey) {
+                                    // The target node has a key so we want to match it up with the correct element
+                                    // in the original DOM tree
+                                    if (curToNodeKey !== curFromNodeKey) {
+                                        // The current element in the original DOM tree does not have a matching key so
+                                        // let's check our lookup to see if there is a matching element in the original
+                                        // DOM tree
+                                        if ((matchingFromEl = fromNodesLookup[curToNodeKey])) {
+                                            if (curFromNodeChild.nextSibling === matchingFromEl) {
+                                                // Special case for single element removals. To avoid removing the original
+                                                // DOM node out of the tree (since that can break CSS transitions, etc.),
+                                                // we will instead discard the current node and wait until the next
+                                                // iteration to properly match up the keyed target element with its matching
+                                                // element in the original tree
+                                                isCompatible = false;
+                                            } else {
+                                                // We found a matching keyed element somewhere in the original DOM tree.
+                                                // Let's moving the original DOM node into the current position and morph
+                                                // it.
+
+                                                // NOTE: We use insertBefore instead of replaceChild because we want to go through
+                                                // the `removeNode()` function for the node that is being discarded so that
+                                                // all lifecycle hooks are correctly invoked
+                                                fromEl.insertBefore(matchingFromEl, curFromNodeChild);
+
+                                                fromNextSibling = curFromNodeChild.nextSibling;
+
+                                                if (curFromNodeKey) {
+                                                    // Since the node is keyed it might be matched up later so we defer
+                                                    // the actual removal to later
+                                                    addKeyedRemoval(curFromNodeKey);
+                                                } else {
+                                                    // NOTE: we skip nested keyed nodes from being removed since there is
+                                                    //       still a chance they will be matched up later
+                                                    removeNode(curFromNodeChild, fromEl, true /* skip keyed nodes */);
+                                                }
+
+                                                curFromNodeChild = matchingFromEl;
+                                            }
+                                        } else {
+                                            // The nodes are not compatible since the "to" node has a key and there
+                                            // is no matching keyed node in the source tree
+                                            isCompatible = false;
+                                        }
+                                    }
+                                } else if (curFromNodeKey) {
+                                    // The original has a key
+                                    isCompatible = false;
+                                }
+
+                                isCompatible = isCompatible !== false && compareNodeNames(curFromNodeChild, curToNodeChild);
+                                if (isCompatible) {
+                                    // We found compatible DOM elements so transform
+                                    // the current "from" node to match the current
+                                    // target DOM node.
+                                    morphEl(curFromNodeChild, curToNodeChild);
+                                }
+
+                            } else if (curFromNodeType === TEXT_NODE || curFromNodeType == COMMENT_NODE) {
+                                // Both nodes being compared are Text or Comment nodes
+                                isCompatible = true;
+                                // Simply update nodeValue on the original node to
+                                // change the text value
+                                if (curFromNodeChild.nodeValue !== curToNodeChild.nodeValue) {
+                                    curFromNodeChild.nodeValue = curToNodeChild.nodeValue;
+                                }
+
+                            }
+                        }
+
+                        if (isCompatible) {
+                            // Advance both the "to" child and the "from" child since we found a match
+                            curToNodeChild = toNextSibling;
+                            curFromNodeChild = fromNextSibling;
+                            continue outer;
+                        }
+
+                        // No compatible match so remove the old node from the DOM and continue trying to find a
+                        // match in the original DOM. However, we only do this if the from node is not keyed
+                        // since it is possible that a keyed node might match up with a node somewhere else in the
+                        // target tree and we don't want to discard it just yet since it still might find a
+                        // home in the final DOM tree. After everything is done we will remove any keyed nodes
+                        // that didn't find a home
+                        if (curFromNodeKey) {
+                            // Since the node is keyed it might be matched up later so we defer
+                            // the actual removal to later
+                            addKeyedRemoval(curFromNodeKey);
+                        } else {
+                            // NOTE: we skip nested keyed nodes from being removed since there is
+                            //       still a chance they will be matched up later
+                            removeNode(curFromNodeChild, fromEl, true /* skip keyed nodes */);
+                        }
+
+                        curFromNodeChild = fromNextSibling;
+                    }
+
+                    // If we got this far then we did not find a candidate match for
+                    // our "to node" and we exhausted all of the children "from"
+                    // nodes. Therefore, we will just append the current "to" node
+                    // to the end
+                    if (curToNodeKey && (matchingFromEl = fromNodesLookup[curToNodeKey]) && compareNodeNames(matchingFromEl, curToNodeChild)) {
+                        fromEl.appendChild(matchingFromEl);
+                        morphEl(matchingFromEl, curToNodeChild);
+                    } else {
+                        var onBeforeNodeAddedResult = onBeforeNodeAdded(curToNodeChild);
+                        if (onBeforeNodeAddedResult !== false) {
+                            if (onBeforeNodeAddedResult) {
+                                curToNodeChild = onBeforeNodeAddedResult;
+                            }
+
+                            if (curToNodeChild.actualize) {
+                                curToNodeChild = curToNodeChild.actualize(fromEl.ownerDocument || doc);
+                            }
+                            fromEl.appendChild(curToNodeChild);
+                            handleNodeAdded(curToNodeChild);
+                        }
+                    }
+
+                    curToNodeChild = toNextSibling;
+                    curFromNodeChild = fromNextSibling;
+                }
+
+                // We have processed all of the "to nodes". If curFromNodeChild is
+                // non-null then we still have some from nodes left over that need
+                // to be removed
+                while (curFromNodeChild) {
+                    fromNextSibling = curFromNodeChild.nextSibling;
+                    if ((curFromNodeKey = getNodeKey(curFromNodeChild))) {
+                        // Since the node is keyed it might be matched up later so we defer
+                        // the actual removal to later
+                        addKeyedRemoval(curFromNodeKey);
+                    } else {
+                        // NOTE: we skip nested keyed nodes from being removed since there is
+                        //       still a chance they will be matched up later
+                        removeNode(curFromNodeChild, fromEl, true /* skip keyed nodes */);
+                    }
+                    curFromNodeChild = fromNextSibling;
+                }
+            }
+
+            var specialElHandler = specialElHandlers[fromEl.nodeName];
+            if (specialElHandler) {
+                specialElHandler(fromEl, toEl);
+            }
+        } // END: morphEl(...)
+
+        var morphedNode = fromNode;
+        var morphedNodeType = morphedNode.nodeType;
+        var toNodeType = toNode.nodeType;
+
+        if (!childrenOnly) {
+            // Handle the case where we are given two DOM nodes that are not
+            // compatible (e.g. <div> --> <span> or <div> --> TEXT)
+            if (morphedNodeType === ELEMENT_NODE) {
+                if (toNodeType === ELEMENT_NODE) {
+                    if (!compareNodeNames(fromNode, toNode)) {
+                        onNodeDiscarded(fromNode);
+                        morphedNode = moveChildren(fromNode, createElementNS(toNode.nodeName, toNode.namespaceURI));
+                    }
+                } else {
+                    // Going from an element node to a text node
+                    morphedNode = toNode;
+                }
+            } else if (morphedNodeType === TEXT_NODE || morphedNodeType === COMMENT_NODE) { // Text or comment node
+                if (toNodeType === morphedNodeType) {
+                    if (morphedNode.nodeValue !== toNode.nodeValue) {
+                        morphedNode.nodeValue = toNode.nodeValue;
+                    }
+
+                    return morphedNode;
+                } else {
+                    // Text node to something else
+                    morphedNode = toNode;
+                }
+            }
+        }
+
+        if (morphedNode === toNode) {
+            // The "to node" was not compatible with the "from node" so we had to
+            // toss out the "from node" and use the "to node"
+            onNodeDiscarded(fromNode);
+        } else {
+            morphEl(morphedNode, toNode, childrenOnly);
+
+            // We now need to loop over any keyed nodes that might need to be
+            // removed. We only do the removal if we know that the keyed node
+            // never found a match. When a keyed node is matched up we remove
+            // it out of fromNodesLookup and we use fromNodesLookup to determine
+            // if a keyed node has been matched up or not
+            if (keyedRemovalList) {
+                for (var i=0, len=keyedRemovalList.length; i<len; i++) {
+                    var elToRemove = fromNodesLookup[keyedRemovalList[i]];
+                    if (elToRemove) {
+                        removeNode(elToRemove, elToRemove.parentNode, false);
+                    }
+                }
+            }
+        }
+
+        if (!childrenOnly && morphedNode !== fromNode && fromNode.parentNode) {
+            if (morphedNode.actualize) {
+                morphedNode = morphedNode.actualize(fromNode.ownerDocument || doc);
+            }
+            // If we had to swap out the from node with a new node because the old
+            // node was not compatible with the target node then we need to
+            // replace the old DOM node in the original DOM tree. This is only
+            // possible if the original DOM node was part of a DOM tree which
+            // we know is the case if it has a parent node.
+            fromNode.parentNode.replaceChild(morphedNode, fromNode);
+        }
+
+        return morphedNode;
+    };
+}
+
+var morphdom = morphdomFactory(morphAttrs);
+
+module.exports = morphdom;
+
+},{}],30:[function(require,module,exports){
+assert.notEqual = notEqual
+assert.notOk = notOk
+assert.equal = equal
+assert.ok = assert
+
+module.exports = assert
+
+function equal (a, b, m) {
+  assert(a == b, m) // eslint-disable-line eqeqeq
+}
+
+function notEqual (a, b, m) {
+  assert(a != b, m) // eslint-disable-line eqeqeq
+}
+
+function notOk (t, m) {
+  assert(!t, m)
+}
+
+function assert (t, m) {
+  if (!t) throw new Error(m || 'AssertionError')
+}
+
+},{}],31:[function(require,module,exports){
+/* global MutationObserver */
+var document = require('global/document')
+var window = require('global/window')
+var assert = require('assert')
+var watch = Object.create(null)
+var KEY_ID = 'onloadid' + (new Date() % 9e6).toString(36)
+var KEY_ATTR = 'data-' + KEY_ID
+var INDEX = 0
+
+if (window && window.MutationObserver) {
+  var observer = new MutationObserver(function (mutations) {
+    if (Object.keys(watch).length < 1) return
+    for (var i = 0; i < mutations.length; i++) {
+      if (mutations[i].attributeName === KEY_ATTR) {
+        eachAttr(mutations[i], turnon, turnoff)
+        continue
+      }
+      eachMutation(mutations[i].removedNodes, turnoff)
+      eachMutation(mutations[i].addedNodes, turnon)
+    }
+  })
+  if (document.body) {
+    beginObserve(observer)
+  } else {
+    document.addEventListener('DOMContentLoaded', function (event) {
+      beginObserve(observer)
+    })
+  }
+}
+
+function beginObserve (observer) {
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeOldValue: true,
+    attributeFilter: [KEY_ATTR]
+  })
+}
+
+module.exports = function onload (el, on, off, caller) {
+  assert(document.body, 'on-load: will not work prior to DOMContentLoaded')
+  on = on || function () {}
+  off = off || function () {}
+  el.setAttribute(KEY_ATTR, 'o' + INDEX)
+  watch['o' + INDEX] = [on, off, 0, caller || onload.caller]
+  INDEX += 1
+  return el
+}
+
+module.exports.KEY_ATTR = KEY_ATTR
+module.exports.KEY_ID = KEY_ID
+
+function turnon (index, el) {
+  if (watch[index][0] && watch[index][2] === 0) {
+    watch[index][0](el)
+    watch[index][2] = 1
+  }
+}
+
+function turnoff (index, el) {
+  if (watch[index][1] && watch[index][2] === 1) {
+    watch[index][1](el)
+    watch[index][2] = 0
+  }
+}
+
+function eachAttr (mutation, on, off) {
+  var newValue = mutation.target.getAttribute(KEY_ATTR)
+  if (sameOrigin(mutation.oldValue, newValue)) {
+    watch[newValue] = watch[mutation.oldValue]
+    return
+  }
+  if (watch[mutation.oldValue]) {
+    off(mutation.oldValue, mutation.target)
+  }
+  if (watch[newValue]) {
+    on(newValue, mutation.target)
+  }
+}
+
+function sameOrigin (oldValue, newValue) {
+  if (!oldValue || !newValue) return false
+  return watch[oldValue][3] === watch[newValue][3]
+}
+
+function eachMutation (nodes, fn) {
+  var keys = Object.keys(watch)
+  for (var i = 0; i < nodes.length; i++) {
+    if (nodes[i] && nodes[i].getAttribute && nodes[i].getAttribute(KEY_ATTR)) {
+      var onloadid = nodes[i].getAttribute(KEY_ATTR)
+      keys.forEach(function (k) {
+        if (onloadid === k) {
+          fn(k, nodes[i])
+        }
+      })
+    }
+    if (nodes[i].childNodes.length > 0) {
+      eachMutation(nodes[i].childNodes, fn)
+    }
+  }
+}
+
+},{"assert":30,"global/document":3,"global/window":4}],32:[function(require,module,exports){
+(function (process){
+  /* globals require, module */
+
+  'use strict';
+
+  /**
+   * Module dependencies.
+   */
+
+  var pathtoRegexp = require('path-to-regexp');
+
+  /**
+   * Module exports.
+   */
+
+  module.exports = page;
+
+  /**
+   * Detect click event
+   */
+  var clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 'touchstart' : 'click';
+
+  /**
+   * To work properly with the URL
+   * history.location generated polyfill in https://github.com/devote/HTML5-History-API
+   */
+
+  var location = ('undefined' !== typeof window) && (window.history.location || window.location);
+
+  /**
+   * Perform initial dispatch.
+   */
+
+  var dispatch = true;
+
+
+  /**
+   * Decode URL components (query string, pathname, hash).
+   * Accommodates both regular percent encoding and x-www-form-urlencoded format.
+   */
+  var decodeURLComponents = true;
+
+  /**
+   * Base path.
+   */
+
+  var base = '';
+
+  /**
+   * Running flag.
+   */
+
+  var running;
+
+  /**
+   * HashBang option
+   */
+
+  var hashbang = false;
+
+  /**
+   * Previous context, for capturing
+   * page exit events.
+   */
+
+  var prevContext;
+
+  /**
+   * Register `path` with callback `fn()`,
+   * or route `path`, or redirection,
+   * or `page.start()`.
+   *
+   *   page(fn);
+   *   page('*', fn);
+   *   page('/user/:id', load, user);
+   *   page('/user/' + user.id, { some: 'thing' });
+   *   page('/user/' + user.id);
+   *   page('/from', '/to')
+   *   page();
+   *
+   * @param {string|!Function|!Object} path
+   * @param {Function=} fn
+   * @api public
+   */
+
+  function page(path, fn) {
+    // <callback>
+    if ('function' === typeof path) {
+      return page('*', path);
+    }
+
+    // route <path> to <callback ...>
+    if ('function' === typeof fn) {
+      var route = new Route(/** @type {string} */ (path));
+      for (var i = 1; i < arguments.length; ++i) {
+        page.callbacks.push(route.middleware(arguments[i]));
+      }
+      // show <path> with [state]
+    } else if ('string' === typeof path) {
+      page['string' === typeof fn ? 'redirect' : 'show'](path, fn);
+      // start [options]
+    } else {
+      page.start(path);
+    }
+  }
+
+  /**
+   * Callback functions.
+   */
+
+  page.callbacks = [];
+  page.exits = [];
+
+  /**
+   * Current path being processed
+   * @type {string}
+   */
+  page.current = '';
+
+  /**
+   * Number of pages navigated to.
+   * @type {number}
+   *
+   *     page.len == 0;
+   *     page('/login');
+   *     page.len == 1;
+   */
+
+  page.len = 0;
+
+  /**
+   * Get or set basepath to `path`.
+   *
+   * @param {string} path
+   * @api public
+   */
+
+  page.base = function(path) {
+    if (0 === arguments.length) return base;
+    base = path;
+  };
+
+  /**
+   * Bind with the given `options`.
+   *
+   * Options:
+   *
+   *    - `click` bind to click events [true]
+   *    - `popstate` bind to popstate [true]
+   *    - `dispatch` perform initial dispatch [true]
+   *
+   * @param {Object} options
+   * @api public
+   */
+
+  page.start = function(options) {
+    options = options || {};
+    if (running) return;
+    running = true;
+    if (false === options.dispatch) dispatch = false;
+    if (false === options.decodeURLComponents) decodeURLComponents = false;
+    if (false !== options.popstate) window.addEventListener('popstate', onpopstate, false);
+    if (false !== options.click) {
+      document.addEventListener(clickEvent, onclick, false);
+    }
+    if (true === options.hashbang) hashbang = true;
+    if (!dispatch) return;
+    var url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
+    page.replace(url, null, true, dispatch);
+  };
+
+  /**
+   * Unbind click and popstate event handlers.
+   *
+   * @api public
+   */
+
+  page.stop = function() {
+    if (!running) return;
+    page.current = '';
+    page.len = 0;
+    running = false;
+    document.removeEventListener(clickEvent, onclick, false);
+    window.removeEventListener('popstate', onpopstate, false);
+  };
+
+  /**
+   * Show `path` with optional `state` object.
+   *
+   * @param {string} path
+   * @param {Object=} state
+   * @param {boolean=} dispatch
+   * @param {boolean=} push
+   * @return {!Context}
+   * @api public
+   */
+
+  page.show = function(path, state, dispatch, push) {
+    var ctx = new Context(path, state);
+    page.current = ctx.path;
+    if (false !== dispatch) page.dispatch(ctx);
+    if (false !== ctx.handled && false !== push) ctx.pushState();
+    return ctx;
+  };
+
+  /**
+   * Goes back in the history
+   * Back should always let the current route push state and then go back.
+   *
+   * @param {string} path - fallback path to go back if no more history exists, if undefined defaults to page.base
+   * @param {Object=} state
+   * @api public
+   */
+
+  page.back = function(path, state) {
+    if (page.len > 0) {
+      // this may need more testing to see if all browsers
+      // wait for the next tick to go back in history
+      history.back();
+      page.len--;
+    } else if (path) {
+      setTimeout(function() {
+        page.show(path, state);
+      });
+    }else{
+      setTimeout(function() {
+        page.show(base, state);
+      });
+    }
+  };
+
+
+  /**
+   * Register route to redirect from one path to other
+   * or just redirect to another route
+   *
+   * @param {string} from - if param 'to' is undefined redirects to 'from'
+   * @param {string=} to
+   * @api public
+   */
+  page.redirect = function(from, to) {
+    // Define route from a path to another
+    if ('string' === typeof from && 'string' === typeof to) {
+      page(from, function(e) {
+        setTimeout(function() {
+          page.replace(/** @type {!string} */ (to));
+        }, 0);
+      });
+    }
+
+    // Wait for the push state and replace it with another
+    if ('string' === typeof from && 'undefined' === typeof to) {
+      setTimeout(function() {
+        page.replace(from);
+      }, 0);
+    }
+  };
+
+  /**
+   * Replace `path` with optional `state` object.
+   *
+   * @param {string} path
+   * @param {Object=} state
+   * @param {boolean=} init
+   * @param {boolean=} dispatch
+   * @return {!Context}
+   * @api public
+   */
+
+
+  page.replace = function(path, state, init, dispatch) {
+    var ctx = new Context(path, state);
+    page.current = ctx.path;
+    ctx.init = init;
+    ctx.save(); // save before dispatching, which may redirect
+    if (false !== dispatch) page.dispatch(ctx);
+    return ctx;
+  };
+
+  /**
+   * Dispatch the given `ctx`.
+   *
+   * @param {Context} ctx
+   * @api private
+   */
+  page.dispatch = function(ctx) {
+    var prev = prevContext,
+      i = 0,
+      j = 0;
+
+    prevContext = ctx;
+
+    function nextExit() {
+      var fn = page.exits[j++];
+      if (!fn) return nextEnter();
+      fn(prev, nextExit);
+    }
+
+    function nextEnter() {
+      var fn = page.callbacks[i++];
+
+      if (ctx.path !== page.current) {
+        ctx.handled = false;
+        return;
+      }
+      if (!fn) return unhandled(ctx);
+      fn(ctx, nextEnter);
+    }
+
+    if (prev) {
+      nextExit();
+    } else {
+      nextEnter();
+    }
+  };
+
+  /**
+   * Unhandled `ctx`. When it's not the initial
+   * popstate then redirect. If you wish to handle
+   * 404s on your own use `page('*', callback)`.
+   *
+   * @param {Context} ctx
+   * @api private
+   */
+  function unhandled(ctx) {
+    if (ctx.handled) return;
+    var current;
+
+    if (hashbang) {
+      current = base + location.hash.replace('#!', '');
+    } else {
+      current = location.pathname + location.search;
+    }
+
+    if (current === ctx.canonicalPath) return;
+    page.stop();
+    ctx.handled = false;
+    location.href = ctx.canonicalPath;
+  }
+
+  /**
+   * Register an exit route on `path` with
+   * callback `fn()`, which will be called
+   * on the previous context when a new
+   * page is visited.
+   */
+  page.exit = function(path, fn) {
+    if (typeof path === 'function') {
+      return page.exit('*', path);
+    }
+
+    var route = new Route(path);
+    for (var i = 1; i < arguments.length; ++i) {
+      page.exits.push(route.middleware(arguments[i]));
+    }
+  };
+
+  /**
+   * Remove URL encoding from the given `str`.
+   * Accommodates whitespace in both x-www-form-urlencoded
+   * and regular percent-encoded form.
+   *
+   * @param {string} val - URL component to decode
+   */
+  function decodeURLEncodedURIComponent(val) {
+    if (typeof val !== 'string') { return val; }
+    return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
+  }
+
+  /**
+   * Initialize a new "request" `Context`
+   * with the given `path` and optional initial `state`.
+   *
+   * @constructor
+   * @param {string} path
+   * @param {Object=} state
+   * @api public
+   */
+
+  function Context(path, state) {
+    if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
+    var i = path.indexOf('?');
+
+    this.canonicalPath = path;
+    this.path = path.replace(base, '') || '/';
+    if (hashbang) this.path = this.path.replace('#!', '') || '/';
+
+    this.title = document.title;
+    this.state = state || {};
+    this.state.path = path;
+    this.querystring = ~i ? decodeURLEncodedURIComponent(path.slice(i + 1)) : '';
+    this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
+    this.params = {};
+
+    // fragment
+    this.hash = '';
+    if (!hashbang) {
+      if (!~this.path.indexOf('#')) return;
+      var parts = this.path.split('#');
+      this.path = parts[0];
+      this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
+      this.querystring = this.querystring.split('#')[0];
+    }
+  }
+
+  /**
+   * Expose `Context`.
+   */
+
+  page.Context = Context;
+
+  /**
+   * Push state.
+   *
+   * @api private
+   */
+
+  Context.prototype.pushState = function() {
+    page.len++;
+    history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  };
+
+  /**
+   * Save the context state.
+   *
+   * @api public
+   */
+
+  Context.prototype.save = function() {
+    history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  };
+
+  /**
+   * Initialize `Route` with the given HTTP `path`,
+   * and an array of `callbacks` and `options`.
+   *
+   * Options:
+   *
+   *   - `sensitive`    enable case-sensitive routes
+   *   - `strict`       enable strict matching for trailing slashes
+   *
+   * @constructor
+   * @param {string} path
+   * @param {Object=} options
+   * @api private
+   */
+
+  function Route(path, options) {
+    options = options || {};
+    this.path = (path === '*') ? '(.*)' : path;
+    this.method = 'GET';
+    this.regexp = pathtoRegexp(this.path,
+      this.keys = [],
+      options);
+  }
+
+  /**
+   * Expose `Route`.
+   */
+
+  page.Route = Route;
+
+  /**
+   * Return route middleware with
+   * the given callback `fn()`.
+   *
+   * @param {Function} fn
+   * @return {Function}
+   * @api public
+   */
+
+  Route.prototype.middleware = function(fn) {
+    var self = this;
+    return function(ctx, next) {
+      if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
+      next();
+    };
+  };
+
+  /**
+   * Check if this route matches `path`, if so
+   * populate `params`.
+   *
+   * @param {string} path
+   * @param {Object} params
+   * @return {boolean}
+   * @api private
+   */
+
+  Route.prototype.match = function(path, params) {
+    var keys = this.keys,
+      qsIndex = path.indexOf('?'),
+      pathname = ~qsIndex ? path.slice(0, qsIndex) : path,
+      m = this.regexp.exec(decodeURIComponent(pathname));
+
+    if (!m) return false;
+
+    for (var i = 1, len = m.length; i < len; ++i) {
+      var key = keys[i - 1];
+      var val = decodeURLEncodedURIComponent(m[i]);
+      if (val !== undefined || !(hasOwnProperty.call(params, key.name))) {
+        params[key.name] = val;
+      }
+    }
+
+    return true;
+  };
+
+
+  /**
+   * Handle "populate" events.
+   */
+
+  var onpopstate = (function () {
+    var loaded = false;
+    if ('undefined' === typeof window) {
+      return;
+    }
+    if (document.readyState === 'complete') {
+      loaded = true;
+    } else {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          loaded = true;
+        }, 0);
+      });
+    }
+    return function onpopstate(e) {
+      if (!loaded) return;
+      if (e.state) {
+        var path = e.state.path;
+        page.replace(path, e.state);
+      } else {
+        page.show(location.pathname + location.hash, undefined, undefined, false);
+      }
+    };
+  })();
+  /**
+   * Handle "click" events.
+   */
+
+  function onclick(e) {
+
+    if (1 !== which(e)) return;
+
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (e.defaultPrevented) return;
+
+
+
+    // ensure link
+    // use shadow dom when available
+    var el = e.path ? e.path[0] : e.target;
+    while (el && 'A' !== el.nodeName) el = el.parentNode;
+    if (!el || 'A' !== el.nodeName) return;
+
+
+
+    // Ignore if tag has
+    // 1. "download" attribute
+    // 2. rel="external" attribute
+    if (el.hasAttribute('download') || el.getAttribute('rel') === 'external') return;
+
+    // ensure non-hash for the same path
+    var link = el.getAttribute('href');
+    if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
+
+
+
+    // Check for mailto: in the href
+    if (link && link.indexOf('mailto:') > -1) return;
+
+    // check target
+    if (el.target) return;
+
+    // x-origin
+    if (!sameOrigin(el.href)) return;
+
+
+
+    // rebuild path
+    var path = el.pathname + el.search + (el.hash || '');
+
+    // strip leading "/[drive letter]:" on NW.js on Windows
+    if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
+      path = path.replace(/^\/[a-zA-Z]:\//, '/');
+    }
+
+    // same page
+    var orig = path;
+
+    if (path.indexOf(base) === 0) {
+      path = path.substr(base.length);
+    }
+
+    if (hashbang) path = path.replace('#!', '');
+
+    if (base && orig === path) return;
+
+    e.preventDefault();
+    page.show(orig);
+  }
+
+  /**
+   * Event button.
+   */
+
+  function which(e) {
+    e = e || window.event;
+    return null === e.which ? e.button : e.which;
+  }
+
+  /**
+   * Check if `href` is the same origin.
+   */
+
+  function sameOrigin(href) {
+    var origin = location.protocol + '//' + location.hostname;
+    if (location.port) origin += ':' + location.port;
+    return (href && (0 === href.indexOf(origin)));
+  }
+
+  page.sameOrigin = sameOrigin;
+
+}).call(this,require('_process'))
+},{"_process":34,"path-to-regexp":33}],33:[function(require,module,exports){
+var isarray = require('isarray')
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^()])+)\\))?|\\(((?:\\\\.|[^()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {String} str
+ * @return {Array}
+ */
+function parse (str) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      continue
+    }
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+    }
+
+    var prefix = res[2]
+    var name = res[3]
+    var capture = res[4]
+    var group = res[5]
+    var suffix = res[6]
+    var asterisk = res[7]
+
+    var repeat = suffix === '+' || suffix === '*'
+    var optional = suffix === '?' || suffix === '*'
+    var delimiter = prefix || '/'
+    var pattern = capture || group || (asterisk ? '.*' : '[^' + delimiter + ']+?')
+
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      pattern: escapeGroup(pattern)
+    })
+  }
+
+  // Match any characters still remaining.
+  if (index < str.length) {
+    path += str.substr(index)
+  }
+
+  // If the path exists, push it onto the end.
+  if (path) {
+    tokens.push(path)
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {String}   str
+ * @return {Function}
+ */
+function compile (str) {
+  return tokensToFunction(parse(str))
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^' + tokens[i].pattern + '$')
+    }
+  }
+
+  return function (obj) {
+    var path = ''
+    var data = obj || {}
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+
+        continue
+      }
+
+      var value = data[token.name]
+      var segment
+
+      if (value == null) {
+        if (token.optional) {
+          continue
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined')
+        }
+      }
+
+      if (isarray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received "' + value + '"')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty')
+          }
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encodeURIComponent(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      segment = encodeURIComponent(value)
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+      }
+
+      path += token.prefix + segment
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {String} str
+ * @return {String}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|\/])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {String} group
+ * @return {String}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$\/()])/g, '\\$1')
+}
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {RegExp} re
+ * @param  {Array}  keys
+ * @return {RegExp}
+ */
+function attachKeys (re, keys) {
+  re.keys = keys
+  return re
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {String}
+ */
+function flags (options) {
+  return options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {RegExp} path
+ * @param  {Array}  keys
+ * @return {RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        pattern: null
+      })
+    }
+  }
+
+  return attachKeys(path, keys)
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {Array}  path
+ * @param  {Array}  keys
+ * @param  {Object} options
+ * @return {RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+
+  return attachKeys(regexp, keys)
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {String} path
+ * @param  {Array}  keys
+ * @param  {Object} options
+ * @return {RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  var tokens = parse(path)
+  var re = tokensToRegExp(tokens, options)
+
+  // Attach keys back to the regexp.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] !== 'string') {
+      keys.push(tokens[i])
+    }
+  }
+
+  return attachKeys(re, keys)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {Array}  tokens
+ * @param  {Array}  keys
+ * @param  {Object} options
+ * @return {RegExp}
+ */
+function tokensToRegExp (tokens, options) {
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var route = ''
+  var lastToken = tokens[tokens.length - 1]
+  var endsWithSlash = typeof lastToken === 'string' && /\/$/.test(lastToken)
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = token.pattern
+
+      if (token.repeat) {
+        capture += '(?:' + prefix + capture + ')*'
+      }
+
+      if (token.optional) {
+        if (prefix) {
+          capture = '(?:' + prefix + '(' + capture + '))?'
+        } else {
+          capture = '(' + capture + ')?'
+        }
+      } else {
+        capture = prefix + '(' + capture + ')'
+      }
+
+      route += capture
+    }
+  }
+
+  // In non-strict mode we allow a slash at the end of match. If the path to
+  // match already ends with a slash, we remove it for consistency. The slash
+  // is valid at the end of a path match, not in the middle. This is important
+  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  if (!strict) {
+    route = (endsWithSlash ? route.slice(0, -2) : route) + '(?:\\/(?=$))?'
+  }
+
+  if (end) {
+    route += '$'
+  } else {
+    // In non-ending mode, we need the capturing groups to match as much as
+    // possible by using a positive lookahead to the end or next path segment.
+    route += strict && endsWithSlash ? '' : '(?=\\/|$)'
+  }
+
+  return new RegExp('^' + route, flags(options))
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(String|RegExp|Array)} path
+ * @param  {Array}                 [keys]
+ * @param  {Object}                [options]
+ * @return {RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  keys = keys || []
+
+  if (!isarray(keys)) {
+    options = keys
+    keys = []
+  } else if (!options) {
+    options = {}
+  }
+
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, keys, options)
+  }
+
+  if (isarray(path)) {
+    return arrayToRegexp(path, keys, options)
+  }
+
+  return stringToRegexp(path, keys, options)
+}
+
+},{"isarray":28}],34:[function(require,module,exports){
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],35:[function(require,module,exports){
+
+var orig = document.title;
+
+exports = module.exports = set;
+
+function set(str) {
+  var i = 1;
+  var args = arguments;
+  document.title = str.replace(/%[os]/g, function(_){
+    switch (_) {
+      case '%o':
+        return orig;
+      case '%s':
+        return args[i++];
+    }
+  });
+}
+
+exports.reset = function(){
+  set(orig);
+};
+
+},{}],36:[function(require,module,exports){
+var bel = require('bel') // turns template tag into DOM elements
+var morphdom = require('morphdom') // efficiently diffs + morphs two DOM elements
+var defaultEvents = require('./update-events.js') // default events to be copied when dom elements update
+
+module.exports = bel
+
+// TODO move this + defaultEvents to a new module once we receive more feedback
+module.exports.update = function (fromNode, toNode, opts) {
+  if (!opts) opts = {}
+  if (opts.events !== false) {
+    if (!opts.onBeforeElUpdated) opts.onBeforeElUpdated = copier
+  }
+
+  return morphdom(fromNode, toNode, opts)
+
+  // morphdom only copies attributes. we decided we also wanted to copy events
+  // that can be set via attributes
+  function copier (f, t) {
+    // copy events:
+    var events = opts.events || defaultEvents
+    for (var i = 0; i < events.length; i++) {
+      var ev = events[i]
+      if (t[ev]) { // if new element has a whitelisted attribute
+        f[ev] = t[ev] // update existing element
+      } else if (f[ev]) { // if existing element has it and new one doesnt
+        f[ev] = undefined // remove it from existing element
+      }
+    }
+    var oldValue = f.value
+    var newValue = t.value
+    // copy values for form elements
+    if ((f.nodeName === 'INPUT' && f.type !== 'file') || f.nodeName === 'SELECT') {
+      if (!newValue && !t.hasAttribute('value')) {
+        t.value = f.value
+      } else if (newValue !== oldValue) {
+        f.value = newValue
+      }
+    } else if (f.nodeName === 'TEXTAREA') {
+      if (t.getAttribute('value') === null) f.value = t.value
+    }
+  }
+}
+
+},{"./update-events.js":37,"bel":1,"morphdom":29}],37:[function(require,module,exports){
+module.exports = [
+  // attribute events (can be set with attributes)
+  'onclick',
+  'ondblclick',
+  'onmousedown',
+  'onmouseup',
+  'onmouseover',
+  'onmousemove',
+  'onmouseout',
+  'ondragstart',
+  'ondrag',
+  'ondragenter',
+  'ondragleave',
+  'ondragover',
+  'ondrop',
+  'ondragend',
+  'onkeydown',
+  'onkeypress',
+  'onkeyup',
+  'onunload',
+  'onabort',
+  'onerror',
+  'onresize',
+  'onscroll',
+  'onselect',
+  'onchange',
+  'onsubmit',
+  'onreset',
+  'onfocus',
+  'onblur',
+  'oninput',
+  // other common events
+  'oncontextmenu',
+  'onfocusin',
+  'onfocusout'
+]
+
+},{}],38:[function(require,module,exports){
+'use strict';
+
+var _page = require('page');
+
+var _page2 = _interopRequireDefault(_page);
+
+require('./views/home');
+
+require('./views/signup');
+
+require('./views/signin');
+
+require('./views/footer');
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+(0, _page2.default)();
+
+},{"./views/footer":42,"./views/home":44,"./views/signin":49,"./views/signup":51,"page":32}],39:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+        value: true
+});
+exports.default = {
+        'likes': '{likes, plural, ' + '=1 { # like }' + 'other { # likes }}',
+        'logout': 'Logout',
+        'english': 'English',
+        'spanish': 'Spanish',
+        'signup-subheading': 'Singup to watch your friend\'s photos',
+        'signup-facebook': 'Singup with Facebook',
+        'signup-face': 'Singup',
+        'email': 'Email',
+        'username': 'Username',
+        'fullname': 'Fullname',
+        'password': 'Password',
+        'signup': 'Signup',
+        'singup.have-account': '¿Already have an account?',
+        'signin': 'Signin',
+        'signin.have-account': '¿Don\'t have account?',
+        'language': 'Language'
+};
+
+},{}],40:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  'likes': '{likes, number} me gusta',
+  'logout': 'Salir',
+  'english': 'Ingles',
+  'spanish': 'Español',
+  'signup-subheading': 'Regístrate para ver fotos de tus amigos',
+  'signup-facebook': 'Iniciar sesión con Facebook',
+  'signup-face': 'Iniciar sesión',
+  'email': 'Correo Electronico',
+  'username': 'Nombre de usuario',
+  'fullname': 'Nombre completo',
+  'password': 'Contraseña',
+  'signup': 'Registrate',
+  'singup.have-account': '¿Tienes una cuenta?',
+  'signin': 'Entrar',
+  'signin.have-account': '¿No tienes una cuenta?',
+  'language': 'Idioma'
+};
+
+},{}],41:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _es = require('./es');
+
+var _es2 = _interopRequireDefault(_es);
+
+var _enUS = require('./en-US');
+
+var _enUS2 = _interopRequireDefault(_enUS);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+if (!window.Intl) {
+  window.Intl = require('intl');
+
+  require('intl/locale-data/jsonp/en-US');
+  require('intl/locale-data/jsonp/es');
+}
+
+// Relative
+
+var IntlRelativeFormat = window.IntlRelativeFormat = require('intl-relativeformat');
+
+require('intl-relativeformat/dist/locale-data/en');
+require('intl-relativeformat/dist/locale-data/es');
+
+// Messages
+
+var IntlMessageFormat = window.IntlMessageFormat = require('intl-messageformat');
+
+var MESSAGES = {};
+
+MESSAGES.es = _es2.default;
+MESSAGES['en-US'] = _enUS2.default;
+
+var locale = localStorage.locale || 'es';
+
+exports.default = {
+  message: function message(text) {
+    var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var msg = new IntlMessageFormat(MESSAGES[locale][text], locale, null);
+
+    return msg.format(opts);
+  },
+  date: new IntlRelativeFormat(locale)
+};
+
+},{"./en-US":39,"./es":40,"intl":24,"intl-messageformat":9,"intl-relativeformat":18,"intl-relativeformat/dist/locale-data/en":16,"intl-relativeformat/dist/locale-data/es":17,"intl/locale-data/jsonp/en-US":26,"intl/locale-data/jsonp/es":27}],42:[function(require,module,exports){
+'use strict';
+
+var _templateObject = _taggedTemplateLiteral(['<footer class="site-footer">\n  <div class="container">\n    <div class="row">\n      <div class="col s12 l2 center-align">\n        <!-- Cambiar idioma--><a href="#" data-activates="dropdown1" class="dropdown-button btn">\n          ', '\n        </a>\n        <!-- Dropdown Structure-->\n        <ul id="dropdown1" class="dropdown-content">\n          <li><a href="#" onclick="', '">', '</a></li>\n          <li><a href="#" onclick="', '">', '</a></li>\n        </ul>\n      </div>\n      <div class="col s12 l3 push-l7 center-align trademark">\xA9 2018 Melygram</div>\n    </div>\n  </div>\n</footer>'], ['<footer class="site-footer">\n  <div class="container">\n    <div class="row">\n      <div class="col s12 l2 center-align">\n        <!-- Cambiar idioma--><a href="#" data-activates="dropdown1" class="dropdown-button btn">\n          ', '\n        </a>\n        <!-- Dropdown Structure-->\n        <ul id="dropdown1" class="dropdown-content">\n          <li><a href="#" onclick="', '">', '</a></li>\n          <li><a href="#" onclick="', '">', '</a></li>\n        </ul>\n      </div>\n      <div class="col s12 l3 push-l7 center-align trademark">\xA9 2018 Melygram</div>\n    </div>\n  </div>\n</footer>']);
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+var el = (0, _yoYo2.default)(_templateObject, _translate2.default.message('language'), lang.bind(null, 'es'), _translate2.default.message('spanish'), lang.bind(null, 'en-US'), _translate2.default.message('english'));
+
+function lang(locale) {
+  localStorage.locale = locale;
+
+  location.reload();
+
+  return false;
+}
+
+document.body.appendChild(el);
+
+},{"../../translate":41,"yo-yo":36}],43:[function(require,module,exports){
+'use strict';
+
+var _templateObject = _taggedTemplateLiteral(['<nav class="header">\n  <div class="wrapper">\n    <div class="container">\n      <div class="row">\n        <div class="col s6 m4">\n          <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n        </div>\n\n        <div class="col s3 m2 offset-m6 offset-s3">\n          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n            <i class="fa fa-user" aria-hidden="true"></i>\n          </a>\n          <ul id="drop-user" class="dropdown-content">\n            <li><a href="#">', '</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</nav>'], ['<nav class="header">\n  <div class="wrapper">\n    <div class="container">\n      <div class="row">\n        <div class="col s6 m4">\n          <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n        </div>\n\n        <div class="col s3 m2 offset-m6 offset-s3">\n          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n            <i class="fa fa-user" aria-hidden="true"></i>\n          </a>\n          <ul id="drop-user" class="dropdown-content">\n            <li><a href="#">', '</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</nav>']);
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+var el = (0, _yoYo2.default)(_templateObject, _translate2.default.message('logout'));
+
+var header = document.getElementById('header');
+
+header.innerHTML = '';
+header.appendChild(el);
+
+},{"../../translate":41,"yo-yo":36}],44:[function(require,module,exports){
+'use strict';
+
+var _page = require('page');
+
+var _page2 = _interopRequireDefault(_page);
+
+var _template = require('./template');
+
+var _template2 = _interopRequireDefault(_template);
+
+var _title = require('title');
+
+var _title2 = _interopRequireDefault(_title);
+
+require('../header');
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var main = document.getElementById('main-container');
+
+console.log('Global');
+
+function loadPictures(ctx, next) {
+  fetch('/api/pictures').then(function (response) {
+    response.json().then(function (data) {
+      console.log(data);
+
+      ctx.imagesAPI = data;
+
+      next();
+    });
+  }).catch(function (err) {
+    console.log(err);
+  });
+}
+
+(0, _page2.default)('/', loadPictures, function (ctx, next) {
+  // ctx y next son posible parametros
+  (0, _title2.default)('Melygram');
+
+  console.log('Funciona');
+
+  main.innerHTML = '';
+  main.appendChild((0, _template2.default)(ctx.imagesAPI));
+});
+
+},{"../header":43,"./template":45,"page":32,"title":35}],45:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ', '\n      </div>\n    </div>\n  </div>'], ['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ', '\n      </div>\n    </div>\n  </div>']);
+
+exports.default = function (picturesAPI) {
+  var el = (0, _yoYo2.default)(_templateObject, picturesAPI.map(function (image) {
+    return (0, _pictureCard2.default)(image);
+  }));
+
+  return (0, _layout2.default)(el);
+};
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _layout = require('../layout');
+
+var _layout2 = _interopRequireDefault(_layout);
+
+var _pictureCard = require('../picture-card');
+
+var _pictureCard2 = _interopRequireDefault(_pictureCard);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+},{"../layout":47,"../picture-card":48,"yo-yo":36}],46:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<div class="container landing">\n    <div class="row">\n      <div class="col s10 m12 push-s1">\n        <div class="row">\n          <div class="col m5 hide-on-small-only">\n            <img src="./images/iphone.png" class="iphone">\n          </div>\n\n          ', '\n        </div>\n      </div>\n    </div>\n  </div>'], ['<div class="container landing">\n    <div class="row">\n      <div class="col s10 m12 push-s1">\n        <div class="row">\n          <div class="col m5 hide-on-small-only">\n            <img src="./images/iphone.png" class="iphone">\n          </div>\n\n          ', '\n        </div>\n      </div>\n    </div>\n  </div>']);
+
+exports.default = function (box) {
+  return (0, _yoYo2.default)(_templateObject, box);
+};
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+},{"yo-yo":36}],47:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<div class="content"> ', ' </div>'], ['<div class="content"> ', ' </div>']);
+
+exports.default = function (content) {
+  return (0, _yoYo2.default)(_templateObject, content);
+};
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+},{"yo-yo":36}],48:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="', '">\n      </div>\n      <div class="card-content">\n        <a href="/user/', '" class="card-title">\n          <img src="', '" class="avatar" />\n          <span class="username">', '</span>\n        </a>\n        <small class="time right">', '</small>\n        <p>\n          <a class="left ', '" href="#" onclick=', '>\n            <i class="fa fa-heart-o"></i>\n          </a>\n\n          <a class="left ', '" href="#" onclick=', '>\n            <i class="fa fa-heart"></i>\n          </a>\n          <span class="left likes">', '</span>\n        </p>\n      </div>\n    </div>'], ['<div class="card">\n      <div class="card-image waves-effect waves-block waves-light">\n        <img class="activator" src="', '">\n      </div>\n      <div class="card-content">\n        <a href="/user/', '" class="card-title">\n          <img src="', '" class="avatar" />\n          <span class="username">', '</span>\n        </a>\n        <small class="time right">', '</small>\n        <p>\n          <a class="left ', '" href="#" onclick=', '>\n            <i class="fa fa-heart-o"></i>\n          </a>\n\n          <a class="left ', '" href="#" onclick=', '>\n            <i class="fa fa-heart"></i>\n          </a>\n          <span class="left likes">', '</span>\n        </p>\n      </div>\n    </div>']);
+
+exports.default = function (pic) {
+  var el;
+
+  function render(image) {
+    return (0, _yoYo2.default)(_templateObject, image.url, image.user.username, image.user.avatar, image.user.username, _translate2.default.date.format(new Date(image.date)), image.liked ? 'hide' : '', like.bind(null, true), image.liked ? '' : 'hide', like.bind(null, false), _translate2.default.message('likes', { 'likes': image.likes }));
+  }
+
+  function like(liked) {
+    pic.liked = liked;
+    pic.likes += liked ? 1 : -1;
+
+    var newEl = render(pic);
+
+    _yoYo2.default.update(el, newEl);
+
+    return false;
+  }
+
+  el = render(pic);
+
+  return el;
+};
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+},{"../../translate":41,"yo-yo":36}],49:[function(require,module,exports){
+'use strict';
+
+var _page = require('page');
+
+var _page2 = _interopRequireDefault(_page);
+
+var _template = require('./template');
+
+var _template2 = _interopRequireDefault(_template);
+
+var _landing = require('../landing');
+
+var _landing2 = _interopRequireDefault(_landing);
+
+var _title = require('title');
+
+var _title2 = _interopRequireDefault(_title);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var main = document.getElementById('main-container');
+
+(0, _page2.default)('/signin', function () {
+  (0, _title2.default)('Melygram - Signin');
+
+  main.innerHTML = '';
+  main.appendChild((0, _landing2.default)(_template2.default));
+});
+
+},{"../landing":46,"./template":50,"page":32,"title":35}],50:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<div class="col s12 m7">\n  <div class="row"> <!-- Registrarse -->\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <div class="section"> <!-- Iniciar sesion con Facebook -->\n          <a href="#" class="btn btn-fb hide-on-med-and-down">', '</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> ', '\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> <!-- Formulario de registro -->\n          <input type="text" name="user-name" placeholder="', '">\n          <input type="password" name="password" placeholder="', '">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">\n            ', '\n          </button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> <!-- Iniciar sesi\xF3n -->\n    <div class="login-box">\n    ', ' <a href="/signup">', '</a>\n    </div>\n  </div>\n</div>'], ['<div class="col s12 m7">\n  <div class="row"> <!-- Registrarse -->\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <div class="section"> <!-- Iniciar sesion con Facebook -->\n          <a href="#" class="btn btn-fb hide-on-med-and-down">', '</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> ', '\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> <!-- Formulario de registro -->\n          <input type="text" name="user-name" placeholder="', '">\n          <input type="password" name="password" placeholder="', '">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">\n            ', '\n          </button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> <!-- Iniciar sesi\xF3n -->\n    <div class="login-box">\n    ', ' <a href="/signup">', '</a>\n    </div>\n  </div>\n</div>']);
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+exports.default = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup-facebook'), _translate2.default.message('signup-face'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signin'), _translate2.default.message('signin.have-account'), _translate2.default.message('signup'));
+
+},{"../../translate":41,"yo-yo":36}],51:[function(require,module,exports){
+'use strict';
+
+var _page = require('page');
+
+var _page2 = _interopRequireDefault(_page);
+
+var _template = require('./template');
+
+var _template2 = _interopRequireDefault(_template);
+
+var _landing = require('../landing');
+
+var _landing2 = _interopRequireDefault(_landing);
+
+var _title = require('title');
+
+var _title2 = _interopRequireDefault(_title);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var main = document.getElementById('main-container');
+
+(0, _page2.default)('/signup', function () {
+  (0, _title2.default)('Melygram - Signup');
+
+  main.innerHTML = '';
+  main.appendChild((0, _landing2.default)(_template2.default));
+});
+
+},{"../landing":46,"./template":52,"page":32,"title":35}],52:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['<div class="col s12 m7">\n  <div class="row"> <!-- Registrarse -->\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <h2>', '</h2>\n\n        <div class="section"> <!-- Iniciar sesion con Facebook -->\n          <a href="#" class="btn btn-fb hide-on-med-and-down">', '</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> ', '\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> <!-- Formulario de registro -->\n          <input type="email" name="email" placeholder="', '">\n          <input type="text" name="name" placeholder="', '">\n          <input type="text" name="user-name" placeholder="', '">\n          <input type="password" name="password" placeholder="', '">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">\n            ', '\n          </button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> <!-- Iniciar sesi\xF3n -->\n    <div class="login-box">\n      ', ' <a href="/signin">', '</a>\n    </div>\n  </div>\n</div>'], ['<div class="col s12 m7">\n  <div class="row"> <!-- Registrarse -->\n    <div class="signup-box">\n      <h1 class="platzigram-tittle">Meligram</h1>\n\n      <form class="signup-form">\n        <h2>', '</h2>\n\n        <div class="section"> <!-- Iniciar sesion con Facebook -->\n          <a href="#" class="btn btn-fb hide-on-med-and-down">', '</a>\n          <a href="#" class="btn btn-fb hide-on-large-only">\n            <i class="fa fa-facebook-official"></i> ', '\n          </a>\n        </div>\n\n        <div class="divider"></div>\n\n        <div class="section"> <!-- Formulario de registro -->\n          <input type="email" name="email" placeholder="', '">\n          <input type="text" name="name" placeholder="', '">\n          <input type="text" name="user-name" placeholder="', '">\n          <input type="password" name="password" placeholder="', '">\n\n          <button class="btn waves-effect waves-light btn-signup" type="submit">\n            ', '\n          </button>\n        </div>\n      </form>\n    </div>\n  </div>\n\n  <div class="row"> <!-- Iniciar sesi\xF3n -->\n    <div class="login-box">\n      ', ' <a href="/signin">', '</a>\n    </div>\n  </div>\n</div>']);
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+exports.default = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup-subheading'), _translate2.default.message('signup-facebook'), _translate2.default.message('signup-face'), _translate2.default.message('email'), _translate2.default.message('fullname'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signup'), _translate2.default.message('singup.have-account'), _translate2.default.message('signin'));
+
+},{"../../translate":41,"yo-yo":36}]},{},[38]);
