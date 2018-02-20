@@ -34,7 +34,7 @@ export default yo`<div class="col s12 m7">
 
   <div class="row"> <!-- Iniciar sesión -->
     <div class="login-box">
-      ${translate.message('singup.have-account')} <a href="/signin">${translate.message('signin')}</a>
+      ${translate.message('signup.have-account')} <a href="/signin">${translate.message('signin')}</a>
     </div>
   </div>
 </div>`

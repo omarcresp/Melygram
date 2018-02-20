@@ -11,8 +11,10 @@ export default {
   'fullname': 'Nombre completo',
   'password': 'Contraseña',
   'signup': 'Registrate',
-  'singup.have-account': '¿Tienes una cuenta?',
+  'signup.have-account': '¿Tienes una cuenta?',
   'signin': 'Entrar',
   'signin.have-account': '¿No tienes una cuenta?',
-  'language': 'Idioma'
+  'language': 'Idioma',
+  'upload-picture': 'Subir imagen',
+  'upload': 'Subir'
 }

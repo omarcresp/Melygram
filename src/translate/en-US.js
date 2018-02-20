@@ -13,8 +13,10 @@ export default {
   'fullname': 'Fullname',
   'password': 'Password',
   'signup': 'Signup',
-  'singup.have-account': '¿Already have an account?',
+  'signup.have-account': '¿Already have an account?',
   'signin': 'Signin',
   'signin.have-account': '¿Don\'t have account?',
-  'language': 'Language'
+  'language': 'Language',
+  'upload-picture': 'Upload picture',
+  'upload': 'Upload'
 }

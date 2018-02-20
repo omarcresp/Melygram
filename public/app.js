@@ -9633,9 +9633,7 @@ require('./views/signin');
 
 require('./views/footer');
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _page2.default)();
 
@@ -9658,10 +9656,12 @@ exports.default = {
         'fullname': 'Fullname',
         'password': 'Password',
         'signup': 'Signup',
-        'singup.have-account': '¿Already have an account?',
+        'signup.have-account': '¿Already have an account?',
         'signin': 'Signin',
         'signin.have-account': '¿Don\'t have account?',
-        'language': 'Language'
+        'language': 'Language',
+        'upload-picture': 'Upload picture',
+        'upload': 'Upload'
 };
 
 },{}],40:[function(require,module,exports){
@@ -9683,10 +9683,12 @@ exports.default = {
   'fullname': 'Nombre completo',
   'password': 'Contraseña',
   'signup': 'Registrate',
-  'singup.have-account': '¿Tienes una cuenta?',
+  'signup.have-account': '¿Tienes una cuenta?',
   'signin': 'Entrar',
   'signin.have-account': '¿No tienes una cuenta?',
-  'language': 'Idioma'
+  'language': 'Idioma',
+  'upload-picture': 'Subir imagen',
+  'upload': 'Subir'
 };
 
 },{}],41:[function(require,module,exports){
@@ -9704,9 +9706,7 @@ var _enUS = require('./en-US');
 
 var _enUS2 = _interopRequireDefault(_enUS);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (!window.Intl) {
   window.Intl = require('intl');
@@ -9757,13 +9757,9 @@ var _translate = require('../../translate');
 
 var _translate2 = _interopRequireDefault(_translate);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var el = (0, _yoYo2.default)(_templateObject, _translate2.default.message('language'), lang.bind(null, 'es'), _translate2.default.message('spanish'), lang.bind(null, 'en-US'), _translate2.default.message('english'));
 
@@ -9780,7 +9776,7 @@ document.body.appendChild(el);
 },{"../../translate":41,"yo-yo":36}],43:[function(require,module,exports){
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['<nav class="header">\n  <div class="wrapper">\n    <div class="container">\n      <div class="row">\n        <div class="col s6 m4">\n          <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n        </div>\n\n        <div class="col s3 m2 offset-m6 offset-s3">\n          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n            <i class="fa fa-user" aria-hidden="true"></i>\n          </a>\n          <ul id="drop-user" class="dropdown-content">\n            <li><a href="#">', '</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</nav>'], ['<nav class="header">\n  <div class="wrapper">\n    <div class="container">\n      <div class="row">\n        <div class="col s6 m4">\n          <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n        </div>\n\n        <div class="col s3 m2 offset-m6 offset-s3">\n          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n            <i class="fa fa-user" aria-hidden="true"></i>\n          </a>\n          <ul id="drop-user" class="dropdown-content">\n            <li><a href="#">', '</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</nav>']);
+var _templateObject = _taggedTemplateLiteral(['<nav class="header">\n  <div class="wrapper">\n    <div class="container">\n      <div class="row">\n        <div class="col s6 m4">\n          <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n        </div>\n\n        <div class="col s3 m2 offset-m6 offset-s3">\n          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n            <i class="fa fa-user" aria-hidden="true"></i>\n          </a>\n          <ul id="drop-user" class="dropdown-content">\n            <li><a href="/signin">', '</a></li>\n            <li><a href="/signup">', '</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</nav>'], ['<nav class="header">\n  <div class="wrapper">\n    <div class="container">\n      <div class="row">\n        <div class="col s6 m4">\n          <a href="/" class="platzigram-tittle layout-title">Meligram</a>\n        </div>\n\n        <div class="col s3 m2 offset-m6 offset-s3">\n          <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n            <i class="fa fa-user" aria-hidden="true"></i>\n          </a>\n          <ul id="drop-user" class="dropdown-content">\n            <li><a href="/signin">', '</a></li>\n            <li><a href="/signup">', '</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</nav>']);
 
 var _yoYo = require('yo-yo');
 
@@ -9790,15 +9786,11 @@ var _translate = require('../../translate');
 
 var _translate2 = _interopRequireDefault(_translate);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var el = (0, _yoYo2.default)(_templateObject, _translate2.default.message('logout'));
+var el = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signin'), _translate2.default.message('signup'));
 
 var header = document.getElementById('header');
 
@@ -9822,9 +9814,7 @@ var _title2 = _interopRequireDefault(_title);
 
 require('../header');
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var main = document.getElementById('main-container');
 
@@ -9861,12 +9851,39 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ', '\n      </div>\n    </div>\n  </div>'], ['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ', '\n      </div>\n    </div>\n  </div>']);
+var _templateObject = _taggedTemplateLiteral(['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3 center-align">\n        <form enctype="multipart/form-data" class="form-upload" id="form-upload" onsubmit=', '>\n          <div id="fileName" class="fileUpload btn btn-flat cyan">\n            <label for="file"><i class="fa fa-camera"></i> ', '</label>\n            <input name="picture" id="file" type="file" class="upload hide" onchange=', '/>\n          </div>\n          <button id="btnUpload" type="submit" class="btn btn-flat hide cyan ">\n            ', '\n          </button>\n          <button onclick=', ' id="btnCancel" type="button" class="btn btn-flat hide red">\n            <i class="fa fa-times"></i>\n          </button>\n        </form>\n      </div>\n    </div>\n\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ', '\n      </div>\n    </div>\n  </div>'], ['<div class="container timeline">\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3 center-align">\n        <form enctype="multipart/form-data" class="form-upload" id="form-upload" onsubmit=', '>\n          <div id="fileName" class="fileUpload btn btn-flat cyan">\n            <label for="file"><i class="fa fa-camera"></i> ', '</label>\n            <input name="picture" id="file" type="file" class="upload hide" onchange=', '/>\n          </div>\n          <button id="btnUpload" type="submit" class="btn btn-flat hide cyan ">\n            ', '\n          </button>\n          <button onclick=', ' id="btnCancel" type="button" class="btn btn-flat hide red">\n            <i class="fa fa-times"></i>\n          </button>\n        </form>\n      </div>\n    </div>\n\n    <div class="row">\n      <div class="col s12 m10 offset-m1 l8 offset-l2 xl6 offset-xl3">\n        ', '\n      </div>\n    </div>\n  </div>']);
 
 exports.default = function (picturesAPI) {
-  var el = (0, _yoYo2.default)(_templateObject, picturesAPI.map(function (image) {
+  var el = (0, _yoYo2.default)(_templateObject, submit, _translate2.default.message('upload-picture'), toggleButtons, _translate2.default.message('upload'), cancel, picturesAPI.map(function (image) {
     return (0, _pictureCard2.default)(image);
   }));
+
+  function toggleButtons() {
+    document.getElementById('fileName').classList.toggle('hide');
+    document.getElementById('btnUpload').classList.toggle('hide');
+    document.getElementById('btnCancel').classList.toggle('hide');
+  }
+
+  function cancel() {
+    toggleButtons();
+
+    document.getElementById('form-upload').reset();
+  }
+
+  function submit(ev) {
+    ev.preventDefault();
+
+    var data = new FormData(this);
+
+    var myRequest = new Request('/api/pictures', {
+      method: 'POST',
+      body: data
+    });
+
+    fetch(myRequest).then(function (response) {
+      return console.log(response);
+    });
+  }
 
   return (0, _layout2.default)(el);
 };
@@ -9883,15 +9900,15 @@ var _pictureCard = require('../picture-card');
 
 var _pictureCard2 = _interopRequireDefault(_pictureCard);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+var _translate = require('../../translate');
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+var _translate2 = _interopRequireDefault(_translate);
 
-},{"../layout":47,"../picture-card":48,"yo-yo":36}],46:[function(require,module,exports){
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+},{"../../translate":41,"../layout":47,"../picture-card":48,"yo-yo":36}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9908,13 +9925,9 @@ var _yoYo = require('yo-yo');
 
 var _yoYo2 = _interopRequireDefault(_yoYo);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 },{"yo-yo":36}],47:[function(require,module,exports){
 'use strict';
@@ -9933,13 +9946,9 @@ var _yoYo = require('yo-yo');
 
 var _yoYo2 = _interopRequireDefault(_yoYo);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 },{"yo-yo":36}],48:[function(require,module,exports){
 'use strict';
@@ -9981,13 +9990,9 @@ var _translate = require('../../translate');
 
 var _translate2 = _interopRequireDefault(_translate);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 },{"../../translate":41,"yo-yo":36}],49:[function(require,module,exports){
 'use strict';
@@ -10008,9 +10013,7 @@ var _title = require('title');
 
 var _title2 = _interopRequireDefault(_title);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var main = document.getElementById('main-container');
 
@@ -10038,13 +10041,9 @@ var _translate = require('../../translate');
 
 var _translate2 = _interopRequireDefault(_translate);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 exports.default = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup-facebook'), _translate2.default.message('signup-face'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signin'), _translate2.default.message('signin.have-account'), _translate2.default.message('signup'));
 
@@ -10067,9 +10066,7 @@ var _title = require('title');
 
 var _title2 = _interopRequireDefault(_title);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var main = document.getElementById('main-container');
 
@@ -10097,14 +10094,10 @@ var _translate = require('../../translate');
 
 var _translate2 = _interopRequireDefault(_translate);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
-}
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-exports.default = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup-subheading'), _translate2.default.message('signup-facebook'), _translate2.default.message('signup-face'), _translate2.default.message('email'), _translate2.default.message('fullname'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signup'), _translate2.default.message('singup.have-account'), _translate2.default.message('signin'));
+exports.default = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup-subheading'), _translate2.default.message('signup-facebook'), _translate2.default.message('signup-face'), _translate2.default.message('email'), _translate2.default.message('fullname'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signup'), _translate2.default.message('signup.have-account'), _translate2.default.message('signin'));
 
 },{"../../translate":41,"yo-yo":36}]},{},[38]);

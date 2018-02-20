@@ -7017,3 +7017,11 @@ body {
 
 .signup-form input::placeholder {
   color: #9a9a9a; }
+
+.form-upload {
+  position: relative;
+  top: 25px; }
+  .form-upload label, .form-upload button {
+    color: white; }
+  .form-upload label {
+    cursor: pointer; }

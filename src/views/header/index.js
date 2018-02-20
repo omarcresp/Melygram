@@ -14,7 +14,8 @@ var el = yo`<nav class="header">
             <i class="fa fa-user" aria-hidden="true"></i>
           </a>
           <ul id="drop-user" class="dropdown-content">
-            <li><a href="#">${translate.message('logout')}</a></li>
+            <li><a href="/signin">${translate.message('signin')}</a></li>
+            <li><a href="/signup">${translate.message('signup')}</a></li>
           </ul>
         </div>
       </div>

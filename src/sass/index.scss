@@ -138,3 +138,16 @@ $avatar-size: 48px;
 .signup-form input::placeholder {
     color: #9a9a9a;
 }
+
+.form-upload {
+    position: relative;
+    top: 25px;
+
+    label, button {
+        color: white;
+    }
+
+    label {
+        cursor: pointer;
+    }
+}
