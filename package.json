@@ -7,7 +7,7 @@
     "build": "gulp",
     "start": "gulp watch & node server.js & firefox localhost:8080",
     "prod": "gulp watch & sudo node server.js",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=public --branch=gh-pages --cleanup"
   },
   "author": "Omar Crespo <crespomerchano@gmail.com> (omarcrespo.com.ve)",
   "license": "MIT",
