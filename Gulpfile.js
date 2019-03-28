@@ -9,56 +9,60 @@ var buffer = require('vinyl-buffer')
 var source = require('vinyl-source-stream')
 var watchify = require('watchify')
 
-gulp.task('styles', function () {
-  gulp
+function styles () {
+  return gulp
     .src('./src/sass/index.scss')
     .pipe(sass())
-    /* .pipe(cleanCSS({debug: true}, (details) => {
+    .pipe(cleanCSS({debug: true}, (details) => {
       console.log('\nMinfyCSS Details >>>>>>>>>>>>>>>>>>>')
       console.log(`${details.name}: ${Math.round(details.stats.originalSize / 1024)} KB`)
       console.log(`${details.name}: ${Math.round(details.stats.minifiedSize / 1024)} KB`)
-    })) */
+    }))
     .pipe(rename('main.css'))
     .pipe(gulp.dest('./public/css'))
-})
+}
 
-gulp.task('assets', function () {
-  gulp
+function assetsImages () {
+  return gulp
     .src('assets/images/*')
     .pipe(gulp.dest('public/images'))
+}
 
-  gulp
+function assetsFavicon () {
+  return gulp
     .src('assets/favicon/*')
     .pipe(gulp.dest('public/favicon'))
-})
+}
 
-gulp.task('font-awesome', function () {
-  gulp
+function fontAwesome () {
+  return gulp
     .src('./node_modules/font-awesome/fonts/*')
     .pipe(gulp.dest('public/fonts'))
+}
 
-  gulp
+function fontAwesomeScss () {
+  return gulp
     .src('./node_modules/font-awesome/scss/font-awesome.scss')
     .pipe(sass())
-    /* .pipe(cleanCSS({debug: true}, (details) => {
+    .pipe(cleanCSS({debug: true}, (details) => {
       console.log('\nMinfyCSS Details >>>>>>>>>>>>>>>>>>>')
       console.log(`${details.name}: ${Math.round(details.stats.originalSize / 1024)} KB`)
       console.log(`${details.name}: ${Math.round(details.stats.minifiedSize / 1024)} KB`)
-    })) */
+    }))
     .pipe(rename('font-awesome.css'))
     .pipe(gulp.dest('./public/css'))
-})
+}
 
 function compile (watch) {
   var bundle
 
   function rebundle () {
-    bundle
+    return bundle
       .transform(babel, {presets: ['env']})
       .bundle()
       .pipe(source('index.js'))
-      /* .pipe(buffer())
-      .pipe(uglify()) */
+      .pipe(buffer())
+      .pipe(uglify())
       .pipe(rename('app.js'))
       .pipe(gulp.dest('public'))
   }
@@ -75,11 +79,14 @@ function compile (watch) {
     bundle = browserify('./src/index.js')
   }
 
-  rebundle()
+  return rebundle()
 }
 
-gulp.task('default', ['styles', 'assets', 'build', 'font-awesome'])
+function  build () { return compile() }
+function watch () { return compile(true) }
 
-gulp.task('build', function () { return compile() })
+var prod = gulp.series(styles, assetsImages, assetsFavicon, fontAwesome, fontAwesomeScss, build)
+var dev = gulp.series(styles, assetsImages, assetsFavicon, fontAwesome, fontAwesomeScss, watch)
 
-gulp.task('watch', function () { return compile(true) })
+exports.default = prod
+exports.watch = dev
